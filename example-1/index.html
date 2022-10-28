@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+
+
+
+
+
+	<script src="file:///C:/cygwin64/home/dtr/axe-core/axe.js"></script>
+	<script>
+
+addEventListener('DOMContentLoaded', (event) => {
+	//axe.run().then((v) => {
+	axe.run({runOnly: ['link-in-text-block']}).then((v) => {
+		console.dir("inapp:", v.inapplicable);
+		console.dir("pass:", v.passes);
+		console.dir("violations:", v.violations);
+	});
+});
+
+
+	</script>
+	<title>x y</title>
+
+
+<link href="main.css" rel="stylesheet" />
+ 
+
+
+</head>
+
+<body>
+
+	<main>
+
+
+		<h1>heading</h1>
+
+<p>Hello <a href="#">World</a></p>
+
+<img src="beacon.svg" alt="alt 1">
+ 
+	</main>
+
+<!--
+ 
+
+
+-->
+
+
+
+
+</body>
+</html>
