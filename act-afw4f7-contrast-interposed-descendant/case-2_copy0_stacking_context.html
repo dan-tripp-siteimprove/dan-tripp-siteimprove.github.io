@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>x</title>
+
+
+
+
+
+
+
+
+	<script src="file:///C:/cygwin64/home/dtr/axe-core/axe.js"></script>
+	<script>
+
+addEventListener('DOMContentLoaded', (event) => {
+	
+	setTimeout(() => {
+		const axeRule = 'color-contrast' ; // eg. 'color-contrast', 'link-in-text-block' 
+		axe.run({runOnly: [axeRule]}).then((v) => {
+			console.dir("passes:", v.passes);
+			console.dir("violations:", v.violations);
+			console.dir("inapplicable:", v.inapplicable);
+			console.dir("incomplete:", v.incomplete);
+			console.dir("all:", v);
+		});
+	}, 1000);
+
+	
+});
+
+
+	</script>
+	
+
+
+
+<style>
+
+div.target {
+	color: #fff; 
+	z-index: 3; 
+	position: relative; 
+}
+
+div.parent-of-target {
+	background-color: #0f0; 
+	z-index: 1; 
+	position: relative; 
+}
+
+.absolutely-positioned-box {
+	position: absolute; 
+	top: 0em; 
+	left: 0em; 
+	background: #0ff;
+	height: 4em; 
+  width: 50vh; 
+	z-index: 0; 
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<main>
+
+
+<div class="parent-of-target">
+	<div class="target">
+		<p>Target Text</p>
+	</div>
+	<div class="absolutely-positioned-box"></div>
+</div>
+
+<p>filler text 1/20</p>
+<p>filler text 2/20</p>
+<p>filler text 3/20</p>
+<p>filler text 4/20</p>
+<p>filler text 5/20</p>
+<p>filler text 6/20</p>
+<p>filler text 7/20</p>
+<p>filler text 8/20</p>
+<p>filler text 9/20</p>
+<p>filler text 10/20</p>
+<p>filler text 11/20</p>
+<p>filler text 12/20</p>
+<p>filler text 13/20</p>
+<p>filler text 14/20</p>
+<p>filler text 15/20</p>
+<p>filler text 16/20</p>
+<p>filler text 17/20</p>
+<p>filler text 18/20</p>
+<p>filler text 19/20</p>
+<p>filler text 20/20</p>
+
+</body>
+</main>
+
+</html>
