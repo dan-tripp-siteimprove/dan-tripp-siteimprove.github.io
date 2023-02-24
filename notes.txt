@@ -1,4 +1,5 @@
 URLs will be: 
 https://dan-tripp-siteimprove.github.io/xyzxyz.htm
+commit, push
+will show up on the live internet in ~ 1 min 
 
-git add --all ; git commit -m "." ; git push -u origin main
