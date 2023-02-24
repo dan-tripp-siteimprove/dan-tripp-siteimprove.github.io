@@ -1,1 +1,4 @@
+URLs will be: 
+https://dan-tripp-siteimprove.github.io/xyzxyz.htm
+
 git add --all ; git commit -m "." ; git push -u origin main
