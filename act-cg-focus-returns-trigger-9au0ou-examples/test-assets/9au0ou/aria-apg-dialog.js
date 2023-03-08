@@ -97,6 +97,9 @@ aria.Utils = aria.Utils || {};
     var currentDialog = aria.getCurrentDialog();
     if (currentDialog) {
       currentDialog.close();
+			if(currentDialog.dialogNode.on_close_via_escape_key) {
+				currentDialog.dialogNode.on_close_via_escape_key();
+			}
       return true;
     }
 
