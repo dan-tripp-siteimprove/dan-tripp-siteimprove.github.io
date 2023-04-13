@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>x</title>
+<style>
+
+</style>
+
+
+
+
+
+
+
+	<script src="file:///C:/cygwin64/home/dtr/axe-core/axe.js"></script>
+	<script>
+
+addEventListener('DOMContentLoaded', (event) => {
+	
+	setTimeout(() => {
+		const axeRule = 'x' ; // eg. 'color-contrast', 'link-in-text-block' 
+		axe.run({runOnly: [axeRule]}).then((v) => {
+			console.dir("passes:", v.passes);
+			console.dir("violations:", v.violations);
+			console.dir("inapplicable:", v.inapplicable);
+			console.dir("incomplete:", v.incomplete);
+			console.dir("all:", v);
+		});
+	}, 1000);
+
+	
+});
+
+
+	</script>
+	
+
+
+
+
+
+</head>
+
+<body>
+<main>
+
+<h2><a href="#">link within heading.  before the 2023-03-29 alfa release: this failed.  as of the 2023-03-29 alfa release: this now passes.</a></h2>
+
+<a href="#"><h2>heading within link.  before the 2023-03-29 alfa release: this failed.  as of the 2023-03-29 alfa release: this still fails.</h2></a>
+
+<h2>normal heading, no link.  before the 2023-03-29 alfa release: this failed.  as of the 2023-03-29 alfa release: this still fails.</h2>
+
+</main>
+
+</body>
+
+</html>
