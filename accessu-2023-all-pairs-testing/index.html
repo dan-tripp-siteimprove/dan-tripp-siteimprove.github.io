@@ -18,9 +18,107 @@
 <h1>AccessU 2023 - All-Pairs testing
 </h1>
 
-I'll put more information here, if there is any.  - Dan
+
+<a href="mailto:dtr@siteimprove.com">dtr@siteimprove.com</a><br>
+<a href="https://linkedin.com/in/dan-tripp">LinkedIn</a><br>
 
 
+<h2>PICT in general</h2>
+<ul>
+<li>
+See <a href="https://github.com/Microsoft/pict/blob/main/doc/pict.md">the main PICT manual page</a>.  Has many examples. 
+</li>
+</ul>
+			
+<h2>PICT - local executable </h2>
+<ul>
+<li>
+<a href="https://github.com/microsoft/pict/releases/">Pre-built Windows .exe file</a>
+</li>
+<li>
+Linux, OS/X, *BSD, etc.: <a href="https://github.com/microsoft/pict#building-on-linux-osx-bsd-etc">build-it-yourself instructions</a>  
+</li>
+</ul>
+
+
+
+<h2>PICT - online </h2>
+<ul>
+<li>
+<a href="https://pairwise.yuuniworks.com/">PICT online</a> (not hosted by the creators of PICT). 
+</li>
+<li>Pros and cons: 
+<ul>
+	<li>
+		Pro: A great way to get started with PICT.  You can do a lot of useful testing with this before you run into its limitations.  (i.e. the limitations of the online edition, compared to the local executable).
+	</li>
+	<li>
+		Pro: Don't need to download anything. 
+
+	</li>
+	<li>
+		Pro: Accepts models in the same format as the local PICT .exe. 
+
+	</li>
+	<li>
+		Con: If you want to do "not pairwise" (eg. all-triples, all-quadruples): you can't specify the "interaction strength" AKA "t" (i.e. /o cmdline arg) so use this work-around: specify a sub-model which includes all params. 
+	</li>
+	<li>
+		Con:  Can't use misc. other cmdline options eg. delimiters.
+	</li>
+	<li>
+		Con:  Can't seed.
+	</li>
+	<li>
+		Con:  Can't handle a large number of output tests.  Roughly > 300 tests, or > ~ 2s to generate model.  Error message: "NetworkError when attempting to fetch resource".
+	</li>
+	</li>
+</ul>
+</li>
+</ul>
+
+<h2>CAGen - online </h2>
+<ul>
+<li>
+CAGen is an alternative to PICT.  Not covered in talk. 
+</li>
+<li> 
+<a href="https://srd.sba-research.org/tools/cagen/#/generate">CAGen online</a> 
+</li>
+<li> 
+Accepts models in the <a href="https://csrc.nist.gov/CSRC/media/Projects/Automated-Combinatorial-Testing-for-Software/documents/acts_user_guide_2_92.pdf">ACTS format</a>  (not the PICT format).  ACTS, in turn, is another generator tool, which is freely available if you send an email to the creators.  
+</li>
+<li> 
+Pro: Can set "interaction strength" AKA "t" easily. 
+</li>
+<li> 
+Pro: Can handle many output rows.  (eg. 1 million).
+</li>
+<li> 
+... Con:  For 1 million output tests, the download fails (to both file and clipboard).  So you can view the output in the web browser only.  
+</li>
+<li> 
+... Pro: For 5000 output tests: download works fine. 
+</li>
+<li> 
+Con:  Constraints can't handle integer comparisons (eg. greater-than, less-than) like PICT and ACTS can. 
+
+</li>
+</ul>
+
+		
+		
+			
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+			
 
 
 </main>
