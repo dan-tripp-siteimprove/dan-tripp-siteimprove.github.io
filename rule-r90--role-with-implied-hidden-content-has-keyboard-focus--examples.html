@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>x</title>
+<style>
+
+</style>
+
+</head>
+
+<body>
+<main>
+
+
+
+<h1 id="id_h1">Examples</h1>
+
+
+<ul>
+
+<li>
+	The <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/307n5z/#test-cases">test cases for the corresponding ACT rule</a> are good.
+</li>
+
+<li>
+	Fails:<br>
+	<ul role="tablist" >
+	<li role="tab">This (non-functional) tab contains a link.
+	<a href="#">x</a>
+	</li>
+	</ul>
+	(Inspired by this <a href="https://my2.siteimprove.com/Auth/Direct?personId=126762193&accountId=28448&back=%2FInspector%2F95260%2FA11Y%2FPage%3FpageId%3D40529674073%26impmd%3DOIPJPOOBDLJOHLBOFIHI%26decision%3Ddismissed%2BfalsePositive%2Bnone%26lang%3Den-US%23%2Fsia-r90%2Ffailed%2FekEyV29KaXc%3D%3BZTkzZWI5YmU%3D#/sia-r90/failed/ekEyV29KaXc=;ZTkzZWI5YmU=">customer's page report</a>.)
+</li>
+
+
+
+<li>
+	Failure is impossible with an &lt;img&gt; element because &lt;img&gt; has no closing tag, so it's impossible to put anything inside of it. 
+</li>
+
+<li>
+	... but this fails (a role="img" element):<br>
+	<span role="img" aria-label="some ASCII art">****** This ASCII art ******* <a href="#">contains a link.</a></span>
+</li>
+
+<li>
+	Fails: (this &lt;button&gt; contains a focusable &lt;span&gt;) <button>x<span tabindex="0">y</span></button> 
+</li>
+
+<li>
+	Fails: <div role="button"><a href="foo">Foo</href></div>
+</li>
+
+</ul>
+
+
+
+</main>
+
+</body>
+
+</html>
