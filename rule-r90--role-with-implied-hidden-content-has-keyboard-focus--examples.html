@@ -17,20 +17,33 @@
 <h1 id="id_h1">Examples</h1>
 
 
-<ul>
+
+
+<ol>
 
 <li>
 	The <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/307n5z/#test-cases">test cases for the corresponding ACT rule</a> are good.
 </li>
 
 <li>
-	Fails:<br>
+Fails: 
+	<br>
 	<ul role="tablist" >
-	<li role="tab">This (non-functional) tab contains a link.
-	<a href="#">x</a>
+	<li role="tab">This is a non-functional role="tab" which contains an anchor element.
+	<a href="#">(and this is the anchor element)</a>
 	</li>
 	</ul>
-	(Inspired by this <a href="https://my2.siteimprove.com/Auth/Direct?personId=126762193&accountId=28448&back=%2FInspector%2F95260%2FA11Y%2FPage%3FpageId%3D40529674073%26impmd%3DOIPJPOOBDLJOHLBOFIHI%26decision%3Ddismissed%2BfalsePositive%2Bnone%26lang%3Den-US%23%2Fsia-r90%2Ffailed%2FekEyV29KaXc%3D%3BZTkzZWI5YmU%3D#/sia-r90/failed/ekEyV29KaXc=;ZTkzZWI5YmU=">customer's page report</a>.)
+	
+
+	<ul>
+
+		<li>
+			Inspired by this <a href="https://my2.siteimprove.com/Auth/Direct?personId=126762193&accountId=28448&back=%2FInspector%2F95260%2FA11Y%2FPage%3FpageId%3D40529674073%26impmd%3DOIPJPOOBDLJOHLBOFIHI%26decision%3Ddismissed%2BfalsePositive%2Bnone%26lang%3Den-US%23%2Fsia-r90%2Ffailed%2FekEyV29KaXc%3D%3BZTkzZWI5YmU%3D#/sia-r90/failed/ekEyV29KaXc=;ZTkzZWI5YmU=">customer's page report</a>.
+		</li>
+
+
+	</ul>	
+
 </li>
 
 
@@ -49,10 +62,84 @@
 </li>
 
 <li>
-	Fails: <div role="button"><a href="foo">Foo</href></div>
+	Fails: <div role="button"><a href="foo">this is an anchor within a &lt;div role="button"&gt;</a></div>
 </li>
 
-</ul>
+<li>
+	anchor without an href (like <a href="https://my2.siteimprove.com/Inspector/335344/A11Y/Page?pageId=59707193743&impmd=WQKEXZTLXHMSWPIINJCB&decision=dismissed+falsePositive+none#/sia-r90/failed/bnhJU3lrMWg=;YjQxMDk4ZjU=">this page report</a>):   
+
+	<ul>
+		<li>
+			It's complicated.  See <a href="https://siteimprove-wgs.atlassian.net/browse/DEV-14325">this JIRA issue</a>.  
+		</li>
+		<li>
+			In summary: an anchor without an href is not focusable and so it will pass the rule.  The above page report shows an anchor without an href, so one would think that it would pass the rule.  But it fails.  The reason: it's not really without an href.  It has href="javascript:void(0)", which is focusable, so it rightly fails the rule.  The HTML in the page report shows no href instead of href="javascript:void(0)" - reason is unknown.    There are other factors at work here (mentioned in the JIRA issue) but that's the important part, I think.  
+		</li>
+		<li>
+			Example (passes the rule): <button><a>this is an anchor without an href inside of a button.</a></button>
+		</li>
+		<li>
+			Example (fails the rule): <button><a href="#">this is an anchor with href="#" inside of a button.</a></button>
+		</li>
+		<li>
+			Example (fails the rule): <button><a href="javascript:void(0)">this is an anchor with  href="javascript:void(0)" inside of a button.</a></button>
+		</li>
+	</ul>
+</li>
+<!--
+<li>
+	
+</li>
+
+<li>
+	
+</li>
+
+<li>
+	
+</li>
+
+<li>
+	
+</li>
+
+<li>
+	
+</li>
+
+<li>
+	
+</li>
+-->
+
+
+<!--
+<li>
+	
+</li>
+
+	<ul>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+	</ul>
+
+
+-->
+
+</ol>
 
 
 
