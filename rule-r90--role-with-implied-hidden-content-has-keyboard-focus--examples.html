@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>x</title>
+<title>R90</title>
 <style>
+
+li{
+  margin: 1em 0;
+}
 
 </style>
 
@@ -23,6 +27,23 @@
 
 <li>
 	The <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/307n5z/#test-cases">test cases for the corresponding ACT rule</a> are good.
+</li>
+
+
+<li>
+	Fails: <button>&lt;button&gt; which contains an <a href="#">anchor</a></button><br>
+	This is also invalid HTML.  Nu checker says: "Error: The element a must not appear as a descendant of the button element."<br>
+</li>
+
+<li>
+	Passes (to my surprise): <a href="#">anchor which contains a <button>&lt;button&gt;</button></a><br>
+	This is invalid HTML.  Nu checker says: "Error: The element button must not appear as a descendant of the a element."<br>
+	Passes the R90 rule on a technicality?  It's because of ACT rule and ARIA wording.  (I don't know why they're worded this way, but they are.)  The ACT rule refers to the ARIA spec, and checks (for the outer element) any roles which have 'children presentational' = true.  This includes "button", "checkbox", etc. - and not "link".  So all anchors as the <i>outer</i> element get a pass.  (anchors as the <i>inner</i> element can still cause failures.) 
+</li>
+
+
+<li>
+	... so this passes the rule too: <a href="#">anchor which contains <span tabindex="0" style="outline: dashed">all</span> kinds of <input type="checkbox" checked aria-label="checkbox1"> focusable <select aria-label="select1"><option value="opt1">content</option></select> </a> (some of which is invalid HTML) <br>
 </li>
 
 <li>
@@ -55,6 +76,17 @@ Fails:
 <li>
 	... but this fails (a role="img" element):<br>
 	<span role="img" aria-label="some ASCII art">****** This ASCII art ******* <a href="#">contains a link.</a></span>
+</li>
+
+<li>
+	(Similar to &lt;img&gt;.) Failure is impossible with a "&lt;button&gt; element within a button &lt;button&gt; element".  Even though &lt;button&gt; has a closing tag (unlike &lt;img&gt;), the HTML parsing ignores the second starting &lt;button&gt; tag.  <a href="https://validator.w3.org/">Nu checker says</a>: "Error: Start tag button seen but an element of the same type was already open." and then "Error: Stray end tag button."  So it doesn't even get parsed as a "&lt;button&gt; element within a button &lt;button&gt; element".  It gets parsed as one button, then another button.  See this <a href="rule-r90--role-with-implied-hidden-content-has-keyboard-focus--button-element-within-a-button-element.html">button parse failure example</a>.  
+</li>
+
+<li>
+	.. but with role="button" you can easily pass <i>basic</i> HTML parsing (in terms of start and end tags) and fail the R90 rule:<br>
+	<button><div role="button" tabindex="0">This fails.  It's a &lt;div role="button" tabindex="0"&gt; within a &lt;button&gt;</div></button><br>
+	<div role="button"><button>This fails.  It's a &lt;button&gt; within a &lt;div role="button"&gt;.  (No explicit tabindex anywhere.)</button></div>
+	<button><div role="button">This passes.  It's a &lt;div role="button"&gt; within a &lt;button&gt; and has no tabindex attribute.  It passes because the inner element isn't focusable.</div></button><br>
 </li>
 
 <li>
