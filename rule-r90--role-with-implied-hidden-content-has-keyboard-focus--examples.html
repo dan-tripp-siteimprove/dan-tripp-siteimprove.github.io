@@ -9,6 +9,24 @@ li{
   margin: 1em 0;
 }
 
+
+
+
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+
+
 </style>
 
 </head>
@@ -38,7 +56,7 @@ li{
 <li>
 	Passes (to my surprise): <a href="#">anchor which contains a <button>&lt;button&gt;</button></a><br>
 	This is invalid HTML.  <a href="https://validator.w3.org/">Nu checker</a> says: "Error: The element button must not appear as a descendant of the a element."<br>
-	Passes the R90 rule on a technicality?  It's because of ACT rule and ARIA wording.  (I don't know why they're worded this way, but they are.)  The ACT rule refers to the ARIA spec, and checks (for the outer element) any roles which have 'children presentational' = true.  This includes "button", "checkbox", etc. - and not "link".  So all anchors as the <i>outer</i> element get a pass.  (anchors as the <i>inner</i> element can still cause failures.) 
+	Passes the <a href="https://alfa.siteimprove.com/rules/sia-r90">R90 rule</a> on a technicality?  It's because of the corresponding <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/307n5z/">ACT rule (307n5z)</a> and <a href="https://www.w3.org/TR/wai-aria-1.2/#childrenArePresentational">ARIA spec</a>.  (I don't know why ACT and ARIA are written this way, but they are.)  The ACT rule refers to the ARIA spec, and checks (for the outer element) any roles which have 'children presentational' = true.  This includes "button", "checkbox", etc. - and not "link".  So any time there's an anchor as the <i>outer</i> element, that will pass R90.  (An anchor as the <i>inner</i> element can still fail R90.) 
 </li>
 
 
@@ -50,8 +68,8 @@ li{
 Fails: 
 	<br>
 	<ul role="tablist" >
-	<li role="tab">This is a non-functional role="tab" which contains an anchor element.
-	<a href="#">(and this is the anchor element)</a>
+	<li role="tab">This is a role="tab" element which contains an anchor element.  
+	<a href="#">(and this is the anchor element)</a>   (It's non-functional tab element, by the way.  It doesn't really implement tabs.  That would require some javascript.) 
 	</li>
 	</ul>
 	
@@ -118,26 +136,121 @@ Fails:
 		</li>
 	</ul>
 </li>
+
+
+
+<li>
+
+	<span role="presentation">
+	(Rule R90 is not concerned with <i>explicit</i> role="presentation" on elements.  (Only <i>implicit</i>.)  These next few examples show that.)<br>
+	Explicit role="presentation" case #1: <a href="#">passes</a>
+	</span>
+	
+</li>
+
+<li>
+		
+	<span role="none">
+	Explicit role="presentation" case #2: <a href="#">also passes</a>
+	</span>
+
+</li>
+
+<li>
+		
+	<span role="none">
+	Explicit role="presentation" case #3: this passes R90 (and fails R86 "Presentational element is exposed to assistive technologies"): <label>form field 1: <select role="presentation"><option value="opt1">option1</option></select></label><br>
+	</span>
+
+</li>
+
+<li>
+Explicit role="presentation" case #4: widgets in a presentational table - not a problem:  <br>
+
+<table role="presentation">
+    <thead>
+        <tr>
+            <th colspan="2">presentational table header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button>button in presentational table - passes</button></td>
+            <td><a href="#">anchor in presentational table - passes</a></td>
+        </tr>
+    </tbody>
+</table>
+</li>
+
+
+<li>
+		
+	<span>
+	Explicit role="presentation" case #5:  <a role="presentation" href="#">Anchor with role="presentation".  This passes R90 (and fails R86 "Presentational element is exposed to assistive technologies")</a>
+	</span>
+
+</li>
+
+
+<li>
+
+	<span>
+	aria-hidden="true"  case: <a aria-hidden="true" href="#">This passes R90 but fails R17 "Hidden element has focusable content".  (The a11y tree might show this link even though it has aria-hidden="true" on it.  I think that's the browser trying to fix this bad HTML.)</a> <br>
+	This shows why (in my opinion) the platform shouldn't use the word "hidden" for R90.  It's confusing.  In R90, 'hidden' seems to mean 'hidden semantics, exposed text content' (which is what role="none" does.)  In R17, 'hidden' means 'hidden entirely' (which is what aria-hidden="true" does.)  I think that for R90, the platform should use the word 'presentational' everywhere instead of 'hidden'.   (Currently it uses 'presentational' and 'hidden' interchangeably.)  
+	</span>
+	
+</li>
+
+
+
+
+<li>
+	widgets in a semantic table - not a problem: <br>
+
+	<table>
+			<thead>
+					<tr>
+							<th colspan="2">semantic table header</th>
+					</tr>
+			</thead>
+			<tbody>
+					<tr>
+							<td><button>button in semantic table - passes</button></td>
+							<td><a href="#">anchor in semantic table - passes</a></td>
+					</tr>
+			</tbody>
+	</table>
+</li>
+
+
+
+
 <!--
-<li>
-	
-</li>
+
+
 
 <li>
 	
 </li>
 
-<li>
-	
-</li>
 
 <li>
 	
 </li>
 
+
+
 <li>
 	
 </li>
+
+
+<li>
+	
+</li>
+
+
+
 
 <li>
 	
