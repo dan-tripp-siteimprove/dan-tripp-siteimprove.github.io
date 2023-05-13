@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=UTF-8">
 <title>AccessU 2023 - All-Pairs testing</title>
-<style>
 
+<style>
+p { line-height: 1.5; }
 </style>
 
 
@@ -18,8 +19,8 @@
 </h1>
 
 
-<a href="mailto:dtr@siteimprove.com">dtr@siteimprove.com</a><br>
-<a href="https://linkedin.com/in/dan-tripp">LinkedIn</a><br>
+<p><a href="mailto:dtr@siteimprove.com">dtr@siteimprove.com</a></p>
+<p><a href="https://linkedin.com/in/dan-tripp">LinkedIn</a></p>
 
 
 
@@ -35,36 +36,6 @@
 	Have fun. 
 	</li>
 </ol>
-
-<h2>Slides</h2>
-<ul>
-	<li>
-		<a href="slides-v3.pptx">Download my talk slides here (PowerPoint).</a>
-	</li>
-</ul>
-
-
-<h2>Quotes</h2>
-<ul>
-	<li>
-	"Failures appear to be caused by interactions of only a few variables, so tests that cover all such few-variable interactions can be very effective."
-		- Introduction to Combinatorial Testing [hereafter: ItoCT], Kuhn et al., 2013, page 3
-	</li>
-	<li>
-	"Identifying the SUT, the test parameters, and the parameter values is not a mechanical task.  It requires knowledge and ingenuity."
-		- ItoCT page 111
-	</li>
-	<li>
-	"Use a maximum of 8-10 values per parameter to keep testing tractable."
-		- ItoCT page 53 
-
-	</li>
-	<li>
-	"Start testing using 2-way (pairwise) combinations, continue increasing the interaction strength t until no errors are detected by the t-way tests, then (optionally) try t + 1, and ensure that no additional errors are detected."
-		- ItoCT page 67 
-
-	</li>
-</ul>
 
 
 <h2>PICT in general</h2>
@@ -83,6 +54,34 @@ See <a href="https://github.com/Microsoft/pict/blob/main/doc/pict.md">the main P
 Linux, OS/X, *BSD, etc.: <a href="https://github.com/microsoft/pict#building-on-linux-osx-bsd-etc">build-it-yourself instructions</a>  
 </li>
 </ul>
+
+
+<h2>Slides</h2>
+<ul>
+	<li>
+		<a href="slides-v3.pptx">Download my talk slides here (PowerPoint).</a>  (Presented at AccessU, May 2023.)  
+	</li>
+</ul>
+
+
+<h2>Quotes</h2>
+<ul>
+	<li>
+	<q>Failures appear to be caused by interactions of only a few variables, so tests that cover all such few-variable interactions can be very effective.</q> - Introduction to Combinatorial Testing [hereafter: ItoCT], Kuhn et al., 2013, page 3
+	</li>
+	<li>
+	<q>Identifying the SUT, the test parameters, and the parameter values is not a mechanical task.  It requires knowledge and ingenuity.</q>	- ItoCT page 111
+	</li>
+	<li>
+	<q>Use a maximum of 8-10 values per parameter to keep testing tractable.</q> - ItoCT page 53 
+
+	</li>
+	<li>
+	<q>Start testing using 2-way (pairwise) combinations, continue increasing the interaction strength t until no errors are detected by the t-way tests, then (optionally) try t + 1, and ensure that no additional errors are detected.</q> - ItoCT page 67 
+
+	</li>
+</ul>
+
 
 
 
@@ -114,7 +113,7 @@ Linux, OS/X, *BSD, etc.: <a href="https://github.com/microsoft/pict#building-on-
 		Con:  Can't seed.
 	</li>
 	<li>
-		Con:  Can't handle a large number of output tests.  Roughly > 300 tests, or > ~ 2s to generate model.  Error message: "NetworkError when attempting to fetch resource".
+		Con:  Can't handle a large number of output tests.  Roughly > 300 tests, or > ~ 2s to generate model.  Error message: <q>NetworkError when attempting to fetch resource</q>.
 	</li>
 </ul>
 </li>
@@ -152,17 +151,6 @@ Con:  Constraints can't handle integer comparisons (eg. greater-than, less-than)
 		
 		
 			
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-			
-
 
 </main>
 
