@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=UTF-8">
+<!-- <meta charset="UTF-8"> -->
+<title>x</title>
+
+<style>
+p { line-height: 1.5; }
+</style>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+<main>
+
+
+<a href="#id_h1">Skip to main content</a>
+<h1 id="id_h1">h1</h1>
+
+
+
+<h2>simple button. passes r78, and that makes sense to me:</h2>
+<button>x</button>
+
+<h2>img w/ alt="x".  passes r78, and that makes sense to me:</h2>
+<img alt="x" src="red-square.png">
+        
+<h2>img w/ no alt attribute.  passes r78, and that doesn't make sense to me:</h2>
+<img src="red-square.png">
+
+<h2>img w/ alt="".  fails r78, and that makes sense to me:</h2>
+<img alt="" src="red-square.png">
+
+<h2>button which contains an img w/ alt="x". this fails r78, and that doesn't make sense to me (... is the intent of the rule that the "content" between the headings should be non-widget text content?):</h2>
+<button><img alt="x" src="red-square.png"></button>
+
+<h2>empty &lt;a&gt; - this passes r78 and that doesn't make sense to me:</h2>
+<a href="#" aria-label="x"></a>
+
+<h2>&lt;a&gt; with just a newline inside of it.  this fails r78, and that makes sense to me:</h2>
+<a href="#" aria-label="x">
+</a>
+
+<h2>heading w/ just links after.  this passes R78, and that doesn't make sense to me...</h2>
+<a href="https://www.udg.edu/ca/catedres/Cambra-de-lEmpresa-Familiar">when this customer page fails</a>
+<a href="https://my2.siteimprove.com/Auth/Direct?personId=738421875&accountId=6104931&back=%2FInspector%2F482893%2FA11Y%2FPage%3FpageId%3D56430136576%26impmd%3D20E449FB9C4B74C32F7134293D3B0AAF%26decision%3DfalsePositive%26lang%3Den-US%23%2Fsia-r78%2Ffailed%2Fdkg0STNCMmo%3D%3BZjE3M2ZkNzM%3D#/sia-r78/failed/dkg0STNCMmo=;ZjE3M2ZkNzM=">.. (here's the corresponding page report)</a>
+
+
+
+
+</main>
+
+</body>
+
+</html>
