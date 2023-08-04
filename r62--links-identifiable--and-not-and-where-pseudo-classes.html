@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>x</title>
+<style>
+
+* {
+	line-height: 1.5; 
+}
+
+a {
+	text-decoration: none;
+}
+
+#p1 a:where(:not(.unused_class)) {
+	text-decoration: underline;
+}
+
+.unused_class {
+}
+
+#p2 a:where(.used_class) {
+	text-decoration: underline;
+}
+
+#p3 a:not(.unused_class) {
+	text-decoration: underline;
+}
+
+
+</style>
+
+</head>
+
+<body>
+<main>
+
+
+<h1>Test
+</h1>
+
+<ol>
+
+<li>
+<div>
+	This paragraph simulates the customer's page. (<a href="https://siteimprove.slack.com/archives/C0495B2EJFP/p1691008656123589">slack thread</a>, <a href="https://my2.siteimprove.com/Auth/Direct?personId=66360490&accountId=47642&back=%2FInspector%2F15695%2FA11Y%2FPage%3FpageId%3D188878989327%26impmd%3DLLCNZHHKCIXREDKVZQXA%26conf%3Da%2Baa%26lang%3Den-US%23">page report</a>.)  This paragraph uses ":where" and ":not". As of 2023-08-04, ":where" isn't supported by alfa.  So this link will be incorrectly failed by alfa.  It's a false positive. 
+</div>
+<p id="p1">
+	surrounding text <a href="#" >link</a> surrounding text  
+</p>
+</li>
+
+<li>
+<p id="p2">
+	This paragraph uses ":where" and does not use ":not".    So this link will also be incorrectly failed by alfa.  That is: it's also a false positive. <br>
+	surrounding text <a href="#" class="used_class">link</a> surrounding text  
+	
+</p>
+</li>
+
+
+<li>
+<p id="p3">
+	This paragraph does not use ":where" and does use ":not".  As of 2023-08-04, ":not" is supported by alfa.  So this paragraph works.  It's not flagged by alfa.  It's not a false positive.  It's a true negative.  This paragraph can serve as a demo for how the customer can change their page so that alfa will recognize it, and they don't need to rely on the false positives process.<br>
+	surrounding text <a href="#">link</a> surrounding text  
+	
+</p>
+</li>
+
+</ol>
+
+</main>
+
+</body>
+
+</html>
