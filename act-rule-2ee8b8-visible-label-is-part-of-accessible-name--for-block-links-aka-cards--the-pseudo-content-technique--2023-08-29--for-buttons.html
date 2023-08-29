@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>x</title>
+
+	<style>
+
+		div > * {
+			padding: .5em 1em;
+			margin: 0 0.5em 1em 0.5em;
+			flex: 0 1 20em;
+			border: .2em solid rgba(0,0,0,.15);
+			border-radius: 1em;
+			background-color: #fff;
+		}
+
+		button {
+			font: inherit;
+			background: transparent;
+			border: none;
+		}
+
+		button:focus, button:hover {
+			outline: none;
+		}
+
+		button span {
+			display: block;
+			text-align: center;
+			padding: .5em 1em;
+			margin: .5em 1em;
+			border: .1em solid #00c;
+			border-radius: .25em;
+			background-color: #00c;
+			color: #fff;
+		}
+
+		button:focus span, button:hover span {
+			color: #00c;
+			background-color: #fff;
+		}
+
+		.block-button {
+			position: relative;
+			padding: .5em 1em;
+			margin: 0 0.5em 1em 0.5em;
+			border: .2em solid rgba(0,0,0,.15);
+			border-radius: 1em;
+		}
+
+		/* This is the important part.  It's what makes the clickable area large. */
+		.block-button button::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<main>
+
+		<section class="block-button">
+			<button onclick="alert('action');">   
+				<span>Subscribe to newsletter</span></br>   
+			</button>
+			<span style="font-size: smaller">We send 1 mail per month.</span>
+		</section>
+
+	</main>
+
+</body>
+
+</html>
