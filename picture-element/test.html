@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<a href="#id_h1">Skip to main content</a>
+<h1 id="id_h1">heading</h1>
+
+<p>Resize your browser viewport and you will see the PNG(s) below switch between "portrait" and "landscape".</p>
+
+This link passes SIA-R11:<br>
+<a href="#">
+	<picture>
+		<source srcset="portrait.png" media="(orientation: portrait)" />
+		<source srcset="landscape.png" media="(orientation: landscape)" />
+		<img src="never-seen.png" alt="abc" />
+	</picture>
+</a>
+
+<br>
+
+This link fails SIA-R11 because the &lt;img&gt; has "display: none" (and you also won't see this link or the images within it - this is also caused by the &lt;img&gt; having "display: none"):<br>
+<a href="#">
+	<picture>
+		<source srcset="portrait.png" media="(orientation: portrait)" />
+		<source srcset="landscape.png" media="(orientation: landscape)" />
+		<img style="display: none" src="never-seen.png" alt="def" />
+	</picture>
+</a>
+
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+Inspired by <a href="https://my2.siteimprove.com/Auth/Direct?personId=230672943&accountId=6001794&back=%2FInspector%2F616250%2FA11Y%2FPage%3FpageId%3D61948424549%26impmd%3DF226851FEEC44194A5B2B33D86B425E1%26conf%3Da%2Baa%26lang%3Den-US">this page report.</a>
+
+</main>
+
+</body>
+
+</html>
