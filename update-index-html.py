@@ -16,7 +16,7 @@ for root, dirs, files in os.walk('.'):
 	dirs[:] = [d for d in dirs if d not in excluded_dirnames]
 
 	for file in files:
-		if file.endswith('.html'):
+		if file.endswith('.html') or file.endswith('.xml'):
 			file_path = os.path.join(root, file)
 			if file_path not in excluded_file_relative_paths:
 				html_file_paths.append(file_path)
