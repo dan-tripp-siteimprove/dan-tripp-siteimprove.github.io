@@ -65,6 +65,9 @@ p { line-height: 1.5; }
 		for(let textFieldId of ['account_id_textfield', 'datacenter_textfield']) {
 			document.getElementById(textFieldId).addEventListener("keydown", textFieldEnterKeyListener);
 		}
+		
+	  let firstTextField = document.querySelector('input');
+    firstTextField.focus();
 
 	});
 
