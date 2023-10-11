@@ -16,13 +16,6 @@ trap exit_trap_func EXIT
 
 set -o errtrace
 
-#cd "$(dirname "$0")"
-#set -o xtrace
-
-
-echo 'change cwd' # tdr 
-
-
-
-
+./update-index-html.py
+git add --all
 
