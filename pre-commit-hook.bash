@@ -22,4 +22,5 @@ set -o errtrace
 
 echo 'change cwd' # tdr 
 sleep 2 # tdr 
+exit 1 
 
