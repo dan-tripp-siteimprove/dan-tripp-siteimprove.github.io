@@ -33,6 +33,7 @@ with open(output_index_filename, "w") as index_file:
 	index_file.write("</head>\n")
 	index_file.write("<body>\n")
 	index_file.write("  <h1>Index</h1>\n")
+	index_file.write("  <p>Sorted by file modificatioin time, most recent first.</p>\n")
 	index_file.write("  <ul>\n")
 
 	for html_file_path in html_file_paths:
