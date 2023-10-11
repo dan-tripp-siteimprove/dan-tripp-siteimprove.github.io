@@ -1,0 +1,5 @@
+*.swp
+~$*.xlsx
+node_modules
+src/si-api-service/public
+output-screenshots
