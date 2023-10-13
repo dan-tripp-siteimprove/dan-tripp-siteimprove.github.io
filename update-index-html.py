@@ -3,7 +3,7 @@
 import sys, os
 
 excluded_dirnames = ['.git']
-included_file_extensions = ['.html', '.xml']
+included_file_extensions = ['.html', '.xml', '.ics']
 
 os.chdir(os.path.dirname(sys.argv[0]))
 filename_of_this_program = os.path.basename(sys.argv[0])
