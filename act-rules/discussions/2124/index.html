@@ -8,12 +8,137 @@
 
 p { line-height: 1.5; }
 
+
+/* Custom checkbox code was copied from https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/examples/checkbox/ 
+That includes the CSS immediately below, and the corresponding HTML and javascript further below. 
+For this purpose (ACT rules https://github.com/act-rules/act-rules.github.io/discussions/2124, oct 2023) I (Dan Tripp) modified some of the APG code after copying it.  In particular: I modified the HTML, to make it one checkbox instead of several. 
+*/
+
+ul.checkboxes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+}
+
+ul.checkboxes li {
+  list-style: none;
+  margin: 1px;
+  padding: 0;
+}
+
+[role="checkbox"] {
+  display: inline-block;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+[role="checkbox"]::before {
+  position: relative;
+  top: 1px;
+  left: -4px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' style='forced-color-adjust: auto;'%3E%3Crect x='2' y='2' height='13' width='13' rx='2' stroke='currentcolor' stroke-width='1' fill-opacity='0' /%3E%3C/svg%3E");
+}
+
+[role="checkbox"][aria-checked="true"]::before {
+  position: relative;
+  top: 1px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' style='forced-color-adjust: auto;'%3E%3Crect x='2' y='2' height='13' width='13' rx='2' stroke='currentcolor' stroke-width='1' fill-opacity='0' /%3E%3Cpolyline points='4,8 7,12 12,5' fill='none' stroke='currentcolor' stroke-width='2' /%3E%3C/svg%3E");
+}
+
+[role="checkbox"]:focus,
+[role="checkbox"]:hover {
+  padding: 2px 6px;
+  border: 2px solid #005a9c;
+  border-radius: 5px;
+  background-color: #def;
+}
+
+[role="checkbox"]:hover {
+  cursor: pointer;
+}
+
+
 	</style>
 
 	<script>
 
 window.addEventListener("load", function(event) {
 });
+
+/*
+ *   This content is licensed according to the W3C Software License at
+ *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ *
+ *   File:   Checkbox.js
+ *
+ *   Desc:   Checkbox widget that implements ARIA Authoring Practices
+ */
+
+'use strict';
+
+class Checkbox {
+  constructor(domNode) {
+    this.domNode = domNode;
+    this.domNode.tabIndex = 0;
+
+    if (!this.domNode.getAttribute('aria-checked')) {
+      this.domNode.setAttribute('aria-checked', 'false');
+    }
+
+    this.domNode.addEventListener('keydown', this.onKeydown.bind(this));
+    this.domNode.addEventListener('keyup', this.onKeyup.bind(this));
+    this.domNode.addEventListener('click', this.onClick.bind(this));
+  }
+
+  toggleCheckbox() {
+    if (this.domNode.getAttribute('aria-checked') === 'true') {
+      this.domNode.setAttribute('aria-checked', 'false');
+    } else {
+      this.domNode.setAttribute('aria-checked', 'true');
+    }
+  }
+
+  /* EVENT HANDLERS */
+
+  // Make sure to prevent page scrolling on space down
+  onKeydown(event) {
+    if (event.key === ' ') {
+      event.preventDefault();
+    }
+  }
+
+  onKeyup(event) {
+    var flag = false;
+
+    switch (event.key) {
+      case ' ':
+        this.toggleCheckbox();
+        flag = true;
+        break;
+
+      default:
+        break;
+    }
+
+    if (flag) {
+      event.stopPropagation();
+    }
+  }
+
+  onClick() {
+    this.toggleCheckbox();
+  }
+}
+
+// Initialize checkboxes on the page
+window.addEventListener('load', function () {
+  let checkboxes = document.querySelectorAll('.checkboxes [role="checkbox"]');
+  for (let i = 0; i < checkboxes.length; i++) {
+    new Checkbox(checkboxes[i]);
+  }
+});
+
 
 	</script>
 
@@ -29,23 +154,90 @@ window.addEventListener("load", function(event) {
 <h1>2.5.3 and more - Test cases</h1>
 
 <h2>Label is the same as the accessible name</h2>
-<button aria-label="button">button</button><br>
-<a href="#" aria-label="link">link</a><br>
+
+<button aria-label="button">button</button><br><br>
+
+<a href="#" aria-label="link">link</a><br><br>
+
+Form field: native HTML &lt;option&gt;:<br>
+<label>Choose an option:
+<select>
+  <option aria-label="option one">option one</option>
+</select>
+</label>
+(we're testing the name of the &lt;option&gt; here, not the &lt;select&gt;)<br><br>
+
+Form field: custom ARIA checkbox:
+<ul class="checkboxes">
+	<li><div aria-label="checkbox one" role="checkbox" aria-checked="false" tabindex="0">checkbox one</div></li>
+</ul>
+<br>
 
 <h2>Label is partially in the accessible name - matches the start</h2>
-<button aria-label="button number two">button</button><br>
-<a href="#" aria-label="link number two">link</a><br>
+
+<button aria-label="button number two">button</button><br><br>
+
+<a href="#" aria-label="link number two">link</a><br><br>
+
+Form field: native HTML &lt;option&gt;:<br>
+<label>Choose an option:
+<select>
+  <option aria-label="option one">option</option>
+</select>
+</label>
+(we're testing the name of the &lt;option&gt; here, not the &lt;select&gt;)<br><br>
+
+Form field: custom ARIA checkbox:
+<ul class="checkboxes">
+	<li><div aria-label="checkbox one" role="checkbox" aria-checked="false" tabindex="0">checkbox</div></li>
+</ul>
+<br>
 
 <h2>Label is partially in the accessible name - matches the end</h2>
-<button aria-label="number three button">button</button><br>
-<a href="#" aria-label="number three link">link</a><br>
+
+<button aria-label="number three button">button</button><br><br>
+
+<a href="#" aria-label="number three link">link</a><br><br>
+
+Form field: native HTML &lt;option&gt;:<br>
+<label>Choose an option:
+<select>
+  <option aria-label="the first option">option</option>
+</select>
+</label>
+(we're testing the name of the &lt;option&gt; here, not the &lt;select&gt;)<br><br>
+
+Form field: custom ARIA checkbox:
+<ul class="checkboxes">
+	<li><div aria-label="the first checkbox" role="checkbox" aria-checked="false" tabindex="0">checkbox</div></li>
+</ul>
+<br>
+
 
 <h2>Label is partially in the accessible name - matches in the middle</h2>
-<button aria-label="number button four">button</button><br>
-<a href="#" aria-label="number link four">link</a><br>
+
+<button aria-label="number button four">button</button><br><br>
+
+<a href="#" aria-label="number link four">link</a><br><br>
+
+Form field: native HTML &lt;option&gt;:<br>
+<label>Choose an option:
+<select>
+  <option aria-label="this option is the only one">option</option>
+</select>
+</label>
+(we're testing the name of the &lt;option&gt; here, not the &lt;select&gt;)<br><br>
+
+Form field: custom ARIA checkbox:
+<ul class="checkboxes">
+	<li><div aria-label="this checkbox is the only one" role="checkbox" aria-checked="false" tabindex="0">checkbox</div></li>
+</ul>
+<br>
 
 <h2>Role is link but accessible name matches the label</h2>
-<button role="link" aria-label="button">button</button><br>
+
+<button role="link" aria-label="button">button</button><br><br>
+
 
 <h2>No visual label but an image with an inferred accessible name (Print for a printer icon)</h2>
 <button aria-label="print">
