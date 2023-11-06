@@ -14,8 +14,13 @@ python_script_name = os.path.basename(__file__)
 
 html_file_paths = []
 
+def does_dir_have_dont_index_file(dir_):
+	dont_index_file_path = os.path.join(dir_, '.dont-index')
+	r = os.path.exists(dont_index_file_path)
+	return r
+
 for root, dirs, files in os.walk('.'):
-	dirs[:] = [d for d in dirs if d not in excluded_dirnames]
+	dirs[:] = [d for d in dirs if d not in excluded_dirnames and not does_dir_have_dont_index_file(d)]
 
 	for file in files:
 		if any(file.lower().endswith(ext.lower()) for ext in included_file_extensions):
