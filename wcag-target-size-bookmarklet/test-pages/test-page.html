@@ -189,12 +189,18 @@ window.addEventListener(
 <br>
 <br>
 <br>
-iframe:<br>
+iframe, same origin:<br>
 <iframe
-  id="inlineFrameExample"
   title="Inline Frame Example"
-  width="300" height="50"
+  width="300" height="100"
   src="test-page-iframe-src.html">
+</iframe>
+<br>
+iframe, different origin:<br>
+<iframe
+  title="Inline Frame Example"
+  width="300" height="100"
+	src="https://example.com">
 </iframe>
 
 <br>
