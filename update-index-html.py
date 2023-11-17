@@ -32,7 +32,7 @@ html_file_paths.sort(key=lambda x: os.path.getmtime(x), reverse=True)
 
 with open(output_index_filename, "w") as index_file:
 	index_file.write("<!DOCTYPE html>\n")
-	index_file.write("<html>\n")
+	index_file.write("<html lang='en'>\n")
 	index_file.write("<head>\n")
 	index_file.write("  <title>Index</title>\n")
 	index_file.write("</head>\n")
