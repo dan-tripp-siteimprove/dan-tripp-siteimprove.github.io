@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+
+
+/* for the disclosure widget */
+
+dl.faq button {
+  margin: 0;
+  margin-top: 16px;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 110%;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+dl dd {
+  margin: 0;
+  padding: 0;
+  margin-left: 1.5em;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #777;
+}
+
+dl.faq .desc {
+  margin: 0;
+  margin-top: 0.25em;
+  padding: 0.25em;
+  font-size: 110%;
+  display: none;
+  background-color: #fed;
+}
+
+dl.faq button:hover,
+dl.faq button:focus {
+  padding: 2px 6px;
+  background-color: #def;
+  border: 2px solid #005a9c;
+  cursor: pointer;
+}
+
+dl.faq button[aria-expanded="false"]::before {
+  content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' style='forced-color-adjust: auto;'%3E%3Cpolygon points='1 1, 1 11, 8 6' fill='currentcolor' stroke= 'currentcolor' /%3E%3C/svg%3E%0A");
+  position: relative;
+  left: -2px;
+}
+
+dl.faq button[aria-expanded="true"]::before {
+  content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' style='forced-color-adjust: auto;'%3E%3Cpolygon points='1 1, 11 1, 6 8' fill='currentcolor' stroke= 'currentcolor' /%3E%3C/svg%3E ");
+  position: relative;
+  left: -4px;
+  top: 2px;
+}
+
+
+/* end disclosure widget */
+
+
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+
+
+
+/* for the disclosure widget */
+
+/*
+ *   This content is licensed according to the W3C Software License at
+ *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ *
+ *   File:   disclosure-button.js
+ *
+ *   Desc:   Disclosure button widget that implements ARIA Authoring Best Practices
+ */
+
+'use strict';
+
+/*
+ *   @constructorDisclosureButton
+ *
+ *
+ */
+class DisclosureButton {
+  constructor(buttonNode) {
+    this.buttonNode = buttonNode;
+    this.controlledNode = false;
+
+    var id = this.buttonNode.getAttribute('aria-controls');
+
+    if (id) {
+      this.controlledNode = document.getElementById(id);
+    }
+
+    this.buttonNode.setAttribute('aria-expanded', 'false');
+    this.hideContent();
+
+    this.buttonNode.addEventListener('click', this.onClick.bind(this));
+    this.buttonNode.addEventListener('focus', this.onFocus.bind(this));
+    this.buttonNode.addEventListener('blur', this.onBlur.bind(this));
+  }
+
+  showContent() {
+    if (this.controlledNode) {
+      this.controlledNode.style.display = 'block';
+    }
+  }
+
+  hideContent() {
+    if (this.controlledNode) {
+      this.controlledNode.style.display = 'none';
+    }
+  }
+
+  toggleExpand() {
+    if (this.buttonNode.getAttribute('aria-expanded') === 'true') {
+      this.buttonNode.setAttribute('aria-expanded', 'false');
+      this.hideContent();
+    } else {
+      this.buttonNode.setAttribute('aria-expanded', 'true');
+      this.showContent();
+    }
+  }
+
+  /* EVENT HANDLERS */
+
+  onClick() {
+    this.toggleExpand();
+  }
+
+  onFocus() {
+    this.buttonNode.classList.add('focus');
+  }
+
+  onBlur() {
+    this.buttonNode.classList.remove('focus');
+  }
+}
+
+/* Initialize Hide/Show Buttons */
+
+window.addEventListener(
+  'load',
+  function () {
+    var buttons = document.querySelectorAll(
+      'button[aria-expanded][aria-controls]'
+    );
+
+    for (var i = 0; i < buttons.length; i++) {
+      new DisclosureButton(buttons[i]);
+    }
+  },
+  false
+);
+
+/* end disclosure widget  */
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+iframe:<br>
+<iframe
+  id="inlineFrameExample"
+  title="Inline Frame Example"
+  width="300" height="50"
+  src="test-page-iframe-src.html">
+</iframe>
+
+<br>
+<br>
+<div style="background-color: rgb(0, 0, 0); width: 500px; height: 150px"></div>
+
+
+
+
+<br>
+<br>
+hidden checkboxes: 
+<div>
+<input style="visibility: hidden" type="checkbox"/>
+<input style="display: none" type="checkbox"/>
+<div style="display: none"><input  type="checkbox"/></div>
+<div style="display: none"><div><input  type="checkbox"/></div></div>
+
+<!-- This will show up on firefox and not in chrome: 
+<input style="width: 0; height: 0" type="checkbox"/> 
+it shows up w/ a computed width/height of ~ 3px.  
+... so we don't use it.  
+-->
+
+<div style="width: 0; height: 0; overflow: hidden"><input  type="checkbox"/></div>
+<input style="opacity: 0" type="checkbox"/>
+<br>
+</div>
+... end.
+
+<br>
+<br>
+150px X 150px:
+<div role="checkbox" style="background-color: rgb(91, 109, 205); width: 150px; ; height: 150px"></div>
+
+
+<br>
+<br>
+24px X 24px:
+<div role="button" style="background-color: rgb(91, 109, 205); width: 24px; height: 24px"></div>
+
+
+<br>
+<br>
+24px X 24px w/ thick border:
+<div role="button" style="background-color: rgb(91, 109, 205); width: 24px; height: 24px; xpadding: 24px; border: 24px solid black;"></div>
+
+
+<br>
+<br>
+44px X 44px:
+<div role="button" style="background-color: rgb(91, 109, 205); width: 44px; ; height: 44px"></div>
+
+
+<br>
+<br>
+<button>X</button>
+
+
+<br>
+<br>
+<button>X</button>
+
+<br>
+<br>
+<div>
+<button>YY<br>YY</button>
+<button style="background-color: #000">YY<br>YY</button>
+<button style="color: #fff; background-color: #fff">YY<br>YY</button>
+<button style="color: #fff; background-color: rgb(0,0,255)">YY<br>YY</button>
+</div>
+
+<br>
+<br>
+<input type="checkbox"/>
+
+
+<br>
+<br>
+<a href="#">abc</a>
+
+<br>
+<br>
+link with padding and no border: <a style="padding: 10px; x-border: 0.1px solid black;" href="#">abc</a>
+
+
+<br>
+<br>
+link with margin: <a style="display: inline-block; margin: 20px; border: 0.1px solid black;" href="#">abc</a> 
+
+
+<br>
+<br>
+<a href="#" style="font-size: 30px">abc</a>
+
+<br>
+<br>
+<div>
+<input type="checkbox"/> <input type="checkbox"/> <input type="checkbox"/> <input type="checkbox"/> <input type="checkbox"/> <input type="checkbox"/> <input type="checkbox"/> <input type="checkbox"/>
+</div>
+
+<br>
+<br>
+<div>
+<a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> 
+</div>
+
+<br>
+<br>
+<input type="date">
+
+
+<br>
+<br>
+<label>checkbox wrapping label 
+<input type="checkbox">
+</label>
+
+
+
+<!-- this disclosure widget is from https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-faq/ --> 
+<br>
+<br>
+<h3>ARIA APG Disclosure Widget</h3>
+<div>
+<dl class="faq">
+  <dt>
+    <button type="button" aria-expanded="false" aria-controls="faq1_desc">Question 1?</button>
+  </dt>
+  <dd>
+    <div id="faq1_desc" class="desc">
+      Answer 1 contains this <a href="#">link</a> and this <button>button</button>.
+    </div>
+  </dd>
+  <dt>
+    <button type="button" aria-expanded="false" aria-controls="faq2_desc">Question 2?</button>
+  </dt>
+  <dd>
+    <div id="faq2_desc" class="desc">
+      Answer 2 contains not much.
+    </div>
+  </dd>
+</dl>
+</div>
+
+
+<br>
+<br>
+overlapping buttons: squares overlap and circles do not overlap: <br>
+<div style="position: relative; height: 50px">
+    <button style="position: absolute; width: 24px; height: 24px; left: 0px; top: 0px;"></button>
+    <button style="position: absolute; width: 24px; height: 24px; left: 18px; top: 18px; z-index: 1;"></button>
+</div>
+overlapping buttons: squares overlap and circles also overlap: <br>
+<div style="position: relative; height: 50px">
+    <button style="position: absolute; width: 24px; height: 24px; left: 0px; top: 0px;"></button>
+    <button style="position: absolute; width: 24px; height: 24px; left: 14px; top: 14px; z-index: 1;"></button>
+</div>
+overlapping buttons: not square: bounding boxes overlap and circles do not overlap: <br>
+<div style="position: relative; height: 50px">
+    <button style="position: absolute; width: 24px; height: 24px; left: 0px; top: 0px;"></button>
+    <button style="position: absolute; width: 100px; height: 10px; left: 18px; top: 8px; z-index: 1;"></button>
+</div>
+
+<br>
+a tall narrow button:<br>
+<button style="width: 10px; height: 100px; left: 18px; top: 8px; "></button>
+        
+				
+
+
+<br>
+<br>
+links that are line-wrapped:<br>
+<p>
+<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</a> <a href="#">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a> <a href="#">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</a> <a href="#">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a> <a href="#">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </a>  
+<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</a> <a href="#">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a> <a href="#">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</a> <a href="#">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a> <a href="#">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </a>  <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</a> <a href="#">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a> <a href="#">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</a> <a href="#">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a> <a href="#">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </a>  <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</a> <a href="#">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a> <a href="#">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</a> <a href="#">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a> <a href="#">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </a>  <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</a> <a href="#">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a> <a href="#">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</a> <a href="#">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a> <a href="#">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </a>  
+</p>
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+</main>
+
+</body>
+
+</html>
