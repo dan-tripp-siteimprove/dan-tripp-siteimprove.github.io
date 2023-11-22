@@ -1,5 +1,22 @@
 <html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Images Bookmarklet for Accessibility Testing</title>
+
+
+
+
+  <script>
+
+window.addEventListener("load", function(event) {
+
+	document.querySelector('#shadow-dom-open').attachShadow({ mode: 'open' }).innerHTML = 'This is an image in an open shadow DOM: <img alt="alt text for image in an open shadow DOM" src="./images_files/w3c_main.svg">';
+	document.querySelector('#shadow-dom-closed').attachShadow({ mode: 'closed' }).innerHTML = 'This is an image in a closed shadow DOM: <img alt="alt text for image in a closed shadow DOM" src="./images_files/w3c_main.svg">';
+
+});
+
+  </script>
+
+
+
 </head>
 <body>
 <p>Images Bookmarklet for Accessibility Testing inserts a green dashed outline around images that have alt values and a red solid outline around images with no alt attribute. Alt attribute values are displayed in black on yellow text on top of the images. Images with empty alt values, &lt;img alt=""&gt; are shown as alt="".</p>
@@ -50,6 +67,11 @@ iframe, different origin:<br>
 <br><br><br><br>
 
 
+
+<br><br><br><br>
+shadow dom:<br>
+<p id="shadow-dom-open"/>
+<p id="shadow-dom-closed"/>
 
 
 </body></html>
