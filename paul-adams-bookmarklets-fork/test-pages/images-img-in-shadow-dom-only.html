@@ -1,0 +1,33 @@
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Images Bookmarklet for Accessibility Testing</title>
+
+
+
+
+  <script>
+
+window.addEventListener("load", function(event) {
+
+	document.querySelector('#shadow-dom-open').attachShadow({ mode: 'open' }).innerHTML = 'This is an image in an open shadow DOM: <img alt="alt text for image in an open shadow DOM" src="./images_files/w3c_main.svg">';
+
+});
+
+  </script>
+
+
+
+</head>
+<body>
+<h2>Test Content</h2>
+
+
+
+
+
+
+<br><br><br><br>
+shadow dom:<br>
+<p id="shadow-dom-open"/>
+
+
+</body></html>
