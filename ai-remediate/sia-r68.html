@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>x</title>
+</head>
+<body>
+
+<div>
+<p>Canned response: <blockquote>
+I believe that this Siteimprove rule is working as intended.  There is an outer < ul > element and an inner < ul > element here.  The outer < ul > element has no direct < li > children, so it is seen as "empty" for the purposes of this accessibilty rule.  ("Empty" here means "no children according to the ARIA specification" - not "no content at all".)  One way that you could fix this would be: remove the outer < ul > element.  Or change it to a < div > element.  (This might cause a change in the visual appearance, so you might need to adjust the CSS to compensate.)
+</blockquote><p>
+
+<p>Failing occurrence:<br>
+<ul>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+</ul>
+<p>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
