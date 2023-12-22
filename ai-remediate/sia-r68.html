@@ -175,14 +175,28 @@ Another way to fix this is: move role=&quot;tab&quot; from each &lt; a &gt; elem
 <div>
 <p>Failing occurrence:<br>
 <ul>
-<li style="display: none">Lorsem ipsum</li>
+	<div class="class1">
+		<li><a href="#">one</a></li>
+	</div>
+	<div class="class2">
+		<li><a href="#">two</a></li>
+	</div>
 </ul>
 <p>
 
 <p>Canned response: 
 <blockquote>
-I believe that this Siteimprove rule is working as intended.  I can see that this &lt; ul &gt; element is not empty in the sense that it has an &lt; li &gt; element within it.  But that &lt; li &gt; element has &quot;display: none&quot; on it, so it's invisible and so it is as though it doesn't exist, and so the &lt; ul &gt; element is considered to be empty for the purposes of this accessibility rule.  To fix this: add &quot;display: none&quot; to the &lt; ul &gt; element (instead of the &lt; li &gt; element.) 
+I believe that this Siteimprove rule is working as intended.  In order to satisfy this rule, the &lt; li &gt; elements need to be direct children of the &lt; ul &gt; element.  (Not grand-children or great-grandchildren.)<br>
+<br>
+One way to fix this is to remove each &lt; div &gt; element which is between the &lt; ul &gt; and the &lt; li &gt; elements.  (You might need to adjust the CSS to compensate.)<br>
+<br>
+Another way to fix this is to move the &lt; div &gt; elements (along with their CSS styles) which are between the &lt; ul &gt; element and each &lt; li &gt; element to inside of the &lt; li &gt; element. <br>
+<br>
+Another way to fix this - which is not ideal - is to add role=&quot;listitem&quot; to the &lt; li &gt;.  It's not ideal because while this will fix the accessibility error, it is still a general HTML error when a &lt; div &gt; is inside of a &lt; ul &gt; like that.  You can check for general HTML errors with https://validator.w3.org/nu/.<br>
+<br>
+Another way to fix this would be to remove the &lt; ul &gt; and &lt; li &gt; tags.  That is: abandon the idea of using a list here.  I say that because the costs of using a list here (in terms of complication, for both you and your users) might outweigh the benefits.  But you will need to be the final judge of that.  
 </blockquote>
+RE: "it is still a general HTML error when a &lt; div &gt; is inside of a &lt; ul &gt; like that" - I'm not sure about this part any more.  I wonder if it's changed recently.
 <p>
 
 <p>2023-12-22:</p>
