@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-  <title>x</title>
+  <title>Test cases for AI remediate</title>
 </head>
 <body>
 
-<div>
-<p>Canned response: <blockquote>
-I believe that this Siteimprove rule is working as intended.  There is an outer < ul > element and an inner < ul > element here.  The outer < ul > element has no direct < li > children, so it is seen as "empty" for the purposes of this accessibilty rule.  ("Empty" here means "no children according to the ARIA specification" - not "no content at all".)  One way that you could fix this would be: remove the outer < ul > element.  Or change it to a < div > element.  (This might cause a change in the visual appearance, so you might need to adjust the CSS to compensate.)
-</blockquote><p>
 
+<ol>
+
+<li>
+<div>
 <p>Failing occurrence:<br>
 <ul>
 <ul>
@@ -20,10 +20,185 @@ I believe that this Siteimprove rule is working as intended.  There is an outer 
 </ul>
 <p>
 
+<p>Canned response: <blockquote>
+I believe that this Siteimprove rule is working as intended.  There is an outer &lt; ul &gt; element and an inner &lt; ul &gt; element here.  The outer &lt; ul &gt; element has no direct &lt; li &gt; children, so it is seen as "empty" for the purposes of this accessibilty rule.  ("Empty" here means "no children according to the ARIA specification" - not "no content at all".)  One way that you could fix this would be: remove the outer &lt; ul &gt; element.  Or change it to a &lt; div &gt; element.  (This might cause a change in the visual appearance, so you might need to adjust the CSS to compensate.)
+</blockquote><p>
+
+<p>2023-12-22:</p>
+<ul>
+	<li>AI remediate says:</li>
+	<li>Desired behaviour:</li>
+</ul>
+
 
 </div>
+</li>
 
 
+<li>
+<div>
+<p>Failing occurrence:<br>
+<ul>
+</ul>
+<p>
+
+<p>Canned response: 
+<blockquote>
+I believe that this Siteimprove rule is working as intended.  There is an empty &lt; ul &gt; element here.  That's what this rule is flagging.  Siteimprove is following the accessibility guidelines on this (for example https://www.w3.org/WAI/standards-guidelines/act/rules/bc4a75/proposed/).<br>
+<br>
+Sometimes empty elements like this are caused by your content management system when you create a list then erase it later.  That is: the visual list will be erased, but not the HTML list element that surrounded it.  You can see this in the HTML view of your content management system, or the HTML view on the Siteimprove page report.  To fix this: remove this empty &lt; ul &gt; element.
+</blockquote>
+<p>
+
+<p>2023-12-22:</p>
+<ul>
+	<li>AI remediate says:</li>
+	<li>Desired behaviour:</li>
+</ul>
+
+</div>
+</li>
+
+
+
+
+
+
+
+
+<li>
+<div>
+<p>Failing occurrence:<br>
+<ol>
+Lorsem ipsum
+</ol>
+<p>
+
+<p>Canned response: 
+<blockquote>
+I believe that this Siteimprove rule is working as intended.  I can see that this &lt; ol &gt; element is not empty in the sense that it has elements within it.  But those elements need to be &lt; li &gt; elements, in order for this container to be considered &quot;non-empty&quot;.<br>
+<br>
+One way that you could fix this would be: change the &lt; ol &gt; element to a &lt; div &gt;.  I say that because, based on my quick look at the page, I don't see any benefit to having an &lt; ol &gt; here.  But you will need to be the final judge of that. 
+</blockquote>
+<p>
+
+<p>2023-12-22:</p>
+<ul>
+	<li>AI remediate says:</li>
+	<li>Desired behaviour:</li>
+</ul>
+
+</div>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+<div>
+<p>Failing occurrence:<br>
+<ul>
+<li style="display: none">Lorsem ipsum</li>
+</ul>
+<p>
+
+<p>Canned response: 
+<blockquote>
+I believe that this Siteimprove rule is working as intended.  I can see that this &lt; ul &gt; element is not empty in the sense that it has an &lt; li &gt; element within it.  But that &lt; li &gt; element has &quot;display: none&quot; on it, so it's invisible and so it is as though it doesn't exist, and so the &lt; ul &gt; element is considered to be empty for the purposes of this accessibility rule.  To fix this: add &quot;display: none&quot; to the &lt; ul &gt; element (instead of the &lt; li &gt; element.) 
+</blockquote>
+<p>
+
+<p>2023-12-22:</p>
+<ul>
+	<li>AI remediate says:</li>
+	<li>Desired behaviour:</li>
+</ul>
+
+</div>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+<div>
+<p>Failing occurrence:<br>
+<ul role="tablist">
+	<li><a role="tab" href="#">one</a></li>
+	<li><a role="tab" href="#">two</a></li>
+</ul>
+
+<p>
+
+<p>Canned response: 
+<blockquote>
+I believe that this Siteimprove rule is working as intended.  I can see that this role=&quot;tablist&quot; element is not empty in the sense that it has role=&quot;tab&quot; elements as descendants.  But between the role=&quot;tablist&quot; element and each of the role=&quot;tab&quot; elements, there is an &lt; li &gt; element.  &lt; li &gt; has an implicit role of listitem, so it's breaking the parent-child relationship between the role=&quot;tablist&quot; element and the role=&quot;tab&quot; element.<br>
+<br>
+One way to fix this is: add role=&quot;none&quot; to each &lt; li &gt; element.<br>
+<br>
+Another way to fix this is: remove role=&quot;tablist&quot; and role=&quot;tab&quot; everywhere.  (That is: give up entirely on using the &quot;tablist&quot; role here.)  I say that because, based on my quick look at this page, the costs of using that role (in terms of complication, for both you and your users) seem to outweigh the benefits.  But you will need to be the final judge of that.<br>
+<br>
+Another way to fix this is: move role=&quot;tab&quot; from each &lt; a &gt; element to the &lt; li &gt; element which contains it.
+</blockquote>
+<p>
+
+<p>2023-12-22:</p>
+<ul>
+	<li>AI remediate says:</li>
+	<li>Desired behaviour:</li>
+</ul>
+
+</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+<div>
+<p>Failing occurrence:<br>
+<ul>
+<li style="display: none">Lorsem ipsum</li>
+</ul>
+<p>
+
+<p>Canned response: 
+<blockquote>
+I believe that this Siteimprove rule is working as intended.  I can see that this &lt; ul &gt; element is not empty in the sense that it has an &lt; li &gt; element within it.  But that &lt; li &gt; element has &quot;display: none&quot; on it, so it's invisible and so it is as though it doesn't exist, and so the &lt; ul &gt; element is considered to be empty for the purposes of this accessibility rule.  To fix this: add &quot;display: none&quot; to the &lt; ul &gt; element (instead of the &lt; li &gt; element.) 
+</blockquote>
+<p>
+
+<p>2023-12-22:</p>
+<ul>
+	<li>AI remediate says:</li>
+	<li>Desired behaviour:</li>
+</ul>
+
+</div>
+</li>
+
+
+
+
+
+</ol>
 
 
 
