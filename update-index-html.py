@@ -34,6 +34,8 @@ with open(output_index_filename, "w") as index_file:
 	index_file.write("<!DOCTYPE html>\n")
 	index_file.write("<html lang='en'>\n")
 	index_file.write("<head>\n")
+	index_file.write("  <meta charset=\"UTF-8\">")
+	index_file.write("  <meta name=\"viewport\" content=\"width=device-width\"/>")
 	index_file.write("  <title>Index</title>\n")
 	index_file.write("</head>\n")
 	index_file.write("<body>\n")
