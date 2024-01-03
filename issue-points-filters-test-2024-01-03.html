@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width"/>
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table,
+td, th {
+  border: 1px solid #333;
+	padding: 0.5em; 
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+
+
+
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+<table>
+	<tr>
+		<th class="visually-hidden">filters</th>
+		<th>multi-issue page</th>
+		<th>single-issue page</th>
+	</tr>
+	<tr>
+		<td>neither (or both) filters checked</td>
+		<td>PYCG: 1.28</td>
+		<td>PYCG: 0.34</td>
+	</tr>
+	<tr>
+		<td>"Occurrences without decisions" checked</td>
+		<td>PYCG: 0.34</td>
+		<td>PYCG: 0.34</td>
+	</tr>
+	<tr>
+		<td>"Dismissed occurrences" checked</td>
+		<td>PYCG: 0.01</td>
+		<td>PYCG: 0.34</td>
+	</tr>
+	
+</table>
+<!--
+<pre>
+<code>
+                                           multi-issue page   single-issue page
+neither (or both) filters checked                PYCG: 1.28          PYCG: 0.34
+"Occurrences without decisions" checked          PYCG: 0.34          PYCG: 0.34
+"Dismissed occurrences" checked	                 PYCG: 0.01          PYCG: 0.34
+</code>
+</pre>
+-->
+
+
+
+
+</main>
+
+</body>
+
+</html>
