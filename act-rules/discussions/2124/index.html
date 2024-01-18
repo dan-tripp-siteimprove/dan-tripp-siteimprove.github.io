@@ -9,7 +9,9 @@
 p { line-height: 1.5; }
 
 
-/* Custom checkbox code was copied from https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/examples/checkbox/ 
+/* start of custom checkbox code */
+/* 
+Custom checkbox code was copied from https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/examples/checkbox/ 
 That includes the CSS immediately below, and the corresponding HTML and javascript further below. 
 For this purpose (ACT rules https://github.com/act-rules/act-rules.github.io/discussions/2124, oct 2023) I (Dan Tripp) modified some of the APG code after copying it.  In particular: I modified the HTML, to make it one checkbox instead of several. 
 */
@@ -57,6 +59,44 @@ ul.checkboxes li {
 [role="checkbox"]:hover {
   cursor: pointer;
 }
+
+/* end of custom checkbox code */
+
+details {
+	border: 4px solid; 
+}
+
+:not(details) details {
+	margin-top: 10px; 
+}
+
+details > :not(summary) {
+	margin: 10px; 
+}
+
+details details {
+	margin: 20px; 
+	border: 2px solid; 
+}
+
+details > summary {
+    background-color: #555; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    outline: none;
+    text-align: left; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+}
+
+summary:hover , summary:focus  {
+    background-color: #777; 
+}
+
+
+
 
 
 	</style>
@@ -153,44 +193,111 @@ window.addEventListener('load', function () {
 
 <h1>2.5.3 and more - Test cases</h1>
 
-<h2>Label is the same as the accessible name</h2>
+<p>
+	<a href="https://docs.google.com/spreadsheets/d/1xfVuzokMBN9-3oxtdAXjDZ6NHfuydSeaoRTjDC1iLQI/edit#gid=0">The spreadsheet</a>
+</p>
 
-<button aria-label="button">button</button><br><br>
+<details>
+	<summary>Row 2 on the spreadsheet</summary>
+	
+	<details>
+		<summary>Explanation of Row 2</summary>
+		<p>Label is the same as the accessible name</p>
+	</details>
 
-<a href="#" aria-label="link">link</a><br><br>
+	<details>
+		<summary>Row 2, case 1</summary>
+		<p><button aria-label="button">button</button></p>
+	</details>
+		
 
-Form field: native HTML &lt;option&gt;:<br>
-<label>Choose an option:
-<select>
-  <option aria-label="option one">option one</option>
-</select>
-</label>
-(we're testing the name of the &lt;option&gt; here, not the &lt;select&gt;)<br><br>
+	<details>
+		<summary>Row 2, case 2</summary>
+		<p><a href="#" aria-label="link">link</a></p>
+	</details>
 
-Form field: custom ARIA checkbox:
-<ul class="checkboxes">
-	<li><div aria-label="checkbox one" role="checkbox" aria-checked="false" tabindex="0">checkbox one</div></li>
-</ul>
+	<details>
+		<summary>Row 2, case 3</summary>
+		<p>
+			Description of this case: Form field: native HTML &lt;option&gt;.  We're testing the name of the &lt;option&gt; here, not the &lt;select&gt;.<br>
+			<label>Choose an option:
+			<select>
+				<option aria-label="option one">option one</option>
+			</select>
+			</label>
+		</p>
+	</details>
+
+	<details>
+		<summary>Row 2, case 4</summary>
+		<p>
+			Description of this case: Form field: custom ARIA checkbox.
+		</p>
+		<ul class="checkboxes">
+			<li>
+				<div aria-label="checkbox one" role="checkbox" aria-checked="false" tabindex="0">checkbox one</div>
+			</li>
+		</ul>
+	</details>
+	
+</details>
+
+<details>
+	<summary>Row 3 on the spreadsheet</summary>
+	
+	<details>
+		<summary>Explanation of Row 3</summary>
+		<p>Label is partially in the accessible name - matches the start</p>
+	</details>
+
+	<details>
+		<summary>Row 3, case 1</summary>
+		<p>
+			<button aria-label="button number two">button</button>
+		</p>
+	</details>
+
+	<details>
+		<summary>Row 3, case 2</summary>
+		<p>
+			<a href="#" aria-label="link number two">link</a><br><br>
+		</p>
+	</details>
+
+	<details>
+		<summary>Row 3, case 3</summary>
+		<p>
+			Description of this case: Form field: native HTML &lt;option&gt;.  We're testing the name of the &lt;option&gt; here, not the &lt;select&gt;.<br>
+			<label>Choose an option:
+			<select>
+				<option aria-label="option one">option</option>
+			</select>
+			</label>
+		</p>
+	</details>
+
+	<details>
+		<summary>Row 3, case 4</summary>
+		<p>
+			Description of this case: Form field: custom ARIA checkbox.
+		</p>
+		<ul class="checkboxes">
+			<li>
+				<div aria-label="checkbox one" role="checkbox" aria-checked="false" tabindex="0">checkbox</div>
+			</li>
+		</ul>
+	</details>
+
+</details>
+
 <br>
-
-<h2>Label is partially in the accessible name - matches the start</h2>
-
-<button aria-label="button number two">button</button><br><br>
-
-<a href="#" aria-label="link number two">link</a><br><br>
-
-Form field: native HTML &lt;option&gt;:<br>
-<label>Choose an option:
-<select>
-  <option aria-label="option one">option</option>
-</select>
-</label>
-(we're testing the name of the &lt;option&gt; here, not the &lt;select&gt;)<br><br>
-
-Form field: custom ARIA checkbox:
-<ul class="checkboxes">
-	<li><div aria-label="checkbox one" role="checkbox" aria-checked="false" tabindex="0">checkbox</div></li>
-</ul>
+<br>
+<br>
+<br>
+<p>TO DO: add show/hide functionality to the rest of the cases, below.</p>
+<br>
+<br>
+<br>
 <br>
 
 <h2>Label is partially in the accessible name - matches the end</h2>
@@ -336,7 +443,7 @@ Form field: custom ARIA checkbox:
 <a role="button" href="#" aria-label="link">link</a><br>
 
 <h2>No visible label but place holder text used for the accessible name</h2>
-<input type="text" placeholder="placeholder" aria-label="placeholder"/>
+<input type="text" placeholder="placeholder" aria-label="placeholder">
 
 
 <!--
