@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<!-- saved from url=(0153)https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained#Common-mistakes -->
+<html
+  class="js no-flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"
+  lang="en"
+  dir="ltr"
+  data-date-format="non_us"
+>
+  <!--<!
+  [endif]--><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>test</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="description"
+      content="Good color contrast is helpful for people with moderately low vision or with color blindness, but it has also benefits for most users."
+    />
+    <meta name="author" content="" />
+    <meta
+      property="og:title"
+      content="Color contrast does not meet accessibility requirements"
+    />
+    <meta
+      property="og:url"
+      content="https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained"
+    />
+    <meta
+      property="og:description"
+      content="  Overview  Who is impacted by this barrier?  How does the check work?  Common mistakes   Overview  On a surface level, the color contrast requirements in WCAG are pretty straightforward. Nevertheless, when text overlaps an image, you may need to ..."
+    />
+    <meta
+      property="og:image"
+      content="https://s3.eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/80016561802/logo/fQa6Jwl2asnkuumhvMNriQ5PYJqPFylf6g.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;amp;X-Amz-Credential=AKIAS6FNSMY2XLZULJPI%2F20240131%2Feu-central-1%2Fs3%2Faws4_request&amp;amp;X-Amz-Date=20240131T184615Z&amp;amp;X-Amz-Expires=604800&amp;amp;X-Amz-SignedHeaders=host&amp;amp;X-Amz-Signature=71c1d7d743753acd989db4df758d9e4b9ed58ab093d3e0cca8f1d2a6e183b6d2"
+    />
+    <meta property="og:site_name" content="Siteimprove" />
+    <meta property="og:type" content="article" />
+    <meta
+      name="twitter:title"
+      content="Color contrast does not meet accessibility requirements"
+    />
+    <meta
+      name="twitter:url"
+      content="https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained"
+    />
+    <meta
+      name="twitter:description"
+      content="  Overview  Who is impacted by this barrier?  How does the check work?  Common mistakes   Overview  On a surface level, the color contrast requirements in WCAG are pretty straightforward. Nevertheless, when text overlaps an image, you may need to ..."
+    />
+    <meta
+      name="twitter:image"
+      content="https://s3.eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/80016561802/logo/fQa6Jwl2asnkuumhvMNriQ5PYJqPFylf6g.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;amp;X-Amz-Credential=AKIAS6FNSMY2XLZULJPI%2F20240131%2Feu-central-1%2Fs3%2Faws4_request&amp;amp;X-Amz-Date=20240131T184615Z&amp;amp;X-Amz-Expires=604800&amp;amp;X-Amz-SignedHeaders=host&amp;amp;X-Amz-Signature=71c1d7d743753acd989db4df758d9e4b9ed58ab093d3e0cca8f1d2a6e183b6d2"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="keywords" content="accessibility_rules" />
+    <link
+      rel="canonical"
+      href="https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src &#39;self&#39; *.siteimprove.com *.siteimproveanalytics.com *.siteimproveanalytics.io; style-src &#39;self&#39; &#39;unsafe-inline&#39; *.freshdesk.com fonts.googleapis.com wchat.eu.freshchat.com tags.srv.stackadapt.com; img-src &#39;self&#39; https: data: blob: *.siteimprove.com *.siteimproveanalytics.com *.siteimproveanalytics.io pardot-marketing-bucket.s3.eu-central-1.amazonaws.com s3.eu-central-1.amazonaws.com b.6sc.co px.ads.linkedin.com www.google.com www.google.co.uk www.facebook.com bat.bing.com; font-src &#39;self&#39; *.siteimprove.com pardot-marketing-bucket.s3.eu-central-1.amazonaws.com fonts.gstatic.com *.freshdesk.com *.freshworks.com fonts.googleapis.com/css *.freshchat.com/; frame-src https: wchat.eu.freshchat.com consentcdn.cookiebot.com *.eu.webpush.freshchat.com www.facebook.com play.vidyard.com; connect-src www.google.com googleads.g.doubleclick.net consentcdn.cookiebot.com ipv6.6sc.co js.zi-scripts.com tags.srv.stackadapt.com ws.zoominfo.com secure.adnxs.com help.siteimprove.com siteimprove.freshdesk.com; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; *.siteimprove.com siteimproveanalytics.com *.siteimproveanalytics.com *.siteimproveanalytics.io wchat.eu.freshchat.com *.freshdesk.com *.freshworks.com https://s3.amazonaws.com/assets.freshdesk.com/ https://s3.amazonaws.com/cdn.freshdesk.com play.vidyard.com www.googletagmanager.com consentcdn.cookiebot.com consent.cookiebot.com snap.licdn.com j.6sc.co googleads.g.doubleclick.net pi.pardot.com connect.facebook.net tracking.g2crowd.com js.zi-scripts.com bat.bing.com tags.srv.stackadapt.com https://www.google.com/recaptcha/api.js https://www.recaptcha.net/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/enterprise.js https://www.google-analytics.com/analytics.js https://static.freshdev.io/fdk/2.0/assets/fresh_parent.js https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js https://www.dropbox.com/static/api/1/dropbox.js https://www.dropbox.com/static/api/2/dropins.js https://cdn.freshbots.ai/assets/share/js/freshbots.min.js https://cdn.euc-freshbots.ai/assets/share/js/freshbots.min.js https://cdn.in-freshbots.ai/assets/share/js/freshbots.min.js https://cdn.au-freshbots.ai/assets/share/js/freshbots.min.js;"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="google-site-verification"
+      content="28U2lTJRYZoIwk-tZ7QBGysyLFFoCGQ76HfpY67bLX4"
+    />
+
+    <link
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/images/favicons/apple-touch-icon.png"
+      rel="apple-touch-icon"
+      sizes="180x180"
+    />
+    <link
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/images/favicons/favicon-32x32.png"
+      rel="icon"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/images/favicons/favicon-16x16.png"
+      rel="icon"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      color="#5bbad5"
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/images/favicons/safari-pinned-tab.svg"
+      rel="mask-icon"
+    />
+    <link
+      href="https://www.siteimprove.com/frontend/favicons/favicon.ico"
+      rel="shortcut icon"
+    />
+    <meta name="msapplication-TileColor" content="#141155" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="preload"
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Regular.woff"
+      as="font"
+      type="font/woff"
+      crossorigin=""
+    />
+    <style>
+		
+			h2 { scroll-margin-top: 85px; } /* experiment by dan tripp 2024-01-31 */
+			:target {  border: 2px solid black; } /* experiment by dan tripp 2024-03-07 */
+      @font-face{font-family:Gilroy;src:url(https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Regular.woff2) format("woff2"),url(https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Regular.woff) format("woff");font-style:normal;font-display:swap}
+      @font-face{font-family:Gilroy Bold;src:url(https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Bold.woff2) format("woff2"),url(https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/fonts/gilroy/Gilroy-Bold.woff) format("woff");font-style:normal;font-display:swap}
+      @font-face { font-family: "icons"; font-weight: normal; font-style: normal; src: url("https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/fonts/help-center.eot"); src: url("https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/fonts/help-center.eot?#iefix") format("embedded-opentype"), url("https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/fonts/help-center.woff2") format("woff2"), url("https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/fonts/help-center.woff") format("woff"), url("https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/fonts/help-center.ttf") format("truetype"), url("https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/fonts/help-center.svg#font") format("svg"); }
+      @media screen and (-webkit-min-device-pixel-ratio:0) { @font-face { font-family: "help center"; src: url("https://pardot-marketing-bucket.s3.eu-central-1.amazonaws.com/v8/fonts/help-center.svg#help-center") format("svg"); } }
+    </style>
+    <style type="text/css" media="print">
+      div#fc_frame.fc-widget-normal,
+      iframe#fc_widget,
+      #related_articles,
+      .share-widget {
+        display: none !important;
+      }
+    </style>
+
+    <!-- Adding meta tag for CSRF token -->
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta
+      name="csrf-token"
+      content="eHQpvY+OC0l6gXBZHtySjGCKUk2gd4wE8NeBJZpHxhkibIc9MYkDe3Kv5RS8PxMmf+YVe+/JANeUDhZrxIlMlA=="
+    />
+    <!-- End meta tag for CSRF token -->
+
+    <!-- Fav icon for portal -->
+    <link
+      rel="shortcut icon"
+      href="https://s3.eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/80221531960/fav_icon/Jk8ISPyh4LSw3sKMt5CFsZizRy7wGssvzQ.png"
+    />
+
+    <!-- Base stylesheet -->
+
+    <link
+      rel="stylesheet"
+      media="print"
+      href="./original_files/portal_print-6e04b27f27ab27faab81f917d275d593fa892ce13150854024baaf983b3f4326.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="./original_files/falcon_portal_utils-ed851bbb56c98c2dee4aa0681760556741f594394cd104f388a8e5efcf47d8f2.css"
+    />
+
+    <!-- Theme stylesheet -->
+
+    <link
+      href="./original_files/theme.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Google font url if present -->
+    <link href="./original_files/css" rel="stylesheet" type="text/css" />
+
+    <!-- Including default portal based script framework at the top -->
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      async=""
+      src="./original_files/widgetIcon.min.js.download"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      async=""
+      src="./original_files/state.js.download"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="./original_files/6si.min.js.download"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="./original_files/uc.js.download"
+      id="Cookiebot"
+    ></script>
+    <script async="" src="./original_files/gtm.js.download"></script>
+    <script src="./original_files/portal_head_v2-449c2c571ad3b4b7f2c7e853a6257dbb6e38540741345ed9ce4a5f08a1671630.js.download"></script>
+    <!-- Including syntexhighlighter for portal -->
+    <script src="./original_files/prism-8b4315d7eb1c628b02d42a6227b3886a6e3af23341e6c927b2be4fc2740d9495.js.download"></script>
+
+    <!-- Access portal settings information via javascript -->
+    <script type="text/javascript">
+      var portal = {"language":"en","name":"Siteimprove","contact_info":"","current_page_name":"article_view","current_tab":"solutions","vault_service":{"url":"https://vault-service-eu.freshworks.com/data","max_try":2,"product_name":"fd"},"current_account_id":1779101,"preferences":{"bg_color":"#f4f5f6","header_color":"#ffffff","help_center_color":"#f4f5f6","footer_color":"#141f33","tab_color":"#ffffff","tab_hover_color":"#1b4ea1","btn_background":"#ffffff","btn_primary_background":"#26227c","base_font":"Roboto","text_color":"#1f2b3f","headings_font":"Roboto","headings_color":"#2c384b","link_color":"#1b4ea1","link_color_hover":"#141155","input_focus_ring_color":"#1b4ea1","non_responsive":"true","personalized_articles":true},"image_placeholders":{"spacer":"https://euc-assets9.freshdesk.com/assets/misc/spacer.gif","profile_thumb":"https://euc-assets7.freshdesk.com/assets/misc/profile_blank_thumb-4a7b26415585aebbd79863bd5497100b1ea52bab8df8db7a1aecae4da879fd96.jpg","profile_medium":"https://euc-assets3.freshdesk.com/assets/misc/profile_blank_medium-1dfbfbae68bb67de0258044a99f62e94144f1cc34efeea73e3fb85fe51bc1a2c.jpg"},"falcon_portal_theme":true,"current_object_id":80001050538};     var attachment_size = 20;     var blocked_extensions = "";
+    </script>
+
+    <script src="./original_files/widget.js.download"></script>
+
+    <style type="text/css">
+      .vidyard-player-container .play-button{position:absolute;width:16%;height:auto;border-radius:50%;border:none;cursor:pointer;opacity:.65;filter:alpha(opacity = 65);transition:opacity .2s linear;overflow:hidden;font-size:0;padding:0;min-width:20px;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-appearance:initial!important;-moz-appearance:initial!important;appearance:initial!important}.vidyard-player-container .play-button .play-button-size{padding-top:100%;width:100%}.vidyard-player-container .play-button .arrow-size{position:absolute;top:50%;left:50%;width:35%;height:auto;margin:-25% 0 0 -12%;overflow:hidden}.vidyard-player-container .play-button .arrow-size-ratio{padding-top:150%;width:100%}.vidyard-player-container .play-button .arrow{position:absolute;top:50%;left:auto;right:0;bottom:auto;width:0;height:0;margin:-200px 0 -200px -300px;border:200px solid transparent;border-left:300px solid #fff;border-right:none}.vidyard-lightbox-thumbnail:hover .play-button{opacity:1;filter:alpha(opacity = 100);zoom:1}.vidyard-player-container{position:relative;height:100%;text-align:center}.vidyard-player-container img{height:100%}.vidyard-player-container .play-button{display:none}.vidyard-close-container{position:fixed;right:20px;top:20px;height:34px;width:34px;cursor:pointer;z-index:1000}.vidyard-close-container:focus{outline:1px dotted grey}.vidyard-close-x{position:absolute;height:100%;width:100%;color:#fff;font-size:2em;text-align:center;line-height:34px}.vidyard-close-x:hover{color:#ddd}.vidyard-close-x:hover:after,.vidyard-close-x:hover:before{background:#ddd}.vidyard-close-x:after,.vidyard-close-x:before{content:"";position:absolute;background:#fff;display:block;left:50%;top:50%;height:65%;width:2px;transition:all .2s;-ms-high-contrast-adjust:none}.vidyard-close-x:before{transform:translate(-50%,-50%) rotate(45deg);-ms-transform:translate(-50%,-50%) rotate(45deg)}.vidyard-close-x:after{transform:translate(-50%,-50%) rotate(-45deg);-ms-transform:translate(-50%,-50%) rotate(-45deg)}.vidyard-close-x.simple-close:after,.vidyard-close-x.simple-close:before{display:none}.vidyard-lightbox-thumbnail{width:100%;height:100%;margin:auto}.vidyard-lightbox-image{height:100%;left:0;position:absolute;top:0;width:100%}.vidyard-lightbox-centering{cursor:pointer;height:0;max-width:100%;overflow:hidden;padding-bottom:56.25%;position:relative}.vidyard-lightbox-content-backer{-webkit-transform:opacity 1s,filter 1s;-ms-transform:opacity 1s,filter 1s;transition:opacity 1s,filter 1s;background-color:#000;height:100%;width:100%;position:absolute}#vidyard-overlay-wrapper,.vidyard-lightbox-content-backer{filter:alpha(opacity = 0);opacity:0;top:0;right:0;bottom:0;left:0}#vidyard-overlay-wrapper{position:relative;box-sizing:border-box;display:none;transition:opacity .5s,filter .5s}#vidyard-overlay{top:0;right:0;bottom:0;left:0;opacity:.9;filter:alpha(opacity = 90);width:100%;height:100%;background-color:#000;z-index:800}#vidyard-content-fixed,#vidyard-overlay{position:fixed;box-sizing:border-box;display:none}#vidyard-content-fixed{opacity:1;z-index:900;text-align:center;top:5%;right:5%;bottom:5%;left:5%;width:90%}#vidyard-popbox{display:inline-block;position:absolute;left:50%;top:50%;-webit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#vidyard-popbox-constraint{opacity:0;filter:alpha(opacity = 0);display:block;visibility:hidden}#vidyard-popbox-constraint.landscape{height:90vh}#vidyard-popbox-constraint.portrait{width:90vw}.vidyard-player-container div[class^=vidyard-iframe-]{z-index:1}.vidyard-player-container div[class^=vidyard-div-]{background-repeat:no-repeat;background-position:0 50%;background-size:100%}img.vidyard-player-embed{width:100%}img.vidyard-player-embed.inserted{position:absolute;top:0;left:0;z-index:0;max-width:100%!important}.vidyard-player-container.playlist-open{padding-right:319px;width:auto!important}.vidyard-player-container.playlist-open div[class^=vidyard-div-]{width:calc(100% + 319px);max-width:calc(100% + 319px)!important;background-size:calc(100% - 319px);background-color:#f5f9ff}.vidyard-player-container.playlist-open div[class^=vidyard-div-] img.vidyard-player-embed{width:calc(100% - 319px)!important}#backlink-icon{height:15px;width:15px;margin-right:6px;transition:.3s}#backlink{align-items:center;border-radius:4px;border:3px solid #ebeeff;display:inline-block;float:left;line-height:18px;margin:8px 0 0;outline:none;padding:1px 8px 1px 5px;position:relative;*zoom:1;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;font-style:normal;font-weight:400;font-size:12px;text-decoration:none}#backlink:after,#backlink:before{content:" ";display:table}#backlink:after{clear:both}#backlink:link,#backlink:visited{background:#ebeeff;border-color:#ebeeff;color:#414dd4}#backlink:hover{background:#bfc2ff;color:#1b1a82;cursor:pointer}#backlink:focus,#backlink:hover{border-color:#bfc2ff}#backlink:active{background:#8f97ff;border-color:#8f97ff;color:#0c084d}#backlink-icon{float:left;height:18px;margin-right:5px;position:relative;width:18px}#backlink-text{float:left}
+    </style>
+    <link href="./original_files/widget.css" rel="stylesheet" />
+    <style type="text/css" id="CookieConsentStateDisplayStyles">
+      .cookieconsent-optin-preferences,.cookieconsent-optin-statistics,.cookieconsent-optin-marketing,.cookieconsent-optin{display:none;}.cookieconsent-optout-preferences,.cookieconsent-optout-statistics,.cookieconsent-optout-marketing,.cookieconsent-optout{display:block;display:initial;}
+    </style>
+    <style id="_6si-shortening">
+      /* This stylesheet is created by 6sense */
+                  .mktoForm .mktoFormRow:has(._6si_sff_filled) {
+                      display: none;
+                  }
+                  .mktoForm .mktoFormRow ._6si_sff_filled {
+                      display: none;
+                  }
+                  .hs-form .hs-form-field:has(._6si_sff_filled) {
+                      display: none;
+                  }
+                  .hs-form .hs-form-field ._6si_sff_filled {
+                      display: none;
+                  }
+                  form.form .form-field:not(.error):has(._6si_sff_filled) {
+                      display: none;
+                  }
+                  form.form .form-field:not(.error) ._6si_sff_filled {
+                      display: none;
+                  }
+                  .elq-form .row:has(._6si_sff_filled) {
+                      display: none;
+                  }
+                  .elq-form .row ._6si_sff_filled {
+                      display: none;
+                  }
+    </style>
+    <link href="./original_files/cb.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header-main">
+        <noscript
+          ><iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W56S73X"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+            title="Google Tag Manager"
+            aria-hidden="true"
+          ></iframe
+        ></noscript>
+        <a
+          class="vh f"
+          href="https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained#main"
+          >Skip to main content</a
+        >
+        <div class="header-main__wrap">
+          <a href="https://help.siteimprove.com/support/home" class="logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 490.2 82.7"
+              xml:space="preserve"
+              aria-label="Siteimprove"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M0,50.4l10.6-6.2c2.3,5.9,6.7,9.6,14.5,9.6c7.5,0,10.1-3.2,10.1-6.7c0-4.7-4.2-6.5-13.6-9.2 c-9.6-2.8-19-6.8-19-18.8c0-11.9,9.9-18.7,20.7-18.7c10.4,0,18.3,5.3,22.5,14.1l-10.4,6c-2.3-4.8-5.7-8.1-12.1-8.1 c-5.2,0-8.3,2.7-8.3,6.3c0,3.9,2.4,5.9,12,8.8c10,3.2,20.6,6.5,20.6,19.4c0,11.8-9.5,19-22.9,19C11.9,66,3.4,59.8,0,50.4z"
+                  ></path>
+                  <path
+                    d="M53.9,7.2C53.9,3.3,57.1,0,61,0c4,0,7.2,3.3,7.2,7.2S65,14.3,61,14.3C57.1,14.3,53.9,11.1,53.9,7.2z M55.2,19.7h11.6v45H55.2V19.7z"
+                  ></path>
+                  <path
+                    d="M93,30.9v18.7c0,4.9,3.5,5,10.2,4.6v10.5c-16.3,1.8-21.8-3-21.8-15.1V30.9h-7.8V19.7h7.8v-9.1L93,7.1v12.6 h10.2v11.2C103.2,30.9,93,30.9,93,30.9z"
+                  ></path>
+                  <path
+                    d="M132.5,55.5c4.5,0,8.1-1.9,10.1-4.5l9.4,5.4c-4.2,6.1-11,9.6-19.6,9.6c-15.1,0-24.7-10.4-24.7-23.8 s9.6-23.8,23.8-23.8c13.3,0,22.8,10.5,22.8,23.8c0,1.7-0.2,3.2-0.5,4.8h-33.9C121.5,52.9,126.4,55.5,132.5,55.5z M142.6,38 c-1.4-6.5-6.3-9.1-11.2-9.1c-6.2,0-10.4,3.3-11.8,9.1H142.6z"
+                  ></path>
+                  <path
+                    d="M161,7.2c0-3.9,3.2-7.2,7.1-7.2c4,0,7.2,3.3,7.2,7.2s-3.2,7.1-7.2,7.1C164.2,14.3,161,11.1,161,7.2z M162.3,19.7h11.6v45h-11.6V19.7L162.3,19.7z"
+                  ></path>
+                  <path
+                    d="M251.4,37v27.7h-11.6V37.8c0-5.3-2.7-8.6-7.6-8.6c-5.1,0-8.4,3.4-8.4,10.2v25.3h-11.6V37.8 c0-5.3-2.7-8.6-7.6-8.6c-5,0-8.5,3.4-8.5,10.2v25.3h-11.6v-45h11.6v4.8c2.5-3.8,6.8-6,12.5-6c5.6,0,9.7,2.3,12.2,6.5 c2.8-4.1,7.3-6.5,13.4-6.5C244.6,18.5,251.4,25.7,251.4,37z"
+                  ></path>
+                  <path
+                    d="M309.5,42.2c0,13.4-9.9,23.8-22,23.8c-6.6,0-11.3-2.4-14.6-6.6v23.3h-11.6v-63h11.6V25 c3.2-4.1,8-6.6,14.6-6.6C299.5,18.5,309.5,28.8,309.5,42.2z M297.8,42.2c0-7.6-5.3-12.7-12.5-12.7c-7.1,0-12.4,5.1-12.4,12.7 s5.3,12.7,12.4,12.7C292.5,54.9,297.8,49.8,297.8,42.2z"
+                  ></path>
+                  <path
+                    d="M342.9,18.8v13c-6-0.7-13.7,2-13.7,11.4v21.5h-11.6v-45h11.6v7.7C331.6,21.3,337.3,18.8,342.9,18.8z"
+                  ></path>
+                  <path
+                    d="M345.6,42.2c0-13.4,10.5-23.8,23.8-23.8c13.2,0,23.9,10.4,23.9,23.8S382.6,66,369.4,66 C356.2,66,345.6,55.6,345.6,42.2z M381.7,42.2c0-7.3-5.3-12.4-12.2-12.4c-6.8,0-12.2,5.1-12.2,12.4s5.3,12.4,12.2,12.4 C376.3,54.6,381.7,49.5,381.7,42.2z"
+                  ></path>
+                  <path
+                    d="M442.1,19.7l-17.1,45h-13.2l-17.1-45h12.8l10.9,31.5l11-31.5C429.4,19.7,442.1,19.7,442.1,19.7z"
+                  ></path>
+                  <path
+                    d="M468.4,55.5c4.5,0,8.1-1.9,10.1-4.5l9.4,5.4c-4.2,6.1-11,9.6-19.6,9.6c-15.1,0-24.7-10.4-24.7-23.8 s9.6-23.8,23.8-23.8c13.3,0,22.8,10.5,22.8,23.8c0,1.7-0.2,3.2-0.5,4.8h-33.9C457.3,52.9,462.2,55.5,468.4,55.5z M478.4,38 c-1.4-6.5-6.3-9.1-11.2-9.1c-6.2,0-10.4,3.3-11.8,9.1H478.4z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <span class="appname">Help Center</span>
+          </a>
+          <div class="nav-wrapper">
+            <nav
+              class="nav-main clear"
+              aria-label="Main menu"
+              data-module="navigation"
+            >
+              <div class="nav-main__actions clear">
+                <button class="btn btn-s nav-close toggle-mobile-nav">
+                  Close menu
+                </button>
+              </div>
+              <ul class="nav-main__items clear">
+                <li class="nav-main__item">
+                  <a
+                    href="https://help.siteimprove.com/support/solutions/80000220153"
+                    class="nav-item"
+                    >Getting Started</a
+                  >
+                </li>
+                <li class="nav-main__item">
+                  <a
+                    href="https://help.siteimprove.com/support/solutions/80000220156"
+                    class="nav-item"
+                    >Guides &amp; FAQs</a
+                  >
+                </li>
+                <li class="nav-main__item">
+                  <a
+                    href="https://help.siteimprove.com/support/solutions/80000220157"
+                    class="nav-item"
+                    >What's new?</a
+                  >
+                </li>
+                <li class="nav-main__item">
+                  <a
+                    href="https://help.siteimprove.com/support/solutions/80000220155"
+                    class="nav-item"
+                    >Webinars</a
+                  >
+                </li>
+              </ul>
+              <div class="cta-mobile clear">
+                <a
+                  href="https://my2.siteimprove.com/app/Home/Support/1?SupportLink=https://help.siteimprove.com/support/home"
+                  class="btn btn-s cta"
+                  >Login</a
+                >
+              </div>
+              <ul class="service-menu-mobile clear">
+                <li>
+                  <a
+                    href="https://help.siteimprove.com/support/tickets/new"
+                    class="service-menu__link"
+                    >Contact support</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="actions">
+            <ul class="service-menu">
+              <li>
+                <a
+                  href="https://help.siteimprove.com/support/tickets/new"
+                  class="service-menu__link"
+                  >Contact support</a
+                >
+              </li>
+            </ul>
+
+            <a
+              href="https://my2.siteimprove.com/app/Home/Support/1?SupportLink=https://help.siteimprove.com/support/home"
+              class="btn btn-s cta"
+              >Login</a
+            >
+
+            <button
+              class="btn btn-s btn-icon toggle-search"
+              aria-label="Open search"
+            >
+              <span class="ico" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <div class="header-search" data-module="search">
+              <form
+                class="hc-search-form print--remove"
+                autocomplete="off"
+                action="https://help.siteimprove.com/support/search/solutions"
+                id="hc-search-form"
+                data-csrf-ignore="true"
+              >
+                <div class="hc-search-input">
+                  <label for="support-search-input" class="hide"
+                    >Enter your search term here...</label
+                  >
+                  <input
+                    placeholder="Enter your search term here..."
+                    type="text"
+                    name="term"
+                    class="special ui-autocomplete-input"
+                    value=""
+                    rel="page-search"
+                    data-max-matches="10"
+                    id="support-search-input"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="hc-search-button">
+                  <button
+                    class="btn btn-primary"
+                    aria-label="Search"
+                    type="submit"
+                    autocomplete="off"
+                  >
+                    <i class="mobile-icon-search hide-tablet"></i>
+                    <span class="hide-in-mobile"> Search </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <button
+              class="btn btn-s nav-open"
+              aria-expanded="false"
+              aria-label="Menu"
+            >
+              Menu
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main" class="content-main">
+        <!-- Notification Messages -->
+        <div
+          class="alert alert-with-close notice"
+          id="noticeajax"
+          style="display:none;"
+        ></div>
+
+        <div class="grid pt0 pb0">
+          <div class="col col-12 pb0">
+            <nav aria-label="breadcrumbs" class="crumbs">
+              <ul>
+                <li>
+                  <a href="https://help.siteimprove.com/support/home">Home</a>
+                </li>
+                <li>
+                  <a href="https://help.siteimprove.com/support/solutions"
+                    >Solution home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://help.siteimprove.com/support/solutions/80000220156"
+                    >Guides &amp; FAQs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://help.siteimprove.com/support/solutions/folders/80000703087"
+                    >New Accessibility rules</a
+                  >
+                </li>
+                <li>
+                  Test Test Test
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="grid grid-lines grid-columns" id="article-show-80001050538">
+          <div class="grid grid-columns__content">
+            <div class="col col-12">
+              <h1 class="mb30">
+               Test Test Test
+              </h1>
+              <div class="author clear">
+                <p class="s">Modified on: Thu, 1 Feb, 2024 at 12:24 AM</p>
+              </div>
+            </div>
+            <div class="col col-12 article">
+              <ul>
+                <li><a dir="ltr" href="#Overview">Overview</a></li>
+                <li>
+                  <a href="#Who-is-impacted-by-this-barrier?"
+                    >Who is impacted by this barrier?</a
+                  >
+                </li>
+                <li>
+                  <a href="#How-does-the-check-work?"
+                    >How does the check work?</a
+                  >
+                </li>
+                <li><a href="#Common-mistakes">Common mistakes</a></li>
+              </ul>
+              <h2
+                data-identifyelement="502"
+                dir="ltr"
+                id="Overview"
+              >
+                Overview
+              </h2>
+              <p data-identifyelement="497" dir="ltr">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <h2
+                data-identifyelement="502"
+                dir="ltr"
+                id="Who-is-impacted-by-this-barrier?"
+              >
+                Who is impacted by this barrier?
+              </h2>
+              <p data-identifyelement="503" dir="ltr">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <h2
+                data-identifyelement="504"
+                dir="ltr"
+                id="How-does-the-check-work?"
+              >
+                How does the check work?
+              </h2>
+              <p data-identifyelement="505" dir="ltr">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <h2 data-identifyelement="504" dir="ltr" id="Common-mistakes">
+                Common mistakes
+              </h2>
+              <p dir="ltr">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+
+            <div class="col col-12">
+              <div class="vote">
+                <p
+                  class="article-vote"
+                  id="voting-container"
+                  data-user-id=""
+                  data-article-id="80001050538"
+                  data-language="en"
+                >
+                  Did you find it helpful?<span
+                    data-href="/support/solutions/articles/80001050538/thumbs_up"
+                    class="vote-up a-link"
+                    id="article_thumbs_up"
+                    data-remote="true"
+                    data-method="put"
+                    data-update="#voting-container"
+                    data-user-id=""
+                    data-article-id="80001050538"
+                    data-language="en"
+                    data-update-with-message="Glad we could be helpful. Thanks for the feedback."
+                  >
+                    Yes</span
+                  ><span class="vote-down-container"
+                    ><span
+                      data-href="/support/solutions/articles/80001050538/thumbs_down"
+                      class="vote-down a-link"
+                      id="article_thumbs_down"
+                      data-remote="true"
+                      data-method="put"
+                      data-update="#vote-feedback-form"
+                      data-user-id=""
+                      data-article-id="80001050538"
+                      data-language="en"
+                      data-hide-dom="#voting-container"
+                      data-show-dom="#vote-feedback-container"
+                    >
+                      No</span
+                    ></span
+                  >
+                </p>
+                <a
+                  class="hide a-link"
+                  id="vote-feedback-form-link"
+                  data-hide-dom="#vote-feedback-form-link"
+                  data-show-dom="#vote-feedback-container"
+                  >Send feedback</a
+                >
+                <div id="vote-feedback-container" class="hide">
+                  <div class="lead">
+                    Sorry we couldn't be helpful. Help us improve this article
+                    with your feedback.
+                  </div>
+                  <div id="vote-feedback-form">
+                    <div class="sloading loading-small loading-block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="grid grid-columns__sidebar">
+            <div class="col col-12">
+              <div class="w100 share-widget txt-c clear">
+                <h2 class="h3">Share this article</h2>
+                <a
+                  class="share facebook ico-facebook-f"
+                  href="https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained"
+                  ><span class="vh">Share on Facebook</span></a
+                >
+                <a
+                  class="share twitter ico-twitter-squared"
+                  href="https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained"
+                  ><span class="vh">Share on Twitter</span></a
+                >
+                <a
+                  class="share linkedin ico-linkedin-2"
+                  href="https://help.siteimprove.com/support/solutions/articles/80001050538-accessibility-rule-color-contrast-does-not-meet-requirement-explained"
+                  ><span class="vh">Share on LinkedIn</span></a
+                >
+              </div>
+            </div>
+            <div class="col col-12">
+              <div id="related_articles" style="display: block;">
+                <div class="cs-g-c">
+                  <section class="article-list">
+                    <h3 class="list-lead">Related Articles</h3>
+                    <ul
+                      rel="remote"
+                      data-remote-url="/support/search/articles/80001050538/related_articles?container=related_articles&amp;limit=10"
+                      id="related-article-list"
+                    >
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001062077-expanded-accessibility-coverage-q1-launch-february-22nd-2023"
+                            >Expanded accessibility coverage - Q1 launch:
+                            February 22nd 2023</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80000448511-does-siteimprove-check-color-contrast-in-accessibility-"
+                            >Does Siteimprove check color contrast in
+                            Accessibility?</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001058760-accessibility-rule-letter-spacing-does-not-meet-minimum-requirement-explained"
+                            >Accessibility rule: Letter spacing does not meet
+                            minimum requirement, explained</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001058761-accessibility-rule-word-spacing-does-not-meet-minimum-requirement-explained"
+                            >Accessibility rule: Word spacing does not meet
+                            minimum requirement, explained</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001058769-accessibility-rule-line-height-does-not-meet-minimum-requirement-explained"
+                            >Accessibility rule: Line height does not meet
+                            minimum requirement, explained</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80000448514-a-guide-to-the-siteimprove-accessibility-checks"
+                            >A Guide to the Siteimprove accessibility checks</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001050742-accessibility-rule-headings-are-not-structured-explained"
+                            >Accessibility rule: Headings are not structured,
+                            explained</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001051793-accessibility-rule-container-element-is-empty-explained"
+                            >Accessibility rule: Container element is empty,
+                            explained</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001058771-accessibility-rule-roles-are-invalid-explained"
+                            >Accessibility rule: Roles are invalid, explained</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ellipsis">
+                          <a
+                            href="https://help.siteimprove.com/support/solutions/articles/80001050734-accessibility-rule-element-ids-are-not-unique-explained"
+                            >Accessibility rule: Element IDs are not unique,
+                            explained</a
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer-main">
+        <div class="grid">
+          <div class="col col-12 col-nest footer-main__end">
+            <div class="col col-12 footer-main__legal">
+              <ul>
+                <li>
+                  <a href="https://www.siteimprove.com/privacy/">Privacy</a>
+                </li>
+                <li><a href="https://www.siteimprove.com/vpat/">VPAT</a></li>
+                <li><a href="https://www.siteimprove.com/legal/">Legal</a></li>
+                <li>
+                  <a href="https://www.siteimprove.com/accessibility-statement/"
+                    >Accessibility Statement</a
+                  >
+                </li>
+              </ul>
+              <p class="s clear">
+                Siteimprove is a registered trademark of Siteimprove A/S - All
+                rights reserved. 2022
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        var iso_lang = 'en-US';
+      </script>
+      <!--[if lt IE 9
+        ]><script src="https://s3.eu-central-1.amazonaws.com/pardot-marketing-bucket/js/html5shiv.min.js"></script
+      ><![endif]-->
+      <script type="text/javascript">
+        function downloadJSAtOnload() {
+          $ = jQuery;
+          (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-W56S73X');
+        }
+        if (window.addEventListener)
+          window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+          window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+      </script>
+      <script>
+        jQuery(document).on('ready',function(){
+             jQuery('.accordion').attr({'role':'tablist','aria-multiselectable':!0});jQuery('.accordion button').each(function(){var $this=jQuery(this),$panel=$this.next('.accordion__panel'),id=$this.attr('id'),open=$this.attr('data-state')!=undefined?!0:!1;$this.attr({'aria-controls':'panel-'+id,'aria-expanded':open?!0:!1,'aria-selected':open?!0:!1,'role':'tab'});$panel.attr({'id':'panel-'+id,'aria-labelledby':id,'aria-hidden':open?!1:!0,'role':'tabpanel'})});jQuery('.accordion button[role="tab"]').on('click',function(e){e.preventDefault();var $button=jQuery(this),$panel=jQuery('#'+$button.attr('aria-controls'))
+          if($button.attr('aria-expanded')==='false'){$button.attr('aria-expanded','true');$panel.attr('aria-hidden','false')}else{$button.attr('aria-expanded','false');$panel.attr('aria-hidden','true')}});jQuery('.accordion button[role="tab"]').on('focus',function(e){jQuery(this).attr('aria-selected','true')});jQuery('.accordion button[role="tab"]').on('blur',function(e){jQuery(this).attr('aria-selected','false')})
+         	  jQuery('select').each(function(){if(!jQuery(this).parent().hasClass('select')){jQuery(this).wrap('<div class="select"/>');}});
+             var $button;
+             function closeSearch(){jQuery("header.header-main .header-search").removeClass("open"),jQuery("header.header-main .toggle-search").focus(),jQuery('header.header-main .header-search input[type="text"]').val(""),jQuery(document).off("keyup.search"),jQuery("html").unbind("click.search-panel")}function closeMobileNav(){jQuery("body").removeClass("oh"),jQuery(".nav-wrapper").removeClass("open"),$button.attr("aria-expanded",!1).focus(),jQuery(document).off("keydown.mm")}jQuery("header.header-main .toggle-search").on("click",(function(e){e.preventDefault();jQuery("body");var a=jQuery(".header-search"),t=jQuery('input[type="text"]',a);!!a.hasClass("open")?closeSearch():(a.addClass("open"),setTimeout((function(){t.focus()}),200),jQuery(document).on("keyup.search",(function(e){27==e.keyCode&&closeSearch()})),jQuery("html").bind("click.search-panel",(function(e){0==$(e.target).closest(".header-search").length&&0==$(e.target).closest("button.toggle-search").length&&closeSearch()})))})),jQuery("header.header-main .nav-open").on("click",(function(e){e.preventDefault();var a=jQuery("body"),t=jQuery(".nav-wrapper");$button=$(this),setTimeout((function(){a.addClass("oh"),t.addClass("open"),$button.attr("aria-expanded",!0),jQuery(".nav-close",t).focus()}),0),jQuery(document).on("keydown.mm",(function(e){if(27===e.keyCode&&(closeMobileNav(),e.preventDefault()),9===e.keyCode){var a=t.find("*").filter("a[href], area[href], input:not([type='hidden']):not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[contenteditable]").filter(":visible"),n=$(document.activeElement),r=a.length,o=a.index(n);e.shiftKey||o!=r-1||(a.get(0).focus(),e.preventDefault()),e.shiftKey&&0==o&&(a.get(r-1).focus(),e.preventDefault())}}))})),jQuery("header.header-main .nav-close").on("click",(function(e){closeMobileNav()}));
+             jQuery(".btn-menu .btn").on("click",(function(e){e.preventDefault();var n=$(this),t=n.next(),a=!!n.hasClass("open");jQuery(".btn-menu .btn").not(n).removeClass("open").attr("aria-expanded","false"),jQuery(".btn-menu .btn-menu__options").not(t).removeClass("open"),a?(t.removeClass("open"),n.removeClass("open").attr("aria-expanded","false"),jQuery("html").unbind("click.btn-menu")):(t.addClass("open"),n.addClass("open").attr("aria-expanded","true"),jQuery("html").bind("click.btn-menu",(function(e){0==$(e.target).closest(".btn-menu .btn").length&&0==$(e.target).closest(".btn-menu .btn-menu__options").length&&(jQuery(".btn-menu .btn").removeClass("open").attr("aria-expanded","false"),jQuery(".btn-menu .btn-menu__options").removeClass("open"))})))}));
+             jQuery('body').on('click','.share.ico-facebook-f, .share.facebook', facebookShare);
+             jQuery('body').on('click','.share.ico-twitter-squared, .share.twitter', twitterShare);
+             jQuery('body').on('click','.share.ico-linkedin-2, .share.linkedin', linkedInShare);
+          var windowLocation=window.location.href;function facebookShare(){return window.open("https://www.facebook.com/sharer/sharer.php?u="+windowLocation,"facebookWindow","height=380,width=660,resizable=0,toolbar=0,menubar=0,status=0,location=0,scrollbars=0"),!1}function twitterShare(){if(jQuery("h1").length>0)var t=encodeURIComponent(jQuery("h1").text());else t=encodeURIComponent(jQuery(document).find("title").text());return window.open("http://twitter.com/intent/tweet?text="+t+" "+windowLocation,"twitterWindow","height=380,width=660,resizable=0,toolbar=0,menubar=0,status=0,location=0,scrollbars=0"),!1}function linkedInShare(){if(jQuery("h1").length>0)var t=encodeURIComponent(jQuery("h1").text());else t=encodeURIComponent(jQuery(document).find("title").text());return window.open("http://www.linkedin.com/shareArticle?mini=true&url="+windowLocation+"&title="+t,"linkedInWindow","height=480,width=660,resizable=0,toolbar=0,menubar=0,status=0,location=0,scrollbars=0"),!1}
+             manageTables();
+             if(jQuery('#related_articles ul li').length < 1){
+               //jQuery('#related_articles').remove();
+             }
+        });
+         function manageTables(){
+
+           jQuery('.article table').each(function(){
+
+             if(!jQuery(this).hasClass('nojs')){
+
+               var jQuerythis = jQuery(this),
+                   headertext = [],
+                   jQueryheaders = jQuery('th',jQuerythis),
+                   jQuerytablerows = jQuery('tr',jQuerythis);
+
+               jQuerythis.addClass('mq');
+
+               jQueryheaders.each(function(){
+                 headertext.push(jQuery(this).text());
+               });
+
+               jQuerytablerows.each(function(){
+                 jQuery('td',this).each(function(i,td){
+                   jQuery(this).attr('data-th', headertext[i]);
+                 });
+               });
+
+             }
+
+           });
+
+         }
+           /* Vote */
+           jQuery('.vote .vote-down').on('click',function(){
+             jQuery('#vote-feedback-container').removeClass('hide');
+             setTimeout(function(){
+               jQuery('.vote form a.btn').addClass('ml15');
+             },200);
+           });
+      </script>
+      <script async="" src="./original_files/v4.js.download"></script>
+      <script>
+        function vidyardIframeCode (uuid) {
+          var srcPath = '//play.vidyard.com/' + uuid;
+          return '<iframe class="vidyard_iframe" src="' + srcPath + '" width="640" height="360" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>';
+        };
+        document.querySelectorAll('.vidyard-player-embed').forEach(function(image){
+          image.parentElement.innerHTML = vidyardIframeCode(image.dataset.uuid)
+        });
+      </script>
+    </div>
+
+    <script src="./original_files/portal_bottom_v2-f70cbb2fcfb9fef52bd1a8292fb2b096c0a6d84aa998a90386219b146783e53d.js.download"></script>
+
+    <script src="./original_files/redactor-10a54c9b6ce9a442c8a2e6a131947e0d106a4af7c5b98360494520fc5245be28.js.download"></script>
+    <script src="./original_files/en-4a75f878b88f0e355c2d9c4c8856e16e0e8e74807c9787aaba7ef13f18c8d691.js.download"></script>
+    <!-- for i18n-js translations -->
+    <script src="./original_files/en-0d1dd644fa691c3168d98f602492a36aa6049ac528e698aefeebfa6c9ea5b324.js.download"></script>
+    <!-- Including default portal based script at the bottom -->
+    <script>
+      //<![CDATA[
+
+      	jQuery(document).ready(function() {
+
+      		// Setting the locale for moment js
+      		moment.lang('en');
+
+      		var validation_meassages = {"required":"This field is required.","remote":"Please fix this field.","email":"Please enter a valid email address.","url":"Please enter a valid URL.","date":"Please enter a valid date.","dateISO":"Please enter a valid date ( ISO ).","number":"Please enter a valid number.","digits":"Please enter only digits.","creditcard":"Please enter a valid credit card number.","equalTo":"Please enter the same value again.","two_decimal_place_warning":"Value cannot have more than 2 decimal digits","select2_minimum_limit":"Please type %{char_count} or more letters","select2_maximum_limit":"You can only select %{limit} %{container}","maxlength":"Please enter no more than {0} characters.","minlength":"Please enter at least {0} characters.","rangelength":"Please enter a value between {0} and {1} characters long.","range":"Please enter a value between {0} and {1}.","max":"Please enter a value less than or equal to {0}.","min":"Please enter a value greater than or equal to {0}.","select2_maximum_limit_jq":"You can only select {0} {1}","facebook_limit_exceed":"Your Facebook reply was over 8000 characters. You'll have to be more clever.","messenger_limit_exceeded":"Oops! You have exceeded Messenger Platform's character limit. Please modify your response.","not_equal_to":"This element should not be equal to","email_address_invalid":"One or more email addresses are invalid.","twitter_limit_exceed":"Oops! You have exceeded Twitter's character limit. You'll have to modify your response.","password_does_not_match":"The passwords don't match. Please try again.","valid_hours":"Please enter a valid hours.","reply_limit_exceed":"Your reply was over 2000 characters. You'll have to be more clever.","url_format":"Invalid URL format","url_without_slash":"Please enter a valid URL without '/'","link_back_url":"Please enter a valid linkback URL","requester_validation":"Please enter a valid requester details or <a href=\"#\" id=\"add_requester_btn_proxy\">add new requester.</a>","agent_validation":"Please enter valid agent details","email_or_phone":"Please enter a Email or Phone Number","upload_mb_limit":"Upload exceeds the available 15MB limit","invalid_image":"Invalid image format","atleast_one_role":"At least one role is required for the agent","invalid_time":"Invalid time.","remote_fail":"Remote validation failed","trim_spaces":"Auto trim of leading & trailing whitespace","hex_color_invalid":"Please enter a valid hex color value.","name_duplication":"The name already exists.","invalid_value":"Invalid value","invalid_regex":"Invalid Regular Expression","same_folder":"Cannot move to the same folder.","maxlength_255":"Please enter less than 255 characters","decimal_digit_valid":"Value cannot have more than 2 decimal digits","atleast_one_field":"Please fill at least {0} of these fields.","atleast_one_portal":"Select atleast one portal.","custom_header":"Please type custom header in the format -  header : value","same_password":"Should be same as Password","select2_no_match":"No matching %{container} found","integration_no_match":"no matching data...","time":"Please enter a valid time","valid_contact":"Please add a valid contact","field_invalid":"This field is invalid","select_atleast_one":"Select at least one option."}
+
+      		jQuery.extend(jQuery.validator.messages, validation_meassages );
+
+
+      		jQuery(".call_duration").each(function () {
+      			var format,time;
+      			if (jQuery(this).data("time") === undefined) { return; }
+      			if(jQuery(this).hasClass('freshcaller')){ return; }
+      			time = jQuery(this).data("time");
+      			if (time>=3600) {
+      			 format = "hh:mm:ss";
+      			} else {
+      				format = "mm:ss";
+      			}
+      			jQuery(this).html(time.toTime(format));
+      		});
+      	});
+
+      	// Shortcuts variables
+      	var Shortcuts = {"global":{"help":"?","save":"mod+return","cancel":"esc","search":"/","status_dialog":"mod+alt+return","save_cuctomization":"mod+shift+s"},"app_nav":{"dashboard":"g d","tickets":"g t","social":"g e","solutions":"g s","forums":"g f","customers":"g c","reports":"g r","admin":"g a","ticket_new":"g n","compose_email":"g m"},"pagination":{"previous":"alt+left","next":"alt+right","alt_previous":"j","alt_next":"k"},"ticket_list":{"ticket_show":"return","select":"x","select_all":"shift+x","search_view":"v","show_description":"space","unwatch":"w","delete":"#","pickup":"@","spam":"!","close":"~","silent_close":"alt+shift+`","undo":"z","reply":"r","forward":"f","add_note":"n","scenario":"s"},"ticket_detail":{"toggle_watcher":"w","reply":"r","forward":"f","add_note":"n","close":"~","silent_close":"alt+shift+`","add_time":"m","spam":"!","delete":"#","show_activities_toggle":"}","properties":"p","expand":"]","undo":"z","select_watcher":"shift+w","go_to_next":["j","down"],"go_to_previous":["k","up"],"scenario":"s","pickup":"@","collaboration":"d"},"social_stream":{"search":"s","go_to_next":["j","down"],"go_to_previous":["k","up"],"open_stream":["space","return"],"close":"esc","reply":"r","retweet":"shift+r"},"portal_customizations":{"preview":"mod+shift+p"},"discussions":{"toggle_following":"w","add_follower":"shift+w","reply_topic":"r"}};
+
+      	// Date formats
+      	var DATE_FORMATS = {"non_us":{"moment_date_with_week":"ddd, D MMM, YYYY","datepicker":"d M, yy","datepicker_escaped":"d M yy","datepicker_full_date":"D, d M, yy","mediumDate":"d MMM, yyyy"},"us":{"moment_date_with_week":"ddd, MMM D, YYYY","datepicker":"M d, yy","datepicker_escaped":"M d yy","datepicker_full_date":"D, M d, yy","mediumDate":"MMM d, yyyy"}};
+
+      	var lang = {
+      		loadingText: "Please Wait...",
+      		viewAllTickets: "View all tickets"
+      	};
+
+
+      //]]>
+    </script>
+
+    <img
+      src="./original_files/hit"
+      alt="Article views count"
+      aria-hidden="true"
+    />
+    <script type="text/javascript">
+      I18n.defaultLocale = "en";
+      I18n.locale = "en";
+    </script>
+    <script>
+      //<![CDATA[
+
+          jQuery(document).ready(function() {
+            window.fcWidget.init({
+              token: "dfad7e73-e9cf-421e-b001-b9914257d772",
+              host: "https://wchat.eu.freshchat.com",
+                locale: "en",
+                meta: {
+                  "fw_product": "freshdesk",
+                  "fw_product_acc_id": "1779101",
+                  "fw_group_id": "80000026202"
+                },
+                config: {"headerProperty":{"backgroundColor":"#141153","backgroundImage":"https://public-data.eu-central-1-prod.freddyproject.com/autofaq/00261129-5214-4ff5-9e67-2f92a849eb53.png"}},
+            });
+          });
+
+      //]]>
+    </script>
+
+    <ul
+      class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content"
+      id="ui-id-1"
+      tabindex="0"
+      style="display: none;"
+    ></ul>
+    <span
+      role="status"
+      aria-live="assertive"
+      aria-relevant="additions"
+      class="ui-helper-hidden-accessible"
+    ></span>
+    <div
+      id="fc_frame"
+      class="fc-widget-normal"
+      style="bottom: 15px; right: 15px;"
+    >
+      <iframe
+        id="fc_widget"
+        name="fc_widget"
+        title="Chat"
+        frameborder="0"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        src="./original_files/saved_resource.html"
+      ></iframe>
+    </div>
+    <style>
+      #CybotCookiebotDialog input[type=checkbox] {
+        position: static !important;
+        left: auto !important;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      id="6senseWebTag"
+      src="./original_files/1c1ae530-01d2-4b91-b707-439e8c822c20.js.download"
+    ></script>
+    <div style="display: none; visibility: hidden;">
+      <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+        (function(window) {
+            addEvent(window, 'message', function(message) {
+              try{
+              var data = JSON.parse(message.data);
+              var dataLayer = window.dataLayer || (window.dataLayer = []);
+              if (data.event) {
+                dataLayer.push({
+                  'event': data.event,
+                  'postMessageData': data
+                });
+              }
+              }catch(e){}
+            });
+
+            // Cross-browser event listener
+            function addEvent(el, evt, fn) {
+              if (el.addEventListener) {
+                el.addEventListener(evt, fn);
+              } else if (el.attachEvent) {
+                el.attachEvent('on' + evt, function(evt) {
+                  fn.call(el, evt);
+                });
+              } else if (typeof el['on' + evt] === 'undefined' || el['on' + evt] === null) {
+                el['on' + evt] = function(evt) {
+                  fn.call(el, evt);
+                };
+              }
+            }
+
+        })(window);
+      </script>
+    </div>
+    <iframe
+      name="__uspapiLocator"
+      tabindex="-1"
+      role="presentation"
+      aria-hidden="true"
+      title="Blank"
+      style="display: none; position: absolute; width: 1px; height: 1px; top: -9999px;"
+      src="./original_files/saved_resource(1).html"
+    ></iframe
+    ><iframe
+      tabindex="-1"
+      role="presentation"
+      aria-hidden="true"
+      title="Blank"
+      src="./original_files/bc-v4.min.html"
+      style="position: absolute; width: 1px; height: 1px; top: -9999px;"
+    ></iframe>
+    <div>
+      <div dir="ltr" id="CookiebotWidget" lang="en">
+        <button class="CookiebotWidget-logo" aria-label="Open widget" lang="en">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill-rule="evenodd">
+              <circle cx="12" cy="12" r="12"></circle>
+              <path
+                d="M15.094 13.978c-1.146 0-1.946-.813-1.946-1.978s.8-1.978 1.946-1.978c1.145 0 1.945.813 1.945 1.978s-.8 1.978-1.945 1.978M9.07 10.022h3.883l-.094.09c-.537.515-.844 1.203-.844 1.888 0 1.738 1.294 3 3.079 3 1.786 0 3.082-1.262 3.082-3s-1.296-3-3.082-3H9.079C7.295 9 6 10.262 6 12s1.295 3 3.079 3h2.144v-1.022H9.07c-1.136 0-1.932-.813-1.937-1.978 0-1.146.815-1.978 1.937-1.978"
+                fill="#000"
+              ></path>
+            </g>
+          </svg>
+        </button>
+        <div id="CookiebotWidget-widgetContent"></div>
+      </div>
+      <div id="CookiebotWidgetUnderlay"></div>
+    </div>
+    <style id="CookiebotWidgetStylesheet">
+      @keyframes CookiebotWidgetFadeIn{0%{opacity:0}to{opacity:1}}#CookiebotWidget{word-wrap:break-word;left:10px;bottom:10px;animation:CookiebotWidgetFadeIn .3s ease-in;background-color:#FFFFFF;border-radius:40px;box-shadow:0 4px 16px rgba(0,0,0,.15);font-family:Helvetica,Arial,sans-serif;line-height:1.5;min-height:48px;min-width:48px;opacity:0;pointer-events:none;position:fixed;transition:all .2s ease-in;word-break:break-word;z-index:2147483631}#CookiebotWidget,#CookiebotWidget *{background:transparent;box-sizing:border-box;color:#141414;font-size:15px;letter-spacing:.1px;margin:0;outline:0;padding:0}#CookiebotWidget *{font-family:inherit}#CookiebotWidget button,#CookiebotWidget li,#CookiebotWidget strong,#CookiebotWidget svg,#CookiebotWidget ul{border:none;cursor:inherit;font-weight:inherit;line-height:1.5}#CookiebotWidget:not(.CookiebotWidget-inactive){opacity:1;pointer-events:all;transition:opacity .3s ease-in,border-radius .2s ease-in}#CookiebotWidget.CookiebotWidget-open{overflow:hidden}#CookiebotWidget:not(.CookiebotWidget-open):hover{box-shadow:0 4px 18px rgba(0,0,0,.3)}#CookiebotWidget+#CookiebotWidgetUnderlay{background:#000;height:100vh;left:0;opacity:0;pointer-events:none;position:fixed;top:0;visibility:hidden;width:100vw;z-index:2147483630}#CookiebotWidget:not(.CookiebotWidget-open) .CookiebotWidget-logo{cursor:pointer}#CookiebotWidget .CookiebotWidget-logo{display:block;transition:opacity .3s,transform .3s}#CookiebotWidget .CookiebotWidget-logo svg{display:block;height:44px;transition:all .3s;width:44px}#CookiebotWidget:not(.CookiebotWidget-open) button.CookiebotWidget-logo svg{height:48px;transition:all 0s ease;transition-delay:.2s;width:48px}#CookiebotWidget .CookiebotWidget-logo svg circle{fill:#FFFFFF}#CookiebotWidget .CookiebotWidget-logo svg path{fill:#141414}#CookiebotWidget #CookiebotWidget-widgetContent{display:flex;max-height:0;max-width:0;overflow:hidden;transition:all .2s ease-in}#CookiebotWidget.CookiebotWidget-open #CookiebotWidget-widgetContent{max-height:1000px;max-width:1000px}#CookiebotWidget.CookiebotWidget-open .CookiebotWidget-contents{max-height:calc(100vh - 10px);min-height:360px}#CookiebotWidget :focus-visible,#CookiebotWidget:not(.CookiebotWidget-open) .Cookiebotwidget-logo{outline:2px solid #1032CF;outline-offset:1px}@media screen and (max-width:600px){#CookiebotWidget:not(.CookiebotWidget-inactive){bottom:10px;left:10px}#CookiebotWidget :focus-visible,#CookiebotWidget:not(.CookiebotWidget-open) .Cookiebotwidget-logo{outline:0}}@media screen and (min-width:601px){#CookiebotWidget+#CookiebotWidgetUnderlay{display:none}}
+    </style>
+    <script
+      type="text/javascript"
+      src="./original_files/co-browsing.js.download"
+    ></script>
+    <div id="fc_push_frame">
+      <iframe
+        id="fc_push"
+        src="./original_files/index.html"
+        title="Chat"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </body>
+</html>
