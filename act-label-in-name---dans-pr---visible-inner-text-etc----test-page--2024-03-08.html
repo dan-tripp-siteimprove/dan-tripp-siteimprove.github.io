@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+<h1>ACT 'label in name' - 'visible inner text' calculation - cases surrounding <a href="https://github.com/act-rules/act-rules.github.io/pull/2075{#}discussion_r1410435368">these github comments</a></h1>
+
+<p>How can we make the rule's return value for 'visible inner text' match the visual that we see with our eyes in as many cases as possible? </p>
+
+
+<ol>
+
+<li>
+<h4> Jean-Yves from <a href="https://github.com/act-rules/act-rules.github.io/pull/2075#discussion_r1389112958">this comment</a> : </h4>
+<button aria-label="hello world"><span>hello</span><span id="space"> </span><span>world</span></button>
+<br>
+Not interesting.  This case is settled, I think.
+</li>
+
+<li>
+<h4> Dan from <a href="https://github.com/act-rules/act-rules.github.io/commit/b2df0212bcb1ef4a9057c1d7216704a519617f57">this commit</a> : </h4> 
+<a aria-label="Download specification" href="#"><span>Download</span><span id="space"> </span><span>specification</span></a>
+<br>
+Not interesting.  This case is also settled.<br>
+current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>: visible inner text = "Download specification"<br>
+behaviour of Dan's PR if we remove the 'contains only whitespace' clause: visible inner text = "Download specification"<br>
+alfa behaviour: visible inner text = "Download specification"<br>
+<br>
+
+</li>
+
+<li>
+<h4>Dan from <a href="https://github.com/act-rules/act-rules.github.io/pull/2075#discussion_r1394521036">this comment</a> : </h4>
+<a aria-label="Download specification" href="#"><span>Download</span><span style="visibility: hidden">x</span><span>specification</span></a>
+<br>
+
+<table>
+<tr>
+<td>
+visual:
+</td>
+<td>
+"Download specification"
+</td>
+</tr>
+<tr>
+<td>
+current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>:
+</td>
+<td>
+"Downloadxspecification"
+</td>
+</tr>
+
+<tr>
+<td>
+behaviour of Dan's PR if we remove the 'contains only whitespace' clause:
+</td>
+<td>
+"Download specification"
+</td>
+</tr>
+
+<tr>
+<td>
+alfa behaviour:
+</td>
+<td>
+"Downloadspecification"
+</td>
+</tr>
+</table>
+
+</li>
+
+
+
+
+
+<li>
+	<h4>... and again, but with whitespace instead of "x": </h4>
+
+
+	<a aria-label="Download specification" href="#"><span>Download</span><span style="visibility: hidden"> </span><span>specification</span></a><br>
+
+	<table>
+	
+		<tr>
+			<td>
+				visual:
+			</td>
+			<td>
+				"Download specification"
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>
+			</td>
+			<td>
+				"Download specification"
+			</td>
+		</tr>
+	
+		<tr>
+			<td>
+				behaviour of Dan's PR if we remove the 'contains only whitespace' clause: 
+			</td>
+			<td>
+				"Download specification"
+			</td>
+		</tr>
+		
+
+		<tr>
+			<td>
+				alfa behaviour: 
+			</td>
+			<td>
+				"Download specification"
+			</td>
+		</tr>
+		
+
+<!--
+
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				
+			</td>
+		</tr>
+		
+-->
+			
+	</table>
+</li>
+
+
+<li>
+<h4> Jean-Yves from <a href="https://github.com/act-rules/act-rules.github.io/pull/2075#discussion_r1410435368">this comment</a> : </h4>
+<a aria-label="Download specification" href="#"><span>Download</span><span style="position: absolute; left: -9999px">x</span><span>specification</span></a>
+<br>
+
+
+
+	<table>
+	
+
+		<tr>
+			<td>
+				visual:
+			</td>
+			<td>
+				"Downloadspecification"
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>:
+			</td>
+			<td>
+				"Downloadxspecification"
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td>
+				behaviour of Dan's PR if we remove the 'contains only whitespace' clause:
+			</td>
+			<td>
+				"Download specification"
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td>
+				alfa behaviour: 
+			</td>
+			<td>
+				"Download specification"
+			</td>
+		</tr>
+		
+	</table>
+		
+(I don't understand how alfa figures out to exclude the "x" , because <a href="https://github.com/Siteimprove/alfa/blob/main/packages/alfa-rules/src/sia-r14/rule.ts#L97-L100">this code</a> says "&amp;&amp; isWhitespace(text.data)" and "x" is not whitespace.)<br>
+
+</li>
+
+
+<li>
+<h4>... and again, but with whitespace instead of "x": </h4>
+<a aria-label="Download specification" href="#"><span>Download</span><span style="position: absolute; left: -9999px"> </span><span>specification</span></a>
+<br>
+current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>: visible inner text = "Download specification"<br>
+behaviour of Dan's PR if we remove the 'contains only whitespace' clause: visible inner text = "Download specification"<br>
+alfa behaviour: visible inner text = "Download specification"<br>
+</li>
+
+
+</ol>
+
+
+
+</main>
+
+</body>
+
+</html>
