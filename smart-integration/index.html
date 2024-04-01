@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>SMART browser extension</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<h1>SMART browser extension</h1>
+
+<h2>Instructions</h2>
+
+<h3>One-time installation</h3>
+
+<ul>
+<li>Open Chrome </li>
+<li>Go to chrome://extensions/ </li>
+<li>Find the "developer mode" toggle.  (It's in the upper right corner, at the time of writing.)  Enable this toggle. </li>
+</ul>
+
+
+<h3>Installation: on every new version </h3>
+
+This means: follow these steps the first time you install this browser extension, and also every time you want to install a new version of it.
+
+<ul>
+<li>Download the zip file </li>
+<li>Unzip it to somewhere.  For example, to a folder named C:\Users\dtr\smart-browser-extension-v1.2 </li>
+<li>In Chrome, go to chrome://extensions/  </li>
+<li>Click the "load unpacked" button </li>
+<li>Select the folder that you unzipped the extension to (for example: C:\Users\dtr\smart-browser-extension-v1.2).  Click "Ok" or whatever the case may be. </li>
+<li>
+Now a button for this extension exists in Chrome, in the toolbar near your bookmarks.   It might be buried under the "Extensions" button/menu.
+	<ul>
+		<li>If you want to pin the SMART extension to the toolbar (so that it's always visible and easy to reach): 
+		From chrome://extensions/ , find the SMART browser extension, click "Details", find the "Pin to toolbar" toggle.  Enable it. </li>
+	</ul>
+</li>
+</ul>
+		
+<h3>To run it</h3>
+<ul>
+<li>Click the SMART browser extension's button.  A new window will appear which contains the results.  </li>
+<li>To re-run the extension, you can click the SMART browser extension's button again twice (once to close it, once to re-open it).  Or use the "Refresh" button inside of its window.</li>
+</li>
+</ul>
+
+
+<h2>Downloads</h2>
+
+<ul>
+	<li>
+		<a href="./dist/smart-browser-extension-v0.1.zip">Version 0.1</a>
+	</li>
+</ul>
+
+
+
+</main>
+
+</body>
+
+</html>
