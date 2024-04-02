@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<p>
+This page passes sia-r59.  It has two aria-owns, and no aria-hidden. 
+</p>
+
+<div>
+<a href="#" aria-owns="id1">link 1</a>
+</div>
+
+<div>
+<a href="#" aria-owns="id1">link 2</a>
+</div>
+
+<div id="id1">
+<h1>h1</h1>
+</div>
+
+
+
+
+
+</main>
+
+</body>
+
+</html>
