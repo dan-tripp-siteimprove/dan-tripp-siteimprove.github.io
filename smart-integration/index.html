@@ -43,6 +43,8 @@ window.addEventListener("load", function(event) {
 
 <h3>One-time installation</h3>
 
+Hopefully you'll only need to do these steps once.
+
 <ul>
 <li>Open Chrome </li>
 <li>Go to chrome://extensions/ </li>
@@ -52,16 +54,32 @@ window.addEventListener("load", function(event) {
 
 <h3>Installation: on every new version </h3>
 
-This means: follow these steps the first time you install this browser extension, and also every time you want to install a new version of it.
+Follow these steps the first time you install this browser extension, and also every time you want to update to a new version of it.  (This browser extension unfortunately does not update itself.)
 
 <ul>
 <li>Download the zip file </li>
-<li>Extract it to somewhere.  For example, to a folder named C:\Users\YOUR_NAME\smart-browser-extension-v1.2 </li>
-<li>In Chrome, go to chrome://extensions/  </li>
+<li>
+Extract it to somewhere.  For example, to a folder named C:\Users\YOUR_NAME\smart-browser-extension-v1.2
+	<ul>
+		<li>If you already have an old version extracted to somewhere, don't try to overwrite it.  That would make a mess.  Extract to a new folder every time.
+		</li>
+	</ul>
+</li>
+<li>In Chrome, go to the chrome://extensions/ page. </li>
 <li>Press the "load unpacked" button </li>
 <li>Select the folder that you extracted the extension to (for example: C:\Users\YOUR_NAME\smart-browser-extension-v1.2).  Press "Ok" or whatever the case may be. </li>
+<li>Now you have two versions of the extension installed: the old one and the new one.  You can leave both installed, if you want.  But most people will probably want to remove the old one.
+	<ul>
+		<li>From the chrome://extensions/ page, find the old version of the extension.  You'll see the version number in the name: "SMART browser extension 0.2" or whatever the case may be.  Click the "Remove" button to uninstall it.
+			<ul>
+				<li>Or, if you only want to temporarily disable it, there is a toggle button for that.  This part is not user-friendly.  This toggle is not visually labelled.  At the time of writing, it's visually at the bottom-right.  The accessible name of it in the enabled state is "On, extension enabled" and in the disabled state is "Off".</li>
+			</ul>
+		</li>
+		<li>Sorry for the trouble.  If I figure out how to make the extension update automatically, I'll do it.</li>
+	</ul>
+</li>
 <li>
-Now a button for this extension exists in Chrome, in the toolbar, near your bookmarks.   It might be buried under the "Extensions" button/menu.
+Now a button for this extension (i.e. the new version) exists in Chrome, in the toolbar, near your bookmarks.   It might be buried under the "Extensions" button/menu.
 	<ul>
 		<li>If you want to pin the SMART extension to the toolbar (so that it's always visible and easy to reach): 
 		From chrome://extensions/ , find the SMART browser extension, press the "Details" button, find the "Pin to toolbar" toggle.  Enable it. </li>
@@ -71,7 +89,7 @@ Now a button for this extension exists in Chrome, in the toolbar, near your book
 		
 <h3>To run it</h3>
 <ul>
-<li>Press the SMART browser extension's button.  A new window will appear which contains the results.
+<li>Press the SMART browser extension's button (in the toolbar, near your bookmarks.)  A new window will appear which contains the results.
 <ul>
 <li>The keyboard accessibility of this Chrome toolbar is unclear to me.  These keyboard shortcuts might help: F10, and alt+shift+t.</li>
 </ul>
