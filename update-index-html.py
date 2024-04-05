@@ -15,7 +15,7 @@ python_script_name = os.path.basename(__file__)
 html_file_paths = []
 
 def does_dir_have_dont_index_file(dir_):
-	dont_index_file_path = os.path.join(dir_, '.dont-index')
+	dont_index_file_path = os.path.join(dir_, '.dont-index') # AKA noindex, ignore 
 	r = os.path.exists(dont_index_file_path)
 	return r
 
