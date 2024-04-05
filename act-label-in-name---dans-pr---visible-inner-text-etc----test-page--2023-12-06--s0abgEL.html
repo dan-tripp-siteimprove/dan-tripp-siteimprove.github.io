@@ -58,9 +58,13 @@ alfa behaviour: visible inner text = "Download specification"<br>
 <a aria-label="Download specification" href="#"><span>Download</span><span style="visibility: hidden">x</span><span>specification</span></a>
 <br>
 interesting:<br>
+desired behaviour: visible inner text = "Download specification"<br>
 current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>: visible inner text = "Downloadxspecification"<br>
 behaviour of Dan's PR if we remove the 'contains only whitespace' clause: visible inner text = "Download specification"<br>
 alfa behaviour: visible inner text = "Downloadspecification"<br>
+visible2 (i.e. replace "making it fully transparent" with "removing it from the DOM"): visible inner text = "Downloadxspecification"<br>
+
+
 </li>
 
 <li>
@@ -77,13 +81,15 @@ alfa behaviour: visible inner text = "Download specification"<br>
 
 <li>
 <h4> Jean-Yves from <a href="https://github.com/act-rules/act-rules.github.io/pull/2075#discussion_r1410435368">this comment</a> : </h4>
-<a aria-label="Download specification" href="#"><span>Download</span><span style="position: absolute; left: -9999px">x</span><span>specification</span></a>
-<br>
+<a aria-label="Download specification" href="#"><span>Download</span><span style="position: absolute; left: -9999px">x</span><span>specification</span></a><br>
+<a aria-label="Download specification" href="#"><span>Download</span><span>specification</span></a> (copy, w/ no "x" element)<br>
 interesting:<br>
-current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>: visible inner text = "Downloadxspecification"<br>
+desired behaviour: visible inner text = "Downloadspecification"<br>
+current behaviour of <a href="https://github.com/act-rules/act-rules.github.io/pull/2075/files#diff-441d454f9a7aee53035edca16efba6b4199b9202a47a3efa92fc3879c2792998R17">Dan's PR</a>: visible inner text = "Downloadxspecification" (written dec 2023.  I think I was wrong.  I think the correct answer is "Downloadspecification".)<br>
 behaviour of Dan's PR if we remove the 'contains only whitespace' clause: visible inner text = "Download specification"<br>
 alfa behaviour: visible inner text = "Download specification"<br>
 (I don't understand how alfa figures out to exclude the "x" , because <a href="https://github.com/Siteimprove/alfa/blob/main/packages/alfa-rules/src/sia-r14/rule.ts#L97-L100">this code</a> says "&amp;&amp; isWhitespace(text.data)" and "x" is not whitespace.)<br>
+visible2 (i.e. replace "making it fully transparent" with "removing it from the DOM"): visible inner text = "Downloadspecification"<br>
 </li>
 
 
