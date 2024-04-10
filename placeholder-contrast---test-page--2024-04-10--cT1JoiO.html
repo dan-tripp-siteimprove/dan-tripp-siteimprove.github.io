@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+textarea.class1::placeholder {
+		color: #eee;
+}
+
+textarea.class2::placeholder {
+		color: #677;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+default color for placeholder.  contrast ratio: 4.61:1 (on my machine, anyway).  this passes WCAG AA.<br>
+<textarea rows="5" placeholder="placeholder placeholder placeholder placeholder placeholder" maxlength="1000" ></textarea>
+<br>
+<br>
+<br>
+
+override placeholder color with #eee.  contrast ratio: 1.16:1.    this fails WCAG AA.  this is not flagged by the Siteimprove browser extension, nor axe.<br>
+<textarea class="class1" rows="5" placeholder="placeholder placeholder placeholder placeholder placeholder" maxlength="1000" ></textarea>
+<br>
+
+
+
+
+</main>
+
+</body>
+
+</html>
