@@ -1,0 +1,15 @@
+<div id="table-host">
+  <th>Hello</th><td>World</td>
+</div>
+
+<div id="list-host"><li>One</li><li>Two</li><li>Three</li></div>
+
+<script>
+  const tableHost = document.getElementById('table-host');
+  const tableRoot = tableHost.attachShadow({mode: 'open'});
+  tableRoot.innerHTML = "<table><tr><slot></slot></tr></table>"
+
+  const listHost = document.getElementById('list-host');
+  const listRoot = listHost.attachShadow({mode: 'open'});
+  listRoot.innerHTML = "<ul><slot></slot></ul>"
+</script>
