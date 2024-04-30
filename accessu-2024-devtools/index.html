@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://offsetchris.github.io/AccessibilityTree_CSUNATC24/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSUNATC Test Page</title>
+<style>
+  /* Basic styling; you'll want to expand this with your own designs */
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; font-size:1.2em;}
+  .header { background: #333; color: #fff; padding: 10px 20px; text-align: center; }
+  .nav { background: #444; color: white; padding: 10px 20px; text-align: center; }
+  .nav a { color: white; margin: 0 15px; text-decoration: none; }
+  .content { padding: 20px; }
+  .tabpanel { display: none; margin:0 1em; border:1px solid grey;padding:1em; }
+  .tabpanel.active { display: block; }
+  .tabbutton {font-size:1em;margin:0 1em; padding:1em;}
+  .tabbutton.active {background:darkblue; color:white;}
+  .logo img { height:6em; }
+  form { margin:2em; }
+  form div{ margin:1em; }
+  form button{margin:1em;}
+  form fieldset{margin:1em;}
+  button {
+    font-size:1em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="logo" href="https://offsetchris.github.io/test_ecomm.html">
+    <img src="duck.png">
+  </a>
+  <h1>CSUNATC Test Page</h1>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="https://offsetchris.github.io/AccessibilityTree_CSUNATC24/#">Home</a>
+  <a href="https://offsetchris.github.io/AccessibilityTree_CSUNATC24/#">Products</a>
+  <a href="https://offsetchris.github.io/AccessibilityTree_CSUNATC24/#">Contact</a>
+  <a href="https://offsetchris.github.io/AccessibilityTree_CSUNATC24/#">About</a>
+</div>
+
+<!-- MAIN issue -->
+<div class="content">
+
+<form>
+  <div>
+    <label>Name</label>
+    <input type="text" name="name">
+  </div>
+  
+
+  <div>
+    <label>Email</label>
+    <input type="email" name="email">
+  </div>
+
+  <strong>Permissions</strong>
+  <fieldset>
+    <label><input type="radio" name="permission">Admin</label>
+    <label><input type="radio" name="permission">User</label>
+  </fieldset>
+
+  <button type="submit">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <title>submitformicon</title>
+        <path d="M18.984 3q0.797 0 1.406 0.609t0.609 1.406v13.969q0 0.797-0.609 1.406t-1.406 0.609h-13.969q-0.844 0-1.43-0.586t-0.586-1.43v-3.984h2.016v3.984h13.969v-13.969h-13.969v3.984h-2.016v-3.984q0-0.844 0.586-1.43t1.43-0.586h13.969zM10.078 15.609l2.578-2.625h-9.656v-1.969h9.656l-2.578-2.625 1.406-1.406 5.016 5.016-5.016 5.016z"></path>
+      </svg>
+    </button>
+</form>
+
+<hr>
+
+
+
+<!-- Heading Level issue -->
+<h3>Tab Panels</h3>
+
+  <div role="tablist" class="tabs">
+    <button class="tabbutton active" onclick="openTab(event, &#39;Tab1&#39;)">Product 1</button>
+    <button class="tabbutton" onclick="openTab(event, &#39;Tab2&#39;)">Product 2</button>
+    <button class="tabbutton" onclick="openTab(event, &#39;Tab3&#39;)">Product 3</button>
+  </div>
+
+  <div role="tabpanel" id="Tab1" class="tabpanel" style="display: block;">
+    <h3>Product 1</h3>
+    <p>Description for Product 1.</p>
+  </div>
+
+  <div role="tabpanel" id="Tab2" class="tabpanel" style="display: none;">
+    <h3>Product 2</h3>
+    <p>Description for Product 2.</p>
+  </div>
+
+  <div role="tabpanel" id="Tab3" class="tabpanel" style="display: none;">
+    <h3>Product 3</h3>
+    <p>Description for Product 3.</p>
+  </div>
+
+
+<hr>
+
+<h2>Sad Empty Container</h2>
+<ul></ul>
+
+<h2>Container with the wrong things</h2>
+<ul>
+  <button>I'm a button!</button>
+</ul>
+
+
+</div>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tabbuttonss;
+  tabcontent = document.getElementsByClassName("tabpanel");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tabbuttons = document.getElementsByClassName("tabbutton");
+  for (i = 0; i < tabbuttons.length; i++) {
+    // tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+    tabbuttons[i].classList.remove("active");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Click on the first tabbuttons on page load
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".tabbutton").click();
+});
+</script>
+
+
+
+</body></html>
