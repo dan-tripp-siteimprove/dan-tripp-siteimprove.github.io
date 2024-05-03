@@ -51,6 +51,21 @@ window.addEventListener("load", function(event) {
 
 <ul>
 	<li>
+		Version 0.7 (2024-05-02)
+		<ul>
+			<li>Label in Name: Now reporting more failures, such as the "View all" button on https://www.bang-olufsen.com/en/us/soundbars.  This change also causes more false positives on other pages.  I think they're worth it.  Let me know.
+			</li>
+			<li>Label in Name: Now in the output, newlines (which are in the visible label) no longer appear.
+			</li>
+			<li>Rearranging the visual/reading order of the test cases in match SMART (eg. SC 2.4.4 comes before SC 1.1.1.) 
+			</li>
+			<li>Moving each "copy to clipboard" button to after the corresponding text area.
+			</li>
+			<li>Obscure bug fix: whole window would fail to refresh sometimes if you moved focus away from the browser immediately after doing a refresh.  This bug would happen more on big slow pages.
+			</li>
+		</ul>
+	</li>
+	<li>
 		Version 0.6 (2024-04-24)
 		<ul>
 			<li>Label in name: bug fix.  Bug affected certin pages such as https://www.virginplus.ca/en/support/index.html?topic=dual_sim.  The bug was: the SMART browser extension would show no results.  Just an empty window.  In the console (the extension's console, not the page's console), this error message would appear:    <code>ReferenceError: and is not defined</code>.
@@ -120,6 +135,9 @@ window.addEventListener("load", function(event) {
 <h2 id="h_downloads">Zip Files: Downloads</h2>
 
 <ul>
+	<li>
+		<a href="./downloads/smart-browser-extension-v0.7.zip">Version 0.7</a>
+	</li>
 	<li>
 		<a href="./downloads/smart-browser-extension-v0.6.zip">Version 0.6</a>
 	</li>
