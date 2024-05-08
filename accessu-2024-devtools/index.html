@@ -26,18 +26,36 @@
 	.disabled {
 		color: #aaa;
 	}
+	
+	.fields_instructions_1 {
+		background-color: #0a0; 
+	}
+	
+	.fields_instructions_2 {
+		background-color: #55f; 
+	}
+		
+	table {
+		border-collapse: collapse;
+	}
+
+	table td, table th {
+		border: 1px solid black;
+		padding: 8px;
+	}
 </style>
 </head>
 <body>
 
+<header>
+
 <div class="header">
-  <a class="logo" href="test_ecomm.html">
+  <a class="logo" href="duck_home.html">
     <img src="duck.png">
   </a>
-  <h1>AccessU 2024 Test Page</h1>
+  <h2>AccessU 2024 Test Page</h2>
 </div>
 
-<!-- NAV -->
 <div class="nav">
   <a href="#">Home</a>
   <a href="#">Products</a>
@@ -45,10 +63,15 @@
   <a href="#">About</a>
 </div>
 
-<!-- MAIN issue -->
+</header>
+
 <div class="content">
 
+<h2>Log in / Sign Up</h2>
+
 <form>
+	<p class="fields_instructions_1">Fill out your details below.</p>
+	<p class="fields_instructions_2">All fields are mandatory.</p>
   <div>
     <label>Name</label>
     <input type="text" name="name">
@@ -76,13 +99,21 @@
 	<a href="#" class="disabled" onclick="return false;" >User Directory (coming soon)</a>
 </form>
 
+</div>
+
 
 <hr>
 
+<main>
+
+<div class="content">
 
 
-<!-- Heading Level issue -->
-<h3>Tab Panels</h3>
+
+
+<h2>Products</h2>
+
+<h4>Product Details</h4>
 
   <div role="tablist" class="tabs">
     <button class="tabbutton active" onclick="openTab(event, &#39;Tab1&#39;)">Product 1</button>
@@ -109,16 +140,45 @@
 <hr>
 
 
-<h2>Sad Empty Container</h2>
-<ul></ul>
+<h2>On Sale Now</h2>
 
-<h2>Container with the wrong things</h2>
+<h2>Store Hours</h2>
+
+<a href="store_hours.html"></a>
+
+<table>
+	<tr><th scope="col">Mon-Fri</th><td>8:00 AM - 5:00 PM</td></tr>
+	<tr><th scope="col">Sat-Sun</th><td>10:00 AM - 2:00 PM</td></tr>
+</table>
+
+<h2>Product Recalls</h2>
+All current product recalls will be listed here.  See also: "Safety Advisories". 
+<ul class="product_recalls"></ul>
+
+<h2>Product Safety Advisories</h2>
+
 <ul>
-  <button>I'm a button!</button>
+All current safety advisories will be listed here.  These advisories are not as severe as "Product Recalls". 
 </ul>
 
 
-<img alt="w3c-no-bars.svg" src="w3c-no-bars.svg"><a href="https://validator.w3.org/">Check out the W3C's HTML validation service</a>
+</main>
+
+<footer>
+
+<hr>
+
+<ul>
+
+<li><a target="_blank" href="privacy.html" aria-label="Cookies Policy (link opens in a new tab)">Privacy Policy</a></li>
+<li><a href="careers.html">Careers</a></li>
+</li>
+<li><a href="https://validator.w3.org/">This page was tested with the W3C's HTML validation service</a><img alt="w3c-no-bars.svg" src="w3c-no-bars.svg">
+</li>
+
+</ul>
+
+</footer>
 
 
 </div>
