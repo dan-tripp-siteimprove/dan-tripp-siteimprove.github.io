@@ -43,6 +43,14 @@
 		border: 1px solid black;
 		padding: 8px;
 	}
+
+	a.product_link {
+			text-decoration: none;
+	}
+	a.product_link:hover,
+	a.product_link:focus {
+			text-decoration: underline;
+	}
 </style>
 </head>
 <body>
@@ -123,17 +131,17 @@
 
   <div role="tabpanel" id="Tab1" class="tabpanel" style="display: block;">
     <h3>Product 1</h3>
-    <p>Description for Product 1.</p>
+    <p>Product 1 has a good safety record, as shown here: <a class="product_link" href="safety-records.html">Safety Records 1999-2024</a>.</p>
   </div>
 
   <div role="tabpanel" id="Tab2" class="tabpanel" style="display: none;">
     <h3>Product 2</h3>
-    <p>Description for Product 2.</p>
+    <p>Product 2 is mediocre.</p>
   </div>
 
   <div role="tabpanel" id="Tab3" class="tabpanel" style="display: none;">
     <h3>Product 3</h3>
-    <p>Description for Product 3.</p>
+    <p>Product 3 is awful.</p>
   </div>
 
 
@@ -164,21 +172,18 @@ All current safety advisories will be listed here.  These advisories are not as 
 
 </main>
 
-<footer>
-
 <hr>
 
-<ul>
+<ul role="contentinfo">
 
-<li><a target="_blank" href="privacy.html" aria-label="Cookies Policy (link opens in a new tab)">Privacy Policy</a></li>
-<li><a href="careers.html">Careers</a></li>
-</li>
-<li><a href="https://validator.w3.org/">This page was tested with the W3C's HTML validation service</a><img alt="w3c-no-bars.svg" src="w3c-no-bars.svg">
-</li>
+	<li><a target="_blank" href="privacy.html" aria-label="Cookies Policy (link opens in a new tab)">Privacy Policy</a></li>
+	<li><a href="careers.html">Careers</a></li>
+	</li>
+	<li><a href="https://validator.w3.org/">This page was tested with the W3C's HTML validation service</a><img alt="w3c-no-bars.svg" src="w3c-no-bars.svg">
+	</li>
 
 </ul>
 
-</footer>
 
 
 </div>
