@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.container {
+		display: flex;
+		gap: 20px; /* Optional: Space between the two divs */
+}
+.scrollable-div {
+		width: 300px;         /* Set the desired width */
+		height: 100px;        /* Set the desired height */
+		overflow-y: scroll;   /* Enable vertical scrolling */
+		border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+		padding: 10px;        /* Optional: Add some padding */
+}
+
+
+button {
+	height: 20px; 
+	margin-bottom: 5px; 
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+	let topLeftDiv = document.getElementById('top-left');
+	topLeftDiv.scrollTop = topLeftDiv.scrollHeight;
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+
+<div class="container">
+	<div class="scrollable-div" id="top-left">
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+	</div>
+	<div class="scrollable-div">
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+		<button>button</button><br>
+	</div>
+</div>
+
+<div class="container">
+	<div class="scrollable-div">
+		<button>button</button><br>
+	</div>
+	<div class="scrollable-div">
+		<button>button</button><br>
+	</div>
+</div>
+
+<p>
+	When I scroll the &lt;div&gt;s all the way to the bottom then run the browser extension, I get no failing occurrences for 'target size minimum'. 
+</p>
+
+
+</main>
+
+</body>
+
+</html>
