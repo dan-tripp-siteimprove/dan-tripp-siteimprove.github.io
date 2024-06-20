@@ -20,7 +20,7 @@ def does_dir_have_dont_index_file(dir_):
 	return r
 
 for root, dirs, files in os.walk('.'):
-	dirs[:] = [d for d in dirs if d not in excluded_dirnames and not does_dir_have_dont_index_file(d)]
+	dirs[:] = [d for d in dirs if d not in excluded_dirnames and not does_dir_have_dont_index_file(os.path.join(root, d))]
 
 	for file in files:
 		if any(file.lower().endswith(ext.lower()) for ext in included_file_extensions):
