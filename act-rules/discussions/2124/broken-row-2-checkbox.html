@@ -4,14 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>spreadsheet row 2 - checkbox</title>
-	<style src="main.css"></style>
+	<link rel="stylesheet" href="main.css">
 	<script src="main.js"></script>
 	<script>
 
 window.addEventListener("load", async function(event) {
-	//console.log(new Date(), "before", JSON.stringify({}, null, 0)); /* tdr */
-
-	addCheckboxToPage('Go to next page', 'Go to next page');
+	addAriaCheckboxToPage('checkbox one', 'checkbox one');
 });
 
 	</script>
@@ -26,13 +24,6 @@ window.addEventListener("load", async function(event) {
 
 
 <h1>spreadsheet row 2 - checkbox</h1>
-
-
-<ul class="checkboxes">
-	<li>
-		<div aria-label="checkbox one" role="checkbox" >checkbox one</div>
-	</li>
-</ul>
 
 
 

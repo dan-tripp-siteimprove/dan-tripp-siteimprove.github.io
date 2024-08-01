@@ -71,6 +71,26 @@ function addButtonToPage(visibleLabel_, accessibleName_) {
 	buttonElem.setAttribute('aria-label', accessibleName_);
 }
 
+function addAriaCheckboxToPage(visibleLabel_, accessibleName_) {
+	let mainElem = document.querySelector('body > main');
+	mainElem.innerHTML += `
+		<ul class="checkboxes">
+			<li>
+				<div aria-label="${accessibleName_}" role="checkbox" aria-checked="false" tabindex="0">
+					${visibleLabel_}
+				</div>
+				<button class="go-button-after-aria-checkbox">Proceed</button>
+			</li>
+		</ul>
+		`;
+	let checkbox = mainElem.querySelector('ul.checkboxes [role="checkbox"]');
+	new Checkbox(checkbox);
+	let proceedButton = mainElem.querySelector('ul.checkboxes button');
+	let nextPageUrl = getUrlOfNextPageBasedOnCurPage();
+	const onClickProceedButton = () => { window.location.href = nextPageUrl; };
+	proceedButton.addEventListener('click', onClickProceedButton);
+}
+
 function createOptionElem(visibleLabel_, accessibleName_, value_) {
 	let r = document.createElement("option");
 	r.innerText = visibleLabel_;
@@ -117,14 +137,6 @@ function addSelectToPage(visibleLabel_, accessibleName_) {
 
 
 }
-
-function addCheckboxToPage(visibleLabel_, accessibleName_) {
-	let checkboxes = document.querySelectorAll('.checkboxes [role="checkbox"]');
-	for (let i = 0; i < checkboxes.length; i++) {
-		new Checkbox(checkboxes[i]);
-	}
-}
-
 
 
 
