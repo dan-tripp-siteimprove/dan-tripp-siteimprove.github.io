@@ -31,11 +31,5 @@ EOF
 	exit 1
 fi
 
-ls row*.html > page-list.txt 
-
-echo 'page list now:'
-cat page-list.txt 
-echo
-echo 'ls:'
-ls -l *.html
+ls row*.html | sort -V > page-list.txt 
 

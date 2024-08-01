@@ -9,10 +9,16 @@
 	<script>
 
 window.addEventListener("load", async function(event) {
-	let url = await getUrlOfRandomizedFirstPage();
-	let beginLink = document.querySelector("#begin_link");
-	beginLink.href = url;
-	beginLink.textContent = 'Begin the tests';
+	let beginLinkRandomUrl = await getUrlOfRandomizedFirstPage();
+	let beginLinkRandom = document.querySelector("#begin_link_random");
+	beginLinkRandom.href = beginLinkRandomUrl;
+	beginLinkRandom.textContent = 'Begin the tests in random order';
+
+	let beginLinkPredictableUrl = await getUrlOfPredictableFirstPage();
+	let beginLinkPredictable = document.querySelector("#begin_link_predictable");
+	beginLinkPredictable.href = beginLinkPredictableUrl;
+	beginLinkPredictable.textContent = 'Begin the tests in predictable order';
+
 });
 
 	</script>
@@ -32,8 +38,13 @@ window.addEventListener("load", async function(event) {
 (Background info: <a href="https://docs.google.com/spreadsheets/d/1xfVuzokMBN9-3oxtdAXjDZ6NHfuydSeaoRTjDC1iLQI/edit#gid=0">spreadsheet</a>)
 </p>
 
-<a id="begin_link"></a>
+<p>
+	<a id="begin_link_random"></a>
+</p>
 
+<p>
+	<a id="begin_link_predictable"></a>
+</p>
 
 
 </main>

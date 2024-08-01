@@ -18,8 +18,15 @@ function shuffle(array_) {
   }
 }
 	
-
 async function getUrlOfRandomizedFirstPage() {
+	return await getUrlOfFirstPage(true);
+}
+
+async function getUrlOfPredictableFirstPage() {
+	return await getUrlOfFirstPage(false);
+}
+
+async function getUrlOfFirstPage(randomize_) {
 	const baseUrl = window.location.href;
 	const fileUrl = new URL("page-list.txt", baseUrl).href;
 	let response = await fetch(fileUrl);
@@ -28,7 +35,7 @@ async function getUrlOfRandomizedFirstPage() {
 	}
 	let responseText = await response.text();
 	let pages = responseText.split(/\s+/).filter(item => item);
-	shuffle(pages);
+	if(randomize_) shuffle(pages);
 	let urlOfNextPage = getUrlOfNextPage(pages);
 	return urlOfNextPage;
 }
