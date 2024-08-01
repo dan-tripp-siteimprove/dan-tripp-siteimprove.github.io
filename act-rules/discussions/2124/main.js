@@ -117,23 +117,23 @@ function addSelectToPage(visibleLabel_, accessibleName_) {
 	selectElem.appendChild(createOptionElem('Option C (does nothing)', 'Option C (does nothing)', 
 		"c"));
 
-	let submitButtonElem = document.createElement("button");
-	submitButtonElem.innerText = "Submit";
+	let proceedButtonElem = document.createElement("button");
+	proceedButtonElem.innerText = "Proceed";
 
-	function updateSubmitButtonEnabledness() {
-		submitButtonElem.disabled = selectElem.value !== 'b';
+	function updateProceedButtonEnabledness() {
+		proceedButtonElem.disabled = selectElem.value !== 'b';
 	}
-	updateSubmitButtonEnabledness();
-	selectElem.addEventListener('change', updateSubmitButtonEnabledness);
+	updateProceedButtonEnabledness();
+	selectElem.addEventListener('change', updateProceedButtonEnabledness);
 
 	let nextPageUrl = getUrlOfNextPageBasedOnCurPage();
-	const onSubmitButtonClick = () => { window.location.href = nextPageUrl; };
-	submitButtonElem.addEventListener('click', onSubmitButtonClick);
+	const onProceedButtonClick = () => { window.location.href = nextPageUrl; };
+	proceedButtonElem.addEventListener('click', onProceedButtonClick);
 
 	let mainElem = document.querySelector('body > main');
 	mainElem.appendChild(selectElem);
 	mainElem.appendChild(document.createTextNode(" "));
-	mainElem.appendChild(submitButtonElem);
+	mainElem.appendChild(proceedButtonElem);
 
 
 }
