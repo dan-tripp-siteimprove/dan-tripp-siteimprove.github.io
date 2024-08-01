@@ -47,7 +47,7 @@ summary:hover , summary:focus  {
     background-color: #777; 
 }
 
-div[role="checkbox"][aria-checked="false"] + button.go-button-after-aria-checkbox {
+div[role="checkbox"][aria-checked="false"] + button.proceed-button-after-aria-checkbox {
 	display: none; 
 }
 

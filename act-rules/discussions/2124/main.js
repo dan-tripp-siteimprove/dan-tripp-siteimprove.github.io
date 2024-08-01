@@ -106,7 +106,7 @@ function addAriaCheckboxToPage(visibleLabel_, accessibleName_) {
 				<div aria-label="${accessibleName_}" role="checkbox" aria-checked="false" tabindex="0">
 					${visibleLabel_}
 				</div>
-				<button class="go-button-after-aria-checkbox">Proceed</button>
+				<button class="proceed-button-after-aria-checkbox">Proceed</button>
 			</li>
 		</ul>
 		`;
