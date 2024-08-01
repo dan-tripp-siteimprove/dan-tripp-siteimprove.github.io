@@ -1,3 +1,7 @@
+row-11-option.html
+row-13-radio.html
+row-14-radio.html
+row-15-radio.html
 row-2-button.html
 row-2-checkbox.html
 row-2-link.html
@@ -5,3 +9,7 @@ row-2-option.html
 row-3-button.html
 row-4-link.html
 row-5-option.html
+row-6-button.html
+row-7-link.html
+row-8-button.html
+row-9-link.html
