@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>spreadsheet row 2 - button</title>
+	<title>spreadsheet row 6 - button</title>
 	<link rel="stylesheet" href="main.css">
 	<script src="main.js"></script>
 	<script>
 
 window.addEventListener("load", async function(event) {
-	addButtonToPage('go to next page', 'go to next page');
+	let buttonElem = addButtonToPage('go to next page', 'go to next page');
+	buttonElem.setAttribute('role', 'link');
 	addSkipButtonToPage();
 });
 
@@ -24,7 +25,7 @@ window.addEventListener("load", async function(event) {
 <main>
 
 
-<h1>spreadsheet row 2 - button</h1>
+<h1>spreadsheet row 6 - button</h1>
 
 
 
