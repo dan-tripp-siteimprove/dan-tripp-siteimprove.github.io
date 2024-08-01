@@ -138,6 +138,18 @@ function addSelectToPage(visibleLabel_, accessibleName_) {
 
 }
 
+function addSkipButtonToPage() {
+	let buttonElem = document.createElement("button");
+	buttonElem.innerText = "Skip";
+	let divElem = document.createElement("div");
+	divElem.appendChild(buttonElem);
+	document.querySelector('body > main').appendChild(divElem);
+	let nextPageUrl = getUrlOfNextPageBasedOnCurPage();
+	const onClick = () => { window.location.href = nextPageUrl; };
+	buttonElem.addEventListener('click', onClick);
+}	
+
+
 
 
 
