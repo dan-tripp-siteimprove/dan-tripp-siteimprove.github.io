@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>spreadsheet row 18</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="main.js"></script>
+	<script>
+
+function addOurAriaCheckboxesToPage(wrapInFieldset_) {
+	let mainElem = document.querySelector('body > main');
+	let newHtmlStr = `<ul class="checkboxes">
+			<li>
+				<div aria-label="other checkbox 1" role="checkbox" aria-checked="false" tabindex="0">
+					
+				</div>
+			</li>
+			<li>
+				<div aria-label="go to next page" role="checkbox" aria-checked="false" tabindex="0">
+					
+				</div>
+				<button class="proceed-button-after-aria-checkbox">Proceed</button>
+			</li>
+			<li>
+				<div aria-label="other checkbox 2" role="checkbox" aria-checked="false" tabindex="0">
+					
+				</div>
+			</li>
+		</ul>`;
+	if(wrapInFieldset_) {
+		newHtmlStr = `<fieldset><legend>Checkboxes</legend>${newHtmlStr}</fieldset>`;
+	}
+	mainElem.innerHTML += newHtmlStr;
+	for (let checkbox of mainElem.querySelectorAll('ul.checkboxes [role="checkbox"]')) {
+		new Checkbox(checkbox);
+	}
+	let proceedButton = mainElem.querySelector('ul.checkboxes button');
+	let nextPageUrl = getUrlOfNextPageBasedOnCurPage();
+	const onClickProceedButton = () => { window.location.href = nextPageUrl; };
+	proceedButton.addEventListener('click', onClickProceedButton);
+}
+
+
+window.addEventListener("load", async function(event) {
+	let wrapInFieldset = true;
+	addOurAriaCheckboxesToPage(wrapInFieldset);
+	addSkipButtonToPage();
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<h1>spreadsheet row 18</h1>
+
+
+
+</main>
+
+</body>
+
+</html>

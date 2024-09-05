@@ -13,3 +13,15 @@ row-11-option.html
 row-13-radio.html
 row-14-radio.html
 row-15-radio.html
+row-16.html
+row-17.html
+row-18.html
+row-19-link.html
+row-20-button.html
+row-21-link.html
+row-22-checkbox.html
+row-23-checkbox.html
+row-24-checkbox.html
+row-25.html
+row-26.html
+row-27.html

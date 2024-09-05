@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>spreadsheet row 27</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="main.js"></script>
+	<script>
+
+function makeButton(visibleLabel_, accessibleName_) {
+	let buttonElem = document.createElement("button");
+	buttonElem.innerText = visibleLabel_;
+	buttonElem.setAttribute('aria-label', accessibleName_);
+	return buttonElem;
+}
+
+window.addEventListener("load", async function(event) {
+	let main = document.querySelector('body > main');
+
+	let button1 = makeButton('go to next page', 'go to next page');
+	main.appendChild(button1);
+	let nextPageUrl = getUrlOfNextPageBasedOnCurPage();
+	const onClick = () => { window.location.href = nextPageUrl; };
+	button1.addEventListener('click', onClick);
+
+	button1.insertAdjacentElement('afterend', document.createElement('br'));
+	button1.insertAdjacentText('afterend', ' <-- this button works');
+
+	let button2 = makeButton('go to next page', 'go to next page');
+	main.appendChild(button2);
+
+	button2.insertAdjacentElement('afterend', document.createElement('br'));
+	button2.insertAdjacentText('afterend', ' <-- this button does not work');
+
+	addSkipButtonToPage();
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<h1>spreadsheet row 27</h1>
+
+
+
+</main>
+
+</body>
+
+</html>

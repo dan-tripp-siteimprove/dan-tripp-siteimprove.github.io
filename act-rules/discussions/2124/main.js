@@ -125,6 +125,39 @@ function addAriaCheckboxToPage(visibleLabel_, accessibleName_) {
 	proceedButton.addEventListener('click', onClickProceedButton);
 }
 
+function addAriaCheckboxesToPage(wrapInFieldset_) {
+	let mainElem = document.querySelector('body > main');
+	let newHtmlStr = `<ul class="checkboxes">
+			<li>
+				<div aria-label="other checkbox 1" role="checkbox" aria-checked="false" tabindex="0">
+					other checkbox 1
+				</div>
+			</li>
+			<li>
+				<div aria-label="go to next page" role="checkbox" aria-checked="false" tabindex="0">
+					go to next page
+				</div>
+				<button class="proceed-button-after-aria-checkbox">Proceed</button>
+			</li>
+			<li>
+				<div aria-label="other checkbox 2" role="checkbox" aria-checked="false" tabindex="0">
+					other checkbox 2
+				</div>
+			</li>
+		</ul>`;
+	if(wrapInFieldset_) {
+		newHtmlStr = `<fieldset><legend>Checkboxes</legend>${newHtmlStr}</fieldset>`;
+	}
+	mainElem.innerHTML += newHtmlStr;
+	for (let checkbox of mainElem.querySelectorAll('ul.checkboxes [role="checkbox"]')) {
+		new Checkbox(checkbox);
+	}
+	let proceedButton = mainElem.querySelector('ul.checkboxes button');
+	let nextPageUrl = getUrlOfNextPageBasedOnCurPage();
+	const onClickProceedButton = () => { window.location.href = nextPageUrl; };
+	proceedButton.addEventListener('click', onClickProceedButton);
+}
+
 function createOptionElem(visibleLabel_, accessibleName_, value_) {
 	let r = document.createElement("option");
 	r.innerText = visibleLabel_;
