@@ -99,16 +99,16 @@ window.addEventListener("load", function(event) {
 </nav>
 
 <p>
-This page demonstrates a way of "marking text as decorative".  There are two parts to this "marking": a) exempting that text from contrast checks, and b) preventing that text from being announced by screen readers.
+The breadcrumbs at the top of this page demonstrate a way of "marking text as decorative".  There are two parts to this "marking": a) exempting that text from contrast checks, and b) preventing that text from being announced by screen readers.
 </p>
 <p>
-At the top of this page, there are breadcrumbs.  Breadcrumb separators (i.e. the forward slashes) are a common situation where page authors want to "mark text as decorative".  The <a href="https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/">APG</a> does this another way: by adding each forward slash not as a plain slash character, but rather as a 1px CSS vertical border which is then rotated 15 degrees to the right.  This APG technique accomplishes (a) and (b) just fine.  But I think that it's unnecessarily weird.  Also, it limits the kind of separator characters that we can use.  I might want to use double slashes, or bullet points, or emojis.
+Breadcrumb separators (i.e. the forward slashes) are a common situation where page authors want to "mark text as decorative".  The <a href="https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/">APG</a> does this another way: by adding each forward slash not as a plain slash character, but rather as a 1px CSS vertical border which is then rotated 15 degrees to the right.  This APG technique accomplishes (a) and (b) just fine.  But I think that it's unnecessarily weird.  Also, it limits the kind of separator characters that we can use.  I might want to use double slashes, or bullet points, or emojis.
 </p>
 <p>
-This page accomplishes (a) by adding the text via CSS pseudo-elements, rather than via straightforward text nodes in the DOM.  Why is this necessary?  Some people think that if you put aria-hidden on some text, that should "mark it as decorative" enough that the contrast checks won't check it.  That is incorrect, because the contrast checks don't pay any attention to aria-hidden.  The contrast checks are justified in doing this, because contrast is a visual thing, so the accessibility tree isn't involved in the user's experience, so (the argument goes) the accessibility tree shouldn't be involved in the checking of it.
+This page's breadcrumbs accomplish (a) by adding the forward slash characters via CSS pseudo-elements, rather than via straightforward text nodes in the DOM.  Why is this necessary?  Some people think that if you put aria-hidden on some text, that should "mark it as decorative" enough that the contrast checks won't check it.  That is incorrect, because the contrast checks don't pay any attention to aria-hidden.  The contrast checks are justified in doing this, because contrast is a visual thing, so the accessibility tree isn't involved in the user's experience, so (the argument goes) the accessibility tree shouldn't be involved in the checking of contrast.  The contrast checks don't check text added via CSS pseudo-elements. And it's not just Siteimprove/alfa.  I tested this with Deque's axe and TPGi ARC too.  If, one day, the tools decide to start checking the contrast of text added via CSS pseudo-elements, then this technique will stop working.
 </p>
 <p>
-This page accomplishes (b) with aria-hidden.  No surprises there.
+This page's breadcrumbs accomplish (b) with aria-hidden.  No surprises there.
 </p>
 <p>
 There is another common situation where page authors want to "mark text as decorative": background text AKA watermark text.  Like if you have a word like "SAMPLE" in big letters (and poor contrast) lurking behind the regular content of your page.  This demo page doesn't show that situation, but I think that this same technique would work for it.
