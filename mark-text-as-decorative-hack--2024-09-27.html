@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>demo page - marking text as decorative</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+nav.breadcrumb {
+  padding: 0.8em 1em;
+  border: 1px solid hsl(0deg 0% 90%);
+  border-radius: 4px;
+  background: hsl(300deg 14% 97%);
+}
+
+nav.breadcrumb ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+nav.breadcrumb li {
+  display: inline;
+}
+
+/*
+nav.breadcrumb li + li::before {
+  display: inline-block;
+  margin: 0 0.25em;
+  transform: rotate(15deg);
+  border-right: 0.1em solid currentcolor;
+  height: 0.8em;
+  content: "";
+}
+*/
+
+.breadcrumb-separator::before {
+	content: "/";
+	color: #ccc; 
+}
+
+nav.breadcrumb [aria-current="page"] {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.breadcrumb-separator-simple {
+	color: #ccc; 
+}
+
+
+
+.watermark-container {
+	position: relative;
+	padding: 50px;
+	margin: 50px auto;
+	width: 80%;
+	border: 1px solid #ddd;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	overflow: hidden; 
+}
+
+.watermark-container .watermark-background-text::before {
+	content: 'sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample sample';
+	position: absolute;
+	top: -50px; 
+	left: -100px; 
+	font-size: 48px;
+	color: lightgrey; 
+	transform: rotate(-15deg); 
+	opacity: 0.2;
+	z-index: -1; 
+}
+
+.watermark-container p {
+	line-height: 1.6;
+	color: #333;
+	z-index: 1; 
+	position: relative; 
+}
+
+
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+	<ol>
+		<li>
+			<a href="#">Home</a>
+			<span class="breadcrumb-separator" aria-hidden="true"></span>
+		</li>
+		<li>
+			<a href="#">Department XYZ</a>
+			<span class="breadcrumb-separator" aria-hidden="true"></span>
+		</li>
+		<li>
+			<a href="#">Staff</a>
+			<span class="breadcrumb-separator" aria-hidden="true"></span>
+		</li>
+		<li>
+			<a href="" aria-current="page">Person ABC</a>
+		</li>
+	</ol>
+</nav>
+
+<p><b>Warning:</b> the "technique" described on this page is probably more of a "hack" than a "technique".  As Jean-Yves wrote in <a href="https://siteimprove.slack.com/archives/CCHHYHFGT/p1727682072320979?thread_ts=1727469282.960819&cid=CCHHYHFGT">this slack thread</a>: "I would say that the lack of checking pseudo-element is more a technical oversight than a design choice from the tools".  Also: "So, I'd be a bit wary of spreading this technique too much as it is mostly a hack around existing tools."   So this "technique" is likely to stop working at some point in the next few years.  So to recommend this technique to customers would be risky at best.   (Written 2024-09-30.)</p>
+
+<hr>
+
+<p>
+The breadcrumbs at the top of this page demonstrate a way of "marking text as decorative".  There are two parts to this "marking": a) exempting that text from contrast checks, and b) preventing that text from being announced by screen readers.
+</p>
+<p>
+Breadcrumb separators (i.e. the forward slashes) are a common situation where page authors want to "mark text as decorative".  The <a href="https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/">APG</a> does this another way: by adding each forward slash not as a plain slash character, but rather as a 1px CSS vertical border which is then rotated 15 degrees to the right.  This APG technique accomplishes (a) and (b) just fine.  But I think that it's unnecessarily weird.  Also, it limits the kind of separator characters that we can use.  I might want to use double slashes, or bullet points, or emojis.
+</p>
+<p>
+This page's breadcrumbs accomplish (a) by adding the forward slash characters via CSS pseudo-elements, rather than via straightforward text nodes in the DOM.  This works because the contrast checks don't check text added via CSS pseudo-elements.
+<p>Some people think that putting aria-hidden on some text should "mark it as decorative" enough that the contrast checks won't check it.  That is incorrect, because the contrast checks don't pay any attention to aria-hidden.  The contrast checks are justified in doing this, because contrast is a visual thing, so the accessibility tree isn't involved in the user's experience, so (the argument goes) the accessibility tree shouldn't be involved in the checking of contrast.
+</p>
+<p>Regarding the contrast checks not checking text added via CSS pseudo-elements: it's not just Siteimprove/alfa.  I tested this with Deque's axe and TPGi ARC too.  If, one day, the tools decide to start checking the contrast of text added via CSS pseudo-elements, then this technique will stop working.
+</p>
+<p>
+This page's breadcrumbs accomplish (b) with aria-hidden.  No surprises there.
+</p>
+
+
+
+
+
+
+<div class="watermark-container">
+	<span class="watermark-background-text" aria-hidden="true"></span>
+	<p>
+		Here is another common situation where page authors want to "mark text as decorative": background text AKA watermark text.  By "watermark" I mean: the word "sample" which is behind this paragraph.  This "watermark" text uses the same technique of "marking text as decorative" as the breadcrumbs on this page: that is, CSS pseudo-elements and aria-hidden.  Again, this technique "works" as of 2024-09-30, but in the future: who knows.  ("Works" means that it accomplishes (a) and (b) above - particularly (a), because that is the brittle one.)
+	</p>
+	<p>
+		This "watermark" paragraph that you are reading would be a good example to re-test with various tools in 2025, 2026, and beyond, to see if they are checking contrast on text added via CSS pseudo-elements.  This watermark example would be more useful to re-test than the breadcrumbs-via-CSS-pseudo-elements example, because the WCAG contrast SCs cover only "text" where <a href="https://www.w3.org/TR/WCAG21/#dfn-text">"text" is defined as</a> "sequence of characters that can be programmatically determined, where the sequence is expressing something in human language", and that - according to the judgement of most humans  - would exclude breadcrumb separators.  To get the automated tools to get this judgement right is another matter.  The tools can have heuristics to identify something that is not human language (eg. a breadcrumb separator) and exclude it from their contrast check.  Those heuristics might get better in the coming years.  It seems more likely that the heuristics will learn to recognize breadcrumb separators than to recognize watermark text.  But who knows what the future will hold.
+	</p>
+</div>
+
+
+<p>For completeness, here are some "simple" breadcrumb separators: they are simple text in the DOM (not added via CSS pseudo-elements).  This will also be a good example to re-test in the coming years.  If tools exempt these simple separators from contrast checks, it must be because of their heuristics for judging non-text content.</p>
+
+</p>
+<a href="#">Home</a>
+<span class="breadcrumb-separator-simple" aria-hidden="true">/</span>
+<a href="#">Department XYZ</a>
+<span class="breadcrumb-separator-simple" aria-hidden="true">/</span>
+<a href="#">Staff</a>
+<span class="breadcrumb-separator-simple" aria-hidden="true">/</span>
+<a href="" aria-current="page">Person ABC</a>
+<br>
+<br>
+<span style="color: #ccc;">This is a control case: simple bad contrast.  No tricks.</span>
+
+
+
+<p>Tool test results 2024-09-30:<br>
+Siteimprove's alfa fails these simple "/" separators under its contrast enhanced rule (and not under its contrsat minimum rule - I don't understand that part.)<br>
+Deque's axe: passes these simple "/" separators.<br>
+TPGi's ARC: fails these simple "/" separators under its contrast minimum rule.<br>
+WAVE: fails these simple "/" separators under its contrast minimum rule.<br>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+</main>
+
+
+
+
+
+</body>
+
+</html>
