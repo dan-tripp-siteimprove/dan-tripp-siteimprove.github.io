@@ -2,7 +2,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Test Page - DevTools talk - AccessU 2024</title>
+<title>Test Page - Tech Talk November 2024</title>
 <style>
   /* Basic styling; you'll want to expand this with your own designs */
   body { font-family: Arial, sans-serif; margin: 0; padding: 0; font-size:1.2em;}
@@ -24,7 +24,8 @@
   }
 	
 	.disabled {
-		color: #aaa;
+		color: #555;
+		font-style: italic; 
 	}
 	
 	.fields_instructions_1 {
@@ -35,11 +36,11 @@
 		background-color: #55f; 
 	}
 		
-	table {
+	.nicetable {
 		border-collapse: collapse;
 	}
 
-	table td, table th {
+	.nicetable td, .nicetable th {
 		border: 1px solid black;
 		padding: 8px;
 	}
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <a class="logo" href="duck_home.html">
     <img src="duck.png">
   </a>
-  <h2>AccessU 2024 Test Page</h2>
+  <h2>Test Page - Tech Talk November 2024</h2>
 </div>
 
 <div class="nav">
@@ -121,8 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <strong>Permissions</strong>
   <fieldset>
-    <label><input type="radio" name="permission">Admin</label>
-    <label><input type="radio" name="permission">User</label>
+    <label><input type="radio" name="permission" role="checkbox">Admin</label>
+    <label><input type="radio" name="permission" role="checkbox">User</label>
   </fieldset>
 
   <button type="submit">
@@ -131,9 +132,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <path d="M18.984 3q0.797 0 1.406 0.609t0.609 1.406v13.969q0 0.797-0.609 1.406t-1.406 0.609h-13.969q-0.844 0-1.43-0.586t-0.586-1.43v-3.984h2.016v3.984h13.969v-13.969h-13.969v3.984h-2.016v-3.984q0-0.844 0.586-1.43t1.43-0.586h13.969zM10.078 15.609l2.578-2.625h-9.656v-1.969h9.656l-2.578-2.625 1.406-1.406 5.016 5.016-5.016 5.016z"></path>
       </svg>
     </button>
-		
-	<a href="#" class="disabled" onclick="return false;" >User Directory (coming soon)</a>
 </form>
+	
+<a href="#" class="disabled" onclick="return false;" >User Directory (coming soon)</a>&nbsp;&nbsp;&nbsp;<button role="none" class="disabled" style="font-style: normal">&#9432;</button> <span class="disabled">(← This "help" button is also coming soon)</span>
+
 
 </div>
 
@@ -152,16 +154,16 @@ document.addEventListener("DOMContentLoaded", () => {
 <h4>Product Details</h4>
 
   <div role="tablist" class="tabs">
-    <button class="tabbutton active" onclick="openTab(event, &#39;Tab1&#39;)">Product 1</button>
-    <button class="tabbutton" onclick="openTab(event, &#39;Tab2&#39;)">Product 2</button>
-    <button class="tabbutton" onclick="openTab(event, &#39;Tab3&#39;)">Product 3</button>
+    <button role="tab" class="tabbutton active" onclick="openTab(event, &#39;Tab1&#39;)">Product 1</button>
+    <button role="tab" class="tabbutton" onclick="openTab(event, &#39;Tab2&#39;)">Product 2</button>
+    <button role="tab" class="tabbutton" onclick="openTab(event, &#39;Tab3&#39;)">Product 3</button>
   </div>
 
   <div role="tabpanel" id="Tab1" class="tabpanel" style="display: block;">
     <h3>Product 1</h3>
     <p>Product 1 has a good safety record, as shown here: <a class="product_link" href="safety-records.html">Safety Records 1999-2024</a>.</p>
 		<p>
-		<img src="product1.png">
+		<img src="product1.png" role="none" tabindex="0">
 		</p>
 		<p style="line-height: 1.3 !important;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
@@ -173,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <div role="tabpanel" id="Tab3" class="tabpanel" style="display: none;">
     <h3>Product 3</h3>
-    <p>Product 3 is awful.</p>
+    <p role="warning">Product 3 is awful.</p>
 
   </div>
 
@@ -187,24 +189,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <a href="store_hours.html"></a>
 
-<table>
-	<tr><th scope="col">Mon-Fri</th><td>8:00 AM - 5:00 PM</td></tr>
-	<tr><th scope="col">Sat-Sun</th><td>10:00 AM - 2:00 PM</td></tr>
+<table class="nicetable">
+	<tr><td></td><th scope="col">Downtown location</th><th scope="col">Uptown location</th></tr>
+	<tr><th scope="col">Mon-Fri</th><td>8:00 AM - 5:00 PM</td><td>9:00 AM - 5:00 PM</td></tr>
+	<tr><th scope="col">Sat-Sun</th><td>10:00 AM - 2:00 PM</td><td>Closed</td></tr>
+	<tr><th scope="col">Holidays</th><td>CLOSED!</td><td>CLOSED!</td></tr>
 </table>
 
 <h2>Product Recalls</h2>
-All current product recalls will be listed here.  See also: "Safety Advisories". 
+<p>All current product recalls will be listed here.  <a href="#" aria-label="Read&nbsp;More About Recalls">Learn&nbsp;More</a>.</p>
 <ul class="product_recalls"></ul>
 
-<h2>Product Safety Advisories</h2>
+<h2>Product Gotchas</h2>
 
-<ul>
-All current safety advisories will be listed here.  These advisories are not as severe as "Product Recalls". 
-</ul>
+All known gotchas will be listed here.  Gotchas are not as severe as Recalls.  <a href="#" aria-label="Learn&amp;nbsp;More About Gotchas">Learn&nbsp;More</a>.
+
 
 
 <h2></h2>
 
+
+
+</div>
 
 </main>
 
@@ -214,20 +220,31 @@ All current safety advisories will be listed here.  These advisories are not as 
 
 	<li><a target="_blank" href="privacy.html" aria-label="Cookies Policy (link opens in a new tab)">Privacy Policy</a></li>
 	<li><a href="careers.html">Careers</a></li>
-	</li>
 	<li><a href="https://validator.w3.org/">This page was tested with the W3C's HTML validation service</a><img alt="w3c-no-bars.svg" src="w3c-no-bars.svg">
 	</li>
+
+
+</ul>
 
 <p>
 This page was made with <img src="heart.png" alt="love"> in <a href="https://notepad-plus-plus.org/">Notepad++</a>
 </p>
 
-</ul>
+<table role="none">
+	<tbody>
+		<tr>
+			<th><i>©</i></th>
+			<th><i>2024</i></th>
+			<th><i>Siteimprove </i></th>
+		</tr>
+		<tr>
+			<td><i>All</i></td>
+			<td><i>rights</i></td>
+			<td><i>reserved</i></td>
+		</tr> 
+	</tbody>
+</table>
 
 
-
-</div>
-
-
-
-</body></html>
+</body>
+</html>
