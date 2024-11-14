@@ -52,6 +52,15 @@
 	a.product_link:focus {
 			text-decoration: underline;
 	}
+		
+	.visually-hidden:not(:focus):not(:active) {
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+	}
 	
 </style>
 
@@ -87,8 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <header>
 
 <div class="header">
-  <a class="logo" href="duck_home.html">
-    <img src="duck.png">
+  <a class="logo" href="duck_central.html" id="parent_company_home_link">
+    <img src="duck.png" alt="Duck Products Limited">
   </a>
   <h2>Test Page - Tech Talk November 2024</h2>
 </div>
@@ -110,14 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
 	<p class="fields_instructions_1">Fill out your details below.</p>
 	<p class="fields_instructions_2">All fields are mandatory.</p>
   <div>
-    <label>Name</label>
-    <input type="text" name="name">
+		<label id="username-label">Username:</label> * 
+		<input 
+				type="text" 
+				id="username"
+				aria-label="User login name"
+				placeholder="Enter your new username"
+				title="Enter a unique username"
+				aria-labelledby="username-label another-label"
+				size="40" 
+				value="">
+		<span id="another-label" class="visually-hidden">This is a required field</span>
   </div>
   
 
   <div>
     <label>Email</label>
-    <input type="email" name="email">
+    <input type="email" name="email" placeholder="name@example.com">
   </div>
 
   <strong>Permissions</strong>
@@ -125,6 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <label><input type="radio" name="permission" role="checkbox">Admin</label>
     <label><input type="radio" name="permission" role="checkbox">User</label>
   </fieldset>
+		
+
+	<br>
+
 
   <button type="submit">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -163,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <h3>Product 1</h3>
     <p>Product 1 has a good safety record, as shown here: <a class="product_link" href="safety-records.html">Safety Records 1999-2024</a>.</p>
 		<p>
-		<img src="product1.png" role="none" tabindex="0">
+		<img src="product1.png" alt="stainless steel die tap set, 6 pieces">
 		</p>
 		<p style="line-height: 1.3 !important;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
@@ -220,14 +242,15 @@ All known gotchas will be listed here.  Gotchas are not as severe as Recalls.  <
 
 	<li><a target="_blank" href="privacy.html" aria-label="Cookies Policy (link opens in a new tab)">Privacy Policy</a></li>
 	<li><a href="careers.html">Careers</a></li>
+	<li><a href="corporate.html" aria-labelledby="parent_company_home_link">Corporate</a></li>
 	<li><a href="https://validator.w3.org/">This page was tested with the W3C's HTML validation service</a><img alt="w3c-no-bars.svg" src="w3c-no-bars.svg">
 	</li>
 
 
 </ul>
 
-<p>
-This page was made with <img src="heart.png" alt="love"> in <a href="https://notepad-plus-plus.org/">Notepad++</a>
+<p aria-hidden="true">
+This page was made with <img src="heart.png" aria-hidden="true"> in <a aria-hidden="true" tabindex="-1" href="https://notepad-plus-plus.org/">Notepad++</a>
 </p>
 
 <table role="none">
@@ -244,6 +267,26 @@ This page was made with <img src="heart.png" alt="love"> in <a href="https://not
 		</tr> 
 	</tbody>
 </table>
+
+
+
+
+<!-- This is some old dead code.  Someone should delete this. --> 
+<div style="display: none">
+  <div>
+		<label id="username-label">Username:</label> * 
+		<input 
+				type="text" 
+				id="username"
+				aria-label="User login name"
+				placeholder="Enter your new username"
+				title="Enter a unique username"
+				aria-labelledby="username-label another-label"
+				size="40" 
+				value="">
+		<span id="another-label" class="visually-hidden">This is a required field</span>
+  </div>
+</div>
 
 
 </body>
