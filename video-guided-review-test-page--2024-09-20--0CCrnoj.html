@@ -46,9 +46,9 @@ window.addEventListener("load", function(event) {
 <br>
 <br>
 <br>
-<video controls width="250">
+<video controls width="250" autoplay  muted>
   <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
-	<track kind="captions" src="captions.vtt" srclang="en" />
+	<track kind="captions" src="captions.vtt" srclang="en" default/>
 
 	<!--
   <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
@@ -74,13 +74,19 @@ this is a visible transcript, which will pass R33.
 </p>
 
 <a href="transcript.html">
-This is a link to a visible transcript, which will, I think, pass R33. 
+This is a link to a visible transcript, which will pass R33. 
 </a>
+
+<div>
+	<p class="visually-hidden">
+	this is a visually-hidden transcript, which isn't (as of 2024-11-18) supposed to pass R33.  but since it's in a &lt;div&gt;, maybe if you point the guided review to the &lt;div&gt;, it will trick the guided review.  to be tested. 
+	</p>
+</div>
 
 <br>
 <br>
 <details>
-	<summary>click to reveal transcript...</summary>
+	<summary>click to reveal a transcript...</summary>
 	<p>This is a transcript inside of a &lt;details&gt; element. </p>
 </details>
 
@@ -88,7 +94,7 @@ This is a link to a visible transcript, which will, I think, pass R33.
 <br>
 <br>
 <details>
-	<summary>click to reveal control case...</summary>
+	<summary>click to reveal a control case...</summary>
 	<p>Here ...<a href="#"></a> is a failing link inside of a &lt;details&gt; element.  I don't understand the behaviour here b/c (when this disclosure is closed) the alfa browser extension will fail the link inside of it and the chrome a11y tree will not show the contents. </p>
 </details>
 
