@@ -3,9 +3,10 @@
 		- we found no way to get the screen reader to announce the iframe title (/ acc name) in spanish. 
 			- this happened even when the parent's <html> element was lang=es.  we find this strange. 
 			- we tried title, aria-label, aria-labelledby 
-		- <iframe lang="es"> had no effect.  i.e. did not change screen reader's pronounciation. 
+		- <iframe lang="es"> had no effect.  i.e. did not change screen reader's pronounciation, of either the iframe title or the iframe content.
 		- in child: <html lang="es"> and <span lang="es"> worked. 
 		- when parent has lang=es and child has nothing, lang=es was not inherited.  
+		- tested NVDA only.  not jaws or anything else.
 		- results were the same in chrome and firefox, for all of the above points. 
 	- translation 
 		- iframe child not translated by either chrome nor firefox. 
