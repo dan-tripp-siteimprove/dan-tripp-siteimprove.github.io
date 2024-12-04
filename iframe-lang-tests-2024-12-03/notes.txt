@@ -1,5 +1,6 @@
 - findings, 2024-12-03:
 	- screen reader 
+		- https://dan-tripp-siteimprove.github.io/iframe-lang-tests-2024-12-03/parent-for-screen-reader-tests.html 
 		- we found no way to get the screen reader to announce the iframe title (/ acc name) in spanish. 
 			- this happened even when the parent's <html> element was lang=es.  we find this strange. 
 			- we tried title, aria-label, aria-labelledby 
@@ -9,6 +10,7 @@
 		- tested NVDA only.  not jaws or anything else.
 		- results were the same in chrome and firefox, for all of the above points. 
 	- translation 
+		- https://dan-tripp-siteimprove.github.io/iframe-lang-tests-2024-12-03/parent-for-translation-tests.html 
 		- iframe child not translated by either chrome nor firefox. 
 
 
