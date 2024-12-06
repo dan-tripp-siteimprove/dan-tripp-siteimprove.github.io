@@ -19,7 +19,7 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
-a {
+a.image-via-css-background {
 	background-image: url("duck.png");
 	display: inline-block; 
 	width: 100px; 
@@ -49,14 +49,26 @@ window.addEventListener("load", function(event) {
 
 <h2>first h2 </h2>
 
-<a href="#" aria-label="acc name via aria-label">
-	<img src="ignored.png" style="visibility: hidden"} >
+<a href="#" class="image-via-css-background" aria-label="acc name via aria-label">
+	<img src="ignored.png" style="visibility: hidden" >
 </a>
 
 <h2>second h2 </h2>
 
-<a href="#" title="acc name via title">
-	<img src="ignored.png" style="visibility: hidden"} >
+<a href="#" class="image-via-css-background" title="acc name via title">
+	<img src="ignored.png" style="visibility: hidden" >
+</a>
+
+<h2>third h2 </h2>
+
+<a href="#" aria-label="acc name via aria-label">
+	<img alt="" src="duck.png"  style="width: 50px; height: 50px;" >
+</a>
+
+<h2>fourth h2 </h2>
+
+<a href="#">
+	<img alt="acc name via img alt attribute" src="duck.png"  style="width: 50px; height: 50px;" >
 </a>
 
 
