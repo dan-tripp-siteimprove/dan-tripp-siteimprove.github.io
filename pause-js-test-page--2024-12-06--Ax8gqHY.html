@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+#target {
+	width: 100px;
+	height: 100px;
+	background-color: red; /* Initial color */
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+	const target = document.getElementById('target');
+	let isRed = true;
+
+	setInterval(() => {
+		if (isRed) {
+			target.style.backgroundColor = 'white';
+		} else {
+			target.style.backgroundColor = 'red';
+		}
+		isRed = !isRed;
+	}, 300); 
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+<p id="target">text text text 
+</p>
+
+
+
+</main>
+
+</body>
+
+</html>
