@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+<a href="#target">go to target</a><br>
+<a href="#">this is a link that does nothing</a><br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- 
+
+I think that the browser maintains a concept of focus that includes information beyond document.activeElement.  
+
+I say that because when #target has no tabindex the jump link scroll to it and document.activeElement will be <body> and then if you press tab then focus will go to "link 1".  so it's like the browser is maintaining a kind of 'virtual focus' and puts it on #target even when document.activeElement is on <body>.
+
+I figure this is why jump links will work and give good keyboard a11y even when the target has no tabindex.   SR reading cursor behaviour might piggy-back on this.  (wild guess.) 
+
+when #target has tabindex="-1" the situation is more straightforward. 
+
+-->
+
+<div id="target" xtabindex="-1">
+this is some text inside of the the target element.<br>
+and here are some links:<br>
+<a href="#">link 1</a><br>
+<a href="#">link 2</a><br>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</main>
+
+</body>
+
+</html>
