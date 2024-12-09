@@ -8,7 +8,7 @@ included_file_extensions = ['.html', '.xml', '.ics', '.png', '.jpg', '.jpeg', '.
 
 os.chdir(os.path.dirname(sys.argv[0]))
 filename_of_this_program = os.path.basename(sys.argv[0])
-output_index_filename = 'index.html'
+output_index_filename = 'list-of-files.html'
 excluded_file_relative_paths = ['./'+output_index_filename, './'+filename_of_this_program]
 
 python_script_name = os.path.basename(__file__)
