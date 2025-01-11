@@ -18,17 +18,16 @@ p { line-height: 1.5; }
     white-space: nowrap;
     width: 1px;
 }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .color-picker {
-            margin-bottom: 10px;
-        }
-        .result {
-            margin-top: 20px;
-        }
+body {
+	font-family: Arial, sans-serif;
+	margin: 20px;
+}
+.color-picker {
+	margin-bottom: 10px;
+}
+.result {
+	margin-top: 20px;
+}
 
 	</style>
 
@@ -60,7 +59,7 @@ window.addEventListener("load", function(event) {
 		return [r, g, b];
 	}
 
-	function updateContrast() {
+	function updateContrastDisplay() {
 		var colorA = document.getElementById('colorA').value;
 		var colorB = document.getElementById('colorB').value;
 		var colorC = document.getElementById('colorC').value;
@@ -74,11 +73,12 @@ window.addEventListener("load", function(event) {
 		document.getElementById('contrastBC').textContent = contrast(rgbB, rgbC).toFixed(2);
 	}
 
-	document.getElementById('colorA').addEventListener('input', updateContrast);
-	document.getElementById('colorB').addEventListener('input', updateContrast);
-	document.getElementById('colorC').addEventListener('input', updateContrast);
+	document.getElementById('colorA').addEventListener('input', updateContrastDisplay);
+	document.getElementById('colorB').addEventListener('input', updateContrastDisplay);
+	document.getElementById('colorC').addEventListener('input', updateContrastDisplay);
 
-	window.addEventListener("load", updateContrast);
+	window.addEventListener("load", updateContrastDisplay);
+	updateContrastDisplay();
 
 });
 
@@ -94,23 +94,25 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
         <h1>Three-Way Contrast Checker</h1>
-        <span class="color-picker">
-            <label for="colorA">Color A:</label>
-            <input type="color" id="colorA" name="colorA" value="#ffffff">
-        </span>
-        <span class="color-picker">
-            <label for="colorB">Color B:</label>
-            <input type="color" id="colorB" name="colorB" value="#000000">
-        </span>
-        <span class="color-picker">
-            <label for="colorC">Color C:</label>
-            <input type="color" id="colorC" name="colorC" value="#ff0000">
-        </span>
-		<div style="margin-top: 250px;"></div>
+		<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 50px;">
+			<span class="color-picker">
+				<label for="colorA">Foreground:</label>
+				<input type="color" id="colorA" name="colorA" value="#0000ff">
+			</span>
+			<span class="color-picker">
+				<label for="colorB">"Middle ground":</label>
+				<input type="color" id="colorB" name="colorB" value="#000000">
+			</span>
+			<span class="color-picker">
+				<label for="colorC">Background:</label>
+				<input type="color" id="colorC" name="colorC" value="#ffffff">
+			</span>
+		</div>
+		<div style="margin-top: 25px;"></div>
         <div class="result">
-            <p>Contrast Ratio A-B: <span id="contrastAB">N/A</span></p>
-            <p>Contrast Ratio A-C: <span id="contrastAC">N/A</span></p>
-            <p>Contrast Ratio B-C: <span id="contrastBC">N/A</span></p>
+            <p>Contrast Ratio foreground to background: <span id="contrastAC">N/A</span></p>
+            <p>Contrast Ratio foreground to middle ground: <span id="contrastAB">N/A</span></p>
+            <p>Contrast Ratio middle ground to background: <span id="contrastBC">N/A</span></p>
         </div>
 
 </main>
