@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>x</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Three-Way Contrast Checker</title>
 
 	<style>
 
@@ -19,12 +19,70 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .color-picker {
+            margin-bottom: 10px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+
 	</style>
 
 	<script>
 
 window.addEventListener("load", function(event) {
+
+	function luminance(r, g, b) {
+		var a = [r, g, b].map(function (v) {
+			v /= 255;
+			return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+		});
+		return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+	}
+
+	function contrast(rgb1, rgb2) {
+		var lum1 = luminance(rgb1[0], rgb1[1], rgb1[2]);
+		var lum2 = luminance(rgb2[0], rgb2[1], rgb2[2]);
+		var brightest = Math.max(lum1, lum2);
+		var darkest = Math.min(lum1, lum2);
+		return (brightest + 0.05) / (darkest + 0.05);
+	}
+
+	function hexToRgb(hex) {
+		var bigint = parseInt(hex.slice(1), 16);
+		var r = (bigint >> 16) & 255;
+		var g = (bigint >> 8) & 255;
+		var b = bigint & 255;
+		return [r, g, b];
+	}
+
+	function updateContrast() {
+		var colorA = document.getElementById('colorA').value;
+		var colorB = document.getElementById('colorB').value;
+		var colorC = document.getElementById('colorC').value;
+
+		var rgbA = hexToRgb(colorA);
+		var rgbB = hexToRgb(colorB);
+		var rgbC = hexToRgb(colorC);
+
+		document.getElementById('contrastAB').textContent = contrast(rgbA, rgbB).toFixed(2);
+		document.getElementById('contrastAC').textContent = contrast(rgbA, rgbC).toFixed(2);
+		document.getElementById('contrastBC').textContent = contrast(rgbB, rgbC).toFixed(2);
+	}
+
+	document.getElementById('colorA').addEventListener('input', updateContrast);
+	document.getElementById('colorB').addEventListener('input', updateContrast);
+	document.getElementById('colorC').addEventListener('input', updateContrast);
+
+	window.addEventListener("load", updateContrast);
+
 });
+
+
 
 	</script>
 
@@ -35,12 +93,25 @@ window.addEventListener("load", function(event) {
 
 <body>
 <main>
-
-
-
-
-
-
+        <h1>Three-Way Contrast Checker</h1>
+        <span class="color-picker">
+            <label for="colorA">Color A:</label>
+            <input type="color" id="colorA" name="colorA" value="#ffffff">
+        </span>
+        <span class="color-picker">
+            <label for="colorB">Color B:</label>
+            <input type="color" id="colorB" name="colorB" value="#000000">
+        </span>
+        <span class="color-picker">
+            <label for="colorC">Color C:</label>
+            <input type="color" id="colorC" name="colorC" value="#ff0000">
+        </span>
+		<div style="margin-top: 250px;"></div>
+        <div class="result">
+            <p>Contrast Ratio A-B: <span id="contrastAB">N/A</span></p>
+            <p>Contrast Ratio A-C: <span id="contrastAC">N/A</span></p>
+            <p>Contrast Ratio B-C: <span id="contrastBC">N/A</span></p>
+        </div>
 
 </main>
 
