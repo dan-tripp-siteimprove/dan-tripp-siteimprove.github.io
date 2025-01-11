@@ -36,7 +36,7 @@ body {
 window.addEventListener("load", function(event) {
 
 	function luminance(r, g, b) {
-		var a = [r, g, b].map(function (v) {
+		let a = [r, g, b].map(function (v) {
 			v /= 255;
 			return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
 		});
@@ -44,41 +44,73 @@ window.addEventListener("load", function(event) {
 	}
 
 	function contrast(rgb1, rgb2) {
-		var lum1 = luminance(rgb1[0], rgb1[1], rgb1[2]);
-		var lum2 = luminance(rgb2[0], rgb2[1], rgb2[2]);
-		var brightest = Math.max(lum1, lum2);
-		var darkest = Math.min(lum1, lum2);
+		let lum1 = luminance(rgb1[0], rgb1[1], rgb1[2]);
+		let lum2 = luminance(rgb2[0], rgb2[1], rgb2[2]);
+		let brightest = Math.max(lum1, lum2);
+		let darkest = Math.min(lum1, lum2);
 		return (brightest + 0.05) / (darkest + 0.05);
 	}
 
 	function hexToRgb(hex) {
-		var bigint = parseInt(hex.slice(1), 16);
-		var r = (bigint >> 16) & 255;
-		var g = (bigint >> 8) & 255;
-		var b = bigint & 255;
+		let bigint = parseInt(hex.slice(1), 16);
+		let r = (bigint >> 16) & 255;
+		let g = (bigint >> 8) & 255;
+		let b = bigint & 255;
 		return [r, g, b];
 	}
 
-	function updateContrastDisplay() {
-		var colorA = document.getElementById('colorA').value;
-		var colorB = document.getElementById('colorB').value;
-		var colorC = document.getElementById('colorC').value;
-
-		var rgbA = hexToRgb(colorA);
-		var rgbB = hexToRgb(colorB);
-		var rgbC = hexToRgb(colorC);
-
-		document.getElementById('contrastAB').textContent = contrast(rgbA, rgbB).toFixed(2);
-		document.getElementById('contrastAC').textContent = contrast(rgbA, rgbC).toFixed(2);
-		document.getElementById('contrastBC').textContent = contrast(rgbB, rgbC).toFixed(2);
+	function getRatioCommentaryWithSC1411(ratio_) {
+		let r = '';
+		r += `${ratio_}.  `;
+		r += (ratio_ > 4.5 ? '✅ Passes' : '❌ Fails') + ' 1.4.3 Contrast (Minimum).  ';
+		r += (ratio_ > 3.0 ? '✅ Passes' : '❌ Fails') + ' 1.4.11 Non-text Contrast.';
+		return r;
 	}
 
-	document.getElementById('colorA').addEventListener('input', updateContrastDisplay);
-	document.getElementById('colorB').addEventListener('input', updateContrastDisplay);
-	document.getElementById('colorC').addEventListener('input', updateContrastDisplay);
+	function getRatioCommentaryWithoutSC1411(ratio_) {
+		let r = '';
+		r += `${ratio_}.  `;
+		r += (ratio_ > 4.5 ? '✅ Passes' : '❌ Fails') + ' 1.4.3 Contrast (Minimum).';
+		return r;
+	}
 
-	window.addEventListener("load", updateContrastDisplay);
-	updateContrastDisplay();
+	function updateAllDisplays() {
+		let colorAHex = document.getElementById('colorA').value;
+		let colorBHex = document.getElementById('colorB').value;
+		let colorCHex = document.getElementById('colorC').value;
+
+		let colorARgb = hexToRgb(colorAHex);
+		let colorBRgb = hexToRgb(colorBHex);
+		let colorCRgb = hexToRgb(colorCHex);
+
+		document.getElementById('colorAText').textContent = `${colorAHex} rgb(${colorARgb})`;
+		document.getElementById('colorBText').textContent = `${colorBHex} rgb(${colorBRgb})`;
+		document.getElementById('colorCText').textContent = `${colorCHex} rgb(${colorCRgb})`;
+
+		document.getElementById('contrastAB').textContent = getRatioCommentaryWithSC1411(contrast(colorARgb, colorBRgb).toFixed(2));
+		document.getElementById('contrastAC').textContent = getRatioCommentaryWithoutSC1411(contrast(colorARgb, colorCRgb).toFixed(2));
+		document.getElementById('contrastBC').textContent = getRatioCommentaryWithSC1411(contrast(colorBRgb, colorCRgb).toFixed(2));
+
+		let demoDiv = document.getElementById('demoDiv');
+		demoDiv.style.backgroundColor = colorCHex;
+		
+		let demoSentenceSpan = document.getElementById('demoSentenceSpan');
+		demoSentenceSpan.style.color = colorBHex;
+		demoSentenceSpan.querySelector('span').style.color = colorAHex;
+
+		let demoButtonSpan = document.getElementById('demoButtonSpan');
+		let demoButton = demoButtonSpan.querySelector('span');
+		demoButton.style.backgroundColor = colorBHex;
+		demoButton.style.color = colorAHex;
+	
+	}
+
+	document.getElementById('colorA').addEventListener('input', updateAllDisplays );
+	document.getElementById('colorB').addEventListener('input', updateAllDisplays );
+	document.getElementById('colorC').addEventListener('input', updateAllDisplays );
+
+	window.addEventListener("load", updateAllDisplays );
+	updateAllDisplays ();
 
 });
 
@@ -94,26 +126,36 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
         <h1>Three-Way Contrast Checker</h1>
-		<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 50px;">
+		<div style="display: flex;   flex-direction: row;  justify-content: space-between;  margin: 0 auto 50px auto; width: 100%;">
 			<span class="color-picker">
 				<label for="colorA">Foreground:</label>
-				<input type="color" id="colorA" name="colorA" value="#0000ff">
+				<input type="color" id="colorA" name="colorA" value="#6b6bf5">
+				<span id="colorAText"></span>
 			</span>
 			<span class="color-picker">
 				<label for="colorB">"Middle ground":</label>
-				<input type="color" id="colorB" name="colorB" value="#000000">
+				<input type="color" id="colorB" name="colorB" value="#cccccc">
+				<span id="colorBText"></span>
 			</span>
 			<span class="color-picker">
 				<label for="colorC">Background:</label>
-				<input type="color" id="colorC" name="colorC" value="#ffffff">
+				<input type="color" id="colorC" name="colorC" value="#000000">
+				<span id="colorCText"></span>
 			</span>
 		</div>
-		<div style="margin-top: 25px;"></div>
+		<div style="margin-top: 300px;"></div>
         <div class="result">
-            <p>Contrast Ratio foreground to background: <span id="contrastAC">N/A</span></p>
-            <p>Contrast Ratio foreground to middle ground: <span id="contrastAB">N/A</span></p>
-            <p>Contrast Ratio middle ground to background: <span id="contrastBC">N/A</span></p>
+            <p>Contrast ratio of foreground to background: <span id="contrastAC">?</span></p>
+            <p>Contrast ratio of foreground to middle ground: <span id="contrastAB">?</span></p>
+            <p>Contrast ratio of middle ground to background: <span id="contrastBC">?</span></p>
         </div>
+		<div style="padding: 5px 5px" id="demoDiv">
+			<span id="demoSentenceSpan" style="padding: 3px">demo sentence with <span style="text-decoration: underline">fake link</span> in the middle</span><br>
+			<br>
+			<span id="demoButtonSpan" style="padding: 3px"> <span style="padding: 4px">fake button</span> </span> 
+			<br>
+			<br>
+		</div>
 
 </main>
 
