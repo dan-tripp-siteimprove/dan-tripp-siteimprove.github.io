@@ -24,6 +24,13 @@ p { line-height: 1.5; }
 	<script>
 
 window.addEventListener("load", function(event) {
+	for(let e of document.querySelectorAll('.add-style-attrib-as-text-content')) {
+		let styleAttribValue = e.getAttribute('style');
+		let origTextContent = e.textContent;
+		e.textContent = `style="${styleAttribValue}"`;
+		e.appendChild(document.createElement('br'));
+		e.appendChild(document.createTextNode(origTextContent));
+	}
 });
 
 	</script>
@@ -38,11 +45,25 @@ window.addEventListener("load", function(event) {
 
 
 <p style="background-color: blue; color: white">
-loreusk hkdshkjshfkjds hfkjds hfkjds hfkjdsk 
+sfskjhdsfjhf hkdshkjshfkjds hfkjds hfkjds hfkjdsk 
 
 </p>
 
 <input type="color">
+
+
+
+<div style="background-color: black; color: red">
+
+<p class="add-style-attrib-as-text-content" style="background-color: rgba(255,255,255); opacity: 0.5; ">
+in devtools this background color might be misleading, b/c "opacity" is separate.  same with the (foreground) color.  that goes for both devtools' Styles tab and Computed tabs.
+</p>
+
+<p class="add-style-attrib-as-text-content" style="background-color: rgba(255,255,255,0.5); ">
+similar as previous example.  but (foreground) color is not misleading. 
+</p>
+
+</div>
 
 
 </main>
