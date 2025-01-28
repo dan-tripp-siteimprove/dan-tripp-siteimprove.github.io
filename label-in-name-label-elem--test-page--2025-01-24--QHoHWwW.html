@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<label for='abc'>Recording </label><button id='abc'></button>
+<br>
+<label for='abc'>Recording </label><button id='abc'> something else</button>
+<br>
+<label>Submit<input type='submit' /> </label>
+<br>
+<label for='abc'>Recording </label><button id='abc' aria-label='recording the document'>Do it</button>
+<br>
+
+
+
+</main>
+
+</body>
+
+</html>

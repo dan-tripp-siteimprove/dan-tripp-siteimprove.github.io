@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<h2>Original</h2>
+<table >
+<caption>
+</caption>
+<thead>
+<tr>
+<th scope="col"><span class="sr-only">Who?</span></th>
+<th colspan="2" scope="colgroup">Undergraduate</th>
+<th colspan="2" scope="colgroup">Graduate</th>
+<th colspan="2" scope="colgroup">Total</th>
+</tr>
+<tr>
+<th scope="col">Student Category</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Total</th>
+<td scope="row">9999</td>
+<td scope="row"></td>
+<td scope="row">8888</td>
+<td scope="row"></td>
+<td scope="row">7777</td>
+<td scope="row"></td>
+</tr>
+<tr>
+<th scope="row">Full Time</th>
+<td scope="row">6666</td>
+<td scope="row">90%</td>
+<td scope="row">355</td>
+<td scope="row">80%</td>
+<td scope="row">5555</td>
+<td scope="row">70%</td>
+</tr>
+
+</tbody>
+</table>
+
+
+
+
+
+
+<h2>Fix with &lt;colgroup&gt;</h2>
+<table >
+<caption>
+</caption>
+<col>
+<colgroup span="2">
+<colgroup span="2">
+<colgroup span="2">
+<thead>
+<tr>
+<th scope="col"><span class="sr-only">Who?</span></th>
+<th colspan="2" scope="colgroup">Undergraduate</th>
+<th colspan="2" scope="colgroup">Graduate</th>
+<th colspan="2" scope="colgroup">Total</th>
+</tr>
+<tr>
+<th scope="col">Student Category</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Total</th>
+<td scope="row">9999</td>
+<td scope="row"></td>
+<td scope="row">8888</td>
+<td scope="row"></td>
+<td scope="row">7777</td>
+<td scope="row"></td>
+</tr>
+<tr>
+<th scope="row">Full Time</th>
+<td scope="row">6666</td>
+<td scope="row">90%</td>
+<td scope="row">355</td>
+<td scope="row">80%</td>
+<td scope="row">5555</td>
+<td scope="row">70%</td>
+</tr>
+
+</tbody>
+</table>
+
+
+
+<h2>Fix with scope="col"</h2>
+<table >
+<caption>
+</caption>
+<thead>
+<tr>
+<th scope="col"><span class="sr-only">Who?</span></th>
+<th colspan="2" scope="col">Undergraduate</th>
+<th colspan="2" scope="col">Graduate</th>
+<th colspan="2" scope="col">Total</th>
+</tr>
+<tr>
+<th scope="col">Student Category</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+<th scope="col">Count</th>
+<th scope="col">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Total</th>
+<td scope="row">9999</td>
+<td scope="row"></td>
+<td scope="row">8888</td>
+<td scope="row"></td>
+<td scope="row">7777</td>
+<td scope="row"></td>
+</tr>
+<tr>
+<th scope="row">Full Time</th>
+<td scope="row">6666</td>
+<td scope="row">90%</td>
+<td scope="row">355</td>
+<td scope="row">80%</td>
+<td scope="row">5555</td>
+<td scope="row">70%</td>
+</tr>
+
+</tbody>
+</table>
+
+
+</main>
+
+</body>
+
+</html>
