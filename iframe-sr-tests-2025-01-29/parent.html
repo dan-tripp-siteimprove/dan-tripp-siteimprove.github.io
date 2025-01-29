@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+before 
+<iframe title="chatbot" src="child.html"></iframe>
+
+after 
+
+
+<br>
+
+
+before  
+<iframe  src="child.html"></iframe>
+after 
+
+<br>
+
+<button>before  </button>
+<iframe  src="child.html"></iframe>
+<button>after  </button>
+
+
+<br>
+
+
+<button>before  </button>
+<iframe title="chatbot" src="child.html"></iframe>
+<button>after  </button>
+
+
+</main>
+
+</body>
+
+</html>
