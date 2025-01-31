@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<button>before</button>
+
+
+<div data-component="toast"
+  class="toast_toast-outer__j0eRE"
+  role="region"
+  aria-label="outer "
+  data-landmark-index="5"
+	style="max-width: 100px " 
+>
+
+
+  <dialog class="toast_toast-inner__9kwdH" aria-label="inner" open="" style="max-width: 100px " >
+    <div class="toast_icon__2YP-_ toast_info__1Vf8Z">
+      <svg
+        data-component="icon"
+        viewBox="0 0 24 24"
+        focusable="false"
+        aria-hidden="true"
+        fill="currentColor"
+      >
+        <path
+          d="M11,7 L13,7 L13,9 L11,9 L11,7 Z M11,11 L13,11 L13,17 L11,17 L11,11 Z M11.99,2 C6.47,2 2,6.48 2,12 C2,17.52 6.47,22 11.99,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 11.99,2 Z M12,20 C7.58,20 4,16.42 4,12 C4,7.58 7.58,4 12,4 C16.42,4 20,7.58 20,12 C20,16.42 16.42,20 12,20 Z"
+        ></path>
+      </svg>
+    </div>
+    <div class="toast_content__1Pk0r">
+      You have unsaved changes. Click the button "Save AI settings" to apply
+      your settings to the account.
+    </div>
+    <button
+      type="button"
+      data-component="button"
+      aria-label="Close dialog"
+      class="button_btn__OpmfO button_borderless__1v7eL button_medium__2XTxv button_icon-only__1GXTI toast_close__204Vn fancy-Button"
+    >
+      <svg
+        data-component="icon"
+        class="fancy-icon icons_large__RQurs"
+        viewBox="0 0 24 24"
+        focusable="false"
+        aria-hidden="true"
+        fill="currentColor"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        ></path>
+      </svg>
+    </button>
+  </dialog>
+
+</div>
+
+
+<button>after</button>
+
+</main>
+
+</body>
+
+</html>
