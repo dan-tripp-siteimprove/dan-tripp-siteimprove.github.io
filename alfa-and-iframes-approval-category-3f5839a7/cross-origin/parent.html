@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<iframe height="300px" src="http://origin2.local:9901/cross-origin/child.html" title="xyz"></iframe>
+
+<ul>
+<li>Only run this test on localhost via the local web server which you can start via the bash script in this directory, then go to http://origin1.local:9901/cross-origin/parent.html  
+<li>You don't want to run this test on a file:// URL, b/c I don't understand the implications of that with regard to iframe origins and alfa, and even if I did, I wouldn't know how to make different "same-origin" and "cross-origin" cases w/ file://.
+<li>You don't want to run this test from github pages on the internet, b/c this page uses my localhost aliases in my machine's "hosts" file.
+</ul>
+
+
+
+</main>
+
+</body>
+
+</html>
