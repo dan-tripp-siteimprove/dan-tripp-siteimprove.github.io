@@ -25,11 +25,10 @@ p { line-height: 1.5; }
 
 	<script>
 
-window.addEventListener("load", function(event) {
-});
+window.addEventListener("load", onResize);
 
 /* thanks https://stackoverflow.com/a/23950838 */ 
-function myFunction(){
+function onResize(){
   if(window.innerWidth !== undefined && window.innerHeight !== undefined) { 
     var w = window.innerWidth;
     var h = window.innerHeight;
@@ -48,7 +47,7 @@ function myFunction(){
 
 
 
-<body onresize="myFunction()" onload="myFunction()">
+<body onresize="onResize()">
  <p>
 	Try to resize the page.
  </p>
