@@ -72,6 +72,7 @@
 	<li>Shift+F10 to open the context menu for that bookmark.  Arrow down to "Edit". 
 	<li>In the "name" field, enter the name of the bookmarklet (eg. "ARIA").
 	<li>In the "URL" field, paste the javascript code, which should still be in your clipboard, since the "copy link address" step.
+	<li><strong>BEWARE</strong> of deviating from the steps above in this way: re-using an old bookmark instead of making a new dummy bookmark.  I say this because I have seen some buggy behaviour regarding pasting long code like this into the bookmark's "value" field, where it silently didn't update.  If you use a new dummy bookmark, any problem during pasting will be obvious.  If you re-use an old bookmark, it won't.
 	</ul>
 	
 	<h4>Chrome usage</h4>
@@ -108,12 +109,14 @@
 	
 	<h4>Installation</h4>
 	
-	This works in any browser, probably.
+	<p>This works in any browser, probably.</p>
 	
 	<ul>
 	<li>Find the link on this page for the bookmarklet in question eg. "ARIA (2023-11-24 version)"
 	<li>Drag that link to your bookmarks toolbar.
 	</ul>
+	
+	<p><strong>BEWARE</strong> if you, as a mouse user, use any installation process other than the above drag-and-drop process.  Specifically: if you re-use an old bookmark and paste the code into it.  I say this because I have seen some buggy behaviour regarding pasting long code like this into a bookmark's "value" field, where it silently didn't update.  If you use the drag-and-drop method above, you will never have that problem.  If you re-use an old bookmark, you might.</p>
 	
 	<h4>Usage</h4>
 	
