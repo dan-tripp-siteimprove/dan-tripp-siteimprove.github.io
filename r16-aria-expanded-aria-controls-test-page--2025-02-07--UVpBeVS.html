@@ -37,8 +37,16 @@ window.addEventListener("load", function(event) {
 <main>
 
 
-<button role="combobox"  >1</button> <-- failure message mentions aria-controls.  this seems wrong, because <a href="https://github.com/Siteimprove/alfa/issues/1340">alfa issue 1340</a> is closed/merged.  this matters because most (or maybe all) comboboxes I see are closed on page load, and of course that's when they're crawled.  so we see, in the platform and the browser extension, for this button 1, a failure message for sia-r16 which mentions aria-expanded and aria-controls.  but if we add an aria-expanded="false" to it and don't add aria-controls, it passes, so there's no failure message.  so, post-fix, it seems like the "aria-controls" part of the failure message was lying to us.<br>
+<button role="combobox"  >1</button> <-- failure message mentions aria-controls.  this seems wrong, 
+because <a href="https://github.com/Siteimprove/alfa/issues/1340">alfa issue 1340</a> is closed/merged.  
+this case matters because most (or maybe all) comboboxes I see are closed on page load, and of course that's
+when they're crawled.  so we see, in the platform and the browser extension, for this button 1, a failure 
+message for sia-r16 which mentions aria-expanded and aria-controls.  but if we add an aria-expanded="false" 
+to it and don't add aria-controls, it passes, so there's no failure message.  so, post-fix, it seems like the 
+"aria-controls" part of the failure message was lying to us.<br>
+
 <button role="combobox" aria-expanded="false">2</button> <-- passes.  this make sense b/c of <br>
+
 <button role="combobox" aria-expanded="true">3</button> <-- failure message mentions aria-controls.  this is good. <br>
 
 
