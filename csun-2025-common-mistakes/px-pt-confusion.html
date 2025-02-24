@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<h2>not bold:</h2>
+
+<p>default</p>
+
+<p style="font-size: 18px">18px </p>
+
+<p style="font-size: 23.99px">23.99px </p>
+
+
+<h2>bold:</h2>
+
+
+<p style="font-weight: bold">default</p>
+
+<p style="font-weight: bold; font-size: 14px">14px </p>
+
+<p style="font-weight: bold; font-size: 18.66px">18.66px </p>
+
+
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<h2>test 1</h2>
+
+<select> 
+	<option>U.S.A.</option>
+	<option>Mexico</option>
+	<option>Canada</option>
+</select>
+
+				
+<h2>test 2</h2>
+
+<label for="country" style="display: none">Country</label> 
+<input id="country" type="text">
+
+
+<h2>test 3</h2>
+
+City: 
+<label for="city"></label> 
+<input id="city" type="text">
+				
+<h2>test 4</h2>
+
+<label>Zip Code:</label> 
+<input id="zipcode" type="text">
+				
+<h2>test 5</h2>
+				
+<h3>Child</h3>
+<span id="child-first-name-label">First Name:</span> 
+<input id="first-name" type="text" aria-labelledby="child-first-name-label">
+
+<h3>Parent</h3>
+<label for="first-name">First Name:</label> 
+<input id="first-name" type="text">
+				
+
+</main>
+
+</body>
+
+</html>

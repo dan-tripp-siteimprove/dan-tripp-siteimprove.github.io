@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+
+// start of focus bookmarklet  
+
+let LOG = false;
+
+
+var siteimprove_mt_tools_bookmarklet_vars_9c277bdd;
+if(siteimprove_mt_tools_bookmarklet_vars_9c277bdd === undefined) {
+	siteimprove_mt_tools_bookmarklet_vars_9c277bdd = {};
+}
+if(!('focus' in siteimprove_mt_tools_bookmarklet_vars_9c277bdd)) {
+	siteimprove_mt_tools_bookmarklet_vars_9c277bdd['focus'] = {};
+}
+(async function (bookmarkletVars) {
+
+const UNIQUE_ID_FOR_OUR_BOOKMARKLETS = 'd68c02e08c00';
+
+/* These CSS class names exist to handle these situations: 
+1) when bookmarklet X is run two or more times.
+2) when bookmarklet X is run then a different bookmarklet Y is run. 
+
+These CSS classes are not used for styling and they never exist.  We are using 
+the "class=" attribute here as a kind of "group ID", to keep track of which 
+elements our bookmarklets have added to the DOM, so that we can remove them 
+later.  
+
+Situation #2 is harder than situation #1.  In general, the bookmarklets add to 
+each other, so you'll see eg. all the images annotations and also all of the 
+ARIA annotations.  But then some of the bookmarklets have overlapping 
+functionality eg. "images" and "ARIA" both add an annotation for 
+"aria-labelledby".  eg. if we run 1) X, then 2) run X again, then 3) run Y: 
+the second run of X will first remove all* of the annotations that the first run of X 
+added, then re-add it's annotations specific to X.  then the run of Y will 
+first remove some of the annotations that X added, then add its own 
+annotations specific to Y.
+
+[* not all.  almost all.  see below.]
+
+This is complicated further by these facts:
+- sometimes the second run of X doesn't remove everything that it added.  
+eg. in "images" (at the time of writing) it adds some "inputSpan" annotations 
+and doesn't remove them.  so on second and subsequent runs, it will keep re-adding 
+duplicates of these annotations indefinitely.  
+- the annotations that they have in common might be almost 
+identical, but not quite.  eg. for "images" and "ARIA", their "aria-labelledby" 
+annotations use different colors). 
+- sometimes Y will remove what X added, and not add any equivalent back.  
+eg. "ARIA" removes "images"' "NO ID MATCH" annotation.
+
+At the time of writing I don't know how much of this behaviour was intentional 
+by the original author(s), or is desirable now.  And I'm not trying to know.  
+Instead, my goals are:
+- preserve the original behaviour amidst our new build process - whether that 
+behaviour is (as in the example above) "ARIA" removing the annotations that 
+were added by "images", or mangling them, or adding useless duplicates for 
+them. 
+- make these CSS class names unique so that we'll never collide with names that 
+are used by the target web page.  
+*/
+
+const CSS_CLASS_GENERAL = `class_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_general`;
+
+/* These are legacy.  I don't know why there's several of them instead of just one. */
+const CSS_CLASS_ALTSPAN = `class_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_altSpan`;
+const CSS_CLASS_AXSPAN = `class_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_axSpan`;
+const CSS_CLASS_OPENSPAN = `class_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_openSpan`;
+const CSS_CLASS_CLOSESPAN = `class_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_closeSpan`;
+const CSS_CLASS_INPUTSPAN = `class_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_inputSpan`;
+const CSS_CLASS_LANGSPAN = `class_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_langSpan`;
+/* ^^ if you add to this list, add to doesElemHaveAnyOfOurClasses() too. */
+
+function areWeInAnIframe() {
+	return window.self !== window.top;
+}
+
+/* this function needs zepto. */
+function showMsg(foundAnyElems_, nouns_) {
+	let msg = foundAnyElems_ 
+		? `Success: one or more ${nouns_} were found on this page` 
+		: `No ${nouns_} were found on this page`;
+	let newMsgElem = $(`<strong class="${CSS_CLASS_GENERAL}" role="alert" 
+		style="color:black;font-weight:bold;font-family:sans-serif;font-size:small;
+		background-color:yellow;margin:0 2px; padding:2px; position: fixed; top: 0; 
+		z-index: 9999999" role="status">${msg}</strong>`);
+	/* ^^ the CSS class is there to handle the case of running this bookmarklet twice 
+	in rapid succession.  b/c in that case there's a hazard that we'll decorate this 
+	message element.  (b/c each bookmarklet tends to add its decorations, then call this function.)  
+	having that class there is a signal which each bookmarklet's code that adds decorations can use 
+	as a signal not to add a decoration to the element. */
+	$('body').prepend(newMsgElem);
+	let delayInMilliseconds = 6000; 
+	setTimeout(() => { newMsgElem.remove(); }, delayInMilliseconds);
+}
+
+/* open shadow DOMs only, I think.  not closed.  unless - maybe - this is run 
+under a browser extension (as opposed to under a bookmarklet).  I haven't tried that. */
+function getShadowDomRoots(document_) {
+	let r = [];
+	function findShadowRoots(node__) {
+		if (node__.shadowRoot) {
+			r.push(node__.shadowRoot);
+		}
+		for (const childNode of node__.childNodes) {
+			if (childNode.nodeType === Node.ELEMENT_NODE) {
+				findShadowRoots(childNode);
+			}
+		}
+	}
+	findShadowRoots(document_.body);
+	return r;
+}
+
+function getIFrameRoots(document_) {
+	let r = [];
+	for(let iframe of document_.body.querySelectorAll('iframe')) {
+		if (!iframe.contentDocument) continue; /* cross-origin iframe.  nothing we can do. */
+			/* ... I think. unless - maybe - this is run under browser extension (as 
+			opposed to under a bookmarklet).  I haven't tried that. */ 
+		r.push(iframe.contentDocument);
+	}
+	return r;
+}
+
+function getRootNodesForQuerySelector() {
+	let r = [document.body];
+	r.push(...getShadowDomRoots(document));
+	r.push(...getIFrameRoots(document));
+	return r;
+}
+
+function runBookmarkletMainFunctionWhenAppropriate(mainFunc_) {
+
+	if(areWeInAnIframe()) {
+		/* This will only happen if we're running inside of tampermonkey, I think.  
+		maybe one day our users will run this code inside of tampermonkey.    
+		but right now, it's only developers of this code that are running it inside of tampermonkey, 
+		to speed up testing.  
+		so I don't want to deal with the complications.  right now, since our real users are 
+		running this code as a bookmarklet (not through tampermonkey), we need to deal with iframes 
+		from the top-level context (which is all that the bookmarklet has access to) 
+		or not at all.  */
+		return;
+	}
+
+	logBuildTimestamp();
+
+	if(document.readyState === "complete") {
+		/* This will happen, probably, if this code is running as a bookmarklet. */
+		mainFunc_();
+	} else {
+		/* This will happen (definitely, I think) if this code is running as a 
+		tampermonkey script via "@require". */ 
+		document.addEventListener("readystatechange", (event__) => {
+			if(document.readyState === "complete") {
+				/* We could call run() right now, and that would work most of the time.
+				But not in this case: at least one of my test pages builds some shadow DOM with JS 
+				in a window.addEventListener("load", ...) listener.  So that shadow DOM doesn't 
+				exist yet, I think.  So this setTimeout() is a hack so that run() will 
+				probably be called after that "load" listener which builds the shadow DOM. */
+				setTimeout(mainFunc_, 1000);
+			}
+		});
+	}
+
+}
+
+function logBuildTimestamp() {
+	let buildTimestamp = "1739250519831";
+	buildTimestamp = parseInt(buildTimestamp, 10);
+	let buildTimeAgoInMillis = Date.now() - buildTimestamp;
+	let buildTimeAgoInSeconds = Math.round(buildTimeAgoInMillis/1000);
+	console.log(new Date(), `Built ${buildTimeAgoInSeconds} second(s) ago.`);
+}
+
+function parseHtmlElementStr(str_) {
+	const parser = new DOMParser();
+	const parsedDocument = parser.parseFromString(str_, 'text/html');
+	if(parsedDocument.body.children.length != 1) {
+		throw new Error("expected one child");
+	}
+	const r = parsedDocument.body.firstChild;
+	return r;
+}
+
+/* returns a list of nodes. */ 
+function parseHtmlDocumentFragmentStr(str_) {
+	const parser = new DOMParser();
+	const parsedDocument = parser.parseFromString(str_, 'text/html');
+	if(parsedDocument.body.children.length < 1) {
+		throw new Error("expected at least one child");
+	}
+	let r = [...parsedDocument.body.children];
+	return r;
+}
+
+function appendHtmlDocumentFragmentStr(targetElem_, htmlDocumentFragmentStr_) {
+	let newChildren = parseHtmlDocumentFragmentStr(htmlDocumentFragmentStr_);
+	targetElem_.append(...newChildren);
+}
+
+function appendHtmlDocumentFragmentStr_CSPSafe(targetElem_, htmlDocumentFragmentStr_) {
+	let newChildNodes = parseHtmlDocumentFragmentStr_CSPSafe(htmlDocumentFragmentStr_);
+	targetElem_.append(...newChildNodes);
+}
+
+/* This is comment 290c7588-40c9-4e6c-82a7-c9ad2fc77aac : 
+This function uses this technique: 
+	1) elem_.setProperty('color', 'red', 'important')  # AKA the setProperty() trick 
+instead of this: 
+	2) elem_.style = 'color: red !important;';
+or this:
+	3) let ourStyleElem = document.createElement('style');
+		document.head.appendChild(ourStyleElem);
+		ourStyleElem.innerText = ".ourclass { color: red !important }";
+		newElem.setAttribute('class', 'ourclass');
+because technique 1 works under certain restrictive CSPs (AKA Content Security Policy) like 
+https://www.gov.uk/ has (late 2023).  and techniques 2 and 3 don't.  
+I thought that maybe technique 3 would work if I put it in a shadow DOM.  it didn't.  
+Many other parts of a bookmarklet wil work, such as adding elements.  Even adding the 'style' 
+element in technique 3 will add it to the DOM, but it won't take effect.  
+
+Techniques 2 and 3 will generate an error message in the console - not throw an exception - 
+and the script will continue running.
+
+on chrome it generates this error message: 
+	Refused to apply inline style because it violates the following Content Security Policy directive: "style-src 'self' www.gstatic.com". Either the 'unsafe-inline' keyword, a hash ('sha256-7p38K8uck+NOgLvGNCMM+io3dewhjgnKvoVLeTlcSwI='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.
+
+on firefox it generates this error message: 
+	Content-Security-Policy: The page’s settings blocked the loading of a resource at inline (“style-src”).
+
+This technique will also work, but we don't use it, b/c we can't specify "important": 
+	4) elem_.style.color = "red";
+
+It's surprising to me that technique 1 works because the DOMs that result from techniques 1 and 2 
+look the same when I dump them both via innerHTML.  
+*/
+function setInlineStyle_CSPSafe(elem_, prop_, value_) {
+	elem_.style.setProperty(prop_, value_, 'important');
+}
+
+function setInlineStyles_CSPSafe_fromMap(elem_, cssPropToValueMap_) {
+	for(let [prop, value] of Object.entries(cssPropToValueMap_)) {
+		setInlineStyle_CSPSafe(elem_, prop, value);
+	}
+}
+
+function setInlineStyles_CSPSafe_fromStr(elem_, inlineStyleStr_) {
+	setInlineStyles_CSPSafe_fromMap(elem_, parseStylesMapFromInlineStyleStr(inlineStyleStr_));
+}
+
+/* This function takes the inline styles of an element and applies them right back on that same 
+element, but using our "CSPSafe" technique.  
+"s-style" stands for "safe style" as in "CSP-safe style". 
+RE: the choice of a custom attribute ('s-style') instead of the standard 'style'): 
+we could have used the 
+standard 'style' and it would have worked, but it would create a CSP error message when we parse 
+the HTML string, complaining about that inline style attribute.  (this parsing and err msg 
+would not happen in this function.  it would happen nearby.)  
+This error msg surprised me because at the moment of parsing, we haven't added it to the main DOM 
+yet - which is when I would have thought the CSP takes effect and when we'd get CSP err msgs.  
+But no, our standalone DOMParser is subject to 
+CSP too, I guess.  So that CSP error message would have been just a warning message for us, 
+because the (useless) style attribute would've still been there in the DOM, we could've still 
+gotten its value, done our setProperty() trick on it (see comment 290c7588-40c9-4e6c-82a7-c9ad2fc77aac), 
+and those styles we set via the setProperty() trick woudl've worked.  But we would have cluttered 
+up the devtools console with CSP error messages that are harmless. */
+function setInlineStyles_CSPSafe_fromSelf(elem_) {
+	let inlineStyleStr = elem_.getAttribute('s-style');
+	if(inlineStyleStr) {
+		elem_.removeAttribute('s-style');
+		setInlineStyles_CSPSafe_fromMap(elem_, parseStylesMapFromInlineStyleStr(inlineStyleStr));
+	}
+}
+
+function setInlineStyles_CSPSafe_fromSelves_wholeDomSubtree(domRootNode_) {
+	let elemsWithStyleAttribs = [...domRootNode_.querySelectorAll('[s-style]')];
+	if(domRootNode_.getAttribute('s-style')) {
+		elemsWithStyleAttribs.push(domRootNode_);
+	}
+	for(let shadowElemWithStyleAttrib of elemsWithStyleAttribs) {
+		setInlineStyles_CSPSafe_fromSelf(shadowElemWithStyleAttrib);
+	}
+}
+
+/* Thanks https://stackoverflow.com/a/65525966 */
+function parseStylesMapFromInlineStyleStr(inlineStyleStr_) {
+	let r = {};
+	let styles = inlineStyleStr_.split(';');
+	styles.forEach(function (style) {
+		let styleParts = style.split(':');
+		if (styleParts.length === 2) {
+			let property = styleParts[0].trim();
+			let value = styleParts[1].trim();
+			r[property] = value;
+		}
+	});
+	return r;
+}
+
+/* CSP = Content Security Policy. 
+See comment 290c7588-40c9-4e6c-82a7-c9ad2fc77aac for reasons. */
+function parseHtmlElementStr_CSPSafe(htmlStr_) {
+	let elem = parseHtmlElementStr(htmlStr_);
+	setInlineStyles_CSPSafe_fromSelves_wholeDomSubtree(elem);
+	return elem;
+}
+
+/* CSP = Content Security Policy. 
+See comment 290c7588-40c9-4e6c-82a7-c9ad2fc77aac for reasons. 
+returns a list of DOM nodes. */
+function parseHtmlDocumentFragmentStr_CSPSafe(htmlDocumentFragmentStr_) {
+	let nodes = parseHtmlDocumentFragmentStr(htmlDocumentFragmentStr_);
+	for(let node of nodes) {
+		setInlineStyles_CSPSafe_fromSelves_wholeDomSubtree(node);
+	}
+	return nodes;
+}
+
+function makeRandomElemId() {
+    const max = 0xFFFFFFFF;
+    let r = Math.floor(Math.random() * max);
+    r = r.toString(16).padStart(8, '0');
+	r = `id_bookmarklet_${UNIQUE_ID_FOR_OUR_BOOKMARKLETS}_${r}`;
+	return r;
+}
+
+function doesElemHaveAnyOfOurClasses(elem_) {
+	const classesToCheck = [CSS_CLASS_GENERAL, CSS_CLASS_ALTSPAN, CSS_CLASS_AXSPAN, 
+		CSS_CLASS_OPENSPAN, CSS_CLASS_CLOSESPAN, CSS_CLASS_INPUTSPAN, CSS_CLASS_LANGSPAN];
+	let r = classesToCheck.some(className => elem_.classList.contains(className));
+	return r;
+}
+
+
+function escapeForInlineHtml(str_) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str_));
+    let r = div.innerHTML;
+	return r;
+}
+
+
+function createFloatingMenu() {
+	let {shadowGuestRootElem} = createFloatingMenuImpl();
+	return shadowGuestRootElem;
+}
+
+function createFloatingMenuImpl() {
+	let parent = document.createElement('div');
+	parent.dataset.name = 'menu';
+	document.body.appendChild(parent);
+	parent.attachShadow({mode: 'open'});
+	let shadowGuestRootElem = createFloatingMenuImpl2(parent);
+	return {shadowGuestRootElem};
+}
+
+function makeMenuMinimizedViewStyleStr() {
+	return makeMenuMaximizedViewStyleStr();
+}
+
+function makeMenuMaximizedViewStyleStr() {
+	let r = `position: fixed; top: 0; 
+		background: #fff; border: 0.2vw solid black ; 
+		padding: 0.2vw; z-index: 999999; `;
+	let position = "top-left";
+	if(position === "top-left") {
+		r += `left: 0%;  `;
+	} else if(position === "top-right") {
+		r += `left: 100%; transform: translateX(-100%);  `;
+	} else if(position === "top-center") {
+		r += `left: 50%; transform: translateX(-50%);  `;
+	} else {
+		throw new Error();
+	}
+	return r;
+}
+
+const GRID_ITEM_STYLE = "padding: 0.3vw; text-align: center;";
+const BUTTON_STYLE = `margin: 0.1vw; border-width: 0.2vw; padding: 0.2vw; font-size: inherit; `;
+const SELECT_STYLE = BUTTON_STYLE ;
+//const GRID_CONTAINER_STYLE = `display: grid; grid-template-columns: auto 1fr 1fr; gap: 0.5vw; 
+//	align-items: center; font-size: 1vw; `;
+const GRID_CONTAINER_STYLE = `display: grid; grid-template-columns: auto 1fr; gap: 0.5vw; 
+	align-items: center; font-size: 1vw; `;
+const BUTTON_GROUP_STYLE = `grid-column: 1; display: grid; grid-auto-flow: column; gap: 0.5vw; 
+	justify-content: end; `;
+
+function createFloatingMenuImpl2(shadowHostElem_) {
+	let maximizedMenuRootElem = document.createElement('div');
+
+	let style = document.createElement('style');
+	style.innerText = `input[type="checkbox"] {
+			width: 1vw; height: 1vw;
+		}`;
+	shadowHostElem_.shadowRoot.appendChild(style);
+	
+	shadowHostElem_.shadowRoot.appendChild(maximizedMenuRootElem);
+	maximizedMenuRootElem.dataset.name = 'menu-maximized';
+	maximizedMenuRootElem.style = makeMenuMaximizedViewStyleStr();
+
+	let maximizedMenuImplBusinessStr = ` 
+		<div s-style="${GRID_CONTAINER_STYLE}">
+			<div s-style="${GRID_ITEM_STYLE} ${BUTTON_GROUP_STYLE}">
+				<button name="close" title="close" aria-label="close" s-style="${BUTTON_STYLE}" 
+					>✖</button>
+				<button name="minimize" title="minimize" aria-label="minimize" s-style="${BUTTON_STYLE}" 
+					>–</button>
+
+				<!--
+				<select s-style="${SELECT_STYLE}" aria-label="docking position" title="docking position" >
+					<option>upper left</option>
+					<option>upper right</option>
+				</select>
+				-->
+
+			</div>
+		</div>`;
+	let maximizedMenuBusinessElem = parseHtmlElementStr_CSPSafe(maximizedMenuImplBusinessStr);
+	maximizedMenuRootElem.appendChild(maximizedMenuBusinessElem);
+
+	function onCloseButtonClicked() {
+		shadowHostElem_.remove();
+	}
+	let closeButton = maximizedMenuRootElem.querySelector(`button[name="close"]`);
+	closeButton.addEventListener("click", onCloseButtonClicked);
+
+	let minimizedMenuRootElem = document.createElement('div');
+	shadowHostElem_.shadowRoot.appendChild(minimizedMenuRootElem);
+	minimizedMenuRootElem.dataset.name = 'menu-minimized';
+	minimizedMenuRootElem.style = makeMenuMinimizedViewStyleStr();
+
+	let minimizedMenuImplBusinessStr = ` 
+		<div s-style="${GRID_CONTAINER_STYLE}">
+			<div s-style="${GRID_ITEM_STYLE} ${BUTTON_GROUP_STYLE}">
+				<button name="maximize" title="maximize" aria-label="maximize" s-style="${BUTTON_STYLE}" 
+					>➕</button>
+			</div>
+		</div>`;
+	let minimizedMenuBusinessElem = parseHtmlElementStr_CSPSafe(minimizedMenuImplBusinessStr);
+	minimizedMenuRootElem.appendChild(minimizedMenuBusinessElem);
+	minimizedMenuRootElem.style.display = 'none';
+
+	function onMinimizeButtonClicked() {
+		maximizedMenuRootElem.style.display = 'none';
+		minimizedMenuRootElem.style.display = 'block';
+	}
+	function onMaximizeButtonClicked() {
+		maximizedMenuRootElem.style.display = 'block';
+		minimizedMenuRootElem.style.display = 'none';
+	}
+	let minimizeButton = maximizedMenuRootElem.querySelector(`button[name="minimize"]`);
+	minimizeButton.addEventListener("click", onMinimizeButtonClicked);
+	let maximizeButton = minimizedMenuRootElem.querySelector(`button[name="maximize"]`);
+	maximizeButton.addEventListener("click", onMaximizeButtonClicked);
+
+
+
+	return maximizedMenuBusinessElem;
+}
+
+
+
+/* 
+
+caveat: not much will work in a closed shadow DOM.  we'll get a focus indicator outside it.  no focus indicator css inside it.  no focus trail inside it. 
+
+caveat: the "set element of interest" function doesn't work for an element inside an iframe.  work-around: go to the iframe's JS context (or whatever it's called) in chrome devtools and paste all of this bookmarklet source code into there, to run it. 
+
+test cases:
+    - what if on bookmarklet load, the focus is inside of a shadow dom or iframe?   
+
+- a good name for this bookmarklet in the browser: focus bookmarklet - load and 
+	set 'element of interest' to null.  (run this first.) 
+
+- this bookmarklet is used with focus-bookmarklet-set-element-of-interest.js 
+
+- usage: 
+	- if you just run this bookmarklet then the focused element, when it receives 
+		focus, will be logged to the devtools console. 
+	- if you also run the "set element of interest" bookmarklet, then only that 
+		"element of interest" (and its DOM descendents) will be logged to the 
+		console when it receives focus.  
+
+- An alternative to this bookmarklet is to use chrome devtools to create a "live 
+expression" on document.activeElement 
+(https://developer.chrome.com/docs/devtools/accessibility/focus/).  Comparing 
+that technique to this bookmarklet:
+    - this bookmarklet visually highlights the focused element.
+	- this bookmarklet logs the time.
+	- this bookmarklet has the 'target element' feature.
+	- this bookmarklet logs all of the element's attributes.
+	- both can be right-clicked and then you can go "Reveal in Elements panel".  
+		this is not obvious w/ a live expression, but it's there.
+	- this bookmarklet works in firefox too.
+
+test this on a page report.  the iframe (I think) which contains the 'content 
+view'. I wanted this to work on 2023-12-15 when I was doing platform testing 
+for tobias (guided review), and it didn't work. 
+
+to do: decorate zero height/width elements. 
+
+to do: decorate elements with an opacity of 0. 
+
+to do: bug?   figure out why this bookmarklet doesn't work on  
+https://www.tamuc.edu/freshmen/cost/ 
+
+a newer / post-fork version of this might exist in tero's demo pages.   that 
+version might have more "commands" like "diff" and different focus styles.
+
+to do: feature: get tero's different focus styles (underline vs. border?) and 
+cycle through them on a 500 ms timer. 
+
+
+*/
+
+
+focus_bookmarklet_element_of_interest = null;
+
+bookmarkletVars.ourDataAttribForOpenShadowHosts = 'data-si-force-focus-open-shadow-host';
+
+const getFocusCssString = () => {
+    let notHasShadowAttrib = `not([${bookmarkletVars.ourDataAttribForOpenShadowHosts}])`;
+
+    // Paul Adam uses "a:focus, *:focus".  I don't know why he didn't (and I don't) just use "*:focus".
+    let selector = `a:${notHasShadowAttrib}:focus, *:${notHasShadowAttrib}:focus`;
+
+    // const outlineColor = "".concat(colorMode_ === "light" ? "#ffffff" : colorMode_ === "dark" ? "#000000" : "revert", " !important;"); // I think this is from Tero.  I don't know if he ever used "light" or "dark" - but "auto" is used.  It seems the point of "auto" is that it will cause outline-color: revert, and I think the assumption behind that is that the browser default is always good.  I think that might be true. 
+
+    // ... but here I'm overriding Tero's potentially good "revert" idea and instead using orange, b/c Paul Adam used orange, therefore the MT team is probably used to orange. 
+    outlineColor = 'orange';
+   
+    const cssRuleBody = `outline-style: solid !important; outline-width: 3px !important; outline-color:  ${outlineColor} !important; outline-offset: 1px !important;`;
+    return `${selector} { ${cssRuleBody} }`;
+};
+
+function elementOrAncestorHasAriaHidden(element_) {
+    let r = false;
+    if(element_.getAttribute('aria-hidden')?.toLowerCase() === 'true') {
+        r = true;
+    } else if(element_.parentElement) {
+        r = elementOrAncestorHasAriaHidden(element_.parentElement);
+    }
+    return r;
+}
+
+function logElement(logPrefixStr_, element_) {
+		if(!LOG) return;
+    let date = new Date();
+    let dateWithMilliseconds = date.toLocaleString('en-US', 
+            { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' })
+        + '.' + ("000" + date.getMilliseconds()).slice(-3); 
+    console.log(dateWithMilliseconds, logPrefixStr_, element_);
+    if(elementOrAncestorHasAriaHidden(element_)) {
+        console.log(dateWithMilliseconds, logPrefixStr_, 
+            '^^ WARN: focused element or one of its ancestors has aria-hidden');
+    }
+}
+
+function logElementMaybe(newlyFocusedElement_) {
+    let log = false; logPrefixStr = "Currently-focused element:";
+    if(focus_bookmarklet_element_of_interest !== null) {
+        if(focus_bookmarklet_element_of_interest === newlyFocusedElement_) {
+            logPrefixStr = "Element of interest is focused:";
+            log = true;
+        } else if(focus_bookmarklet_element_of_interest.contains(newlyFocusedElement_)) {
+            log = true;
+            logPrefixStr = "Descendent of element of interest is focused:";
+        }
+    } else {
+        log = true;
+    }
+    if(log) {
+        logElement(logPrefixStr, newlyFocusedElement_);
+
+        let LOG_CALL_STACK = false;
+        if(LOG_CALL_STACK) {
+            /* This is useless b/c it logs the call stack of our listener.  
+            Not the call stack of the code that causes the focus change.  
+            It's useless but it was a nice idea. */
+            console.trace();
+        }
+    }
+};
+
+function isOpenShadowHost(element_) {
+    return element_.shadowRoot && element_.shadowRoot.mode === "open";
+}
+
+function focusListener(event_) {
+    let newlyFocusedElement = event_.target;
+    if(newlyFocusedElement.nodeType !== Node.ELEMENT_NODE) {
+        /* this happens in firefox when an "HTMLDocument" is focused.  What's an "HTMLDocument"?  I don't know, but that's what it shows up as in the console.  seems to happen around iframes, and maybe the root dom "body" element too. */
+        return;
+    }
+    if(isOpenShadowHost(newlyFocusedElement)) {
+        /* when focus moves into a shadow dom, this function gets called twice: once for the shadow host and once for the element inside the shadow dom.  by default that would result in two "focus trail" steps, one for each.  we don't want that. */
+        return;
+    }
+    /* when focus moves into a /closed/ shadow dom, this function gets called once: on the shadow host.  that's too bad.  I'd rather it get called on the element inside the shadow dom. */
+
+    logElementMaybe(newlyFocusedElement);
+    updateFocusTrailOnFocus(newlyFocusedElement);
+};
+
+function createFocusTrailContainer() {
+    const container = document.createElement('div');
+    let shadowRoot = container.attachShadow({mode: 'open'});
+    return container;
+}
+
+function makeFocusTrailDecoration(referencePt_, text_) {
+    const left = referencePt_.x;
+    const top = referencePt_.y;
+    const width = 30;
+    const height = 20;
+    const lineHeight = 10;
+    let svgStr = 
+        `<svg xmlns='http://www.w3.org/2000/svg' aria-hidden="true" 
+                style="position: absolute; left: ${left-width/2}px; top: ${top - height - lineHeight}px; 
+                    width: ${width}px; height: ${height + lineHeight}px; z-index: 2147483647; 
+                    margin: 0px; pointer-events: none;">
+            <rect x="0" y="0" width="${width}" height="${height}" fill="yellow" stroke="black" />
+            <line x1="${width / 2}" y1="${height}" x2="${width / 2}" y2="${height + lineHeight}" stroke="black" />
+            <text x="${width / 2}" y="${height / 2}" dominant-baseline="middle" text-anchor="middle" fill="black">${text_}</text>
+        </svg>`;
+    let svg = (new DOMParser()).parseFromString(svgStr, 'image/svg+xml');
+    svg = svg.documentElement;
+    return svg;
+}
+
+function updateFocusTrailOnFocus(newlyFocusedElement_) {
+    updateFocusTrailList(newlyFocusedElement_);
+    redrawFocusTrailDecorations();
+}
+
+function updateFocusTrailList(newlyFocusedElement_) {
+    /* in this function we don't need to handle (and ignore) focus events onto elements inside of our floating menu.  b/c we added our focus listeners (incl. one listener for each shadow dom on the page) before we added our floating menu (which is a shadow dom) to the page.  so one of our listeners - and therefore this method - will never get called when focus goes onto an element inside of our floating menu. 
+    but the host element (correct vocabulary unclear) of our floating menu is another matter: */
+    let hostNodeOfFloatingMenu = bookmarkletVars.floatingMenu?.getRootNode()?.host;
+    if(newlyFocusedElement_ === hostNodeOfFloatingMenu) return;
+    let max = 10;
+    bookmarkletVars.focusTrailElements.push(newlyFocusedElement_);
+    while(bookmarkletVars.focusTrailElements.length > max) {
+        bookmarkletVars.focusTrailElements.shift();
+    }
+}
+
+function redrawFocusTrailDecorations() {
+    if(!bookmarkletVars.focusTrailContainer) {
+        bookmarkletVars.focusTrailContainer = createFocusTrailContainer();
+        document.body.appendChild(bookmarkletVars.focusTrailContainer);
+    } else {
+        bookmarkletVars.focusTrailContainer.shadowRoot.innerHTML = '';
+    }
+    if(!bookmarkletVars.focusTrailShow) return;
+    for(let [i, focusTrailElement] of bookmarkletVars.focusTrailElements.entries()) {
+        let rect = focusTrailElement.getBoundingClientRect();
+        let referencePt = {x: window.scrollX+rect.left+rect.width/2, y: window.scrollY+rect.top};
+        let offsets = getXYOffsetsRelativeToRootDom(focusTrailElement);
+        referencePt.x += offsets.x;
+        referencePt.y += offsets.y;
+        bookmarkletVars.focusTrailContainer.shadowRoot.appendChild(makeFocusTrailDecoration(referencePt, (i+1).toString()));
+    }
+}
+
+function getIframeBorderWidths(iframe) {
+    let style = getComputedStyle(iframe);
+    return {
+        left: parseFloat(style.borderLeftWidth),
+        top: parseFloat(style.borderTopWidth),
+    };
+}
+
+function getXYOffsetsRelativeToRootDom(element_) {
+    let x = 0, y = 0;
+    let curElement = element_;
+    while(true) {
+        let curIFrame = curElement.ownerDocument.defaultView.frameElement;
+        if(!curIFrame) break;
+        let curIFrameRect = curIFrame.getBoundingClientRect();
+        x += curIFrameRect.left;
+        y += curIFrameRect.top;
+        let curIFrameBorderWidths = getIframeBorderWidths(curIFrame);
+        x += curIFrameBorderWidths.left;
+        y += curIFrameBorderWidths.top;
+        curElement = curIFrame;
+    }
+    return {x, y};
+}
+
+const addFocusStyleCssToARoot = (root_) => {
+    let parentForNewStyleElement, documentObjForCreateElement;
+    if(root_.host) {
+        parentForNewStyleElement = root_.host.getRootNode().querySelector("head");
+        documentObjForCreateElement = root_.host.ownerDocument;
+    } else {
+        parentForNewStyleElement = root_.querySelector("head");
+        documentObjForCreateElement = root_;
+    }
+    let focusStyle = documentObjForCreateElement.createElement("style");
+    focusStyle.setAttribute("type", "text/css");
+    focusStyle.innerHTML = getFocusCssString();
+    parentForNewStyleElement.appendChild(focusStyle);
+    bookmarkletVars.styleElementsAndTheirParents.push([focusStyle, parentForNewStyleElement]);
+};
+
+const addFocusListenerToARoot = (root_) => {
+    /* firefox on an iframe: this is strange.  it seems to work on 2025-02-10.  on 2025-02-07 I'm pretty sure it didn't. */ 
+    root_.addEventListener("focus", focusListener, true);
+};
+
+/* Unlike document.activeElement, this function handles shadow DOM. */
+function getActiveElement(doc = document) {
+    let r = doc.activeElement;
+    while (r && r.shadowRoot) {
+        r = r.shadowRoot.activeElement;
+    }
+    return r;
+}
+
+function createFocusFloatingMenu() {
+	let shadowGuestRootElem = createFloatingMenu();
+    bookmarkletVars.floatingMenu = shadowGuestRootElem;
+    let shortcutKey = 'f';
+	appendHtmlDocumentFragmentStr_CSPSafe(shadowGuestRootElem, `
+		<div s-style="${GRID_ITEM_STYLE}">
+            <label><input type="checkbox" checked name="show-styles">Show forced focus styles</label> (shortcut: ctrl+shift+${shortcutKey}) 
+            <label><input type="checkbox" ${bookmarkletVars.focusTrailShow ? 'checked' : ''} name="show-trail">Show focus trail</label>
+        </div>
+		`);
+    let showStylesCheckbox = shadowGuestRootElem.querySelector('input[name="show-styles"]');
+    showStylesCheckbox.addEventListener('change', (event) => {
+        if(event.target.checked) {
+            for(let e of bookmarkletVars.styleElementsAndTheirParents) {
+                let styleElem = e[0], parent = e[1];
+                parent.appendChild(styleElem);
+            }
+        } else {
+            for(let e of bookmarkletVars.styleElementsAndTheirParents) {
+                let styleElem = e[0], parent = e[1];
+                styleElem.remove();
+            }
+        }
+    });
+    for(let root of [document, ...getIFrameRoots(document)]) {
+        root.addEventListener('keydown', (event__) => {
+            if(event__.ctrlKey && event__.shiftKey && event__.key === shortcutKey.toUpperCase()) {
+                showStylesCheckbox.click();
+            }
+        });
+    }
+    let showTrailCheckbox = shadowGuestRootElem.querySelector('input[name="show-trail"]');
+    showTrailCheckbox.addEventListener('change', (event) => {
+        bookmarkletVars.focusTrailShow = event.target.checked;
+        redrawFocusTrailDecorations();
+    });
+}
+
+/* here we deal with what would otherwise be an undesirable behaviour: our force-focus CSS styles would get applied to both open and closed shadow dom hosts.  for closed: this is desirable, b/c our styles won't get applied to any of the elements inside, so the styles being on the host is as good as it gets. for open: this would be undesirable (b/c our styles DO get applied to elements inside).  so here, and in the corresponding CSS, we prevent that. */
+function toEachOpenShadowHostAddOurDataAttrib(root_) {
+    for(let shadowRoot of getShadowDomRoots(root_)) {
+        if(shadowRoot.mode === "open") {
+            let shadowHost = shadowRoot.host;
+            shadowHost.setAttribute(bookmarkletVars.ourDataAttribForOpenShadowHosts, '');
+        }
+    }
+}
+
+function getIFrameRootsUnderShadowRoot(shadowRoot_) {
+	let r = [];
+	for(let iframe of shadowRoot_.querySelectorAll('iframe')) {
+		if (!iframe.contentDocument) continue; /* cross-origin iframe.  nothing we can do. */
+			/* ... I think. unless - maybe - this is run under browser extension (as 
+			opposed to under a bookmarklet).  I haven't tried that. */ 
+		r.push(iframe.contentDocument);
+	}
+	return r;
+}
+
+function main() {
+    if(bookmarkletVars.ranYet) {
+        alert("This bookmarklet already ran since the last page load.  It's not designed to run more than once.  It will now do nothing.  If you want to remove the focus styles that this bookmarklet added: reload the page.");
+        return;
+    }
+    bookmarkletVars.ranYet = true;
+    bookmarkletVars.styleElementsAndTheirParents = [];
+    bookmarkletVars.focusTrailElements = [];
+    bookmarkletVars.focusTrailShow = false;
+
+    addFocusStyleCssToARoot(document);
+    toEachOpenShadowHostAddOurDataAttrib(document);
+    /* tdr unc 
+    for(let iframe of getIFrameRoots(document)) {
+        addFocusStyleCssToARoot(iframe);
+        toEachOpenShadowHostAddOurDataAttrib(iframe);
+        for(let shadowRoot of getShadowDomRoots(iframe)) {
+            addFocusStyleCssToARoot(shadowRoot);
+        }
+    }
+    */
+
+    for(let shadowRoot of getShadowDomRoots(document)) {
+        addFocusStyleCssToARoot(shadowRoot);
+        /* tdr unc 
+        for(let iframe of getIFrameRootsUnderShadowRoot(shadowRoot)) {
+            addFocusStyleCssToARoot(iframe);
+        }
+        */
+    }
+
+    let focusedElement = getActiveElement();
+    logElement("Bookmarklet activated.  Currently-focused element:", focusedElement);
+
+    addFocusListenerToARoot(document);
+    for(let iframe of getIFrameRoots(document)) {
+        addFocusListenerToARoot(iframe);
+        for(let shadowRoot of getShadowDomRoots(iframe)) {
+            addFocusListenerToARoot(shadowRoot);
+        }
+    }
+    for(let shadowRoot of getShadowDomRoots(document)) {
+        addFocusListenerToARoot(shadowRoot);
+        for(let iframe of getIFrameRootsUnderShadowRoot(shadowRoot)) {
+            addFocusListenerToARoot(iframe);
+        }
+    }
+
+    window.addEventListener("resize", redrawFocusTrailDecorations);
+	//createFocusFloatingMenu();
+    updateFocusTrailOnFocus(focusedElement);
+}
+
+runBookmarkletMainFunctionWhenAppropriate(main);
+
+
+
+})(siteimprove_mt_tools_bookmarklet_vars_9c277bdd['focus']);
+
+
+
+
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+<br><br><br><br><br>
+ACT 1 (failed). &lt;a href=&quot;http://www.w3.org/WAI&quot;&gt;&lt;/a&gt;  <br>
+
+<a href="http://www.w3.org/WAI"></a><br>
+duplicated w/ different target URLs: <br>
+<a href="https://example.com/alpha/bravo"></a><br>
+<a href="https://example.com/alpha/bravo/charlie"></a><br>
+<a href="https://example.com/alpha-bravo/charlie"></a><br>
+<a href="https://example.com/alpha-bravo-charlie"></a><br>
+<a href="https://example.com/alpha/bravo-charlie"></a><br>
+<a href="https://example.com/alpha/bravo-charlie/"></a><br>
+<a href="https://example.com/alpha/bravo-charlie.html"></a><br>
+<a href="https://example.com/"></a><br>
+<a href="https://alpha.example.com/"></a><br>
+<a href="https://alpha.bravo.example.com/"></a><br>
+<a href="https://alpha-bravo.example.com/"></a><br>
+<a href="https://alpha-bravo.example.com/charlie?delta=true"></a><br>
+<a href="https://alpha-bravo.example.com/charlie/delta?foxtrot=true"></a><br>
+<a href="https://alpha-bravo.example.com/charlie/delta?foxtrot=true&golf=false"></a><br>
+<a href="https://alpha-bravo.example.com?foxtrot=true"></a><br>
+<a href="https://alpha-bravo-charlie-delta-foxtrot.golf.example.com"></a><br>
+<a href="https://example.com/alpha-bravo-charlie-delta-foxtrot-golf"></a><br>
+
+<br><br><br><br><br>
+
+
+
+
+ACT 2.  &lt;a href=&quot;https://www.w3.org/WAI&quot;&gt;&lt;img src=&quot;/test-assets/shared/w3c-logo.png&quot; alt=&quot;&quot;/&gt;&lt;/a&gt;  <br>
+
+<a href="https://www.w3.org/WAI"><img src="/test-assets/shared/w3c-logo.png" alt=""/></a>
+
+
+<br><br><br><br><br>
+
+
+
+
+ACT 3.  &lt;a href=&quot;http://www.w3.org/WAI&quot;&gt;&lt;img src=&quot;/test-assets/shared/w3c-logo.png&quot; role=&quot;presentation&quot;/&gt;&lt;/a&gt;  <br>
+
+<a href="http://www.w3.org/WAI"><img src="/test-assets/shared/w3c-logo.png" role="presentation"/></a>
+
+
+<br><br><br><br><br>
+
+
+
+
+
+ACT 4.  &lt;a href=&quot;http://www.w3.org/WAI&quot;&gt;&lt;img src=&quot;/test-assets/shared/w3c-logo.png&quot; role=&quot;none&quot;/&gt;&lt;/a&gt;
+  <br>
+
+<a href="http://www.w3.org/WAI"><img src="/test-assets/shared/w3c-logo.png" role="none"/></a>
+
+
+<br><br><br><br><br>
+
+
+
+
+
+ACT 5.  &lt;a href=&quot;https://www.w3.org/WAI&quot;&gt;&lt;img src=&quot;/test-assets/shared/w3c-logo.png&quot; title=&quot;&quot;/&gt;&lt;/a&gt;
+  <br>
+
+<a href="https://www.w3.org/WAI"><img src="/test-assets/shared/w3c-logo.png" title=""/></a>
+
+
+<br><br><br><br><br>
+
+
+
+
+ACT 6.  &lt;a href=&quot;https://www.w3.org/WAI&quot;&gt;&lt;img src=&quot;/test-assets/shared/w3c-logo.png&quot; aria-labelledby=&quot;id1&quot;/&gt;&lt;/a&gt;
+&lt;div id=&quot;id1&quot;&gt;&lt;/div&gt;
+  <br>
+
+<a href="https://www.w3.org/WAI"><img src="/test-assets/shared/w3c-logo.png" aria-labelledby="id1"/></a>
+<div id="id1"></div>
+
+
+<br><br><br><br><br>
+
+
+
+
+
+ACT 7.  &lt;a href=&quot;https://www.w3.org/WAI&quot;&gt;&lt;img src=&quot;/test-assets/shared/w3c-logo.png&quot; aria-labelledby=&quot;id1&quot;/&gt;&lt;/a&gt;
+
+  <br>
+
+<a href="https://www.w3.org/WAI"><img src="/test-assets/shared/w3c-logo.png" aria-labelledby="id1"/></a>
+
+
+<br><br><br><br><br>
+
+
+
+ACT 8.  (off-screen)<br>
+&lt;a href=&quot;https://www.w3.org/WAI&quot; style=&quot;left: -9999px; position: absolute;&quot;&gt;
+	&lt;img src=&quot;/test-assets/shared/w3c-logo.png&quot; /&gt;
+&lt;/a&gt;
+  <br>
+
+<a href="https://www.w3.org/WAI" style="left: -9999px; position: absolute;">
+	<img src="/test-assets/shared/w3c-logo.png" />
+</a>
+
+
+<br><br><br><br><br>
+
+
+
+ACT 9.  &lt;img src=&quot;/test-assets/c487ae/planets.jpg&quot; width=&quot;145&quot; height=&quot;126&quot; alt=&quot;Planets&quot; usemap=&quot;#planetmap&quot; /&gt;
+&lt;map name=&quot;planetmap&quot;&gt;
+	&lt;area shape=&quot;rect&quot; coords=&quot;0,0,82,126&quot; href=&quot;sun.htm&quot; /&gt;
+&lt;/map&gt;
+  <br>
+
+<img src="/test-assets/c487ae/planets.jpg" width="145" height="126" alt="Planets" usemap="#planetmap" />
+<map name="planetmap">
+	<area shape="rect" coords="0,0,82,126" href="sun.htm" />
+</map>
+
+
+<br><br><br><br><br>
+
+
+
+
+
+ACT 10.  &lt;a href=&quot;https://www.w3.org/WAI&quot; role=&quot;none&quot;&gt; &lt;/a&gt;
+  <br>
+
+<a href="https://www.w3.org/WAI" role="none"> </a>
+
+
+<br><br><br><br><br>
+
+
+
+
+ACT 11 (last)<br>
+See [&lt;a href=&quot;https://act-rules.github.io/&quot; role=&quot;doc-biblioref&quot;
+	&gt;&lt;img src=&quot;https://github.com/act-rules/act-rules.github.io/blob/develop/test-assets/shared/act-logo.png&quot; alt=&quot;&quot;/&gt;&lt;/a
+&gt;]
+  <br>
+
+See [<a href="https://act-rules.github.io/" role="doc-biblioref"
+	><img src="https://github.com/act-rules/act-rules.github.io/blob/develop/test-assets/shared/act-logo.png" alt=""/></a
+>]
+
+
+
+
+<br><br><br><br><br>
+
+
+dan 1.  &lt;a href=&quot;#&quot;&gt;&lt;span style=&quot;display: none&quot;&gt;text&lt;/span&gt;&lt;/a&gt;
+<br>
+
+<a href="https://example.com/alpha-beta-charlie"><span style="display: none">text</span></a>
+
+
+<br><br><br><br><br>
+
+
+
+dan 2.  &lt;a href=&quot;#&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;text&lt;/span&gt;&lt;/a&gt;
+<br>
+<a href="https://example.com/alpha-beta-charlie/delta/echo"><span aria-hidden="true">text</span></a>
+
+
+
+<br><br><br><br><br>
+
+
+
+
+
+</main>
+
+</body>
+
+</html>

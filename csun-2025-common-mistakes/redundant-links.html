@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<p>empty then non-empty: <a href="https://example.com"></a> <a href="https://example.com">link</a> text </p>
+
+<p>non-empty then empty: <a href="https://example1.com">link</a> <a href="https://example1.com"></a> text </p>
+
+
+<p>text <a href="https://example.com">link</a> <a href="https://example.com">link</a> text </p>
+
+<p>text <a href="https://example.com">link</a> text text <a href="https://example.com">link</a> text </p>
+
+<p>text <a href="https://example.com">link</a> </p>
+<div>text </div>
+<img src="xyz.png">
+<p><a href="https://example.com">link</a> text </p>
+
+<p>text <a href="https://example.com">link</a> </p>
+<div>text </div>
+<img src="xyz.png">
+<button>button</button>
+<p><a href="https://example.com">link</a> text </p>
+
+</main>
+
+</body>
+
+</html>
