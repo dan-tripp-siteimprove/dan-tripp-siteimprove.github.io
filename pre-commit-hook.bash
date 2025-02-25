@@ -16,6 +16,6 @@ trap exit_trap_func EXIT
 
 set -o errtrace
 
-./update-index-html.py
+./update-index-html-files.py
 git add --all
 

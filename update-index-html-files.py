@@ -14,6 +14,12 @@ excluded_file_relative_paths = ['./'+output_index_filename, './'+filename_of_thi
 python_script_name = os.path.basename(__file__)
 
 html_file_paths = []
+dirs_which_need_an_independent_index_file = []
+
+def does_dir_have_independent_index_file(dir_):
+	p = os.path.join(dir_, '.independent-index')
+	r = os.path.exists(p)
+	return r
 
 def does_dir_have_dont_index_file(dir_):
 	dont_index_file_path = os.path.join(dir_, '.dont-index') # AKA noindex, ignore 
@@ -21,6 +27,14 @@ def does_dir_have_dont_index_file(dir_):
 	return r
 
 for root, dirs, files in os.walk('.'):
+
+	for subdir in dirs:
+		subdir = os.path.join(root, subdir)
+		if does_dir_have_independent_index_file(subdir):
+			if does_dir_have_dont_index_file(subdir):
+				raise Exception("not supported yet")
+			dirs_which_need_an_independent_index_file.append(subdir)
+
 	dirs[:] = [d for d in dirs if d not in excluded_dirnames and not does_dir_have_dont_index_file(os.path.join(root, d))]
 
 	for file in files:
