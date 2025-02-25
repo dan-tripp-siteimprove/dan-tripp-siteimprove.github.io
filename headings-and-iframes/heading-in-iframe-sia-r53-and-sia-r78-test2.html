@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<h1>Tests</h1>
+
+<p>Interesting: 1) "h5 a" is not failed under "headings not structured".  2) "h3 a" is failed under "content missing after heading".</p>
+
+<p>It seems to me that (1) above indicates that "headings not structured" doesn't check inside of iframes, and (2) above indicates that "content missing after heading" does check inside of iframes, but with the possibly-surprising-behaviour that it sees all iframes _themselves_ as content, so some headings outside the iframe that I would expect to fail don't fail.</p>
+
+<p>On the headings inside the iframe: the alfa browser extension seems to do the highlighting wrong (with respect to vertical offset).</p>
+
+<h2>h2 not in an iframe </h2>
+
+
+<iframe src="heading-in-iframe-sia-r53-and-sia-r78-child-with-heading.html" width="600px"></iframe><br>
+
+
+<h4>h4</h4>
+
+<p>text </p>
+
+<iframe src="heading-in-iframe-sia-r53-and-sia-r78-child-with-misc-headings-and-text.html" width="600px" height="300px"></iframe><br>
+
+
+
+
+
+</main>
+
+</body>
+
+</html>
