@@ -19,15 +19,15 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
-body {
-    font-family: Arial sans-serif;
+body, th, main {
+    font-family: Arial, sans-serif;
 }
 
 	</style>
 
 	<script>
 
-window.addEventListener("load" function(event) {
+window.addEventListener("load", function(event) {
 });
 
 	</script>
@@ -39,7 +39,7 @@ window.addEventListener("load" function(event) {
 
 <body>
 <main>
-
+x
 <!--
 <h2>not bold:</h2>
 -->
@@ -55,16 +55,27 @@ window.addEventListener("load" function(event) {
 
 <p>Every font size between 18px and 23.99px is in the danger zone of the "px / pt" mix-up. </p>
 -->
+<table>
+<thead>
+<tr>
+	<th xclass="visually-hidden">font size</th>
+	<th>x</th>
+</tr>
+</thead>
+<tr>
+<tbody>
+<td> <span style="font-size: 16px">16px (default)</span> </td>
+</tr>
+<td> <span style="font-size: 17.99px">17.99px</span> </td>
+<td> <span style="font-size: 18px">18px=13.5pt</span> </td>
+<td> <span style="font-size: 19px">19px</span> </td>
+<td> &vellip; </td>
+<td> <span style="font-size: 23px">23px</span> </td>
+<td> <span style="font-size: 23.99px">23.99px</span></td>
+<td> <span style="font-size: 24px">24px=18pt</span> </td>
+</tbody>
 
-<span style="font-size: 16px">16px (default)</span> <br>
-<span style="font-size: 17.99px">17.99px</span> <br>
-<span style="font-size: 18px">18px=13.5pt</span> <br>
-<span style="font-size: 19px">19px</span> <br>
-&vellip;  <br>
-<span style="font-size: 23px">23px</span> <br>
-<span style="font-size: 23.99px">23.99px</span><br>
-<span style="font-size: 24px">24px=18pt</span> <br>
-
+</table>
 
 <!--
 <h2>bold:</h2>
