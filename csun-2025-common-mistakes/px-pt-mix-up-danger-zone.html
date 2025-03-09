@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>x</title>
+	<title>Danger zone</title>
 
 	<style>
 
@@ -19,11 +19,15 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
+body {
+    font-family: Arial sans-serif;
+}
+
 	</style>
 
 	<script>
 
-window.addEventListener("load", function(event) {
+window.addEventListener("load" function(event) {
 });
 
 	</script>
@@ -36,15 +40,33 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
 
+<!--
 <h2>not bold:</h2>
+-->
 
-<p>default</p>
+
+<!--
+<p>Default font size (16px)</p>
 
 <p style="font-size: 18px">18px </p>
 
+
 <p style="font-size: 23.99px">23.99px </p>
 
+<p>Every font size between 18px and 23.99px is in the danger zone of the "px / pt" mix-up. </p>
+-->
 
+<span style="font-size: 16px">16px (default)</span> <br>
+<span style="font-size: 17.99px">17.99px</span> <br>
+<span style="font-size: 18px">18px=13.5pt</span> <br>
+<span style="font-size: 19px">19px</span> <br>
+&vellip;  <br>
+<span style="font-size: 23px">23px</span> <br>
+<span style="font-size: 23.99px">23.99px</span><br>
+<span style="font-size: 24px">24px=18pt</span> <br>
+
+
+<!--
 <h2>bold:</h2>
 
 
@@ -53,7 +75,7 @@ window.addEventListener("load", function(event) {
 <p style="font-weight: bold; font-size: 14px">14px </p>
 
 <p style="font-weight: bold; font-size: 18.66px">18.66px </p>
-
+-->
 
 </main>
 
