@@ -19,9 +19,42 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
-body, th, main {
+body {
     font-family: Arial, sans-serif;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 4px;
+    text-align: left;
+	vertical-align: top;
+}
+
+/* Header styling: Light blue background with black text */
+th {
+    background-color: #cce5ff; /* Light blue */
+    color: black;
+    font-weight: bold;
+}
+
+/* Alternating row colors for better readability */
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray */
+}
+
+x.danger {
+	color: red;
+}
+
 
 	</style>
 
@@ -39,7 +72,7 @@ window.addEventListener("load", function(event) {
 
 <body>
 <main>
-x
+
 <!--
 <h2>not bold:</h2>
 -->
@@ -58,21 +91,65 @@ x
 <table>
 <thead>
 <tr>
-	<th xclass="visually-hidden">font size</th>
-	<th>x</th>
+	<th xclass="visually-hidden">Font size</th>
+	<th>Seems Large</th>
+	<th>Is Large</th>
+	<th>Danger Zone</th>
 </tr>
 </thead>
 <tr>
 <tbody>
-<td> <span style="font-size: 16px">16px (default)</span> </td>
+<tr>
+	<td> <span style="font-size: 16px">16px (default)</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
 </tr>
-<td> <span style="font-size: 17.99px">17.99px</span> </td>
-<td> <span style="font-size: 18px">18px=13.5pt</span> </td>
-<td> <span style="font-size: 19px">19px</span> </td>
-<td> &vellip; </td>
-<td> <span style="font-size: 23px">23px</span> </td>
-<td> <span style="font-size: 23.99px">23.99px</span></td>
-<td> <span style="font-size: 24px">24px=18pt</span> </td>
+<tr>
+	<td> <span style="font-size: 17.99px">17.99px</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+</tr>
+<tr>
+	<td class="danger"> <span style="font-size: 18px">18px=13.5pt</span> </td>
+	<td> <span style="font-size: 16px">Yes</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px"><strong class="danger">Yes</strong></span> </td>
+</tr>
+<tr>
+	<td class="danger"> <span style="font-size: 19px">19px</span> </td>
+	<td> <span style="font-size: 16px">Yes</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px"><strong class="danger">Yes</strong></span> </td>
+</tr>
+<tr>
+	<td class="danger"> &vellip; </td>
+	<td> <span style="font-size: 16px">Yes</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px"><strong class="danger">Yes</strong></span> </td>
+</tr>
+<tr>
+	<td class="danger"> <span style="font-size: 23px">23px</span> </td>
+	<td> <span style="font-size: 16px">Yes</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px"><strong class="danger">Yes</strong></span> </td>
+</tr>
+<tr>
+	<td class="danger"> <span style="font-size: 23.99px">23.99px</span></td>
+	<td> <span style="font-size: 16px">Yes</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+	<td> <span style="font-size: 16px"><strong class="danger">Yes</strong></span> </td>
+</tr>
+<tr>
+	<td> <span style="font-size: 24px">24px=18pt</span> </td>
+	<td> <span style="font-size: 16px">Yes</span> </td>
+	<td> <span style="font-size: 16px">Yes</span> </td>
+	<td> <span style="font-size: 16px">No</span> </td>
+</tr>
+
+
+
 </tbody>
 
 </table>
