@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<div class="card-orig" style="display: inline-block; border: 1px solid black;">
+	<a href="https://example.com">
+		<img src="./duck.png" style="width: 100px;" alt="">
+		<h2>A card</h2>
+		<p>text text text.</p>
+		<small>By Author</small>
+	</a>
+</div>
+
+
+
+
+<div class="card-orig" style="display: inline-block; border: 1px solid black;">
+<div>
+	<a href="https://example.com">
+		<img src="./duck.png" style="width: 100px;" alt="">
+		<h2>A card</h2>
+		<p>text text text.</p>
+		<small>By Author</small>
+	</a>
+</div>
+</div>
+
+
+
+
+
+
+<style>
+
+.card-bba84c20-2139-4c7e-81fc-facaca5aa431 {
+	position: relative; 
+}
+
+.card-bba84c20-2139-4c7e-81fc-facaca5aa431 a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+</style>
+
+
+<div class="card-bba84c20-2139-4c7e-81fc-facaca5aa431" style="display: inline-block; border: 1px solid black;">
+	<img src="./duck.png" style="width: 100px;" alt="">
+	<h2><a href="https://example.com">A card</a></h2>
+	<p>text text text.</p>
+	<small>By Author</small>
+</div>
+
+
+
+
+
+</main>
+
+</body>
+
+</html>

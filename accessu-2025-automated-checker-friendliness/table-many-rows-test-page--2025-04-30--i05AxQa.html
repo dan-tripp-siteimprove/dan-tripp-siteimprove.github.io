@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+  let tbody = document.getElementById('tbody');
+  if (!tbody) return;
+
+  let n = 1000;
+
+  for (let i = 0; i < n; i++) {
+    let tr = document.createElement('tr');
+
+    for (let j = 0; j < 10; j++) {
+      let td = document.createElement('td');
+      let div = document.createElement('div');
+      div.style.padding = '10px';
+      div.style.border = '1px solid #ccc';
+      div.style.background = i % 2 ? '#f9f9f9' : '#e9e9e9';
+      div.innerHTML = `
+        <button onclick="console.log('row ${i} cell ${j}')">Click</button>
+        <input type="text" value="row ${i} input ${j}" style="width: 100px;" />
+        <label><input type="checkbox" /> check</label>
+      `;
+      td.appendChild(div);
+      tr.appendChild(td);
+    }
+
+    tbody.appendChild(tr);
+  }
+});
+
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<table>
+<tbody id="tbody">
+</tbody>
+</table>
+
+
+
+
+
+</main>
+
+</body>
+
+</html>
