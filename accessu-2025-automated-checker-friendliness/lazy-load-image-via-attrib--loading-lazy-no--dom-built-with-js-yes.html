@@ -24,6 +24,14 @@ p { line-height: 1.5; }
 	<script>
 
 window.addEventListener("load", function(event) {
+	//return;
+	let htmlStr = '';
+	htmlStr += '<ol>\n';
+	for(let i=0; i<20; i++) {
+		htmlStr += `<li><img src="duck${i}.png" alt="drawing of a duck" style="height: 500px"/> text ${i+10}</li>\n`;
+	}
+	htmlStr += '</ol>';
+	document.querySelector('main').innerHTML = htmlStr;
 });
 
 	</script>
@@ -34,15 +42,17 @@ window.addEventListener("load", function(event) {
 
 
 <body>
+
+
+
+
 <main>
-
-
-<img src="duck0.png" alt="drawing of a duck" style="height: 500px"/> <a href="#">goose</a><br>
-
 
 
 
 </main>
+
+
 
 </body>
 

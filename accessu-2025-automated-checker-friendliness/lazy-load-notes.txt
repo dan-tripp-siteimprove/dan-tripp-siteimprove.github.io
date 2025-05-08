@@ -1,0 +1,11 @@
+
+<img loading="lazy"> 
+
+	- I verified via devtools network tab that lazy-loading is working.   
+		- important: set the height on the img. 
+
+	- surprising results here w/ nvda (on chrome) 
+		- either loading="lazy" or adding <img> via JS was often enough to get that image unannounced. 
+		- unannounced means: no mention on arrow nav, and on g "no next graphic". 
+		- the text content was announced fine. 
+
