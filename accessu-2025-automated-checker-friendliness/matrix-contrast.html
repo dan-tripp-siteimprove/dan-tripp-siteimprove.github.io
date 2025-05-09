@@ -24,8 +24,13 @@ button {
 	padding: 0.5em;
 }
 
-div {
-	height: 500px;
+h2 {
+	font-size: 4em;
+	padding-top: 4em;
+}
+
+div.spacer {
+	height: 500px; 
 }
 
 	</style>
@@ -46,23 +51,29 @@ window.addEventListener("load", function(event) {
 <main>
 
 
-<div></div>
+
+<h2>Pass SC / Pass check</h2>
 
 <button>Sign up for this course</button>
 
-<div></div>
+
+<h2>Fail SC / Fail check</h2>
 
 <button style="color: #fff; background-color: #67A0B2">Sign up for this course</button>
 
-<div></div>
+
+<h2>Pass SC / Fail check</h2>
 
 <button style="text-shadow: 10px 10px 10px rgba(1, 1, 1, 0.4)">Sign up for this course</button>
 
-<div></div>
+
+<h2>Fail SC / Pass check</h2>
 
 <button disabled>Sorry, you are missing one or more prerequisites for this course, so you can't sign up for it.  If you would like to apply for an exception, email exceptions@school.edu.</button>
 
-<div></div>
+<!--
+<div class="spacer"></div>
+-->
 
 </main>
 
