@@ -36,16 +36,6 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
 
-<!-- 
-
-- don't load from a file:// URL.  if you do, the iframe lazy loading won't work.  
-
-- with these iframes I couldn't reproduce the same kinds of problems that I had w/ <img loading="lazy">.  
-	- w/ nvda on chrome 
-		- I arrowed down through the whole page and all images got announced.  all links got announced.  viewport didn't scroll down.  and ins+f7 showed all the links.  
-
--->
-
 
 <iframe loading="lazy" src="lazy-load-iframe-native-html-child.html" width="600" height="600"></iframe><br>
 <iframe loading="lazy" src="lazy-load-iframe-native-html-child.html" width="600" height="600"></iframe><br>

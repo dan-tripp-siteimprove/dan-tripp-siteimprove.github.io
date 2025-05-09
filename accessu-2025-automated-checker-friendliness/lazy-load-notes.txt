@@ -8,4 +8,22 @@
 		- either loading="lazy" or adding <img> via JS was often enough to get that image unannounced. 
 		- unannounced means: no mention on arrow nav, and on g "no next graphic". 
 		- the text content was announced fine. 
+		
+	- voiceover 
+		- uninteresting.  I couldn't produce any strangeness, or even figure out how to emulate the behaviours in nvda that caused strangeness in nvda. 
+
+<iframe loading="lazy"> 
+
+	- don't load from a file:// URL.  if you do, the iframe lazy loading won't work.  
+	
+	- nvda
+	
+		- with these iframes I got straightforward lazy load problem: at top of page, ins+f7 showed only the first ~ 6 links.   
+
+		- with these iframes I couldn't reproduce the mysterious kinds of problems that I had w/ <img loading="lazy">.  
+			- w/ nvda on chrome 
+				- I arrowed down through the whole page and all images got announced.  all links got announced.  viewport didn't scroll down.  and ins+f7 showed all the links.  
+				
+			
+			
 

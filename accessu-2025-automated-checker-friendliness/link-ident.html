@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.bad:focus {
+  outline: none;
+  box-shadow: none;
+	text-decoration: none;
+}
+
+.bad-anim {
+	box-shadow: 0 0 0 2px rgba(255, 0, 0, 0);
+	transition: box-shadow 0.4s ease;
+}
+
+.bad-anim.active {
+	box-shadow: 0 0 0 2px rgba(255, 0, 0, 1);
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+
+
+
+	for(let link  of document.querySelectorAll('a')) {
+
+		link.addEventListener('focus', () => {
+			link.classList.add('bad-anim');
+			// add delay before applying visible ring
+			setTimeout(() => {
+				link.classList.add('active');
+			}, 150); // delay makes the ring late
+		});
+
+
+		link.addEventListener('blur', () => {
+			link.classList.remove('fake-focus', 'active');
+		});
+		
+	}
+
+
+
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+<p>
+lorem <a href="#" class="bad">link</a> ipsum 
+</p>
+
+<p>
+lorem <a href="#" class="bad">link</a> ipsum 
+</p>
+
+
+<!--
+<p>
+for axe lorem <a href="#" style="text-decoration: none">link</a> ipsum 
+</p>
+-->
+
+</main>
+
+</body>
+
+</html>

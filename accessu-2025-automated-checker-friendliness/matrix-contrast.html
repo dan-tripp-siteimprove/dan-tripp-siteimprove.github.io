@@ -19,21 +19,20 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
+button {
+	font-size: 3em; 
+	padding: 0.5em;
+}
+
+div {
+	height: 500px;
+}
+
 	</style>
 
 	<script>
 
 window.addEventListener("load", function(event) {
-	//return;
-	let htmlStr = '';
-	htmlStr += '<ol>\n';
-	for(let i=0; i<20; i++) {
-		/* I'm not sure about this one.  maybe text or not makes a difference. */
-		htmlStr += `<li><img src="duck${i}.png" alt="drawing of a duck" style="height: 500px"/> text ${i+10}</li>\n`;
-		//htmlStr += `<li><img src="duck${i}.png" alt="drawing of a duck" style="height: 500px"/></li>\n`;
-	}
-	htmlStr += '</ol>';
-	document.querySelector('main').innerHTML = htmlStr;
 });
 
 	</script>
@@ -44,17 +43,28 @@ window.addEventListener("load", function(event) {
 
 
 <body>
-
-
-
-
 <main>
 
 
+<div></div>
+
+<button>Sign up for this course</button>
+
+<div></div>
+
+<button style="color: #fff; background-color: #67A0B2">Sign up for this course</button>
+
+<div></div>
+
+<button style="text-shadow: 10px 10px 10px rgba(1, 1, 1, 0.4)">Sign up for this course</button>
+
+<div></div>
+
+<button disabled>Sorry, you are missing one or more prerequisites for this course, so you can't sign up for it.  If you would like to apply for an exception, email exceptions@school.edu.</button>
+
+<div></div>
 
 </main>
-
-
 
 </body>
 
