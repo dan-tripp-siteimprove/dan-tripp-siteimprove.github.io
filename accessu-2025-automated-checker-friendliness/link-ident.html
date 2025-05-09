@@ -19,19 +19,53 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
-.bad:focus {
+.plain-bad:focus {
+  outline: none;
+  box-shadow: none;
+	text-decoration: none;
+}
+
+.to-bad-anim:focus {
   outline: none;
   box-shadow: none;
 	text-decoration: none;
 }
 
 .bad-anim {
-	box-shadow: 0 0 0 2px rgba(255, 0, 0, 0);
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0);
 	transition: box-shadow 0.4s ease;
 }
 
 .bad-anim.active {
-	box-shadow: 0 0 0 2px rgba(255, 0, 0, 1);
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
+}
+
+@keyframes spinAndGlow {
+  0%   { transform: rotate(0deg) scale(1);    box-shadow: 0 0 0 3px black; }
+  25%  { transform: rotate(5deg) scale(1.1);  box-shadow: 0 0 5px 3px orange; }
+  50%  { transform: rotate(-5deg) scale(1.2); box-shadow: 0 0 10px 3px yellow; }
+  75%  { transform: rotate(5deg) scale(1.1);  box-shadow: 0 0 5px 3px orange; }
+  100% { transform: rotate(0deg) scale(1);    box-shadow: 0 0 0 3px black; }
+}
+
+.bad-anim-ridiculous {
+  animation: spinAndGlow 0.6s ease-out;
+}
+
+
+p {
+	font-size: 2em; 
+	padding-bottom: 8em;
+}
+
+h2 {
+	font-size: 3em;
+	padding-top: 4em;
+}
+
+.evil:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.05);
+	text-decoration: none; 
 }
 
 	</style>
@@ -42,19 +76,18 @@ window.addEventListener("load", function(event) {
 
 
 
-	for(let link  of document.querySelectorAll('a')) {
+	for(let link  of document.querySelectorAll('a.to-bad-anim')) {
 
 		link.addEventListener('focus', () => {
 			link.classList.add('bad-anim');
-			// add delay before applying visible ring
 			setTimeout(() => {
-				link.classList.add('active');
-			}, 150); // delay makes the ring late
+				link.classList.add('active', 'bad-anim-ridiculous');
+			}, 150); 
 		});
 
 
 		link.addEventListener('blur', () => {
-			link.classList.remove('fake-focus', 'active');
+			link.classList.remove('bad-anim', 'active', 'bad-anim-ridiculous');
 		});
 		
 	}
@@ -74,17 +107,24 @@ window.addEventListener("load", function(event) {
 <main>
 
 
+<h2>Pass SC / Pass check</h2>
+<p>Please check the <a href="#">schedule</a> and <a href="#">pricing</a> before you sign up for this course. </p>
 
-<p>
-lorem <a href="#" class="bad">link</a> ipsum 
-</p>
+<h2>Fail SC / Fail check</h2>
+<p>Please check the <a href="#" class="plain-bad">schedule</a> and <a href="#" class="plain-bad">pricing</a> before you sign up for this course. </p>
 
-<p>
-lorem <a href="#" class="bad">link</a> ipsum 
-</p>
+<h2>Pass SC / Fail check</h2>
+<p>Please check the <a href="#" class="to-bad-anim">schedule</a> and <a href="#" class="to-bad-anim">pricing</a> before you sign up for this course. </p>
 
+<h2>Fail SC / Pass check</h2>
+<p>Please check the <a href="#" class="evil">schedule</a> and <a href="#" class="evil">pricing</a> before you sign up for this course. </p>
 
 <!--
+<p>
+lorem <a href="#" class="bad">link</a> ipsum 
+</p>
+
+
 <p>
 for axe lorem <a href="#" style="text-decoration: none">link</a> ipsum 
 </p>
