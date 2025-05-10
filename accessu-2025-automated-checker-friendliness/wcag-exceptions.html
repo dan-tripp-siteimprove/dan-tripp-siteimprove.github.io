@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+div.spacer {
+        height: 500px; 
+}
+
+body {
+	font-family: sans-serif;
+}
+
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<img src="wcag-exceptions-target-size-equiv.png" alt="a carousel with large next/previous buttons on the left and right, and 10 too-small page buttons on the bottom">
+
+<div class="spacer"></div>
+
+<div style="font-size: 3em; margin: 1em">
+
+<p >There's no debate or ambiguity on this part, that I know of.  Everyone seems to agree that <a href="#">links like this</a>, which are in a multi-line paragraph, should be part of the <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">target size SC</a>'s "inline exception".  The text of the "inline exception" is: "The target is in a sentence or its size is otherwise constrained by the line-height of non-target text".</p>
+
+<br>
+<p>The ambiguity of the exception is in cases like these:</p>
+
+<div style="display: flex; gap: 3em;">
+	<div>
+		<ol>
+			<li><a href="#">one</a></li>
+			<li><a href="#">two</a></li>
+			<li><a href="#">three</a></li>
+		</ol>
+
+		<ul>
+			<li><a href="#">one</a></li>
+			<li><a href="#">two</a></li>
+			<li><a href="#">three</a></li>
+		</ul>
+	</div>
+
+	<div>
+		<ul>
+			<li><a href="#">one</a> non-link text</li>
+			<li><a href="#">two</a> non-link text</li>
+			<li><a href="#">three</a> non-link text</li>
+		</ul>
+
+		<ul>
+			<li><a href="#">one</a></li>
+			<li><a href="#">two</a></li>
+			<li><a href="#">three</a> non-link text</li>
+		</ul>
+	</div>
+
+	<div>
+		<ul>
+			<li><a href="#">one</a> <a href="#">two</a></li>
+			<li><a href="#">three</a> <a href="#">four</a></li>
+			<li><a href="#">five</a> <a href="#">six</a></li>
+		</ul>
+
+	</div>
+
+
+</div>
+
+
+</div>
+
+<br>
+WCAG source: <a href="https://github.com/w3c/wcag/issues/2767#issuecomment-1332857479">github issue</a> which links to <a href="https://docs.google.com/document/d/1BFNDFnbU9CizswP4oEICpFHeqt7qXg9kRt2QEDoUXSM/edit?tab=t.0">this google doc</a>.
+
+
+<div class="spacer"></div>
+
+
+<p style="font-size: 3em;">There is a disabled link at the end of this line, so it meets the exception of the contrast SC.  Fine.  <a href="javascript:void(0)" aria-disabled="true" style="color: #aaa;">Sign Up</a></p>
+
+<div class="spacer"></div>
+
+<div style="font-size: 3em;">
+
+<!--
+<label>Name <span style="color: #aaa"><sup>*</sup></span> <input style="font-size: 1em;"></label><br>
+-->
+
+Table of Contents:
+<p>Chapter 1 <span style="color: #aaa">. . . . . . . . . . . . . . . . . .</span> 2</p>
+<p>Chapter 2 <span style="color: #aaa">...................................</span> 21</p>
+<p>Chapter 3 <span style="color: #aaa">. . . . . . . . . . . . . . . . . .</span> 37</p>
+<p>Chapter 4 <span style="color: #aaa">...................................</span> 52</p>
+
+</div>
+
+<div class="spacer"></div>
+
+
+</main>
+
+</body>
+
+</html>
