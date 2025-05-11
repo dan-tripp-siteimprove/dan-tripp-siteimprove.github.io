@@ -11,12 +11,16 @@ p { line-height: 1.5; }
 
 /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
 .visually-hidden:not(:focus):not(:active) {
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+body {
+	font-size: 50px; 
 }
 
 	</style>
@@ -36,9 +40,17 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
 
+<ol style="line-height: 1.5; padding-left: 1em;">
+<li><a href="#" aria-label="Watch demo (opens in a new tab)">Watch the demo</button> 
+<li><a href="#" aria-label="Nonstandard items (opens in a new tab)">Non-standard items</a><br>
+<li><a href="#" aria-label="Books and More (opens in a new tab)">Books & More</a><br>
+<li><a href="#" aria-label="Alpine Road (opens in a new tab)">Alpine Rd.</a><br>
+<li><a href="#" aria-label="New">  New <span style="display: inline-block; background: red; color: white; font-size: 0.5em; font-weight: bold; line-height: 1; padding: 0.3em; border-radius: 999px; vertical-align: super; min-width: 1.2em; text-align: center; ">3</span> </a><br>
+<li><a href="#" aria-label="Cancelled (opens in a new tab)">Canceled items</a><br>
+<li><a href="#" aria-label="S U Veez">SUVs</a><br>
+<li><a href="#" aria-label="5 1 2 5 5 5 1 2 3 4">512-555-1234</a><br>
+</ol>
 
-
-<label>First name (required)</label><input type="text" aria-label="First name">
 
 
 

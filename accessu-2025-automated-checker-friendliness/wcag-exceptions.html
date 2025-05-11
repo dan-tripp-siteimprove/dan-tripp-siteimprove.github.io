@@ -73,15 +73,15 @@ window.addEventListener("load", function(event) {
 
 	<div>
 		<ul>
-			<li><a href="#">one</a> non-link text</li>
-			<li><a href="#">two</a> non-link text</li>
-			<li><a href="#">three</a> non-link text</li>
+			<li><a href="#">one</a> text</li>
+			<li><a href="#">two</a> text</li>
+			<li><a href="#">three</a> text</li>
 		</ul>
 
 		<ul>
 			<li><a href="#">one</a></li>
 			<li><a href="#">two</a></li>
-			<li><a href="#">three</a> non-link text</li>
+			<li><a href="#">three</a> text</li>
 		</ul>
 	</div>
 
@@ -92,6 +92,11 @@ window.addEventListener("load", function(event) {
 			<li><a href="#">five</a> <a href="#">six</a></li>
 		</ul>
 
+		<ul style="list-style: none;">
+			<li><a href="#">one</a></li>
+			<li><a href="#">two</a></li>
+			<li><a href="#">three</a> text</li>
+		</ul>
 	</div>
 
 
@@ -102,6 +107,25 @@ window.addEventListener("load", function(event) {
 
 <br>
 WCAG source: <a href="https://github.com/w3c/wcag/issues/2767#issuecomment-1332857479">github issue</a> which links to <a href="https://docs.google.com/document/d/1BFNDFnbU9CizswP4oEICpFHeqt7qXg9kRt2QEDoUXSM/edit?tab=t.0">this google doc</a>.
+
+<br>
+<br>
+<br>
+<h3>Real (small) example - Bad example - "line-height: normal;"</h3>
+<ul xstyle="line-height: normal;">
+	<li><a href="#">one</a></li>
+	<li><a href="#">two</a></li>
+	<li><a href="#">three</a> non-link text</li>
+</ul>
+
+<h3>Good example - "line-height: 1.5;"</h3>
+<ul style="line-height: 1.5;">
+	<li ><a href="#">one</a></li>
+	<li ><a href="#">two</a></li>
+	<li ><a href="#">three</a> non-link text</li>
+</ul>
+
+
 
 
 <div class="spacer"></div>
