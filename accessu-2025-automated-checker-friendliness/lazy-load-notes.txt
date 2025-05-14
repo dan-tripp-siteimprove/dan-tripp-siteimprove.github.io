@@ -18,7 +18,7 @@
 	
 	- nvda
 	
-		- with these iframes I got straightforward lazy load problem: at top of page, ins+f7 showed only the first ~ 6 links.   
+		- with these iframes I got straightforward lazy load problem: at top of page, ins+f7 showed only the first ~ 6 links or headings. 
 
 		- with these iframes I couldn't reproduce the mysterious kinds of problems that I had w/ <img loading="lazy">.  
 			- w/ nvda on chrome 

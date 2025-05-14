@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Focus Bumper with requestAnimationFrame</title>
+  <style>
+    #modal {
+      border: 2px solid black;
+      padding: 1em;
+      width: 300px;
+    }
+
+    #start-bumper,
+    #end-bumper {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+  </style>
+</head>
+<body>
+
+<a href="#">outside</a>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div tabindex="0" id="start-bumper"></div>
+
+  <button>First</button>
+  <button>Middle</button>
+  <button>Last</button>
+
+  <div tabindex="0" id="end-bumper"></div>
+</div>
+
+<a href="#" aria-hidden="true">outside</a>
+
+<script>
+  let modal = document.getElementById("modal");
+
+  function getFocusableElements() {
+    return modal.querySelectorAll(
+      'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    );
+  }
+
+  modal.addEventListener("focusin", (e) => {
+    let focusables = getFocusableElements();
+    let first = focusables[0];
+		let second = focusables[1];
+    let last = focusables[focusables.length - 1];
+
+    //if (e.target.id === "start-bumper") {
+    //  requestAnimationFrame(() => [].focus());
+    //} else 
+		if (e.target.id === "end-bumper") {
+      requestAnimationFrame(() => second.focus());
+    }
+  });
+</script>
+
+</body>
+</html>
