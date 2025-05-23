@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>x</title>
+	<title>Canned Responses Javascript Runner</title>
 
 	<style>
-
+	
 p { line-height: 1.5; }
 
 /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
@@ -19,31 +19,71 @@ p { line-height: 1.5; }
     width: 1px;
 }
 
+textarea {
+	width: 100%;
+	height: 150px;
+	font-family: monospace;
+	margin-bottom: 1em;
+}
+button {
+	margin-top: 0.5em;
+}
 	</style>
 
 	<script>
-
 window.addEventListener("load", function(event) {
-});
+	let input = document.getElementById("input");
+	let output = document.getElementById("output");
 
+	function runCode() {
+		let userCode = input.value;
+
+		/* We do it this way to 1) get "let r = " to work (not just "r = "), 2) to get line numbers (if there's an exception).  and we cram the first line so that the stack trace line numbers correspond to the user's code (not our wrap funnction code). */
+		let wrapped = `(() => { try { ${userCode}
+					return { r: typeof r !== 'undefined' ? r : 'r is not defined' };
+				} catch (e) {
+					return { error: e.message, stack: e.stack };
+				}
+			})()`;
+
+		try {
+			let result = eval(wrapped);
+			if (result.error) {
+				output.value = "Error: " + result.error + "\n\nStack:\n" + result.stack;
+			} else {
+				output.value = String(result.r);
+			}
+		} catch (outerError) {
+			output.value = "Eval failure: " + outerError.message;
+		}
+	}
+
+
+	function copyOutput() {
+		output.select();
+		document.execCommand("copy");
+	}
+
+	input.addEventListener("input", runCode);
+	document.getElementById("copyToClipboardButton").addEventListener("click", copyOutput);
+
+	runCode();
+});
 	</script>
 
 </head>
 
-
-
-
 <body>
 <main>
 
+<h2>Input (Javascript code):</h2>
+<textarea id="input" spellcheck="false">let r = 'xyz';</textarea>
 
+<h2>Output (value of "r"):</h2>
+<textarea id="output" spellcheck="false" readonly></textarea>
 
-
-
-
+<button id="copyToClipboardButton">Copy output to clipboard</button>
 
 </main>
-
 </body>
-
 </html>
