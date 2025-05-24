@@ -32,8 +32,8 @@ button {
 
 	<script>
 
-function checkForForbiddenRegexes(str_) {
-	/* If you are Dan, and you change this, then change /home/dtr/dts-local-si/local_ahk_functions.py too, and vice versa. */
+/* If you are Dan, and you change this function, then change /home/dtr/dts-local-si/local_ahk_functions.py too, and vice versa. */
+function checkAndEscapeStr(str_) {
 	let forbiddenRegexes = [
 		'___', '<<<', '>>>', 'botched', 'gotcha', 'guidance',
 		'\\[', '\\]', "'''",
@@ -48,6 +48,16 @@ function checkForForbiddenRegexes(str_) {
 			throw new Error(`The forbidden regex "${forbiddenRegexes[i]}" is in the output.  (That's the regex with index [${i}].)`);
 		}
 	}
+
+	// "Escape" HTML tags (eg. replace <a> with < a >) so that they'll be accepted 
+	// by the platform.  i.e. avoid the "Changing approval state failed" error. 
+	let r = str_;
+	r = r.replace(/<(?! )/g, '< ');
+	r = r.replace(/(?<! )>/g, ' >');
+	r = r.trim();
+
+	return r;
+	
 }
 
 function getTimestamp() {
@@ -75,7 +85,7 @@ window.addEventListener("load", function(event) {
 		outputTimestamp.textContent = `Code was last run at ${getTimestamp()}`;
 
 		delete window.r; /* if we don't do this and the user's code used "r = 'xyz';" (i.e. didn't use the "let" keyword) then "r" will persist across runs, which would be bad. */
-		
+
 		let userCode = input.value;
 
 		/* We do it this way to 1) get "let r = " to work (not just "r = "), 2) to get line numbers (if there's an exception).  and we cram the first line so that the stack trace line numbers correspond to the user's code (not our wrap funnction code). */
@@ -92,7 +102,7 @@ window.addEventListener("load", function(event) {
 				output.value = "Error: " + result.error + "\n\nStack:\n" + result.stack;
 			} else {
 				let resultStr = String(result.r);
-				checkForForbiddenRegexes(resultStr);
+				resultStr = checkAndEscapeStr(resultStr);
 				output.value = resultStr;
 			}
 		} catch (error) {
