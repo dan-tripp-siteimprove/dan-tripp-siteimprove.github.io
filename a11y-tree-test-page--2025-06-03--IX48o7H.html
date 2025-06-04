@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+header {
+		outline: 2px solid grey;
+		padding: 1em;
+}
+
+[role="contentinfo"] {
+		outline: 2px solid grey;
+		padding: 1em;
+		margin: 2em 0;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+<header>
+
+<h1>WELCOME</h1>
+
+</header>
+
+
+<body>
+<main>
+
+
+<h2>Regular link</h2>
+<a href="#">Read More</a>
+
+<h2>Regular button</h2>
+<button>Click Here</button>
+
+<h2>Link with name overridden</h2>
+<a href="#" aria-label="Read More About Lawnmowers">Read More</a><br>
+
+<h2>Button with role overridden</h2>
+<a href="https://www.w3.org/WAI/ARIA/apg/patterns/switch/examples/switch-button/#id-group-label">APG Switch</a>
+
+
+<h2>divs with roles overridden</h2>
+
+<a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/#ex_label">APG Button</a>
+ 
+
+
+
+</main>
+
+
+<div role="contentinfo">
+<i>Copyright XYZ 2025.</i>
+</div>
+
+</body>
+
+</html>
