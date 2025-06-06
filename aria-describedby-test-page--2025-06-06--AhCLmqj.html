@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+
+<div aria-describedby="d1">testing</div>
+<div>end</div>
+
+<div id="d1">description is here lorem ipsum skf dskhf dskh kjdshf kjdshfkjs hfkjds hfks hkf hsdkjf hfkjs hfdskjhsfkjhskfhkjsd hfkjshkjf hsfkjs hfkjs hfkjhskjf hkjs hfkjs hfsfkj hskjfskd f</div>
+
+
+
+<div role="region" aria-describedby="d1">testing</div>
+<div>end</div>
+
+<div tabindex="0"  aria-describedby="d1">testing</div>
+<div>end</div>
+
+
+<a href="#" aria-describedby="d1">testing</a>
+<div>end</div>
+
+
+<img src="duck.png" style="width: 30px;" alt="this is the alt text" aria-describedby="d1"><br>
+end
+
+
+
+</main>
+
+</body>
+
+</html>
