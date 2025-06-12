@@ -349,15 +349,30 @@ link with margin: <a style="display: inline-block; margin: 20px; border: 0.1px s
 
 <br>
 <br>
-overlapping buttons: squares overlap and circles do not overlap: <br>
+overlapping buttons, 24x24, squares overlap and circles do not overlap: <br>
 <div style="position: relative; height: 50px">
     <button style="position: absolute; width: 24px; height: 24px; left: 0px; top: 0px;"></button>
     <button style="position: absolute; width: 24px; height: 24px; left: 18px; top: 18px; z-index: 1;"></button>
 </div>
-overlapping buttons: squares overlap and circles also overlap: <br>
+overlapping buttons, 24x24, squares overlap and circles also overlap: <br>
 <div style="position: relative; height: 50px">
     <button style="position: absolute; width: 24px; height: 24px; left: 0px; top: 0px;"></button>
     <button style="position: absolute; width: 24px; height: 24px; left: 14px; top: 14px; z-index: 1;"></button>
+</div>
+overlapping buttons, 25x25, squares overlap and circles also overlap: <br>
+<div style="position: relative; height: 50px">
+    <button style="position: absolute; width: 25px; height: 25px; left: 0px; top: 0px;"></button>
+    <button style="position: absolute; width: 25px; height: 25px; left: 14px; top: 14px; z-index: 1;"></button>
+</div>
+overlapping buttons, 24x24 without rounded corners, squares overlap and circles also overlap: <br>
+<div style="position: relative; height: 50px">
+    <button style="position: absolute; width: 24px; height: 24px; left: 0px; top: 0px; border-radius: 0px;"></button>
+    <button style="position: absolute; width: 24px; height: 24px; left: 14px; top: 14px; z-index: 1; border-radius: 0px;"></button>
+</div>
+overlapping buttons, 25x25 without rounded corners, squares overlap and circles also overlap: <br>
+<div style="position: relative; height: 50px">
+    <button style="position: absolute; width: 25px; height: 25px; left: 0px; top: 0px; border-radius: 0px;"></button>
+    <button style="position: absolute; width: 25px; height: 25px; left: 14px; top: 14px; z-index: 1; border-radius: 0px;"></button>
 </div>
 overlapping buttons: not square: bounding boxes overlap and circles do not overlap: <br>
 <div style="position: relative; height: 50px">
