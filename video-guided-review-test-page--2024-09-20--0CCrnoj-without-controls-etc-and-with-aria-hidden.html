@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<!--
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JR5hCvifJVo?si=0UT3vm1OgxTA4XSm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-->
+
+<br>
+<br>
+<br>
+<br>
+text before 
+<br>
+<video width="250" autoplay  muted  aria-hidden="true" >
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+
+	<!--
+  <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
+	-->
+
+  <!-- below is the fallback content --> 
+	Download the
+  <a href="/media/cc0-videos/flower.webm">WEBM</a>
+  or
+  <a href="/media/cc0-videos/flower.mp4">MP4</a>
+  video.
+</video>
+
+
+
+<p class="visually-hidden">
+this is a visually-hidden transcript, which won't pass R33. 
+</p>
+
+
+<p>
+this is a visible transcript, which will pass R33. 
+</p>
+
+<a href="transcript.html">
+This is a link to a visible transcript, which will pass R33. 
+</a>
+
+<div>
+	<p class="visually-hidden">
+	this is a visually-hidden transcript, which isn't (as of 2024-11-18) supposed to pass R33.  but since it's in a &lt;div&gt;, you might think that if you point the guided review to the &lt;div&gt;, it will trick the guided review.  tested 2024-11-18: that didn't work.
+	</p>
+</div>
+
+<div>
+	<p class="visually-hidden">
+	this is almost a total copy of the previous case except this one has &amp;nbsp; outside the &lt;p&gt; and inside the &lt;div&gt;.  to be tested.  
+	</p>
+	&nbsp;
+</div>
+
+<br>
+<br>
+<details>
+	<summary>click to reveal a transcript...</summary>
+	<p>This is a transcript inside of a &lt;details&gt; element. </p>
+</details>
+
+
+<br>
+<br>
+<details>
+	<summary>click to reveal a control case...</summary>
+	<p>Here ...<a href="#"></a> is a failing link inside of a &lt;details&gt; element.  I don't understand the behaviour here b/c (when this disclosure is closed) the alfa browser extension will fail the link inside of it and the chrome a11y tree will not show the contents. </p>
+</details>
+
+
+
+</main>
+
+</body>
+
+</html>
