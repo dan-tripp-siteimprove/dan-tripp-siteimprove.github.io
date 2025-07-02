@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+
+
+document.addEventListener('keydown', function(event) {
+  const isAnyArrow = (event.key === 'ArrowDown') || (event.key === 'ArrowUp') || (event.key === 'ArrowLeft') || (event.key === 'ArrowRight') ;
+
+  if (isAnyArrow) {
+    alert('listener saw arrow key');
+  }
+});
+
+
+
+});
+
+
+
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<a href="#">link</a><br>
+
+<!--
+<button role="textbox" >button</button><br>
+-->
+
+
+<div role="tablist" aria-orientation="horizontal">
+<div role="tab" tabindex="0">tab 1</div>
+<div role="tab" tabindex="0">tab 2</div>
+</div>
+<br>
+
+
+<a href="#">link</a><br>
+
+<!--
+no role no 
+tablist yes 
+tab yes 
+checkbox no 
+listbox yes 
+link no 
+radio yes 
+radiogroup no 
+scrollbar no 
+textbox yes 
+-->
+
+</main>
+
+</body>
+
+</html>
