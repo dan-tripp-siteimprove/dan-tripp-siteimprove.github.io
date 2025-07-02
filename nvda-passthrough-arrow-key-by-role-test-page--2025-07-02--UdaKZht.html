@@ -53,10 +53,28 @@ document.addEventListener('keydown', function(event) {
 
 <a href="#">link</a><br>
 
-<!--
 <button role="textbox" >button</button><br>
+
+<!--
+tests w/ nvda 2025-07-02: 
+	- do the arrow key presses get reported in the listener when the button above has role X?  
+		no role no 
+		tablist yes 
+		tab yes 
+		checkbox no 
+		listbox yes 
+		link no 
+		radio yes 
+		radiogroup no 
+		scrollbar no 
+		textbox yes 
+		combobox did not test ... but we assume "yes"! 
 -->
 
+
+<!--
+this just proves that aria-orientation doesn't matter to the screen reader.  we figure it must be the widget's JS that uses it or not.
+-->
 
 <div role="tablist" aria-orientation="horizontal">
 <div role="tab" tabindex="0">tab 1</div>
@@ -66,19 +84,6 @@ document.addEventListener('keydown', function(event) {
 
 
 <a href="#">link</a><br>
-
-<!--
-no role no 
-tablist yes 
-tab yes 
-checkbox no 
-listbox yes 
-link no 
-radio yes 
-radiogroup no 
-scrollbar no 
-textbox yes 
--->
 
 </main>
 
