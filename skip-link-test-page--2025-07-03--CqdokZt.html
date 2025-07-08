@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+<!-- 
+first focusable 
+BUST nested in a div 
+nested landmarks   long shot 
+-->
+
+
+<body>
+
+
+<header>
+<a id="skipContentLink" title="Skip Navigation and go to Content" href="#mainContent">Skip to Content</a>
+</header>
+
+
+
+<div id="pageHeading" role="main" aria-label="Page Heading" data-landmark-index="4">
+<h1>
+Intensification Opportunities Study
+</h1>
+</div>
+
+
+<div>
+<main id="main" class="ic-container-fluid" aria-label="Page Content" data-landmark-index="8">
+
+
+<div id="mainContent" tabindex="-1">
+xyz
+</div>
+
+</main>
+</div>
+
+
+
+</body>
+
+</html>
