@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+a {
+	text-decoration: none;
+}
+
+xa::before {
+      content: "\e080";
+      display: inline-block;
+      font-family: "Glyphicons Halflings";
+      font-size: 0.6666666667rem;
+      line-height: 1.3333333333rem;
+      min-width: 22px;
+      min-height: 22px;
+      text-align: center;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #003187;
+      border-radius: 100px;
+      margin-right: 8px;
+      text-decoration: none;
+      position: absolute;
+      top: 7px;
+      left: 0px; }
+			
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<p>You will probably want to scroll to the top of the page before running the browser extension.  Because there is a bug, and scrolling to the top works around that bug./p>
+
+
+<p>test <a href="#">link</a> text</p>
+
+<p>test <a href="#">link <img src="broken.png"> </a> text</p>
+
+<p>test <a href="#">link <img src="broken.png"> </a></p>
+
+
+<p>Hansen, S.S.K., Krautz, R., Rago, D.<span>&nbsp;</span><em>et al.</em><span>&nbsp;<a rel="noopener" href="https://www.nature.com/articles/s41467-024-48492-x#citeas" target="_blank" data-anchor="#citeas">Pulmonary maternal immune activation does not cross the placenta but leads to fetal metabolic adaptation.<img src="broken.png"></a></span></p>
+
+<p>Hansen, S.S.K., Krautz, R., Rago, D.<span>&nbsp;</span><em>et al.</em><span>&nbsp;<a rel="noopener" href="https://www.nature.com/articles/s41467-024-48492-x#citeas" target="_blank" data-anchor="#citeas">Pulmonary maternal immune activation does not cross the placenta but leads to fetal metabolic adaptation.</a></span></p>
+
+<p>Hansen, S.S.K., Krautz, R., Rago, D.<span>&nbsp;</span><em>et al.</em><span>&nbsp;<a rel="noopener" href="https://www.nature.com/articles/s41467-024-48492-x#citeas" target="_blank" data-anchor="#citeas">Pulmonary maternal immune activation does not cross the placenta but leads to fetal metabolic adaptation. <svg xmlns="http://www.w3.org/2000/svg" class="open-in-new-window-icon" viewBox="0 0 24 24">
+	<path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path>
+</svg></a></span></p>
+
+
+
+<p><a href="#">this link has no surrounding text in its paragraph, so it will pass</a></p>
+<p>... actually it doesn't pass - it's "inapplicable".  the last example on <a style="text-decoration: underline !important" href="https://alfa.siteimprove.com/rules/sia-r62">the rule page</a> - "This link has no surrounding text" - shows this.</p>
+
+<p><a href="#">... but add one "x" of surrounding text (after this link) and it will fail</a> x</p>
+
+
+
+</main>
+
+</body>
+
+</html>
