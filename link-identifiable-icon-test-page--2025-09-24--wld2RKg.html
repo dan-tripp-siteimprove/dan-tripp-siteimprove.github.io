@@ -70,7 +70,7 @@ window.addEventListener("load", function(event) {
 
 <p>text <a href="#">link passes with duck image when the duck has the CSS "vertical-align: middle"<img src="duck.png" style="width: 30px; vertical-align: middle;"> </a></p>
 
-<p>↑ that last example reproduces the customer page mentioned on <a href="https://siteimprove.slack.com/archives/C03N0CABY/p1758744434915269?thread_ts=1758712324.009779&cid=C03N0CABY">this slack thread</a>.</p>
+<p>↑ that last example reproduces the customer page mentioned on <a style="text-decoration: underline !important" href="https://siteimprove.slack.com/archives/C03N0CABY/p1758744434915269?thread_ts=1758712324.009779&cid=C03N0CABY">this slack thread</a>.</p>
 
 <p>
 here's the duck with "vertical-align: middle" again, in alternating pairs.  in each pair, the first link has the vertical-align and passes.  the second link doesn't have it, and fails.  visually, sure there is a difference between the ducks, but that's not the point.  the point is: it's not true that one duck makes the link "distinguishable" and the other doesn't.  so I think this behaviour is an accidental side-effect of the rule.
@@ -89,6 +89,9 @@ here's the duck with "vertical-align: middle" again, in alternating pairs.  in e
 1) <a href="#">link <img src="duck.png" style="width: 30px; vertical-align: middle;"></a>
 2) <a href="#">link <img src="duck.png" style="width: 30px; x-vertical-align: middle;"></a> 
 </p>
+
+<p>this link passes when it has even one letter with "vertical-align: middle".  it's the "n" in "link".  <a href="#">li<span style="vertical-align: middle;">n</span>k</a>.</p>
+
 
 <p><a href="#">this link has no surrounding text in its paragraph, so it will pass</a></p>
 <p>... actually it doesn't pass - it's "inapplicable".  the last example on <a style="text-decoration: underline !important" href="https://alfa.siteimprove.com/rules/sia-r62">the rule page</a> - "This link has no surrounding text" - shows this.</p>
