@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width">
+				<title>x</title>
+				<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+	</style>
+				<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+	</head>
+	<body>
+		<main>
+		
+<h2>Base example.  From <a href="https://my2.siteimprove.com/Auth/Direct?personId=90782957&accountId=90782852&back=%2FInspector%2F1094183%2FA11Y%2FPage%3FpageId%3D62473753236%26impmd%3DIKMBMSKHHULOFTSFFWBQ%26decision%3DfalsePositive%26lang%3Den-US">this customer page</a>.  Cells in top row fail R46 and R77.</h2>
+<table>
+	<tbody>
+		<tr>
+			<th role="rowheader">a</th>
+			<td>b</td>
+			<td>c</td>
+		</tr>
+		<tr>
+			<td colspan="3">d</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Base example + bottom row removed.  Cells in top row pass R46 and R77.</h2>
+<table>
+	<tbody>
+		<tr>
+			<th role="rowheader">a</th>
+			<td>b</td>
+			<td>c</td>
+		</tr>
+		<!--
+		<tr>
+			<td colspan="3">d</td>
+		</tr>
+		-->
+	</tbody>
+</table>
+
+<h2>Base example + bottom row given a th with scope="row".  Cells in top row pass R46 and R77.</h2>
+<table>
+	<tbody>
+		<tr>
+			<th role="rowheader">a</th>
+			<td>b</td>
+			<td>c</td>
+		</tr>
+		<tr>
+			<th scope="row">d</th>
+			<td>e</td>
+			<td>f</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Base example + bottom row colspan removed.  Cells in top row still fail R46 and R77.</h2>
+<table>
+	<tbody>
+		<tr>
+			<th role="rowheader">a</th>
+			<td>b</td>
+			<td>c</td>
+		</tr>
+		<tr>
+			<td zzzcolspan="3">d</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Base example + role="rowheader" replaced with scope="row".  Cells in top row pass R46 and R77.</h2>
+<table>
+	<tbody>
+		<tr>
+			<th zzzrole="rowheader" scope="row">a</th>
+			<td>b</td>
+			<td>c</td>
+		</tr>
+		<tr>
+			<td colspan="3">d</td>
+		</tr>
+	</tbody>
+</table>
+
+			
+			
+		</main>
+	</body>
+</html>
