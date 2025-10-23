@@ -13,12 +13,12 @@ if (len(sys.argv) < MIN_ARGS+1) or (len(sys.argv) == 2 and sys.argv[1] == "--hel
 	sys.exit(1)
 
 
-for alt in ['absent', 'quote-quote', 'non-empty']:
+for alt in ['absent', 'no-equals-sign', 'quote-quote', 'non-empty']:
 	for displayNone in ['absent', 'inline', 'via-selector']:
 		for ariaHidden in ['absent', 'true', 'false']:
 			for role in ['absent', 'presentation', 'none']:
 				imgStr = '<img src="duck.png" '
-				imgStr += {'absent':'', 'quote-quote':'alt="" ', 'non-empty':'alt="goose" '}[alt]
+				imgStr += {'absent':'', 'no-equals-sign':'alt', 'quote-quote':'alt="" ', 'non-empty':'alt="goose" '}[alt]
 				imgStr += {'absent':'', 'inline':'style="display: none" ', 'via-selector':'class="display-none" '}[displayNone]
 				imgStr += {'absent':'', 'true':'aria-hidden="true" ', 'false':'aria-hidden="false" '}[ariaHidden]
 				imgStr += {'absent':'', 'presentation':'role="presentation" ', 'none':'role="none" '}[role]
