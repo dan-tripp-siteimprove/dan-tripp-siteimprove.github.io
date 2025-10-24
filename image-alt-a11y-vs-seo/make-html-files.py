@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, os, re, subprocess, textwrap
+import sys, os, re, subprocess, textwrap, time
 
 os.chdir(os.path.dirname(sys.argv[0]))
 
@@ -12,6 +12,10 @@ if (len(sys.argv) < MIN_ARGS+1) or (len(sys.argv) == 2 and sys.argv[1] == "--hel
 """, file=sys.stderr)
 	sys.exit(1)
 
+
+
+print('''Remember that you probably want to delete all the *.html files before running this program.  This program doesn't do that.''')
+time.sleep(3)
 
 for alt in ['absent', 'full-stop', 'quote-quote', 'non-empty']:
 	for displayNone in ['absent', 'inline', 'via-selector']:
