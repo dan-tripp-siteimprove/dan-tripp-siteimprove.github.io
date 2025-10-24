@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, os, re, subprocess, textwrap, time
+import sys, os, re, subprocess, textwrap, time, uuid
 
 os.chdir(os.path.dirname(sys.argv[0]))
 
@@ -48,6 +48,12 @@ for alt in ['absent', 'full-stop', 'quote-quote', 'non-empty']:
 							<main>
 							{imgStr}
 							</main>
+							
+							<div style="display: none">
+								<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+								{uuid.uuid4()}
+							</div>
+							
 						</body>
 
 					</html>
