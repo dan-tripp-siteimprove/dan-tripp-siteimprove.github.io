@@ -34,12 +34,24 @@ table {
 	<script>
 
 window.addEventListener("load", function(event) {
-	let linkElem = document.querySelector('#has-a-listener');
-	let displayElem = document.querySelector('#was-clicked-display');
-	linkElem.addEventListener("click", () => {
-		displayElem.textContent = '...CLICKED...';
-		setTimeout(() => {displayElem.textContent = '';}, 1000);
-	});
+	{
+		let linkElem = document.querySelector('#has-a-listener');
+		let displayElem = document.querySelector('#was-clicked-display');
+		linkElem.addEventListener("click", () => {
+			displayElem.textContent = '...CLICKED...';
+			setTimeout(() => {displayElem.textContent = '';}, 1000);
+		});
+	}	
+	
+	{
+		let linkElem = document.querySelector('#has-a-listener-2');
+		let displayElem = document.querySelector('#was-clicked-display-2');
+		linkElem.addEventListener("click", () => {
+			displayElem.textContent = '...CLICKED...';
+			setTimeout(() => {displayElem.textContent = '';}, 1000);
+		});
+	}	
+	
 });
 
 	</script>
@@ -59,7 +71,9 @@ window.addEventListener("load", function(event) {
 
 <a href="#" role="button">B</a> (has role="button")<br>
 
-<a href="#" id="has-a-listener">C</a> (has a listener too)  <span id="was-clicked-display"></span><br>
+<a href="#" id="has-a-listener">C</a> (has a listener)  <span id="was-clicked-display"></span><br>
+
+<a href="#" id="has-a-listener-2" role="button">C</a> (has a listener and role=button)  <span id="was-clicked-display-2"></span><br>
 
 <button>end - does nothing</button>
 
