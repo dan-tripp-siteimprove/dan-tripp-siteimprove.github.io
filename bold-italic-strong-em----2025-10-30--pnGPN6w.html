@@ -34,12 +34,6 @@ table {
 	<script>
 
 window.addEventListener("load", function(event) {
-	let linkElem = document.querySelector('#has-a-listener');
-	let displayElem = document.querySelector('#was-clicked-display');
-	linkElem.addEventListener("click", () => {
-		displayElem.textContent = '...CLICKED...';
-		setTimeout(() => {displayElem.textContent = '';}, 1000);
-	});
 });
 
 	</script>
@@ -52,21 +46,16 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
 
-<a href="#main">skip link</a><br>
 
-<a href="#">A</a> (regular link)<br>
+<p>
+test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> test <strong>test</strong> 
+</p>
 
 
-<a href="#" role="button">B</a> (has role="button")<br>
 
-<a href="#" id="has-a-listener">C</a> (has a listener too)  <span id="was-clicked-display"></span><br>
-
-<button>end - does nothing</button>
-
-<div style="height: 3000px;"></div>
-<main id="main">
-this is the main content
-</main>
+<p>
+test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> test <em>test</em> 
+</p>
 
 
 
@@ -75,7 +64,7 @@ this is the main content
 
 <div style="display: none">
 <!-- this is to prevent the crawler from doing "deduplication" on this page. -->
-3e915162-a3f9-4aeb-8abf-373edcb3f478
+ca9b8ede-a81a-467f-b5cc-7f4524a78683
 </div>
 
 </body>
