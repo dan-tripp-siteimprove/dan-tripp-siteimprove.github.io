@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+<style>
+  body {
+		background: white;
+		box-sizing: border-box;
+    }
+    body * {
+		box-sizing: border-box;
+    }
+	ul {
+		list-style-type: none;
+	}
+  ul.nav {
+		background: #ccc;
+		list-style-type: none;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		position: relative
+    }
+    ul.nav > li {
+		display: inline-block;
+    }
+    a {
+		display: inline-block;
+		color: black;
+		text-decoration: none;
+		padding: 20px 20px;
+		outline: none;
+		border-bottom: 2px solid #ccc;
+    }
+    a:focus {
+		border-bottom: 2px solid #000;
+    }
+    .fly-out {
+		display: none;
+		position: absolute;
+		top: calc(100% - 2px);
+		left: 0;
+		background: #f4f4f4;
+		border: 1px solid #ccc;
+		padding: 0.5rem;
+		width: 100%;
+    }
+	li:focus-within .fly-out {
+		display: block;
+    }
+</style>
+
+<body>
+
+<ul class="nav">
+	<li>
+		<a href="#">ACT Rules</a>
+		<div class="fly-out">
+			<ul>
+				<li>Link 1</li>
+				<li>Link 2</li>
+				<li>Link 3</li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<a href="#">WCAG</a>
+		<div class="fly-out">
+			<ul>
+				<li>Link 4</li>
+				<li>Link 5</li>
+				<li>Link 6</li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<a href="#">WAI-ARIA</a>
+		<div class="fly-out">
+			<ul>
+				<li>Link 7</li>
+				<li>Link 8</li>
+				<li>Link 9</li>
+			</ul>
+		</div>
+	</li>
+</ul>
+
+</body>
+
+</html>
