@@ -31,7 +31,9 @@ document.addEventListener('keydown', function(event) {
 
   if (isAnyArrow) {
     alert('listener saw arrow key');
-  }
+  } else if(event.key === 'Enter') {
+		alert('listener saw ENTER');
+	}
 });
 
 
@@ -53,7 +55,7 @@ document.addEventListener('keydown', function(event) {
 
 <a href="#">link</a><br>
 
-<button role="textbox" >button</button><br>
+<button role="textbox" >button role="textbox" ?!?</button><br>
 
 <!--
 tests w/ nvda 2025-07-02: 
@@ -84,6 +86,9 @@ this just proves that aria-orientation doesn't matter to the screen reader.  we 
 
 
 <a href="#">link</a><br>
+
+<a href="#" role="button">link w/ role=button</a><br>
+<button  >button (regular)</button><br>
 
 </main>
 

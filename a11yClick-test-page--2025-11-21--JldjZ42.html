@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { 
+	line-height: 1.5;
+}
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+	</style>
+
+	<script src="./jquery-3.7.1.min.js">
+	</script>
+
+	<script>
+	
+function a11yClick(event){
+		if(event.type === 'click'){
+				return true;
+		}
+		else if(event.type === 'keypress'){
+				var code = event.charCode || event.keyCode;
+				if((code === 32)|| (code === 13)){
+						return true;
+				}
+		}
+		else{
+				return false;
+		}
+}
+
+
+window.addEventListener("load", function(event) {
+	for(let elementId of ['fake-button', 'real-button']) {
+		let elementIdSelector = `#${elementId}`;
+		if(1) {
+			$(elementIdSelector).on('click keypress', function(event){
+				if(a11yClick(event) === true){
+					// do stuff
+					alert('do stuff both');
+				}
+			});
+		}
+		
+		if(0) {
+			if(1) {
+				$(elementIdSelector).on('keypress', function(event){
+					if(a11yClick(event) === true){
+						// do stuff
+						alert('do stuff keypress');
+					}
+				});
+			}
+			if(1) {
+				$(elementIdSelector).on('click', function(event){
+					if(a11yClick(event) === true){
+						// do stuff
+						alert('do stuff click');
+					}
+				});
+			}
+		}
+	}
+
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<div id="fake-button" tabindex="0">fake button</div>
+<br>
+<button id="real-button">real button</button>
+
+
+
+
+</main>
+
+<div style="display: none">
+<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+786324d0-b60b-4a60-b298-27445a366628
+</div>
+
+</body>
+
+</html>
