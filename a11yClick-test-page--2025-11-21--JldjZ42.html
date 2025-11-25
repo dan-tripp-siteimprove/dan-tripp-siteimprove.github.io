@@ -102,9 +102,27 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
 
+<p>
+params for test cases:<br>
+<ul>
+<li>browser: chrome, firefox
+<li>whichButton: div as button, normal button, link as button 
+<li>screenReaderRunning: no, yes 
+<li>userAction: mouseClick, space, enter 
+</ul>
+
+definition of success:<br>
+<ul>
+<li>console logs "do stuff" once (not twice). 
+<li>viewport doesn't scroll down. 
+</ul>
+
+</p>
+<hr>
+
 <div id="div-as-button" tabindex="0">div as button</div>
 <br>
-<button id="normal-button">real button</button>
+<button id="normal-button">normal button</button>
 <br>
 <br>
 <a href="#" id="link-as-button">link as button</a>
