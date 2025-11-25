@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>test</title>
+	</head>
+	<script>
+	
+/* adapted from https://karlgroves.com/ridiculously-easy-trick-for-keyboard-accessibility/ */
+function a11yClick(event){
+		if(event.type === 'click'){
+				return true;
+		}
+		else if(event.type === 'keydown'){
+				var code = event.charCode || event.keyCode;
+				if((code === 32)|| (code === 13)){
+						return true;
+				}
+		}
+		else{
+				return false;
+		}
+}
+
+		
+window.addEventListener("load", function(event) {
+
+	document.getElementById('fake-button').addEventListener('click', function(e) {
+		console.log(new Date(), "do stuff on click");
+		e.preventDefault();
+	});
+
+	document.getElementById('fake-button').addEventListener('keydown', function(e) {
+		if(a11yClick(e)) {
+			console.log(new Date(), "do stuff on keydown");
+			e.preventDefault();
+		}
+	});
+
+
+
+});		
+		
+	</script>
+	<body>
+		<button>1</button> <button>2</button> <button>3</button>  <br>
+		<a id="fake-button" href="#">A</a><br>
+		<button>end</button><br>
+	</body>
+</html>

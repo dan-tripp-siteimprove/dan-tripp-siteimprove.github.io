@@ -31,17 +31,19 @@ table {
 
 	</style>
 
+	<!--
 	<script src="./jquery-3.7.1.min.js">
+	-->
 	</script>
 
 	<script>
 	
-/* thanks https://karlgroves.com/ridiculously-easy-trick-for-keyboard-accessibility/ */
+/* adapted from https://karlgroves.com/ridiculously-easy-trick-for-keyboard-accessibility/ */
 function a11yClick(event){
 		if(event.type === 'click'){
 				return true;
 		}
-		else if(event.type === 'keypress'){
+		else if(event.type === 'keydown'){
 				var code = event.charCode || event.keyCode;
 				if((code === 32)|| (code === 13)){
 						return true;
@@ -55,15 +57,37 @@ function a11yClick(event){
 
 window.addEventListener("load", function(event) {
 
-	$('#fake-button').on('click keypress', function(e) {
+	document.getElementById('div-as-button').addEventListener('click', function(e) {
+		console.log(new Date(), "do stuff on click");
+	});
+
+	document.getElementById('div-as-button').addEventListener('keydown', function(e) {
 		if(a11yClick(e)) {
-			console.log(new Date(), "do stuff");
+			console.log(new Date(), "do stuff on keydown");
 			e.preventDefault();
 		}
 	});
 
-	$('#real-button').on('click', function(e) {
-		console.log(new Date(), "do stuff");
+
+
+
+	document.getElementById('normal-button').addEventListener('click', function(e) {
+		console.log(new Date(), "do stuff on click");
+	});
+
+
+
+
+	document.getElementById('link-as-button').addEventListener('click', function(e) {
+		console.log(new Date(), "do stuff on click");
+		e.preventDefault(); // this is here to work around https://github.com/nvaccess/nvda/issues/19190 
+	});
+
+	document.getElementById('link-as-button').addEventListener('keydown', function(e) {
+		if(a11yClick(e)) {
+			console.log(new Date(), "do stuff on keydown");
+			e.preventDefault();
+		}
 	});
 
 });
@@ -78,12 +102,17 @@ window.addEventListener("load", function(event) {
 <body>
 <main>
 
-<div id="fake-button" tabindex="0">fake button</div>
+<div id="div-as-button" tabindex="0">div as button</div>
 <br>
-<button id="real-button">real button</button>
+<button id="normal-button">real button</button>
+<br>
+<br>
+<a href="#" id="link-as-button">link as button</a>
+<br>
 
 
 <div style="height: 5000px;">
+<br>
 this is a tall div.  it's here so that we'll notice if the SPACE key causes a scroll-down (as SPACE does, by default.)
 </div>
 

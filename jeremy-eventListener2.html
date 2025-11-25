@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+		#fakeButton1, #fakeButton2, #fakeButton3{
+			border: 1px solid black;
+			max-width: 60px;
+			cursor: pointer;
+		}
+		#fakeRoleButton1, #fakeRoleButton2, #fakeRoleButton3{
+			border: 1px solid black;
+			max-width: 60px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+
+
+
+<body>
+<main>
+	<h2>DIVs acting like buttons</h2>
+	<p>Click Listener Only</p>
+	<div tabindex="0" id="fakeButton1">Fake Button 1</div><br>
+	<p>Keyboard Listener Only</p>
+	<div tabindex="0" id="fakeButton2">Fake Button 2</div><br>
+	<p>Click and Keyboard Listeners</p>
+	<div tabindex="0" id="fakeButton3">Fake Button 3</div><br>
+	<hr>
+	
+	<h2>Semantic HTML Buttons</h2>
+	<p>Click Listener only</p>
+	<button id="realButton1">Real Button 1</button>
+	<p>Keyboard Listener Only</p>
+	<button id="realButton2">Real Button 2</button>
+	<p>Click and Keyboard Listeners</p>
+	<button id="realButton3">Real Button 3</button>
+	<hr>
+
+	<h2>DIVs with role=button</h2>
+	<p>Click Listener Only</p>
+	<div tabindex="0" id="fakeRoleButton1" role="button">Button by Role 1</div><br>
+	<p>Keyboard Listener Only</p>
+	<div tabindex="0" id="fakeRoleButton2" role="button">Button by Role 1 2</div><br>
+	<p>Click and Keyboard Listeners</p>
+	<div tabindex="0" id="fakeRoleButton3" role="button">Button by Role 1 3</div><br>
+	<hr>
+
+	<h2>Does Type Matter? Added type="button"</h2>
+	<p>Click Listener only.</p>
+	<button type="button" id="typeButton1">Type Button 1</button>
+	<p>Click and Keyboard Listeners</p>
+	<button type="button" id="typeButton2">Type Button 2</button>
+
+	<hr>
+	<p>The text below is used to add enough content so the window scrolls</p>
+	
+	<h1>HTML Ipsum Presents</h1>
+
+	<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+	<h2>Header Level 2</h2>
+
+	<ol>
+		<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+		<li>Aliquam tincidunt mauris eu risus.</li>
+	</ol>
+
+	<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+	<h3>Header Level 3</h3>
+
+	<ul>
+		<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+		<li>Aliquam tincidunt mauris eu risus.</li>
+	</ul>
+
+	<pre><code>
+	#header h1 a {
+		display: block;
+		width: 300px;
+		height: 80px;
+	}
+	</code></pre>
+
+</main>
+<script>
+
+window.addEventListener("load", () => {
+// Add Event Listeners to buttons
+
+// Fake Button 1 - Click Only
+document.getElementById("fakeButton1").addEventListener("click", handleActivate);
+// Fake Button 2 - Keydown Only
+document.getElementById("fakeButton2").addEventListener("keydown", keydownEval);
+// Fake Button 3 - Click and Keydown
+document.getElementById("fakeButton3").addEventListener("click", handleActivate);
+document.getElementById("fakeButton3").addEventListener("keydown", keydownEval);
+
+// Real Button 1 - Click Only
+document.getElementById("realButton1").addEventListener("click", handleActivate);
+
+// Real Button 2 - Keydown Only	
+document.getElementById("realButton2").addEventListener("keydown", keydownEval);
+
+
+
+
+
+// Real Button 3 - Click and Keydown	
+document.getElementById("realButton3").addEventListener("click", handleActivate);
+document.getElementById("realButton3").addEventListener("keydown", keydownEval);
+
+
+
+
+
+
+// Button by Role 1	
+document.getElementById("fakeRoleButton1").addEventListener("click", handleActivate);
+
+// Button by Role 2	
+document.getElementById("fakeRoleButton2").addEventListener("keydown", keydownEval);
+
+// Button by Role 3	
+document.getElementById("fakeRoleButton3").addEventListener("click", handleActivate);
+document.getElementById("fakeRoleButton3").addEventListener("keydown", keydownEval);
+
+// Type Button 1
+document.getElementById("typeButton1").addEventListener("click", handleActivate);
+
+// Type Button 2
+document.getElementById("typeButton2").addEventListener("click", handleActivate);
+document.getElementById("typeButton2").addEventListener("keydown", keydownEval);
+
+});
+
+function handleActivate(event) {
+	if (event.type === "keydown") {
+		console.log("Activated:", event.type, "key:", event.code);
+	}
+	else {
+		console.log("Activated:", event.type);
+	}
+}
+function keydownEval(event) {
+	if (event.key === "Enter" || event.key === " ") {
+	    //event.preventDefault(); // prevents page from scrolling on Space
+	    handleActivate(event);
+	  }
+}
+
+</script>
+</body>
+
+</html>
