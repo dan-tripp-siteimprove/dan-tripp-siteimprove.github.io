@@ -39,19 +39,8 @@ table {
 	<script>
 	
 /* adapted from https://karlgroves.com/ridiculously-easy-trick-for-keyboard-accessibility/ */
-function a11yClick(event){
-		if(event.type === 'click'){
-				return true;
-		}
-		else if(event.type === 'keydown'){
-				var code = event.charCode || event.keyCode;
-				if((code === 32)|| (code === 13)){
-						return true;
-				}
-		}
-		else{
-				return false;
-		}
+function a11yClick(event_) {
+	return (event_.type === 'click') || ((event_.type === 'keydown') && ["Enter", " "].includes(event_.key));
 }
 
 
@@ -108,13 +97,14 @@ params for test cases:<br>
 <li>browser: chrome, firefox
 <li>whichButton: div as button, normal button, link as button 
 <li>screenReaderRunning: no, yes 
-<li>userAction: mouseClick, space, enter 
+<li>userActivateAction: mouseClick, space, enter 
 </ul>
 
 definition of success:<br>
 <ul>
-<li>console logs "do stuff" once (not twice). 
-<li>viewport doesn't scroll down. 
+<li>on activate: console logs "do stuff" once (not twice). 
+<li>on activate: viewport doesn't scroll down. 
+<li>keys other than ENTER and SPACE are unaffected 
 </ul>
 
 </p>
