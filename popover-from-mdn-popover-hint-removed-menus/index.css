@@ -97,9 +97,7 @@ body {
   box-shadow: inset 1px 1px 2px #333, inset -1px -1px 2px #eee;
 }
 
-/* Styling hint popovers */
-
-[popover="hint"] {
+.tooltip[popover] {
   inset: unset;
   position: absolute;
   top: calc(anchor(bottom) + 5px);
