@@ -60,6 +60,7 @@ body {
 
 /* Styling auto popovers */
 
+/* 
 [popover="auto"] {
   inset: unset;
   position: absolute;
@@ -96,11 +97,14 @@ body {
 [popover="auto"] button:active {
   box-shadow: inset 1px 1px 2px #333, inset -1px -1px 2px #eee;
 }
+*/
+
 
 .tooltip[popover] {
   inset: unset;
   position: absolute;
-  top: calc(anchor(bottom) + 5px);
+  /* top: calc(anchor(bottom) + 5px); */
+	top: calc(anchor(bottom) + 0px);
   justify-self: anchor-center;
   margin: 0;
 
