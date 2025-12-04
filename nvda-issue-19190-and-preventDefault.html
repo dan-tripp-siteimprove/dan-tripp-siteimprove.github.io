@@ -13,10 +13,10 @@ function a11yClick(event){
 				return true;
 		}
 		else if(event.type === 'keydown'){
-				var code = event.charCode || event.keyCode;
+				var code = event.charCode || event.keyCode; // keyCode is deprecated.  see a11yClick*html in this repo for an updated version. 
 				if((code === 32)|| (code === 13)){
 						return true;
-				}
+				} // else ==> return undefined, I guess.  I think karl made a mistake here, but it's harmless. 
 		}
 		else{
 				return false;
