@@ -55,6 +55,15 @@ window.addEventListener("load", function(event) {
 
 <ul>
 	<li>
+		Version 0.12 (2025-12-19)
+		<ul>
+			<li>Headings bookmarklet: now handles recursive shadow dom and recursive iframes.
+			<li>All bookmarklets: bookmarklets no longer decorate other bookmarklets' stuff (eg. the ARIA bookmarklet decorating the Focus bookmarklet's floating menu).
+			<li>The expandable sections (AKA details/summary) for "Boomarklets" and "SMART checks": their expanded/collapsed state is now remembered.
+			<li>Adding the "Copy scrape to clipboard" button.   The scrape is no longer copied to the clipboard automatically (on every refresh) any more.  it's only copied when you click the button.
+		</ul>
+	</li>
+	<li>
 		Version 0.11 (2025-12-16)
 		<ul>
 			<li>Bookmarklets are now in here.  Only the ones that were in the "mt-tools" project before: lang, focus, target size, aria, headings, images.
@@ -174,6 +183,9 @@ window.addEventListener("load", function(event) {
 <h2 id="h_downloads">Zip Files: Downloads</h2>
 
 <ul>
+	<li>
+		<a href="./downloads/smart-browser-extension-0.12.zip">Version 0.12</a>
+	</li>
 	<li>
 		<a href="./downloads/smart-browser-extension-0.11.zip">Version 0.11</a>
 	</li>
