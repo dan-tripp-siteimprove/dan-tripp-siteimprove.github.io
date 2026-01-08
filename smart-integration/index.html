@@ -7,7 +7,9 @@
 
 	<style>
 
-p { line-height: 1.5; }
+p { 
+	line-height: 1.5; 
+}
 
 /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
 .visually-hidden:not(:focus):not(:active) {
@@ -21,6 +23,7 @@ p { line-height: 1.5; }
 
 li {
 	min-height: 1.5em; 
+	line-height: 1.5; 
 }
 
 	</style>
@@ -54,6 +57,41 @@ window.addEventListener("load", function(event) {
 <h2>Release Notes</h2>
 
 <ul>
+	<!-- 
+	<li>
+		Version 0.________ (______date_______) 
+		<ul>
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+			<li>__________
+		</ul>
+	</li>
+	-->
+
+	<li>
+		Version 0.13 (2026-01-08)
+		<ul>
+			<li>Each bookmarklet now has a documentation link next to it.
+			<li>Focus bookmarklet: bug fix for this bookmarklet's floating menu sometimes showing strange fonts or text shadows, on certain pages.  This was happening because the page's CSS would sometimes affect our bookmarklet's floating menu.  This bug still exists for our Target Size bookmarklet.
+			<li>Focus bookmarklet: bug fix regarding when focus is inside this bookmarklet's floating menu.  
+			<li>Focus bookmarklet: bug fix regarding the "focus trail" flags and alt-tabbing to another window. 
+			<li>ARIA bookmarklet and Images bookmarklet: bug fix regarding elements with "display: none" and "visibility: hidden".  Now we don't "decorate" such elements.  We used to, sometimes.
+			<li>The beta channel has a new icon. 
+		</ul>
+	</li>
+
 	<li>
 		Version 0.12 (2025-12-19)
 		<ul>
@@ -183,6 +221,9 @@ window.addEventListener("load", function(event) {
 <h2 id="h_downloads">Zip Files: Downloads</h2>
 
 <ul>
+	<li>
+		<a href="./downloads/smart-browser-extension-0.13.zip">Version 0.13</a>
+	</li>
 	<li>
 		<a href="./downloads/smart-browser-extension-0.12.zip">Version 0.12</a>
 	</li>
