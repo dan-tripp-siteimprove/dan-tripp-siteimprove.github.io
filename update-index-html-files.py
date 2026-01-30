@@ -72,7 +72,7 @@ for subdir in dirs_which_need_an_independent_index_file:
 	subdir_output_index_filename = os.path.join(subdir, 'index.html')
 	subdir_indexed_file_paths = os.listdir(subdir)
 	subdir_indexed_file_paths = [f for f in subdir_indexed_file_paths if any(f.lower().endswith(ext.lower()) for ext in included_file_extensions)]
-	if 'index.html':
+	if 'index.html' in subdir_indexed_file_paths:
 		subdir_indexed_file_paths.remove('index.html')
 	write_index_file(subdir_output_index_filename, subdir_indexed_file_paths)
 
