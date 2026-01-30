@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { 
+	line-height: 1.5;
+}
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+	</style>
+
+	<script>
+{	
+	function removeIframesIfFileUriScheme() {
+		if(location.protocol !== "file:") return;
+		// this doesn't handle iframes within shadow dom 
+		for(let iframe of document.querySelectorAll('iframe')) {
+			let newWarningElem = document.createElement('div');
+			newWarningElem.style.fontSize = '2em';
+			newWarningElem.style.color = 'rgba(235, 0, 0)';
+			newWarningElem.textContent = `IFRAME REMOVED.  Because you are viewing this page as a file:// URL, many tools can't handle this, even though the iframe will technically load.  It's more trouble than it's worth.  Recommendation: start a local web server, then view this page as an http:// URL.`;
+			iframe.replaceWith(newWarningElem);
+		}
+	}
+
+	window.addEventListener("load", function(event) {
+		removeIframesIfFileUriScheme();
+	});
+}
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+before
+<iframe src="xyz.html"></iframe>
+after
+
+
+</main>
+
+<div style="display: none">
+<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+1dc15006-6e06-4424-801d-e51f13ff2929
+</div>
+
+</body>
+
+</html>
