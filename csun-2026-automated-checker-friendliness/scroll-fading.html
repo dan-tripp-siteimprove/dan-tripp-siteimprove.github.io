@@ -6,6 +6,10 @@
 	<title>x</title>
 
 	<style>
+	
+.fadedOut {
+	color: grey; 
+}
 
 p { 
 	line-height: 1.5;
@@ -69,8 +73,38 @@ table {
 		}
 	}
 
+	function initScrollFading(el_) {
+
+		let minOpacity = 0.3;
+		let ourClamp = (v) => Math.max(minOpacity, Math.min(1, v));
+
+		el_.style.opacity = `${minOpacity}`;
+		el_.style.transition = "opacity 0.1s linear";
+
+		let thresholds = [];
+		for (let i = 0; i <= 100; i += 2) thresholds.push(i / 100);
+
+		let observer = new IntersectionObserver(
+			(entries) => {
+				for (let entry of entries) {
+					let r = entry.intersectionRatio;
+					let t = ourClamp((r - 0.05) / 0.35);
+					el_.style.opacity = String(t);
+				}
+			},
+			{ threshold: thresholds }
+		);
+
+		observer.observe(el_);
+
+	}
+
 	window.addEventListener("load", function(event) {
 		removeIframesIfFileUriScheme();
+		
+		let fadingContent = document.getElementById('fadingContent');
+		//fadingContent.classList.add("fadedOut");
+		initScrollFading(fadingContent);
 	});
 }
 	</script>
@@ -84,15 +118,24 @@ table {
 <main>
 
 
+<h1>Scroll Fading</h1>
+
+<div style="height: 2000px;">... scroll down ...</div>
+
+<h2>fading content</h2>
+
+<p id="fadingContent">This is the content that does scroll fading.</p>
+
+<div style="height: 200px;"></div>
+
 
 </main>
 
 <div style="display: none">
 <!-- this is to prevent the crawler from doing "deduplication" on this page. -->
-2c698055-b608-4842-9a17-78561885105e
+fd9c3ddc-56f8-46b9-839a-24f258b5c06d
 </div>
 
 </body>
 
 </html>
-
