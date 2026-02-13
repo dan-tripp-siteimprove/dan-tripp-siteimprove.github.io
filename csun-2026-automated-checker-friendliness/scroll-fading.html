@@ -7,10 +7,6 @@
 
 	<style>
 	
-.fadedOut {
-	color: grey; 
-}
-
 p { 
 	line-height: 1.5;
 }
@@ -75,11 +71,11 @@ table {
 
 	function initScrollFading(el_) {
 
-		let minOpacity = 0.3;
-		let ourClamp = (v) => Math.max(minOpacity, Math.min(1, v));
+		let minOpacity = 0.1, maxOpacity = 1.0;
+		let ourClamp = (v) => Math.max(minOpacity, Math.min(maxOpacity, v));
 
 		el_.style.opacity = `${minOpacity}`;
-		el_.style.transition = "opacity 0.1s linear";
+		el_.style.transition = "opacity 3s linear";
 
 		let thresholds = [];
 		for (let i = 0; i <= 100; i += 2) thresholds.push(i / 100);
@@ -103,7 +99,6 @@ table {
 		removeIframesIfFileUriScheme();
 		
 		let fadingContent = document.getElementById('fadingContent');
-		//fadingContent.classList.add("fadedOut");
 		initScrollFading(fadingContent);
 	});
 }
