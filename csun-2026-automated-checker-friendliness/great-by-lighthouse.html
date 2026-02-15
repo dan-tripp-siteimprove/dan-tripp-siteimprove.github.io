@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { 
+	line-height: 1.5;
+}
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+	</style>
+
+	<script>
+{
+
+	window.addEventListener("DOMContentLoaded", function(event) {
+	
+		let t0 = performance.now();
+
+		let delayUrl = "https://httpbin.org/delay/10";
+
+		fetch(delayUrl)
+				.then(response => {
+						if (!response.ok) {
+								throw new Error("Request failed");
+						}
+						return response.json();
+				})
+				.then(data => {
+						let target = document.getElementById("contentFromApi");
+						if (target) {
+								target.textContent = `API content loaded ${Math.round(performance.now()-t0)} milliseconds after DOMContentLoaded`;
+						}
+				})
+				.catch(() => {
+						let target = document.getElementById("contentFromApi");
+						if (target) {
+								target.textContent = "API request failed.";
+						}
+				});
+		
+	});
+
+}
+	</script>
+	
+	
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<h2>section 1</h2>
+
+start<br>
+<button>button</button><br>
+<a href="https://example.com">link</a><br>
+<div style="height: 3000px;"></div>
+
+<h2>section 2</h2>
+
+<div id="contentFromApi"></div>
+
+</main>
+
+<div style="display: none">
+<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+b6f65d79-2a61-4a5a-a071-54acd287163b
+</div>
+
+</body>
+
+</html>
