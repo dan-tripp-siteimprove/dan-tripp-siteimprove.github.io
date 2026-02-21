@@ -7,6 +7,10 @@
 
 	<style>
 
+body {
+	font-family: Arial, sans-serif;
+}
+
 p { 
 	line-height: 1.5;
 }
@@ -83,7 +87,13 @@ table {
 <body>
 <main>
 
+<h2>Athletics News Stories</h2>
+<button id="mensBasketball">Men's Basketball</button>
+<button id="womensBasketball">Women's Basketball</button>
+<button id="mensGolf">Men's Golf</button>
+<button id="womensGolf">Women's Golf</button>
 
+<ul id="storiesList"></ul>
 
 </main>
 
@@ -91,6 +101,78 @@ table {
 <!-- this is to prevent the crawler from doing "deduplication" on this page. -->
 828a6eff-7109-4431-a920-7c34ac303e11
 </div>
+
+<script>
+const stories = {
+	mensBasketball: [
+		"Team Wins Conference Championship in Overtime Thriller",
+		"Star Guard Named Player of the Week",
+		"Coach Discusses Upcoming Tournament Strategy",
+		"Home Crowd Celebrates 20-Point Victory",
+		"Team Clinches Playoff Berth with Saturday Win",
+		"Freshman Forward Makes Impressive Debut",
+		"Rivalry Game Set for Next Weekend",
+		"Team Sets New Season Record for Three-Pointers",
+		"Players Give Back Through Community Service",
+		"Preview: Road Game Against Top-Ranked Opponent"
+	],
+	womensBasketball: [
+		"Team Extends Winning Streak to Eight Games",
+		"Senior Captain Reaches 1,000 Career Points",
+		"Defense Shines in Championship Game Victory",
+		"Coach Receives Coach of the Year Honors",
+		"Team Prepares for National Tournament Appearance",
+		"Sophomore Guard Earns All-Conference Recognition",
+		"Team Hosts Annual Youth Basketball Clinic",
+		"Game Recap: Dominant Performance in Rivalry Match",
+		"Players Excel in Classroom with Academic Awards",
+		"Season Preview: High Expectations for Upcoming Year"
+	],
+	mensGolf: [
+		"Team Takes First Place at Invitational Tournament",
+		"Senior Golfer Shoots Career-Best Round",
+		"Team Qualifies for Regional Championships",
+		"Player Profile: Rising Star on the Fairways",
+		"Coach Previews Spring Tournament Schedule",
+		"Team Finishes Strong at Conference Championship",
+		"Golfer Earns Medalist Honors at Home Event",
+		"Team Announces New Practice Facility Plans",
+		"Player Named to All-Region Team",
+		"Season Recap: Record-Breaking Performances"
+	],
+	womensGolf: [
+		"Team Wins First Tournament of the Season",
+		"Freshman Golfer Makes Strong First Impression",
+		"Team Prepares for Conference Championship",
+		"Player Shoots Record Low Score at Invitational",
+		"Coach Discusses Team Development and Goals",
+		"Team Members Volunteer at Junior Golf Clinic",
+		"Golfer Advances to National Championship",
+		"Team Celebrates Academic Achievement Awards",
+		"Preview: Challenging Schedule Ahead",
+		"Senior Golfer Reflects on Successful Career"
+	]
+};
+
+function loadStories(category) {
+	const list = document.getElementById('storiesList');
+	list.innerHTML = '';
+	
+	stories[category].forEach((story, index) => {
+		const li = document.createElement('li');
+		const a = document.createElement('a');
+		a.href = '#';
+		a.textContent = story;
+		li.appendChild(a);
+		list.appendChild(li);
+	});
+}
+
+document.getElementById('mensBasketball').addEventListener('click', () => loadStories('mensBasketball'));
+document.getElementById('womensBasketball').addEventListener('click', () => loadStories('womensBasketball'));
+document.getElementById('mensGolf').addEventListener('click', () => loadStories('mensGolf'));
+document.getElementById('womensGolf').addEventListener('click', () => loadStories('womensGolf'));
+</script>
 
 </body>
 
