@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { 
+	line-height: 1.5;
+}
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+	</style>
+
+	<script>
+{
+
+	function getShadowRoots() {
+		if(!document.body) { // under realistic conditions, this will never happen, I think.  under contrived test conditions I made it happen by running this script very early in the page load process (= under tampermonkey, @run-at document-start, no sleep.  
+			return [];
+		}
+		let r = [document.body];
+		function walk(node__) {
+			let shadowRoot = node__.shadowRoot;
+			if(shadowRoot) {
+				r.push(shadowRoot);
+				walk(shadowRoot);
+			}
+			for (let child of node__.childNodes) {
+				if (child.nodeType === Node.ELEMENT_NODE) {
+					walk(child);
+				}
+			}
+		}
+		walk(document.body);
+		return r;
+	}
+
+
+	function removeIframesIfFileUriScheme() {
+		if(location.protocol !== "file:") return;
+		for(let root of [document, ...getShadowRoots()]) {
+			for(let iframe of root.querySelectorAll('iframe')) {
+				let newWarningElem = document.createElement('div');
+				newWarningElem.style.fontSize = '2em';
+				newWarningElem.style.color = 'rgba(235, 0, 0)';
+				newWarningElem.textContent = `IFRAME REMOVED.  Because you are viewing this page as a file:// URL, many tools can't handle this, even though the iframe will technically load.  It's more trouble than it's worth.  Recommendation: start a local web server, then view this page as an http:// URL.`;
+				iframe.replaceWith(newWarningElem);
+			}
+		}
+	}
+
+	window.addEventListener("load", function(event) {
+		removeIframesIfFileUriScheme();
+	});
+}
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+<label><input type="radio">U.S.A.</label><br>
+<label><input type="radio">Canada</label><br>
+
+<label>State/Province
+<select xdisabled>
+<option>Alabama</option>
+</select></label><br>
+
+
+</main>
+
+<div style="display: none">
+<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+38abb590-8e97-4101-a564-5ad976d31d6b
+</div>
+
+</body>
+
+</html>
