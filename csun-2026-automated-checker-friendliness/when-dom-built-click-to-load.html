@@ -38,6 +38,7 @@ table {
 	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
 	margin-top: 20px;
+	max-width: 50%;
 }
 
 .card {
@@ -168,31 +169,31 @@ function loadStories(category) {
 	const container = document.getElementById('storiesList');
 	container.innerHTML = '';
 	
-	// Specific sport-related images - replace these URLs with your own images if desired
+	let params = `w=200&h=200&fit=crop&crop=entropy`;
 	const images = {
 		mensBasketball: [
-			'https://images.unsplash.com/photo-1580692475446-c2fabbbbf835?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1474224017046-182ece80b263?w=400&h=200&fit=crop',
+			`https://images.unsplash.com/photo-1546519638-68e109498ffc?${params}`,
+			`https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?${params}`,
+			`https://images.unsplash.com/photo-1504450758481-7338eba7524a?${params}`,
+			`https://images.unsplash.com/photo-1474224017046-182ece80b263?${params}`,
 		],
 		womensBasketball: [
-			'https://images.unsplash.com/photo-1720715061200-e8fe612559e0?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1519861531473-9200262188bf?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1577223625816-7546f21a49b3?w=400&h=200&fit=crop',
+			`https://images.unsplash.com/photo-1720715061200-e8fe612559e0?${params}`,
+			`https://images.unsplash.com/photo-1626003573503-2e088d82c647?${params}`,
+			`https://images.unsplash.com/photo-1519861531473-9200262188bf?${params}`,
+			`https://images.unsplash.com/photo-1556441693-e27bc50c45c5?${params}`,
 		],
 		mensGolf: [
-			'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1593111774240-d529f12f6c07?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?w=400&h=200&fit=crop',
+			`https://images.unsplash.com/photo-1535131749006-b7f58c99034b?${params}`,
+			`https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?${params}`,
+			`https://images.unsplash.com/photo-1593111774240-d529f12f6c07?${params}`,
+			`https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?${params}`,
 		],
 		womensGolf: [
-			'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1593111774240-d529f12f6c07?w=400&h=200&fit=crop',
-			'https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?w=400&h=200&fit=crop',
+			`https://images.unsplash.com/photo-1535131749006-b7f58c99034b?${params}`,
+			`https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?${params}`,
+			`https://images.unsplash.com/photo-1593111774240-d529f12f6c07?${params}`,
+			`https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?${params}`,
 		]
 	};
 	
