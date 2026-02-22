@@ -33,6 +33,40 @@ table {
 	border-collapse: collapse;
 }
 
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.card {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+}
+
+.card a {
+	display: block;
+	padding: 15px;
+	color: #333;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.card a:hover {
+	background: #f5f5f5;
+}
+
 	</style>
 
 	<script>
@@ -93,7 +127,7 @@ table {
 <button id="mensGolf">Men's Golf</button>
 <button id="womensGolf">Women's Golf</button>
 
-<ul id="storiesList"></ul>
+<div id="storiesList" class="cards-container"></div>
 
 </main>
 
@@ -109,62 +143,74 @@ const stories = {
 		"Star Guard Named Player of the Week",
 		"Coach Discusses Upcoming Tournament Strategy",
 		"Home Crowd Celebrates 20-Point Victory",
-		"Team Clinches Playoff Berth with Saturday Win",
-		"Freshman Forward Makes Impressive Debut",
-		"Rivalry Game Set for Next Weekend",
-		"Team Sets New Season Record for Three-Pointers",
-		"Players Give Back Through Community Service",
-		"Preview: Road Game Against Top-Ranked Opponent"
 	],
 	womensBasketball: [
 		"Team Extends Winning Streak to Eight Games",
 		"Senior Captain Reaches 1,000 Career Points",
 		"Defense Shines in Championship Game Victory",
 		"Coach Receives Coach of the Year Honors",
-		"Team Prepares for National Tournament Appearance",
-		"Sophomore Guard Earns All-Conference Recognition",
-		"Team Hosts Annual Youth Basketball Clinic",
-		"Game Recap: Dominant Performance in Rivalry Match",
-		"Players Excel in Classroom with Academic Awards",
-		"Season Preview: High Expectations for Upcoming Year"
 	],
 	mensGolf: [
 		"Team Takes First Place at Invitational Tournament",
 		"Senior Golfer Shoots Career-Best Round",
 		"Team Qualifies for Regional Championships",
 		"Player Profile: Rising Star on the Fairways",
-		"Coach Previews Spring Tournament Schedule",
-		"Team Finishes Strong at Conference Championship",
-		"Golfer Earns Medalist Honors at Home Event",
-		"Team Announces New Practice Facility Plans",
-		"Player Named to All-Region Team",
-		"Season Recap: Record-Breaking Performances"
 	],
 	womensGolf: [
 		"Team Wins First Tournament of the Season",
 		"Freshman Golfer Makes Strong First Impression",
 		"Team Prepares for Conference Championship",
 		"Player Shoots Record Low Score at Invitational",
-		"Coach Discusses Team Development and Goals",
-		"Team Members Volunteer at Junior Golf Clinic",
-		"Golfer Advances to National Championship",
-		"Team Celebrates Academic Achievement Awards",
-		"Preview: Challenging Schedule Ahead",
-		"Senior Golfer Reflects on Successful Career"
 	]
 };
 
 function loadStories(category) {
-	const list = document.getElementById('storiesList');
-	list.innerHTML = '';
+	const container = document.getElementById('storiesList');
+	container.innerHTML = '';
+	
+	// Specific sport-related images - replace these URLs with your own images if desired
+	const images = {
+		mensBasketball: [
+			'https://images.unsplash.com/photo-1580692475446-c2fabbbbf835?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1474224017046-182ece80b263?w=400&h=200&fit=crop',
+		],
+		womensBasketball: [
+			'https://images.unsplash.com/photo-1720715061200-e8fe612559e0?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1519861531473-9200262188bf?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1577223625816-7546f21a49b3?w=400&h=200&fit=crop',
+		],
+		mensGolf: [
+			'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1593111774240-d529f12f6c07?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?w=400&h=200&fit=crop',
+		],
+		womensGolf: [
+			'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1593111774240-d529f12f6c07?w=400&h=200&fit=crop',
+			'https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?w=400&h=200&fit=crop',
+		]
+	};
 	
 	stories[category].forEach((story, index) => {
-		const li = document.createElement('li');
+		const card = document.createElement('div');
+		card.className = 'card';
+		
+		const img = document.createElement('img');
+		img.src = images[category][index];
+		img.alt = story;
+		
 		const a = document.createElement('a');
 		a.href = '#';
 		a.textContent = story;
-		li.appendChild(a);
-		list.appendChild(li);
+		
+		card.appendChild(img);
+		card.appendChild(a);
+		container.appendChild(card);
 	});
 }
 
