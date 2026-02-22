@@ -9,6 +9,7 @@
 
 body {
 	font-family: Arial, sans-serif;
+	text-align: center;
 }
 
 p { 
@@ -39,6 +40,10 @@ table {
 	gap: 20px;
 	margin-top: 20px;
 	max-width: 50%;
+	list-style: none;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .card {
@@ -128,7 +133,7 @@ table {
 <button id="mensGolf">Men's Golf</button>
 <button id="womensGolf">Women's Golf</button>
 
-<div id="storiesList" class="cards-container"></div>
+<ul id="storiesList" class="cards-container"></ul>
 
 </main>
 
@@ -198,7 +203,7 @@ function loadStories(category) {
 	};
 	
 	stories[category].forEach((story, index) => {
-		const card = document.createElement('div');
+		const card = document.createElement('li');
 		card.className = 'card';
 		
 		const img = document.createElement('img');
