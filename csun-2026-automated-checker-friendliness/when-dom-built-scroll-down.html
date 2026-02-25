@@ -52,7 +52,6 @@ p {
 
 a {
 	color: #2563eb;
-	text-decoration: none;
 	transition: opacity 0.2s;
 }
 
@@ -135,6 +134,7 @@ nav a {
 	font-weight: 500;
 	font-size: 1.05em;
 	transition: background-color 0.2s;
+	text-decoration: none;
 }
 
 nav a:hover {
@@ -146,6 +146,66 @@ nav ul a::after {
 	content: ' ▾';
 	font-size: 0.8em;
 	margin-left: 5px;
+}
+
+footer {
+	background-color: #1a365d;
+	color: white;
+	padding: 40px 20px 20px;
+	margin-top: 60px;
+}
+
+.footer-content {
+	max-width: 900px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	margin-bottom: 30px;
+}
+
+.footer-section h3 {
+	color: #fff;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+	font-weight: 600;
+}
+
+.footer-section ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-section li {
+	margin-bottom: 10px;
+}
+
+.footer-section a {
+	color: #cbd5e1;
+	font-size: 0.95em;
+}
+
+.footer-section a:hover {
+	color: #fff;
+}
+
+.footer-bottom {
+	max-width: 900px;
+	margin: 0 auto;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	text-align: center;
+	color: #fff;
+	font-size: 0.9em;
+}
+
+.footer-bottom a {
+	color: #fff;
+}
+
+.footer-bottom p {
+	color: #fff;
 }
 
 	</style>
@@ -220,7 +280,7 @@ nav ul a::after {
 
 <body>
 <nav>
-	<a href="/" class="logo">
+	<a href="/" class="logo" aria-label="Home">
 		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 			<!-- Shield background -->
 			<path d="M50 10 L85 25 L85 50 Q85 75 50 90 Q15 75 15 50 L15 25 Z" fill="#2563eb" stroke="#fff" stroke-width="2"/>
@@ -288,6 +348,44 @@ nav ul a::after {
 
 
 </main>
+
+<footer>
+	<div class="footer-content">
+		<div class="footer-section">
+			<h3>Admissions</h3>
+			<ul>
+				<li><a href="/apply">Apply Now</a></li>
+				<li><a href="/visit">Schedule a Visit</a></li>
+				<li><a href="/financial-aid">Financial Aid</a></li>
+				<li><a href="/tuition">Tuition & Fees</a></li>
+				<li><a href="/transfer">Transfer Students</a></li>
+			</ul>
+		</div>
+		<div class="footer-section">
+			<h3>Academics</h3>
+			<ul>
+				<li><a href="/degree-programs">Degree Programs</a></li>
+				<li><a href="/academic-calendar">Academic Calendar</a></li>
+				<li><a href="/faculty">Faculty Directory</a></li>
+				<li><a href="/library">Library</a></li>
+				<li><a href="/research">Research</a></li>
+			</ul>
+		</div>
+		<div class="footer-section">
+			<h3>Contact</h3>
+			<ul>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/locations">Campus Locations</a></li>
+				<li><a href="/directory">Directory</a></li>
+				<li><a href="/employment">Employment</a></li>
+				<li><a href="/news">News & Events</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; 2026 Highland University. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/accessibility">Accessibility</a></p>
+	</div>
+</footer>
 
 <div style="display: none">
 <!-- this is to prevent the crawler from doing "deduplication" on this page. -->
