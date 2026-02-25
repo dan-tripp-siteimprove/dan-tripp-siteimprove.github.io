@@ -64,6 +64,10 @@ img.lazyload:not([src]) {
 	visibility: hidden;
 }
 
+img.lazyload:not([src]) {
+	height: 200px; 
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -189,14 +193,14 @@ nav ul a::after {
 		
 		const observer = new IntersectionObserver((entries, observer) => {
 			entries.forEach(entry => {
-				if (entry.isIntersecting) {
+				if(entry.intersectionRatio >= 0.8) {
 					const img = entry.target;
 					img.src = img.dataset.src;
 					observer.unobserve(img);
 				}
 			});
 		}, {
-			rootMargin: '50px'
+			threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] 
 		});
 		
 		images.forEach(img => observer.observe(img));
