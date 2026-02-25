@@ -184,8 +184,27 @@ nav ul a::after {
 		}
 	}
 
+	function lazyLoadImages() {
+		const images = document.querySelectorAll('img.lazyload[data-src]:not([src])');
+		
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const img = entry.target;
+					img.src = img.dataset.src;
+					observer.unobserve(img);
+				}
+			});
+		}, {
+			rootMargin: '50px'
+		});
+		
+		images.forEach(img => observer.observe(img));
+	}
+
 	window.addEventListener("load", function(event) {
 		removeIframesIfFileUriScheme();
+		lazyLoadImages();
 	});
 }
 	</script>
