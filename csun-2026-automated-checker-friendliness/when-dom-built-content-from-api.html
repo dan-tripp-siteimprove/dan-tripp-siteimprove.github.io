@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background-color: #f8f9fa;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 40px 20px;
+	background-color: white;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	text-align: center;
+}
+
+h1 {
+	color: #1a365d;
+	font-size: 2.5em;
+	margin-bottom: 0.5em;
+	font-weight: 700;
+	border-bottom: 3px solid #2563eb;
+	padding-bottom: 0.3em;
+	display: inline-block;
+}
+
+h2 {
+	color: #2563eb;
+	font-size: 1.8em;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	font-weight: 600;
+}
+
+p {
+	line-height: 1.8;
+	margin-bottom: 1.2em;
+	color: #4a5568;
+	font-size: 1.05em;
+}
+
+a {
+	color: #2563eb;
+	transition: opacity 0.2s;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+img.lazyload:not([src]) {
+	visibility: hidden;
+}
+
+img.lazyload:not([src]) {
+	height: 200px; 
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 2em auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+	padding: 12px;
+	text-align: left;
+}
+
+table th {
+	background-color: #1a365d;
+	color: white;
+	font-weight: 600;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 2em auto;
+}
+
+nav {
+	background-color: #1a365d;
+	padding: 0;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+}
+
+.logo svg {
+	height: 50px;
+	width: auto;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 0;
+}
+
+nav li {
+	position: relative;
+}
+
+nav a {
+	display: block;
+	padding: 18px 30px;
+	color: white;
+	font-weight: 500;
+	font-size: 1.05em;
+	transition: background-color 0.2s;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #2563eb;
+	opacity: 1;
+}
+
+nav ul a::after {
+	content: ' ▾';
+	font-size: 0.8em;
+	margin-left: 5px;
+}
+
+footer {
+	background-color: #1a365d;
+	color: white;
+	padding: 40px 20px 20px;
+	margin-top: 60px;
+}
+
+.footer-content {
+	max-width: 900px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	margin-bottom: 30px;
+}
+
+.footer-section h3 {
+	color: #fff;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+	font-weight: 600;
+}
+
+.footer-section ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-section li {
+	margin-bottom: 10px;
+}
+
+.footer-section a {
+	color: #cbd5e1;
+	font-size: 0.95em;
+}
+
+.footer-section a:hover {
+	color: #fff;
+}
+
+.footer-bottom {
+	max-width: 900px;
+	margin: 0 auto;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	text-align: center;
+	color: #fff;
+	font-size: 0.9em;
+}
+
+.footer-bottom a {
+	color: #fff;
+}
+
+.footer-bottom p {
+	color: #fff;
+}
+
+	</style>
+
+	<script>
+{
+
+	function getShadowRoots() {
+		if(!document.body) { // under realistic conditions, this will never happen, I think.  under contrived test conditions I made it happen by running this script very early in the page load process (= under tampermonkey, @run-at document-start, no sleep.  
+			return [];
+		}
+		let r = [document.body];
+		function walk(node__) {
+			let shadowRoot = node__.shadowRoot;
+			if(shadowRoot) {
+				r.push(shadowRoot);
+				walk(shadowRoot);
+			}
+			for (let child of node__.childNodes) {
+				if (child.nodeType === Node.ELEMENT_NODE) {
+					walk(child);
+				}
+			}
+		}
+		walk(document.body);
+		return r;
+	}
+
+
+	function removeIframesIfFileUriScheme() {
+		if(location.protocol !== "file:") return;
+		for(let root of [document, ...getShadowRoots()]) {
+			for(let iframe of root.querySelectorAll('iframe')) {
+				let newWarningElem = document.createElement('div');
+				newWarningElem.style.fontSize = '2em';
+				newWarningElem.style.color = 'rgba(235, 0, 0)';
+				newWarningElem.textContent = `IFRAME REMOVED.  Because you are viewing this page as a file:// URL, many tools can't handle this, even though the iframe will technically load.  It's more trouble than it's worth.  Recommendation: start a local web server, then view this page as an http:// URL.`;
+				iframe.replaceWith(newWarningElem);
+			}
+		}
+	}
+
+	function lazyLoadImages() {
+		const images = document.querySelectorAll('img.lazyload[data-src]:not([src])');
+		
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if(entry.intersectionRatio >= 0.8) {
+					const img = entry.target;
+					img.src = img.dataset.src;
+					observer.unobserve(img);
+				}
+			});
+		}, {
+			threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] 
+		});
+		
+		images.forEach(img => observer.observe(img));
+	}
+
+	window.addEventListener("load", function(event) {
+		removeIframesIfFileUriScheme();
+		lazyLoadImages();
+	});
+}
+	</script>
+
+</head>
+
+
+
+
+<body>
+<nav>
+	<a href="/" class="logo" aria-label="Home">
+		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			<!-- Umbrella handle -->
+			<path d="M50 55 L50 80 Q50 85 45 85" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+			<!-- Umbrella canopy -->
+			<path d="M20 55 Q35 35 50 35 Q65 35 80 55" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+			<!-- Company initials -->
+			<text x="50" y="25" font-family="sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">SecureLife</text>
+		</svg>
+	</a>
+	<ul>
+		<li><a href="#">Products</a></li>
+		<li><a href="#">Get a Quote</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
+</nav>
+
+<main>
+
+<p>The Canadian Dental Care Plan (CDCP) provides essential dental coverage to eligible Canadians. This resource center offers comprehensive information on service codes, fee schedules, and policies for participating dental care providers.</p>
+
+<p>Whether you're looking for details on covered procedures, billing guidelines, or provider enrollment information, our documentation will help you navigate the CDCP program effectively. Please review the materials below to ensure compliance with current program requirements.</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name <button>↑↓</button></th>
+			<th>Province <button>↑↓</button></th>
+			<th>Last Updated <button>↑↓</button></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="#">Maple Dental Clinic</a></td>
+			<td>Ontario</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Vancouver Smile Centre</a></td>
+			<td>British Columbia</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Prairie Family Dentistry</a></td>
+			<td>Alberta</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Montreal Dental Associates</a></td>
+			<td>Quebec</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Halifax Dental Care</a></td>
+			<td>Nova Scotia</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Winnipeg Tooth & Gum Specialists</a></td>
+			<td>Manitoba</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Regina Dental Group</a></td>
+			<td>Saskatchewan</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">St. John's Oral Health Clinic</a></td>
+			<td>Newfoundland and Labrador</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Charlottetown Dental Centre</a></td>
+			<td>Prince Edward Island</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Fredericton Family Dental</a></td>
+			<td>New Brunswick</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Yellowknife Dental Services</a></td>
+			<td>Northwest Territories</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Whitehorse Smile Studio</a></td>
+			<td>Yukon</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Iqaluit Arctic Dental</a></td>
+			<td>Nunavut</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Ottawa Capital Dentistry</a></td>
+			<td>Ontario</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Calgary Modern Dental</a></td>
+			<td>Alberta</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Victoria Coastal Dental</a></td>
+			<td>British Columbia</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Quebec City Dental Partners</a></td>
+			<td>Quebec</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Saskatoon Prairie Dental</a></td>
+			<td>Saskatchewan</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Brandon Family Dentistry</a></td>
+			<td>Manitoba</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Dartmouth Harbour Dental</a></td>
+			<td>Nova Scotia</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Surrey Central Dental Clinic</a></td>
+			<td>British Columbia</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Mississauga Dental Excellence</a></td>
+			<td>Ontario</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Laval Dental Solutions</a></td>
+			<td>Quebec</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Red Deer Dental Group</a></td>
+			<td>Alberta</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Kelowna Valley Dental</a></td>
+			<td>British Columbia</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">London Thames Dental Care</a></td>
+			<td>Ontario</td>
+			<td>2024</td>
+		</tr>
+		<tr>
+			<td><a href="#">Sherbrooke Dental Professionals</a></td>
+			<td>Quebec</td>
+			<td>2025</td>
+		</tr>
+		<tr>
+			<td><a href="#">Lethbridge Family Dental</a></td>
+			<td>Alberta</td>
+			<td>2024</td>
+		</tr>
+	</tbody>
+</table>
+
+</main>
+
+<footer>
+	<div class="footer-content">
+		<div class="footer-section">
+			<h3>Insurance Products</h3>
+			<ul>
+				<li><a href="/term-life">Term Life Insurance</a></li>
+				<li><a href="/whole-life">Whole Life Insurance</a></li>
+				<li><a href="/universal-life">Universal Life Insurance</a></li>
+				<li><a href="/final-expense">Final Expense Insurance</a></li>
+				<li><a href="/group-life">Group Life Insurance</a></li>
+			</ul>
+		</div>
+		<div class="footer-section">
+			<h3>Resources</h3>
+			<ul>
+				<li><a href="/calculator">Coverage Calculator</a></li>
+				<li><a href="/learning-center">Learning Center</a></li>
+				<li><a href="/faqs">FAQs</a></li>
+				<li><a href="/claims">File a Claim</a></li>
+				<li><a href="/beneficiaries">Manage Beneficiaries</a></li>
+			</ul>
+		</div>
+		<div class="footer-section">
+			<h3>Contact</h3>
+			<ul>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/agents">Find an Agent</a></li>
+				<li><a href="/support">Customer Support</a></li>
+				<li><a href="/careers">Careers</a></li>
+				<li><a href="/about">About SecureLife</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; 2026 SecureLife Insurance Company. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/accessibility">Accessibility</a></p>
+	</div>
+</footer>
+
+<div style="display: none">
+<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+2f35c003-fd2a-49cf-99ef-42e8e07372bc
+</div>
+
+</body>
+
+</html>
