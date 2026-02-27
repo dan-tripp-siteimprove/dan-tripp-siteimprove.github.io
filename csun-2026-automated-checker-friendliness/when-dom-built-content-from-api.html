@@ -59,14 +59,6 @@ a:hover {
 	opacity: 0.8;
 }
 
-img.lazyload:not([src]) {
-	visibility: hidden;
-}
-
-img.lazyload:not([src]) {
-	height: 200px; 
-}
-
 img {
 	max-width: 100%;
 	height: auto;
@@ -258,27 +250,69 @@ footer {
 		}
 	}
 
-	function lazyLoadImages() {
-		const images = document.querySelectorAll('img.lazyload[data-src]:not([src])');
+	function loadTableData() {
+		const providers = [
+			{name: "Maple Dental Clinic", province: "Ontario", year: "2024"},
+			{name: "Vancouver Smile Centre", province: "British Columbia", year: "2024"},
+			{name: "Prairie Family Dentistry", province: "Alberta", year: "2025"},
+			{name: "Montreal Dental Associates", province: "Quebec", year: "2024"},
+			{name: "Halifax Dental Care", province: "Nova Scotia", year: "2025"},
+			{name: "Winnipeg Tooth & Gum Specialists", province: "Manitoba", year: "2024"},
+			{name: "Regina Dental Group", province: "Saskatchewan", year: "2025"},
+			{name: "St. John's Oral Health Clinic", province: "Newfoundland and Labrador", year: "2024"},
+			{name: "Charlottetown Dental Centre", province: "Prince Edward Island", year: "2025"},
+			{name: "Fredericton Family Dental", province: "New Brunswick", year: "2024"},
+			{name: "Yellowknife Dental Services", province: "Northwest Territories", year: "2025"},
+			{name: "Whitehorse Smile Studio", province: "Yukon", year: "2024"},
+			{name: "Iqaluit Arctic Dental", province: "Nunavut", year: "2025"},
+			{name: "Ottawa Capital Dentistry", province: "Ontario", year: "2024"},
+			{name: "Calgary Modern Dental", province: "Alberta", year: "2025"},
+			{name: "Victoria Coastal Dental", province: "British Columbia", year: "2024"},
+			{name: "Quebec City Dental Partners", province: "Quebec", year: "2025"},
+			{name: "Saskatoon Prairie Dental", province: "Saskatchewan", year: "2024"},
+			{name: "Brandon Family Dentistry", province: "Manitoba", year: "2025"},
+			{name: "Dartmouth Harbour Dental", province: "Nova Scotia", year: "2024"},
+			{name: "Surrey Central Dental Clinic", province: "British Columbia", year: "2025"},
+			{name: "Mississauga Dental Excellence", province: "Ontario", year: "2024"},
+			{name: "Laval Dental Solutions", province: "Quebec", year: "2025"},
+			{name: "Red Deer Dental Group", province: "Alberta", year: "2024"},
+			{name: "Kelowna Valley Dental", province: "British Columbia", year: "2025"},
+			{name: "London Thames Dental Care", province: "Ontario", year: "2024"},
+			{name: "Sherbrooke Dental Professionals", province: "Quebec", year: "2025"},
+			{name: "Lethbridge Family Dental", province: "Alberta", year: "2024"}
+		];
 		
-		const observer = new IntersectionObserver((entries, observer) => {
-			entries.forEach(entry => {
-				if(entry.intersectionRatio >= 0.8) {
-					const img = entry.target;
-					img.src = img.dataset.src;
-					observer.unobserve(img);
-				}
-			});
-		}, {
-			threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] 
+		const tbody = document.querySelector('table tbody');
+		if (!tbody) return;
+		
+		providers.forEach(provider => {
+			const tr = document.createElement('tr');
+			
+			const tdName = document.createElement('td');
+			const link = document.createElement('a');
+			link.href = '#';
+			link.textContent = provider.name;
+			tdName.appendChild(link);
+			
+			const tdProvince = document.createElement('td');
+			tdProvince.textContent = provider.province;
+			
+			const tdYear = document.createElement('td');
+			tdYear.textContent = provider.year;
+			
+			tr.appendChild(tdName);
+			tr.appendChild(tdProvince);
+			tr.appendChild(tdYear);
+			
+			tbody.appendChild(tr);
 		});
-		
-		images.forEach(img => observer.observe(img));
 	}
 
 	window.addEventListener("load", function(event) {
 		removeIframesIfFileUriScheme();
-		lazyLoadImages();
+		setTimeout(() => {
+			loadTableData();
+		}, 5000);
 	});
 }
 	</script>
@@ -322,146 +356,6 @@ footer {
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td><a href="#">Maple Dental Clinic</a></td>
-			<td>Ontario</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Vancouver Smile Centre</a></td>
-			<td>British Columbia</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Prairie Family Dentistry</a></td>
-			<td>Alberta</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Montreal Dental Associates</a></td>
-			<td>Quebec</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Halifax Dental Care</a></td>
-			<td>Nova Scotia</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Winnipeg Tooth & Gum Specialists</a></td>
-			<td>Manitoba</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Regina Dental Group</a></td>
-			<td>Saskatchewan</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">St. John's Oral Health Clinic</a></td>
-			<td>Newfoundland and Labrador</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Charlottetown Dental Centre</a></td>
-			<td>Prince Edward Island</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Fredericton Family Dental</a></td>
-			<td>New Brunswick</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Yellowknife Dental Services</a></td>
-			<td>Northwest Territories</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Whitehorse Smile Studio</a></td>
-			<td>Yukon</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Iqaluit Arctic Dental</a></td>
-			<td>Nunavut</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Ottawa Capital Dentistry</a></td>
-			<td>Ontario</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Calgary Modern Dental</a></td>
-			<td>Alberta</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Victoria Coastal Dental</a></td>
-			<td>British Columbia</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Quebec City Dental Partners</a></td>
-			<td>Quebec</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Saskatoon Prairie Dental</a></td>
-			<td>Saskatchewan</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Brandon Family Dentistry</a></td>
-			<td>Manitoba</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Dartmouth Harbour Dental</a></td>
-			<td>Nova Scotia</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Surrey Central Dental Clinic</a></td>
-			<td>British Columbia</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Mississauga Dental Excellence</a></td>
-			<td>Ontario</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Laval Dental Solutions</a></td>
-			<td>Quebec</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Red Deer Dental Group</a></td>
-			<td>Alberta</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Kelowna Valley Dental</a></td>
-			<td>British Columbia</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">London Thames Dental Care</a></td>
-			<td>Ontario</td>
-			<td>2024</td>
-		</tr>
-		<tr>
-			<td><a href="#">Sherbrooke Dental Professionals</a></td>
-			<td>Quebec</td>
-			<td>2025</td>
-		</tr>
-		<tr>
-			<td><a href="#">Lethbridge Family Dental</a></td>
-			<td>Alberta</td>
-			<td>2024</td>
-		</tr>
 	</tbody>
 </table>
 
