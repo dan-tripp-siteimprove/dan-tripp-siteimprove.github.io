@@ -310,9 +310,10 @@ footer {
 
 	window.addEventListener("load", function(event) {
 		removeIframesIfFileUriScheme();
+		const delay = Math.random() < 0.5 ? 1000 : 5000;
 		setTimeout(() => {
 			loadTableData();
-		}, 5000);
+		}, delay);
 	});
 }
 	</script>
