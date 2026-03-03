@@ -23,10 +23,39 @@ p {
 
 table td, table th {
 	border: 1px solid black;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 table {
 	border-collapse: collapse;
+}
+
+#data-table {
+	display: block;
+	max-height: 168px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+#data-table thead,
+#data-table tbody {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+#data-table thead {
+	position: sticky;
+	top: 0;
+	background-color: black;
+	color: white;
+	z-index: 1;
+}
+
+#data-table thead th {
+	outline: 1px solid white;
 }
 
 	</style>
@@ -69,13 +98,40 @@ table {
 		}
 	}
 
-	function randomString(length) {
-		const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-		let result = '';
-		for (let i = 0; i < length; i++) {
-			result += chars.charAt(Math.floor(Math.random() * chars.length));
-		}
-		return result;
+	function seededRandom(seed) {
+		const x = Math.sin(seed) * 10000;
+		return x - Math.floor(x);
+	}
+
+	function generateFundData(fundId) {
+		const fundNames = [
+			'Pinnacle Growth Strategy Fund', 'Horizon 500 Index', 'Silverlake Blue Chip Growth',
+			'Northstar Growth Fund of America', 'Crestview Total Return', 'Ironwood Global Allocation',
+			'Meridian Equity Income', 'Westfield Stock Fund', 'Riverside Total Return Bond',
+			'Bayshore Capital Appreciation', 'Mountainview Mid Cap', 'Lakeside Dividend Income',
+			'Redstone Bond Debenture', 'Clearwater Value Fund', 'Springhill Genesis',
+			'Crossroads Select Fund', 'Skyline Odyssey Growth', 'Summit Special Equity',
+			'Cornerstone S&P 500 Index', 'Bluewater Dividend Growth', 'Greenwood Wellington',
+			'Parkside Mid Cap Value', 'Riverbend Aggregate Bond', 'Timberline Growth',
+			'Lighthouse US Large Cap Value', 'Cascade Contrafund', 'Fairmont Income',
+			'Eastwood Healthcare Fund', 'Palmetto Developing Markets', 'Ridgeline Enterprise',
+			'Harborview Bond Fund', 'Oakridge ICAP Equity', 'Maplewood High Yield Municipal Bond',
+			'Windmill Gold & Special Minerals', 'Seaside Jennison Growth', 'Ashford Blue Chip',
+			'Pathfinder UltraBull', 'Grandview Equity Income', 'Sunset Nova Fund', 'Hillcrest Equity 500 Index',
+			'Trailhead Growth Fund', 'Gateway Equity Index', 'Foxridge Growth', 'Highpoint Sycamore Established Value',
+			'Springwater Special Mid Cap Value', 'Millstone Core Bond', 'Kingsley Discovery Growth',
+			'Silverpoint Growth', 'Crestline Value', 'Woodland Tax-Managed Growth', 'Riverside Growth Opportunities'
+		];
+		const assetClasses = ['Large Cap', 'Mid Cap', 'Small Cap', 'Bond', 'International', 'Emerging Markets', 'Real Estate', 'Commodities'];
+		
+		const fundName = fundNames[fundId % 50];
+		const ticker = fundName.split(' ').slice(0, 2).map(w => w.substring(0, 2)).join('').toUpperCase() + 'X';
+		const nav = (50 + seededRandom(fundId * 13) * 150).toFixed(2);
+		const yearReturn = ((seededRandom(fundId * 17) - 0.3) * 30).toFixed(2);
+		const expenseRatio = (0.05 + seededRandom(fundId * 19) * 1.5).toFixed(2);
+		const assetClass = assetClasses[Math.floor(seededRandom(fundId * 23) * assetClasses.length)];
+		
+		return [fundName, ticker, `$${nav}`, `${yearReturn}%`, `${expenseRatio}%`, assetClass];
 	}
 
 	function loadTableData() {
@@ -87,11 +143,12 @@ table {
 			const firstTd = document.createElement('td');
 			firstTd.textContent = i+1;
 			tr.appendChild(firstTd);
-			for (let j = 0; j < 6; j++) {
+			const fundData = generateFundData(i + 1);
+			fundData.forEach(val => {
 				const td = document.createElement('td');
-				td.textContent = randomString(20);
+				td.textContent = val;
 				tr.appendChild(td);
-			}
+			});
 			tbody.appendChild(tr);
 		}
 	}
@@ -111,6 +168,7 @@ table {
 <body>
 <main>
 
+<h1>Mutual Fund Info</h1>
 
 <table id="data-table">
 <thead>
