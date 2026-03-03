@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width">
 	<title>x</title>
 
-	<style>
+<style>
 
 p { 
 	line-height: 1.5;
@@ -13,40 +13,43 @@ p {
 
 /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
 .visually-hidden:not(:focus):not(:active) {
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-table td, table th {
-	border: 1px solid black;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 table {
-	border-collapse: collapse;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+table td,
+table th {
+	border: 0;
+	outline: 1px solid black;
+	outline-offset: -1px;
+	padding: 0.25em;
+	line-height: 1.2;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	height: 1.7em;
 }
 
 #data-table {
 	display: block;
-	max-height: 168px;
-	overflow-y: auto;
-	overflow-x: hidden;
 	width: 100%;
-}
-
-#data-table thead,
-#data-table tbody {
-	display: table;
-	width: 100%;
-	table-layout: fixed;
+	overflow: hidden;
 }
 
 #data-table thead {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
 	position: sticky;
 	top: 0;
 	background-color: black;
@@ -56,9 +59,25 @@ table {
 
 #data-table thead th {
 	outline: 1px solid white;
+	outline-offset: -1px;
 }
 
-	</style>
+#data-table tbody {
+	display: block;
+	width: 100%;
+	overflow-y: auto;
+	max-height: calc(7 * 1.7em);
+}
+
+#data-table tbody tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	height: 1.7em;
+}
+
+
+</style>
 
 	<script>
 {
