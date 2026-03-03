@@ -44,17 +44,24 @@ table th {
 	display: block;
 	width: 100%;
 	overflow: hidden;
+	outline: 2px solid black;
 }
 
 #data-table thead {
+	display: block;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	background-color: #333;
+	color: white;
+	z-index: 1;
+	overflow-y: scroll;
+}
+
+#data-table thead tr {
 	display: table;
 	width: 100%;
 	table-layout: fixed;
-	position: sticky;
-	top: 0;
-	background-color: black;
-	color: white;
-	z-index: 1;
 }
 
 #data-table thead th {
@@ -65,7 +72,7 @@ table th {
 #data-table tbody {
 	display: block;
 	width: 100%;
-	overflow-y: auto;
+	overflow-y: scroll;
 	max-height: calc(7 * 1.7em);
 }
 
