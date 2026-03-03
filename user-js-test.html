@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Canned Responses</title>
+
+	<link rel="stylesheet" href="styles.css">
+
+	<script type="module">
+	import * as main from './main.mjs';
+	main.initForMainPage();
+	</script>
+
+	<style>
+		.runner-container {
+			display: flex;
+			flex-wrap: nowrap;
+			gap: 20px;
+			width: 100%;
+		}
+		.runner-section {
+			flex: 1 1 0;
+			min-width: 0;
+			width: 50%;
+		}
+		textarea#runnerInput, textarea#runnerOutput {
+			width: 100%;
+			height: 500px;
+		}
+		.section-headers {
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+			margin-bottom: 10px;
+		}
+		.section-header {
+			display: table-cell;
+			width: 50%;
+			vertical-align: top;
+		}
+		.section-title {
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+
+
+
+
+<body>
+<main>
+
+<h1>Canned Responses</h1>
+
+<p>This is a page for searching canned responses and other guidance for accessibility false positive reviews and alfa/platform consulting and support.  The source data is a text file, and that <a href="" id="linkToTextFile">text file is here</a>.</p>
+
+<h2>Search</h2>
+
+<details>
+	<summary>Info on how to search</summary>
+	<div class="inner-details">
+		<ul>
+		<li>You can specify multiple search terms, separated by spaces.  
+		<li>This page does an "and" search, not an "or" search.  
+		<li>This page does a substring search, not a whole word search.
+		<li>This page generally expects each search term to be a fixed string.  But a search term <i>can</i> be a regex instead - probably.  This is not well defined.
+		<li>The order of your search terms doesn't matter.
+		<li>The search results are not sorted by "relevance" or a "score" or anything like that.</p>
+		</ul>
+	</div>
+</details>
+
+<label>Query: <input id="searchInput" style="width: 30em;"></label> <button id="search">Search</button>
+
+<div id="searchResults"></div>
+
+<h2>Runner</h2>
+<div class="section-headers">
+    <div class="section-header">
+        <span class="section-title">Input</span>
+    </div>
+    <div class="section-header">
+        <div class="output-header-content">
+            <span class="section-title">Output</span>
+            <span id="runnerOutputTimestamp">...</span>
+            <button id="runnerCopyToClipboardButton">Copy output to clipboard</button>
+        </div>
+    </div>
+</div>
+
+<div class="runner-container">
+    <div class="runner-section">
+        <div class="section-content">
+            <textarea id="runnerInput" spellcheck="false">// javascript 
+let r = 'xyz';
+</textarea>
+        </div>
+    </div>
+    
+    <div class="runner-section">
+        <div class="section-content">
+            <textarea id="runnerOutput" spellcheck="false" readonly></textarea>
+        </div>
+    </div>
+</div>
+
+
+
+</main>
+
+</body>
+
+</html>
