@@ -85,7 +85,7 @@ table {
 		for (let i = 0; i < numRows; i++) {
 			const tr = document.createElement('tr');
 			const firstTd = document.createElement('td');
-			firstTd.textContent = i;
+			firstTd.textContent = i+1;
 			tr.appendChild(firstTd);
 			for (let j = 0; j < 6; j++) {
 				const td = document.createElement('td');
@@ -111,31 +111,15 @@ table {
 <body>
 <main>
 
-<table>
-<thead>
-	<tr><th>Dummy Before</th></tr>
-</thead>
-<tbody>
-	<tr><td>Before Data</td></tr>
-</tbody>
-</table>
 
 <table id="data-table">
 <thead>
-	<tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+	<tr><th>Result Number</th><th>Fund Name</th><th>Ticker Symbol</th><th>NAV</th><th>1-Year Return</th><th>Expense Ratio</th><th>Asset Class</th></tr>
 </thead>
 <tbody>
 </tbody>
 </table>
 
-<table>
-<thead>
-	<tr><th>Dummy After</th></tr>
-</thead>
-<tbody>
-	<tr><td>After Data</td></tr>
-</tbody>
-</table>
 
 
 </main>
