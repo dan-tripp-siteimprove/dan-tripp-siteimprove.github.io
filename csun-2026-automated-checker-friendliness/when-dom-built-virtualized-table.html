@@ -163,7 +163,7 @@ table th {
 	function loadTableData() {
 		const tbody = document.querySelector('#data-table tbody');
 		if (!tbody) return;
-		let numRows = 800;
+		let numRows = 118;
 		for (let i = 0; i < numRows; i++) {
 			const tr = document.createElement('tr');
 			const firstTd = document.createElement('td');
@@ -195,6 +195,10 @@ table th {
 <main>
 
 <h1>Mutual Fund Info</h1>
+
+<!-- This table is not really virtualized.  It's for talking points and I don't intend to show the DOM.  -->
+
+<p style="font-size: 1.5em;">118 results.</p>
 
 <table id="data-table">
 <thead>
