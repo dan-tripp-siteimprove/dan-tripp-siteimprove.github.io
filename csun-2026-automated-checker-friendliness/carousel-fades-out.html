@@ -30,9 +30,11 @@ table {
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; padding: 40px; }
+body { font-family: museo-sans, sans-serif; padding: 40px; }
 
-h1 { margin-bottom: 20px; }
+h1, h2, h3, h4, h5, h6 { font-family: miller-display, serif; }
+
+h1 { margin-bottom: 20px; margin-left: 60px; }
 
 .carousel-wrapper {
 	position: relative;
@@ -81,15 +83,20 @@ h1 { margin-bottom: 20px; }
 	padding: 12px 14px;
 	font-size: 1.4em;
 	cursor: pointer;
-	border: 1px solid #333;
-	background: #333;
+	border: 1px solid #888;
+	background: #888;
 	color: white;
-	border-radius: 4px;
+	border-radius: 50%;
 	flex-shrink: 0;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .carousel-btn:hover {
-	background: #555;
+	background: #777;
 }
 
 	</style>
@@ -187,22 +194,22 @@ h1 { margin-bottom: 20px; }
 <div class="carousel-wrapper">
 	<div class="carousel-track" id="carousel-track">
 		<div class="carousel-item">
-			<img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=300&h=200&fit=crop&crop=entropy" alt="New pediatric wing">
+			<img src="./c1.jpg" alt="New pediatric wing">
 			<h3>New Pediatric Wing Opens</h3>
 			<p>Our expanded children's center now offers 40 additional beds and a family lounge.</p>
 		</div>
 		<div class="carousel-item">
-			<img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop&crop=entropy" alt="Heart surgery milestone">
+			<img src="./c2.jpg" alt="Heart surgery milestone">
 			<h3>1,000th Heart Surgery Milestone</h3>
 			<p>Our cardiac team celebrates a landmark achievement in patient care.</p>
 		</div>
 		<div class="carousel-item">
-			<img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=300&h=200&fit=crop&crop=entropy" alt="Community health fair">
+			<img src="c3.jpg" alt="Community health fair">
 			<h3>Community Health Fair Success</h3>
 			<p>Over 500 residents received free screenings at our annual wellness event.</p>
 		</div>
 		<div class="carousel-item">
-			<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=300&h=200&fit=crop&crop=entropy" alt="Nurse recognition">
+			<img src="c4.jpg" alt="Nurse recognition">
 			<h3>Nurse of the Year Award</h3>
 			<p>Congratulations to this year's winner for outstanding dedication to patient care.</p>
 		</div>
