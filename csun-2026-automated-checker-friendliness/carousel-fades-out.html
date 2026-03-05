@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { 
+	line-height: 1.5;
+}
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; padding: 40px; }
+
+h1 { margin-bottom: 20px; }
+
+.carousel-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 900px;
+	overflow: hidden;
+}
+
+.carousel-track {
+	display: flex;
+	transition: transform 0.4s ease;
+	gap: 16px;
+}
+
+.carousel-item {
+	flex: 0 0 calc((100% - 48px) / 3.5);
+	background: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+	transition: opacity 0.4s ease;
+}
+
+.carousel-item img {
+	width: 100%;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+
+.carousel-item h3 {
+	margin-bottom: 8px;
+}
+
+.carousel-container {
+	position: relative;
+	max-width: 900px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.carousel-btn {
+	padding: 12px 14px;
+	font-size: 1.4em;
+	cursor: pointer;
+	border: 1px solid #333;
+	background: #333;
+	color: white;
+	border-radius: 4px;
+	flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+	background: #555;
+}
+
+	</style>
+
+	<script>
+{
+
+	function getShadowRoots() {
+		if(!document.body) { // under realistic conditions, this will never happen, I think.  under contrived test conditions I made it happen by running this script very early in the page load process (= under tampermonkey, @run-at document-start, no sleep.  
+			return [];
+		}
+		let r = [document.body];
+		function walk(node__) {
+			let shadowRoot = node__.shadowRoot;
+			if(shadowRoot) {
+				r.push(shadowRoot);
+				walk(shadowRoot);
+			}
+			for (let child of node__.childNodes) {
+				if (child.nodeType === Node.ELEMENT_NODE) {
+					walk(child);
+				}
+			}
+		}
+		walk(document.body);
+		return r;
+	}
+
+
+	function removeIframesIfFileUriScheme() {
+		if(location.protocol !== "file:") return;
+		for(let root of [document, ...getShadowRoots()]) {
+			for(let iframe of root.querySelectorAll('iframe')) {
+				let newWarningElem = document.createElement('div');
+				newWarningElem.style.fontSize = '2em';
+				newWarningElem.style.color = 'rgba(235, 0, 0)';
+				newWarningElem.textContent = `IFRAME REMOVED.  Because you are viewing this page as a file:// URL, many tools can't handle this, even though the iframe will technically load.  It's more trouble than it's worth.  Recommendation: start a local web server, then view this page as an http:// URL.`;
+				iframe.replaceWith(newWarningElem);
+			}
+		}
+	}
+
+	window.addEventListener("load", function(event) {
+		removeIframesIfFileUriScheme();
+
+		const track = document.getElementById('carousel-track');
+		const prevBtn = document.getElementById('prev-btn');
+		const nextBtn = document.getElementById('next-btn');
+		let position = 0;
+		const items = track.querySelectorAll('.carousel-item');
+		const totalItems = items.length;
+		const visibleItems = 3.5;
+		const maxPosition = totalItems - visibleItems;
+
+		function updateCarousel() {
+			const itemWidth = items[0].offsetWidth + 16; // width + gap
+			track.style.transform = `translateX(-${position * itemWidth}px)`;
+			const lastVisible = Math.floor(position + 3);
+			items.forEach((item, i) => {
+				if (i === lastVisible) {
+					item.style.opacity = '0.3';
+				} else {
+					item.style.opacity = '1';
+				}
+			});
+		}
+
+		updateCarousel();
+
+		prevBtn.addEventListener('click', function() {
+			position = Math.max(0, position - 1);
+			updateCarousel();
+		});
+
+		nextBtn.addEventListener('click', function() {
+			position = Math.min(maxPosition, position + 1);
+			updateCarousel();
+		});
+	});
+}
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<h1>Recent Stories</h1>
+
+<div class="carousel-container">
+<button id="prev-btn" class="carousel-btn" aria-label="Previous">&#9664;</button>
+<div class="carousel-wrapper">
+	<div class="carousel-track" id="carousel-track">
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=300&h=200&fit=crop&crop=entropy" alt="New pediatric wing">
+			<h3>New Pediatric Wing Opens</h3>
+			<p>Our expanded children's center now offers 40 additional beds and a family lounge.</p>
+		</div>
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop&crop=entropy" alt="Heart surgery milestone">
+			<h3>1,000th Heart Surgery Milestone</h3>
+			<p>Our cardiac team celebrates a landmark achievement in patient care.</p>
+		</div>
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=300&h=200&fit=crop&crop=entropy" alt="Community health fair">
+			<h3>Community Health Fair Success</h3>
+			<p>Over 500 residents received free screenings at our annual wellness event.</p>
+		</div>
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=300&h=200&fit=crop&crop=entropy" alt="Nurse recognition">
+			<h3>Nurse of the Year Award</h3>
+			<p>Congratulations to this year's winner for outstanding dedication to patient care.</p>
+		</div>
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=300&h=200&fit=crop&crop=entropy" alt="Telehealth expansion">
+			<h3>Telehealth Services Expand</h3>
+			<p>Virtual visits now available for 15 specialties across the network.</p>
+		</div>
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&h=200&fit=crop&crop=entropy" alt="Cancer research grant">
+			<h3>$2M Cancer Research Grant</h3>
+			<p>New funding supports innovative immunotherapy trials at our oncology center.</p>
+		</div>
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=300&h=200&fit=crop&crop=entropy" alt="Emergency department renovation">
+			<h3>ER Renovation Complete</h3>
+			<p>Upgraded trauma bays and faster triage improve emergency response times.</p>
+		</div>
+		<div class="carousel-item">
+			<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&h=200&fit=crop&crop=entropy" alt="Volunteer program">
+			<h3>Volunteer Program Grows</h3>
+			<p>200 new volunteers join our mission to support patients and families.</p>
+		</div>
+	</div>
+</div>
+<button id="next-btn" class="carousel-btn" aria-label="Next">&#9654;</button>
+</div>
+
+</main>
+
+<div style="display: none">
+<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+31d625f8-4e13-4565-b595-cd4dd53c0d7c
+</div>
+
+</body>
+
+</html>
