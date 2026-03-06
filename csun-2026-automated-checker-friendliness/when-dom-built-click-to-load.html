@@ -145,6 +145,7 @@ table {
 <button id="womensGolf">Women's Golf</button>
 
 <ul id="storiesList" class="cards-container"></ul>
+<p id="emptyMessage" style="background-color: yellow; font-size: 2em;">&lt;ul&gt;&lt;/ul&gt;</p>
 
 </main>
 
@@ -184,6 +185,7 @@ const stories = {
 function loadStories(category) {
 	const container = document.getElementById('storiesList');
 	container.innerHTML = '';
+	document.getElementById('emptyMessage').style.display = 'none';
 	
 	let params = `w=800&h=400&fit=crop&crop=entropy`;
 	const images = {
