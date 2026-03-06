@@ -10,6 +10,17 @@
 body {
 	font-family: Arial, sans-serif;
 	text-align: center;
+	font-size: 1.5em;
+}
+
+button {
+	font-size: inherit;
+	margin-bottom: 0.5em;
+}
+
+button:focus {
+	outline: 4px solid #2563eb;
+	outline-offset: 3px;
 }
 
 p { 
@@ -39,7 +50,7 @@ table {
 	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
 	margin-top: 20px;
-	max-width: 50%;
+	max-width: 95%;
 	list-style: none;
 	padding: 0;
 	margin-left: auto;
@@ -56,7 +67,7 @@ table {
 
 .card img {
 	width: 100%;
-	height: 200px;
+	height: 150px;
 	object-fit: cover;
 	display: block;
 }
@@ -174,16 +185,16 @@ function loadStories(category) {
 	const container = document.getElementById('storiesList');
 	container.innerHTML = '';
 	
-	let params = `w=200&h=200&fit=crop&crop=entropy`;
+	let params = `w=800&h=400&fit=crop&crop=entropy`;
 	const images = {
 		mensBasketball: [
 			`https://images.unsplash.com/photo-1546519638-68e109498ffc?${params}`,
-			`https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?${params}`,
+			`https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=800&h=400&fit=crop&crop=center`,
 			`https://images.unsplash.com/photo-1504450758481-7338eba7524a?${params}`,
 			`https://images.unsplash.com/photo-1474224017046-182ece80b263?${params}`,
 		],
 		womensBasketball: [
-			`https://images.unsplash.com/photo-1720715061200-e8fe612559e0?${params}`,
+			`https://images.unsplash.com/photo-1720715061200-e8fe612559e0?w=800&h=400&fit=crop&crop=center`,
 			`https://images.unsplash.com/photo-1626003573503-2e088d82c647?${params}`,
 			`https://images.unsplash.com/photo-1519861531473-9200262188bf?${params}`,
 			`https://images.unsplash.com/photo-1556441693-e27bc50c45c5?${params}`,
