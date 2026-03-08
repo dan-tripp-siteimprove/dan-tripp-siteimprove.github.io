@@ -7,8 +7,16 @@
 
 	<style>
 
+* {
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+}
+
 p { 
 	line-height: 1.5;
+}
+
+.accordion-panel table {
+	margin: 1em 0;
 }
 
 /* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
@@ -32,26 +40,29 @@ table {
 .accordion {
 	margin: 0;
 	padding: 0;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.accordion-item {
 	border: 2px solid hsl(0deg 0% 52%);
 	border-radius: 7px;
-	width: 30em;
+	overflow: hidden;
+}
+
+.accordion-item:focus-within {
+	border-color: hsl(216deg 94% 43%);
+}
+
+.accordion-item:focus-within h3 {
+	background-color: hsl(0deg 0% 97%);
 }
 
 .accordion h3 {
 	margin: 0;
 	padding: 0;
-}
-
-.accordion:focus-within {
-	border-color: hsl(216deg 94% 43%);
-}
-
-.accordion:focus-within h3 {
-	background-color: hsl(0deg 0% 97%);
-}
-
-.accordion > * + * {
-	border-top: 1px solid hsl(0deg 0% 52%);
 }
 
 .accordion-trigger {
@@ -61,7 +72,7 @@ table {
 	font-size: 1rem;
 	font-weight: normal;
 	margin: 0;
-	padding: 1em 1.5em;
+	padding: 0.5em 1em;
 	position: relative;
 	text-align: left;
 	width: 100%;
@@ -80,14 +91,9 @@ table {
 	outline: 4px solid transparent;
 }
 
-.accordion > *:first-child .accordion-trigger,
-.accordion > *:first-child {
-	border-radius: 5px 5px 0 0;
-}
-
-.accordion > *:last-child .accordion-trigger,
-.accordion > *:last-child {
-	border-radius: 0 0 5px 5px;
+.accordion-item .accordion-trigger,
+.accordion-item {
+	border-radius: 5px;
 }
 
 .accordion button::-moz-focus-inner {
@@ -135,6 +141,103 @@ table {
 
 .accordion-panel[hidden] {
 	display: none;
+}
+
+header {
+	background-color: #154273;
+	color: white;
+	padding: 1em 2em;
+}
+
+header .site-name {
+	font-size: 1.4em;
+	font-weight: bold;
+	margin: 0;
+}
+
+header nav {
+	margin-top: 0.5em;
+}
+
+header nav a {
+	color: white;
+	text-decoration: none;
+	margin-right: 1.5em;
+}
+
+header nav a:hover {
+	text-decoration: underline;
+}
+
+.breadcrumbs {
+	background: #f3f3f3;
+	padding: 0.6em 2em;
+	font-size: 0.9em;
+}
+
+.breadcrumbs a {
+	color: #154273;
+	text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+	text-decoration: underline;
+}
+
+.breadcrumbs span {
+	margin: 0 0.4em;
+	color: #666;
+}
+
+main {
+	padding: 2em;
+}
+
+footer {
+	background-color: #154273;
+	color: white;
+	padding: 2em;
+	margin-top: 3em;
+}
+
+footer a {
+	color: #b3d4fc;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer .footer-columns {
+	display: flex;
+	gap: 3em;
+	margin-bottom: 1.5em;
+}
+
+footer .footer-columns div {
+	flex: 1;
+}
+
+footer h4 {
+	margin: 0 0 0.5em 0;
+	font-size: 1em;
+}
+
+footer ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+footer li {
+	margin-bottom: 0.3em;
+}
+
+footer .footer-bottom {
+	border-top: 1px solid rgba(255,255,255,0.3);
+	padding-top: 1em;
+	font-size: 0.85em;
 }
 
 	</style>
@@ -189,56 +292,129 @@ table {
 
 
 <body>
+
+<header>
+	<p class="site-name">Rijksoverheid</p>
+	<nav>
+		<a href="#">Home</a>
+		<a href="#">Onderwerpen</a>
+		<a href="#">Documenten</a>
+		<a href="#">Contact</a>
+	</nav>
+</header>
+
+<div class="breadcrumbs">
+	<a href="#">Home</a><span>›</span><a href="#">Onderwerpen</a><span>›</span><a href="#">Dienstverlening</a><span>›</span>Veelgestelde vragen
+</div>
+
 <main>
+<h2>Veelgestelde vragen over overheidsdiensten</h2>
 
 <div id="accordionGroup" class="accordion">
+	<div class="accordion-item">
 	<h3>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect1" id="accordion1id">
-			<span class="accordion-title">Personal Information<span class="accordion-icon"></span></span>
+			<span class="accordion-title">Inloggen bij de overheid<span class="accordion-icon"></span></span>
 		</button>
 	</h3>
 	<div id="sect1" role="region" aria-labelledby="accordion1id" class="accordion-panel" hidden>
-		<p>Please provide your <a href="#">full legal name</a>, email address, and phone number so we can contact you regarding your application status.</p>
+		<p>Om gebruik te maken van overheidsdiensten heeft u een <a href="#">persoonlijk account</a> nodig. Hiermee kunt u zich veilig identificeren bij meer dan 900 organisaties, waaronder de Belastingdienst, het UWV en uw gemeente.</p>
+		<ul>
+			<li>U kunt uw account activeren met een geldig identiteitsbewijs.</li>
+			<li>Tweestapsverificatie is vereist voor extra beveiliging.</li>
+		</ul>
+	</div>
 	</div>
 
+	<div class="accordion-item">
 	<h3>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect2" id="accordion2id">
-			<span class="accordion-title">Billing Address<span class="accordion-icon"></span></span>
+			<span class="accordion-title">Toeslagen aanvragen<span class="accordion-icon"></span></span>
 		</button>
 	</h3>
 	<div id="sect2" role="region" aria-labelledby="accordion2id" class="accordion-panel" hidden>
-		<p>Enter the billing address associated with your payment method. This should match the address on file with your bank or credit card provider.</p>
+		<p>U kunt bij de Belastingdienst verschillende toeslagen aanvragen, zoals zorgtoeslag, huurtoeslag, kinderopvangtoeslag en het kindgebonden budget. Controleer eerst of u aan de voorwaarden voldoet.</p>
+		<table>
+			<tr><th>Toeslag</th><th>Maximaal bedrag per maand</th></tr>
+			<tr><td>Zorgtoeslag</td><td>€ 154</td></tr>
+			<tr><td>Huurtoeslag</td><td>€ 362</td></tr>
+		</table>
+	</div>
 	</div>
 
+	<div class="accordion-item">
 	<h3>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect3" id="accordion3id">
-			<span class="accordion-title">Shipping Address<span class="accordion-icon"></span></span>
+			<span class="accordion-title">Paspoort of identiteitskaart<span class="accordion-icon"></span></span>
 		</button>
 	</h3>
 	<div id="sect3" role="region" aria-labelledby="accordion3id" class="accordion-panel" hidden>
-		<p>Provide the address where you would like your order to be delivered. You may use a residential or business address.</p>
+		<p>Een paspoort of identiteitskaart vraagt u aan bij de balie van uw gemeente. Maak vooraf een afspraak en neem uw huidige identiteitsbewijs en een recente pasfoto mee. De levertijd is doorgaans vijf werkdagen.</p>
+		<ol>
+			<li>Maak online een afspraak bij uw gemeente.</li>
+			<li>Neem uw huidige identiteitsbewijs en pasfoto mee naar de balie.</li>
+			<li>Haal uw nieuwe document op na vijf werkdagen.</li>
+		</ol>
+	</div>
 	</div>
 
+	<div class="accordion-item">
 	<h3>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect4" id="accordion4id">
-			<span class="accordion-title">Payment Method<span class="accordion-icon"></span></span>
+			<span class="accordion-title">Verhuizing doorgeven<span class="accordion-icon"></span></span>
 		</button>
 	</h3>
 	<div id="sect4" role="region" aria-labelledby="accordion4id" class="accordion-panel" hidden>
-		<p>Select your preferred payment method. We accept major credit cards, debit cards, and electronic bank transfers.</p>
+		<p>Wanneer u gaat verhuizen, bent u verplicht dit binnen vijf dagen door te geven aan uw nieuwe gemeente. Dit kan online via MijnOverheid of aan de balie van het gemeentehuis. Uw adreswijziging wordt automatisch doorgegeven aan andere overheidsinstellingen.</p>
+	</div>
 	</div>
 
+	<div class="accordion-item">
 	<h3>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect5" id="accordion5id">
-			<span class="accordion-title">Order Review<span class="accordion-icon"></span></span>
+			<span class="accordion-title">Belastingaangifte doen<span class="accordion-icon"></span></span>
 		</button>
 	</h3>
 	<div id="sect5" role="region" aria-labelledby="accordion5id" class="accordion-panel" hidden>
-		<p>Review your order details before submitting. Verify that all information is correct including items, quantities, and total cost.</p>
+		<p>Elk jaar ontvangt u van de Belastingdienst een uitnodiging om aangifte inkomstenbelasting te doen. U kunt dit online regelen via Mijn Belastingdienst. De aangifteperiode loopt van 1 maart tot 1 mei.</p>
+	</div>
 	</div>
 </div>
 
 </main>
+
+<footer>
+	<div class="footer-columns">
+		<div>
+			<h4>Service</h4>
+			<ul>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Abonneren</a></li>
+				<li><a href="#">RSS-feeds</a></li>
+			</ul>
+		</div>
+		<div>
+			<h4>Over deze site</h4>
+			<ul>
+				<li><a href="#">Copyright</a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Cookies</a></li>
+				<li><a href="#">Toegankelijkheid</a></li>
+			</ul>
+		</div>
+		<div>
+			<h4>Volg ons</h4>
+			<ul>
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">LinkedIn</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		© 2026 Rijksoverheid
+	</div>
+</footer>
 
 <div style="display: none">
 <!-- this is to prevent the crawler from doing "deduplication" on this page. -->
@@ -281,7 +457,7 @@ class Accordion {
 	}
 }
 
-const accordions = document.querySelectorAll('.accordion h3');
+const accordions = document.querySelectorAll('.accordion-item h3');
 accordions.forEach((accordionEl) => {
 	new Accordion(accordionEl);
 });
