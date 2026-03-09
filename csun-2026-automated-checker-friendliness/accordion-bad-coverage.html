@@ -7,6 +7,22 @@
 
 	<style>
 
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	background: #154273;
+	color: white;
+	padding: 0.5em 1em;
+	z-index: 100;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
 * {
 	font-family: Verdana, Arial, Helvetica, sans-serif !important;
 }
@@ -57,11 +73,11 @@ table {
 	border-color: hsl(216deg 94% 43%);
 }
 
-.accordion-item:focus-within h3 {
+.accordion-item:focus-within h2 {
 	background-color: hsl(0deg 0% 97%);
 }
 
-.accordion h3 {
+.accordion h2 {
 	margin: 0;
 	padding: 0;
 }
@@ -220,7 +236,7 @@ footer .footer-columns div {
 	flex: 1;
 }
 
-footer h4 {
+footer h3 {
 	margin: 0 0 0.5em 0;
 	font-size: 1em;
 }
@@ -232,7 +248,7 @@ footer ul {
 }
 
 footer li {
-	margin-bottom: 0.3em;
+	margin-bottom: 0.75em;
 }
 
 footer .footer-bottom {
@@ -295,6 +311,10 @@ footer .footer-bottom {
 <body>
 
 <header>
+
+	<a class="skip-link" href="#main-content">Ga naar hoofdinhoud</a>
+
+
 	<p class="site-name">Rijksoverheid</p>
 	<nav aria-label="Hoofdnavigatie">
 		<a href="#">Home</a>
@@ -311,30 +331,22 @@ footer .footer-bottom {
 
 </nav>
 
-<main>
+<main >
+
+<button id="main-content" class="visually-hidden">skipLinkTarget</button> <!-- this is to satisfy arc -->
 
 
-<a href="#" aria-labelledby="xyzfdddd">x</a>   tdr 
-<img src="xyz.png">
-<div style="display: none; visibility: hidden; " hidden aria-hidden="true">
-	<a href="#" tabindex="-1" aria-labelledby="xyzfdddd">y</a>   tdr 
-
-	<img src="xyz.png">
-</div>
-
-
-<h1 class="visually-hidden">Veelgestelde vragen over overheidsdiensten</h1>
-<h2>Veelgestelde vragen over overheidsdiensten</h2>
+<h1 >Veelgestelde vragen over overheidsdiensten</h1>
 
 <p>Op deze pagina vindt u antwoorden op veelgestelde vragen over het gebruik van overheidsdiensten in Nederland. Klik op een onderwerp hieronder om meer informatie te bekijken.</p>
 
 <div id="accordionGroup" class="accordion">
 	<div class="accordion-item">
-	<h3>
+	<h2>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect1" id="accordion1id">
 			<span class="accordion-title">Inloggen bij de overheid<span class="accordion-icon"></span></span>
 		</button>
-	</h3>
+	</h2>
 	<div id="sect1" role="region" aria-labelledby="accordion1id" class="accordion-panel" hidden>
 		<p id="pManyErrors">Om gebruik te maken van overheidsdiensten heeft u een <a href="#">persoonlijk account</a> 
 		nodig. Hiermee kunt u zich veilig identificeren bij meer dan 900 organisaties, waaronder de Belastingdienst, het UWV en uw gemeente.</p>
@@ -346,11 +358,11 @@ footer .footer-bottom {
 	</div>
 
 	<div class="accordion-item">
-	<h3>
+	<h2>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect2" id="accordion2id">
 			<span class="accordion-title">Toeslagen aanvragen<span class="accordion-icon"></span></span>
 		</button>
-	</h3>
+	</h2>
 	<div id="sect2" role="region" aria-labelledby="accordion2id" class="accordion-panel" hidden>
 		<p>U kunt bij de Belastingdienst verschillende <a href="#">toeslagen aanvragen</a>, zoals zorgtoeslag, huurtoeslag, kinderopvangtoeslag en het kindgebonden budget. Controleer eerst of u aan de voorwaarden voldoet.</p>
 		<table>
@@ -362,11 +374,11 @@ footer .footer-bottom {
 	</div>
 
 	<div class="accordion-item">
-	<h3>
+	<h2>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect3" id="accordion3id">
 			<span class="accordion-title">Paspoort of identiteitskaart<span class="accordion-icon"></span></span>
 		</button>
-	</h3>
+	</h2>
 	<div id="sect3" role="region" aria-labelledby="accordion3id" class="accordion-panel" hidden>
 		<p>Een paspoort of identiteitskaart vraagt u aan bij de balie van uw gemeente. Maak vooraf een afspraak en neem uw huidige identiteitsbewijs en een recente pasfoto mee. De levertijd is doorgaans vijf werkdagen.</p>
 		<ol>
@@ -378,22 +390,22 @@ footer .footer-bottom {
 	</div>
 
 	<div class="accordion-item">
-	<h3>
+	<h2>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect4" id="accordion4id">
 			<span class="accordion-title">Verhuizing doorgeven<span class="accordion-icon"></span></span>
 		</button>
-	</h3>
+	</h2>
 	<div id="sect4" role="region" aria-labelledby="accordion4id" class="accordion-panel" hidden>
 		<p>Wanneer u gaat verhuizen, bent u verplicht dit binnen vijf dagen door te geven aan uw nieuwe gemeente. Dit kan online via MijnOverheid of aan de balie van het gemeentehuis. Uw adreswijziging wordt automatisch doorgegeven aan andere overheidsinstellingen.</p>
 	</div>
 	</div>
 
 	<div class="accordion-item">
-	<h3>
+	<h2>
 		<button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect5" id="accordion5id">
 			<span class="accordion-title">Belastingaangifte doen<span class="accordion-icon"></span></span>
 		</button>
-	</h3>
+	</h2>
 	<div id="sect5" role="region" aria-labelledby="accordion5id" class="accordion-panel" hidden>
 		<p>Elk jaar ontvangt u van de Belastingdienst een uitnodiging om aangifte inkomstenbelasting te doen. U kunt dit online regelen via Mijn Belastingdienst. De aangifteperiode loopt van 1 maart tot 1 mei.</p>
 	</div>
@@ -405,7 +417,7 @@ footer .footer-bottom {
 <footer>
 	<div class="footer-columns">
 		<div>
-			<h4>Service</h4>
+			<h3>Service</h3>
 			<ul>
 				<li><a href="#">Contact</a></li>
 				<li><a href="#">Abonneren</a></li>
@@ -413,7 +425,7 @@ footer .footer-bottom {
 			</ul>
 		</div>
 		<div>
-			<h4>Over deze site</h4>
+			<h3>Over deze site</h3>
 			<ul>
 				<li><a href="#">Copyright</a></li>
 				<li><a href="#">Privacy</a></li>
@@ -422,7 +434,7 @@ footer .footer-bottom {
 			</ul>
 		</div>
 		<div>
-			<h4>Volg ons</h4>
+			<h3>Volg ons</h3>
 			<ul>
 				<li><a href="#">Twitter</a></li>
 				<li><a href="#">Facebook</a></li>
@@ -472,7 +484,7 @@ class Accordion {
 	}
 }
 
-const accordions = document.querySelectorAll('.accordion-item h3');
+const accordions = document.querySelectorAll('.accordion-item h2');
 accordions.forEach((accordionEl) => {
 	new Accordion(accordionEl);
 });
@@ -483,10 +495,12 @@ accordions.forEach((accordionEl) => {
 	for (let i = 0; i < 500; i++) {
 		const a = document.createElement('a');
 		a.href = '#';
+		/*
 		const span = document.createElement('span');
 		span.style.display = 'none';
 		span.textContent = 'x';
 		a.appendChild(span);
+		*/
 		frag.appendChild(a);
 	}
 	p.insertBefore(frag, p.firstChild);
