@@ -1,6 +1,28 @@
 
 2026:
 
+Date in the "Created" column: Mon 2026-09-07 to Sun 2026-09-13 - Dan
+Date in the "Created" column: Mon 2026-08-31 to Sun 2026-09-06 - Niels
+Date in the "Created" column: Mon 2026-08-24 to Sun 2026-08-30 - Dan
+Date in the "Created" column: Mon 2026-08-17 to Sun 2026-08-23 - Niels
+Date in the "Created" column: Mon 2026-08-10 to Sun 2026-08-16 - Dan
+Date in the "Created" column: Mon 2026-08-03 to Sun 2026-08-09 - Niels
+Date in the "Created" column: Mon 2026-07-27 to Sun 2026-08-02 - Dan
+Date in the "Created" column: Mon 2026-07-20 to Sun 2026-07-26 - Niels
+Date in the "Created" column: Mon 2026-07-13 to Sun 2026-07-19 - Dan
+Date in the "Created" column: Mon 2026-07-06 to Sun 2026-07-12 - Niels
+Date in the "Created" column: Mon 2026-06-29 to Sun 2026-07-05 - Dan
+Date in the "Created" column: Mon 2026-06-22 to Sun 2026-06-28 - Niels
+Date in the "Created" column: Mon 2026-06-15 to Sun 2026-06-21 - Dan
+Date in the "Created" column: Mon 2026-06-08 to Sun 2026-06-14 - Niels
+Date in the "Created" column: Mon 2026-06-01 to Sun 2026-06-07 - Dan
+Date in the "Created" column: Mon 2026-05-25 to Sun 2026-05-31 - Niels
+Date in the "Created" column: Mon 2026-05-18 to Sun 2026-05-24 - Dan
+Date in the "Created" column: Mon 2026-05-11 to Sun 2026-05-17 - Niels
+Date in the "Created" column: Mon 2026-05-04 to Sun 2026-05-10 - Dan
+Date in the "Created" column: Mon 2026-04-27 to Sun 2026-05-03 - Niels
+Date in the "Created" column: Mon 2026-04-20 to Sun 2026-04-26 - Dan
+Date in the "Created" column: Mon 2026-04-13 to Sun 2026-04-19 - Niels
 Date in the "Created" column: Mon 2026-04-06 to Sun 2026-04-12 - Dan
 Date in the "Created" column: Mon 2026-03-30 to Sun 2026-04-05 - Niels
 Date in the "Created" column: Mon 2026-03-23 to Sun 2026-03-29 - Dan
