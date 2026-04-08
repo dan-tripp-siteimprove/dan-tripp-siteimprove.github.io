@@ -3,7 +3,7 @@
 import sys, os
 
 excluded_dirnames = ['.git']
-included_file_extensions = ['.html', '.xml', '.ics', '.png', '.jpg', '.jpeg', '.txt', '.nvda-addon']
+included_file_extensions = ['.html', '.xml', '.ics', '.png', '.jpg', '.jpeg', '.txt', '.nvda-addon', '.pdf']
 
 
 os.chdir(os.path.dirname(sys.argv[0]))
