@@ -99,11 +99,15 @@ table {
 <fieldset role="radiogroup" >
 	<legend>Choose payment type</legend>
 	<div>
-		<label><input type="radio" name="payment_method_options" >Bank transfer</label><br>
+		<label><input type="radio" aria-describedby="accDesc" name="payment_method_options" >Bank transfer<br>
+		$1000</label><br>
+		<span id="accDesc">
+		Include charges and taxes<br>
+		</span>
 		⭐ Recommended way to pay<br>
 	</div>
 	<div>
-		<label><input type="radio" name="payment_method_options" >Cheque</label><br>
+		<label><input type="radio" name="payment_method_options" >VISA</label><br>
 	</div>
 	<div>
 		<label><input type="radio" name="payment_method_options" >Cash</label><br>
