@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tooltip via HTML popover example</title>
+    <link href="index.css" rel="stylesheet" />
+    <link href="popoverTooltip.css" rel="stylesheet" />
+    <script src="popoverTooltip.js" defer></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        addPopoverTooltips();
+        document.querySelectorAll("button").forEach((btn) => {
+          btn.addEventListener("click", () => alert("clicked"));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <section id="button-bar">
+        <button>A <span class="textForPopoverTooltip">the first letter of the alphabet</span></button>
+        <button>B <span class="textForPopoverTooltip">the second letter of the alphabet</span></button>
+        <a href="https://example.com">C <span class="textForPopoverTooltip">the third letter of the alphabet</span></a>
+        <button>D <span class="textForPopoverTooltip">the fourth letter of the alphabet</span></button>
+      </section>
+    </div>
+    <p>This code was originally from MDN (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using">main MDN article is here</a>, and <a href="https://mdn.github.io/dom-examples/popover-api/popover-hint/">specifically I used this demo here</a>).  Then I modified it.  It implements a tooltip via the HTML popover attribute, specifically a "hint popover" i.e. popover="hint".</p>
+    <p>Features/limitations of this tooltip:</p>
+    <ol>
+      <li>The tooltip is meant to be added to an interactive widget eg. button or link.  Maybe it works for other widgets too - I don't know.
+      <li>This tooltip is meant to contain a small amount of text.  Not a lot of text.  Not any interactive widgets or images.  Maybe those do work, or could be easily made to work - I don't know.
+      <li>The tooltip appears on mouse hover or keyboard focus.  It disappears on mouse out or blur.
+      <li>The tooltip's text is included as the accessible name of the widget.  (So keep the tooltip text short.  We don't use accessible description AKA aria-describedby.)
+      <li>It can be dismissed with the ESCAPE key, or by clicking off of it.
+      <li>If button is near the edge of the viewport: the tooltip will appear within the viewport. 
+      <li>The tooltip will <em>almost</em> not overlap its target widget.  The problem is on Firefox, and it happens because of something unsupported about anchor positioning, I think.  To do: fix that.
+      <li>Not much Javascript is needed.
+      <li>Possible bug: since the tooltip-contents-as-popover are aria-hidden, I wonder if there is a bad user experience possible here.  Something like a sighted user using NVDA with "mouse tracking" on.
+    </ol>
+  </body>
+</html>

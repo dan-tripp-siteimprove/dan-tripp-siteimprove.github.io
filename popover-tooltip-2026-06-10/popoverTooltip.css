@@ -1,0 +1,25 @@
+.textForPopoverTooltip {
+/* This is a visually-hidden AKA sr-only class.  
+thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.popoverTooltip {
+  inset: unset;
+  position: absolute;
+  top: calc(anchor(bottom) + 0px);
+  justify-self: anchor-center;
+  margin: 0;
+
+  padding: 8px;
+  border-radius: 6px;
+  background: #271717;
+  color: whitesmoke;
+  box-shadow: 1px 1px 3px #999;
+  border: none;
+}

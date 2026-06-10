@@ -1,0 +1,60 @@
+/* General styling */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui;
+}
+
+body {
+  background: #ccc;
+  margin: 0;
+  padding: 16px;
+}
+
+/* Button bar styling */
+
+#button-bar {
+  height: 48px;
+  min-width: 300px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #eee;
+  box-shadow: 1px 1px 3px #999;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Button styling */
+
+#button-bar button {
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #eee;
+  flex: 1;
+}
+
+#button-bar button:hover,
+#button-bar button:focus {
+  background: #ccc;
+}
+
+#button-bar button:active {
+  box-shadow: inset 1px 1px 2px #333, inset -1px -1px 2px #eee;
+}
+
+#wrapper {
+  width: 60%;
+  max-width: 500px;
+}
+
+@media (max-width: 640px) {
+  #wrapper {
+    width: 90%;
+  }
+}
