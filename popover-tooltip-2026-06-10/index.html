@@ -38,6 +38,7 @@
       <li>Not much Javascript is needed.
       <li>Possible bug: since the tooltip-contents-as-popover are aria-hidden, I wonder if there is a bad user experience possible here.  Something like a sighted user using NVDA with "mouse tracking" on.
       <li>The tooltip text is currently always in the a11y tree.  So if you, say, use a screen reader and arrow nav to a button, you'll hear the tooltip text.  (Though NVDA/Firefox behaviour here is different from Chrome.  On Firefox, the visible text and the tooltip text are in different "sentences".)  At any rate, maybe this approach i.e. tooltip text in the accName, visible tooltip text aria-hidden - is bad.  Maybe we should not aria-hide the visible tooltip text, and advertise the existence of the tooltip to screen readers somehow, and expect them to TAB to the widget (to make the tooltip appear / get added to the a11y tree) then use arrow key nav down to hear that tooltip text.
+			<li>To do: if "the diagonal bug" exists in any meaningful way, then fix it.  and/or make the "hover area" (= the area which you can hover over without causing the tooltip to disappear) a little bigger than the tooltip.  we could call this a "hover margin".  probably only add this "hover margin" to the tooltip.  not the target widget.
     </ol>
   </body>
 </html>
