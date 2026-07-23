@@ -1,0 +1,2262 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="../wp-content/themes/StoryTeller/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../wp-content/themes/StoryTeller/style.css">
+            <title>Participants in the ACT Rules Community Group</title>
+                    <style>
+            div.w3c_message {
+                background: #FFF;
+                letter-spacing: .5px;
+                border-left: 3px solid #D69E88;
+                color: #9d3718;
+                font-size: 95%;
+                margin: 0 auto;
+            }
+
+            .w3c_message ul {
+                list-style: none;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .w3c_message h3 {
+                display: none;
+            }
+        </style>
+                                    </head>
+<body>
+<header>
+    <div class="logos">
+        <a href="../../index.html" class="w3-logo"><img alt="w3c logo" class="animated fadeInLeft"
+                                                           src="../wp-content/themes/StoryTeller/img/svg/w3c-logo.svg"/></a>
+        <a href="https://www.w3.org/community/" class="cgbg-logo"><img alt="w3c community group logo" class="animated fadeInRotate height"
+                                                     src="../wp-content/themes/StoryTeller/img/svg/cgbg-logo.svg"/></a>
+        <a href="https://www.w3.org/community/" class="cgbg-logo-title"><h1 class="animated fadeInRight">Community & Business Groups</h1>
+        </a>
+    </div>
+
+    <div class="white-bar"></div>
+    <div class="white-circle"></div>
+    <div class="blue-top"></div>
+</header><!-- #header -->
+
+<div class="center ov-visible">
+    <nav id="access" class="right main-nav">
+        <ul id="menu-top-menu">
+            <li id="menu-item-60"
+                class="cg menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-home menu-item-60">
+                <a title="Groups" href="https://www.w3.org/community/groups/"><span>Current Groups</span></a></li>
+            <li id="menu-item-57" class="rp menu-item menu-item-type-custom menu-item-object-custom menu-item-57"><a
+                        href="https://www.w3.org/community/reports/"><span>Reports</span></a></li>
+            <li id="menu-item-59" class="ab menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a
+                        title="About" href="https://www.w3.org/community/about/"><span>About</span></a></li>
+        </ul>
+    </nav><!-- #access -->
+</div>
+
+    <div class="center">
+        <div class="maincolumn">
+                            <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="https://www.w3.org/community/" title="Community &amp; Business Groups">Home</a> /</li>
+                        <li><a href="../../../w3.org/community/act-r/index.html">ACT Rules Community Group</a> /</li>
+                        <li>Participants</li>
+                    </ul>
+                </div>
+            
+                            <section class="group" id="content">
+                    <h2 class="group-title">Participants in the ACT Rules Community Group</h2>
+                                                
+                        <div id="w3c_content_body">
+                        </div>
+                    
+                                        <section class="maincolumn group-list">
+            <h4>Chairs</h4>
+            <a href="https://www.w3.org/community/about/tool/#choose-chair"
+               class="tooltip information"><span>More on how to choose Chairs</span></a>
+                            <ul class="vcard no-bg">
+                                            <li class="chair-item">
+                            <label for="nominate-chair" class="visuallyhidden">Check and nominate Chair:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="140" height="140" alt="Helen Burge&apos;s profile picture"
+                                         src="../../thumbnails/200/avatar-images/7xlxbi48tpc0csowwsswk8c440cg48c.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info">
+                                <p class="chair-name name">Helen Burge</p>
+
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Testlio
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="chair-item">
+                            <label for="nominate-chair" class="visuallyhidden">Check and nominate Chair:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="140" height="140" alt="Wilco Fiers&apos;s profile picture"
+                                         src="../../thumbnails/200/avatar-images/gyujqb7ldgggc4w84ok8ogsc0occs0c.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info">
+                                <p class="chair-name name">Wilco Fiers</p>
+
+                                <p class="chair-affiliation rep">
+                                    Deque Systems, Inc.
+                                </p>
+                            </div>
+                        </li>
+                                    </ul>
+                    </section>
+
+        <section class="maincolumn group-list sortable-list participants">
+            <h3 style="display: block">Participants</h3>
+                            <ul>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jake Abma&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/t4o5k2vhxz4wssog44ww4g8cw480ssw.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jake Abma</p>
+                                <p class="chair-affiliation rep">
+                                    ING Groep N.V.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Christina Adams</p>
+                                <p class="chair-affiliation rep">
+                                    Siteimprove
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Tawsif Ahmed</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Robert Aiello&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/gs19viusix44skw000cc8cckco0gkwk.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Robert Aiello</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with IEEE Standards Association
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Zainab AlMeraj</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Kuwait University
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Alaa Alsharif</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Rafael Amoros&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/s8lo169shy8kg0c8kwo40g80w4gkckk.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Rafael Amoros</p>
+                                <p class="chair-affiliation rep">
+                                    Accesit Inclusvo SL
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Bryn Anderson</p>
+                                <p class="chair-affiliation rep">
+                                    Sainsbury&#039;s Ltd
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Vincent Aniort</p>
+                                <p class="chair-affiliation rep">
+                                    Orange
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Stanimira Atanasova</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jonathan Avila</p>
+                                <p class="chair-affiliation rep">
+                                    Level Access
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="MIHEE BANG&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/qvxvjzbfbpwswo4osgs4kgwg8coc0kk.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">MIHEE BANG</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with LinkageLab
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Luca Barone</p>
+                                <p class="chair-affiliation rep">
+                                    Powermapper Software
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Divina Barraza</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Steven Bassett</p>
+                                <p class="chair-affiliation rep">
+                                    Airbnb Inc
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Sean Beld</p>
+                                <p class="chair-affiliation rep">
+                                    UnitedHealth Group
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Frank Berker&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/n2b8vewz3sgsc08skkscokkg8cckkko.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Frank Berker</p>
+                                <p class="chair-affiliation rep">
+                                    Kompetenzzentrum Barrierefreiheit Volmarstein
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="David Berman&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/nhlhe0zluqswwgswgk0cwo8g4cwsg8c.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">David Berman</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Michael Bervell</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Chris Blouch&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/74od2kqlrd0k8cswooscog0oo0sscgc.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Chris Blouch</p>
+                                <p class="chair-affiliation rep">
+                                    Level Access
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Brian Bors&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/ft9yuz436zw4kwk40c4wgkw84c4wwcc.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Brian Bors</p>
+                                <p class="chair-affiliation rep">
+                                    Accessibility Foundation
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Trevor Bostic</p>
+                                <p class="chair-affiliation rep">
+                                    MITRE Corporation
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Nick Bourgeois</p>
+                                <p class="chair-affiliation rep">
+                                    Humana
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Dan Bowling&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/fkic8fue89c8gkgg4kg40g4cgw0w4s4.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Dan Bowling</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with University of Montana
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Thomas Brunet</p>
+                                <p class="chair-affiliation rep">
+                                    IBM Corporation
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Christophe Buffenoir</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Miranda Capra</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Bogdan Cerovac&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/17jdwqt8wl1csgsw0404sksk4og0oss.webp?x-version=2"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Bogdan Cerovac</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with IDEA-lab Cerovac
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jennifer Chadwick&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/c5xjwaue3l4oscsgskoccssg4sw004w.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jennifer Chadwick</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Rafal Charlampowicz</p>
+                                <p class="chair-affiliation rep">
+                                    AccessibilityOz
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Carolyn Chesler</p>
+                                <p class="chair-affiliation rep">
+                                    BECU
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Gautier Chomel&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/8dbzakiylx8gcgkk4s40oos004o8cw8.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Gautier Chomel</p>
+                                <p class="chair-affiliation rep">
+                                    EDRLab
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Lars Ballieu Christensen</p>
+                                <p class="chair-affiliation rep">
+                                    Sensus ApS
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Steve Christie</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Australian Department of Home Affairs
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Nicholas Cook</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with AssistivLabs
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">william creedle</p>
+                                <p class="chair-affiliation rep">
+                                    Web accessibility tool
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jennifer Curby-Borowski&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/gop7vovc85c0c44cksgcwg8gkwowck8.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jennifer Curby-Borowski</p>
+                                <p class="chair-affiliation rep">
+                                    JP Morgan Chase
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Tim Damen</p>
+                                <p class="chair-affiliation rep">
+                                    ABN AMRO Bank
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Raph de Rooij&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/io3h345kn5kw8w84soossw44gco0oog.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Raph de Rooij</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Ministry of the Interior and Kingdom Relations
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Romain Deltour&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/492a66xwx544048wkog00swss04kwos.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Romain Deltour</p>
+                                <p class="chair-affiliation rep">
+                                    DAISY Consortium
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Shane Dittmar</p>
+                                <p class="chair-affiliation rep">
+                                    CVS Pharmacy, Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Bob Dodd&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/ir304a3lo1s00wkc4c4kc8wo4084skc.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Bob Dodd</p>
+                                <p class="chair-affiliation rep">
+                                    Digita11y Accessible Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Brittany Donovan</p>
+                                <p class="chair-affiliation rep">
+                                    Digita11y Accessible Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Carlos Duarte&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/1x9yq37fc9b4gkswswg4scc08kskgkc.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Carlos Duarte</p>
+                                <p class="chair-affiliation rep">
+                                    Universidade de Lisboa - ULisboa
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Adithya Sai Duduku</p>
+                                <p class="chair-affiliation rep">
+                                    Deque Systems, Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Radoslav Ďurač&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/4q53nios8qskc04kcc0kw8ww04swcgw.webp?x-version=3"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Radoslav Ďurač</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Ministry of Investments, Regional Development and Informatization of the Slovak Republic
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Oliver Emberton&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/mkt721esneo0wsoko8w88w4gksswsow.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Oliver Emberton</p>
+                                <p class="chair-affiliation rep">
+                                    Silktide
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Kathy Eng&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/jz3aambod6o4g4cg8gwsocooss0wcoc.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Kathy Eng</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Kristina England</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Antonio Estriga</p>
+                                <p class="chair-affiliation rep">
+                                    Universidade de Lisboa - ULisboa
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Steve Faulkner&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/8p57uafem4wssgccgwo4444ks0gswgw.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Steve Faulkner</p>
+                                <p class="chair-affiliation rep">
+                                    TetraLogical Services Ltd
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Nuno Fontinha</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Gabriel Fouasnon</p>
+                                <p class="chair-affiliation rep">
+                                    Quansight
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Danielli Franquim</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Sorin Fratila</p>
+                                <p class="chair-affiliation rep">
+                                    Acquia
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Casey Friedrich</p>
+                                <p class="chair-affiliation rep">
+                                    ADA Site Compliance
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Miriam Fukushima</p>
+                                <p class="chair-affiliation rep">
+                                    GLAMUS GmbH
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Michael (preferred name is Godwin) Godwin&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/gteed2v8mxw08oo80884c8800004s8g.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Michael (preferred name is Godwin) Godwin</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jeremy Gonzales&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/3jdbwctc2u808goog0g8g8cw80koc08.webp?x-version=2"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jeremy Gonzales</p>
+                                <p class="chair-affiliation rep">
+                                    Siteimprove
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Tobias Greiner</p>
+                                <p class="chair-affiliation rep">
+                                    Web Inclusion GmbH
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Umut Gultekin&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/llw54s7j0e84k8gw00cwkwcw4ow0cok.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Umut Gultekin</p>
+                                <p class="chair-affiliation rep">
+                                    Accessibility Cloud
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jon Gunderson&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/gv1yrwe3lt4o4osscc4c8s0ow084gwo.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jon Gunderson</p>
+                                <p class="chair-affiliation rep">
+                                    University of Illinois
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Andy Halford</p>
+                                <p class="chair-affiliation rep">
+                                    Total Validator
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Charles Hall&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/kganmw3glm8s0ww4gk444gkss0kck0k.webp?x-version=2"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Charles Hall</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">frédéric halna</p>
+                                <p class="chair-affiliation rep">
+                                    Océane Consulting
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Katie Haritos-Shea&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/g7y9jy24rdsko0sg4w8o0ooogwgkc00.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Katie Haritos-Shea</p>
+                                <p class="chair-affiliation rep">
+                                    Knowbility
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Yousif Hejazy</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Chad Hester</p>
+                                <p class="chair-affiliation rep">
+                                    Allyant
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Susan Hewitt&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/62d0qfz1uf8kcgkscw0goc08444k0cw.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Susan Hewitt</p>
+                                <p class="chair-affiliation rep">
+                                    Cigna
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="John Hicks&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/2746369mh51c44wswoogwwwsgwko0k0.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">John Hicks</p>
+                                <p class="chair-affiliation rep">
+                                    URBILOG
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="JOSE HILERA&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/ifjaqr88kj4sc4skkgw8080koskgkk4.webp?x-version=2"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">JOSE HILERA</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Universidad de Alcalá
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Daniel Horning&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/3sgkawqdgmgwo0sos4wsg0wkss08k88.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Daniel Horning</p>
+                                <p class="chair-affiliation rep">
+                                    American Digital Services
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Peter Houmann</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Red Huang&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/j4r8kbm8pg8cwwo0k4gcwo8g4sgkw4o.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Red Huang</p>
+                                <p class="chair-affiliation rep">
+                                    Synology
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Sylvie Hubert</p>
+                                <p class="chair-affiliation rep">
+                                    Orange
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Darius Huntly</p>
+                                <p class="chair-affiliation rep">
+                                    Dig Inclusion
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Aron Janecki&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/iws7oqj6ecooo4400ks4wcc08s4o48o.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Aron Janecki</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Sameera Kamra&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/ieztok3ewqgwkkk8w80wccwokogcgws.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Sameera Kamra</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with JP Morgan Chase
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Sage Keriazes</p>
+                                <p class="chair-affiliation rep">
+                                    Navy Federal Credit Union
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Nithesh Krishnan</p>
+                                <p class="chair-affiliation rep">
+                                    sitecx
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="ManojKumar Kumar&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/ph5020aur80cgw88cc4cssc4oow0o8s.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">ManojKumar Kumar</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Anju Kvijayan</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jan Beniamin Kwiek</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with DNB
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Kathrine Kyp</p>
+                                <p class="chair-affiliation rep">
+                                    City of Deltona
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Patrick Lauke&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/8rixh672or8cwgsswso8ksc4cgcw84k.webp?x-version=2"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Patrick Lauke</p>
+                                <p class="chair-affiliation rep">
+                                    TetraLogical Services Ltd
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Tom Lawton</p>
+                                <p class="chair-affiliation rep">
+                                    AccessibilityOz
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Evan Levesque&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/lhio3dqxuaogow4g0c804c48g0g844s.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Evan Levesque</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Todd Libby&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/p8385rml41cos040s0oc48og8ksgggc.webp?x-version=6"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Todd Libby</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jedi Lin&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/ke8c1p0yyg0kk0sk4ssook4gggwgss.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jedi Lin</p>
+                                <p class="chair-affiliation rep">
+                                    Ministry of Digital Affairs, Taiwan
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jano Llorca Lis&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/qp2oruim80000ossg0ksco04w0k480g.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jano Llorca Lis</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Plexus tech
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Audrey Maniez&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/9571p1e9yz48gk0so844o04wwkogk8g.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Audrey Maniez</p>
+                                <p class="chair-affiliation rep">
+                                    Access42
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Manisha Manisha Shekhar</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with CORNERSTONE ONDEMAND
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Gowshalya Manivannan</p>
+                                <p class="chair-affiliation rep">
+                                    Infosys Limited
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jennie Mather</p>
+                                <p class="chair-affiliation rep">
+                                    Taylor &amp; Francis Group
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Megan McCray</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Bayer CropScience
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">steven Miller</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Digital Transformation Agency
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Akhil Mohan&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/lq705x9eftc88sco0wwcgkwk8sww88k.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Akhil Mohan</p>
+                                <p class="chair-affiliation rep">
+                                    InstantPost Printers and Scanners Private Limited
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Daniel Montalvo&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/aedbof79fmogcw0wscs0w0occkocg48.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Daniel Montalvo</p>
+                                <p class="chair-affiliation rep">
+                                    W3C
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Baldino Morelli</p>
+                                <p class="chair-affiliation rep">
+                                    UsableNet
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Lourdes Moreno</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Universidad Carlos III de Madrid
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jean-Yves Moyen&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/iapknlgyjxss80gogwgsocswkoc4ww8.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jean-Yves Moyen</p>
+                                <p class="chair-affiliation rep">
+                                    Siteimprove
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Carlos Muncharaz&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/j5kfo9bug204koo4cg8g48g4w4k8og8.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Carlos Muncharaz</p>
+                                <p class="chair-affiliation rep">
+                                    Springer Nature
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Mira Nausner</p>
+                                <p class="chair-affiliation rep">
+                                    Austrian Research Promotion Agency
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Aleksandra Nichols</p>
+                                <p class="chair-affiliation rep">
+                                    Deque Systems, Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Annika Nietzio</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Thomas O Shaughnessy</p>
+                                <p class="chair-affiliation rep">
+                                    University of Limerick
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Vartika Pandey</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with CORNERSTONE ONDEMAND
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Predrag Panic</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Fabio Paternò&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/np910l066bk0c8wgsok0k8g80gkkos8.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Fabio Paternò</p>
+                                <p class="chair-affiliation rep">
+                                    CNR-ISTI (Istituto di Scienza e Tecnologie dell&#039;Informazione &quot;A. Faedo&quot;)
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Orla Pedersen</p>
+                                <p class="chair-affiliation rep">
+                                    Inqlude IT ApS
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Bruno Welber Pereira&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/r6xcgrlfgu800k80wkwkgwg8wo00800.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Bruno Welber Pereira</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Giacomo Petri&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/fm1z2sibpsoc0k4888ock0wg4scwsk8.webp?x-version=3"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Giacomo Petri</p>
+                                <p class="chair-affiliation rep">
+                                    UsableNet
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Ken Petri&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/7q0vdc1lddwksw8cww88k4s480o8c4g.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Ken Petri</p>
+                                <p class="chair-affiliation rep">
+                                    JPMorgan Chase &amp; Co.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Kevin Prince&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/1iil275cccw0wk8gkwk4sww0gwg08gg.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Kevin Prince</p>
+                                <p class="chair-affiliation rep">
+                                    Foster Moore
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Caidin Riley</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Data Recognition Corp
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Mark Rogers</p>
+                                <p class="chair-affiliation rep">
+                                    Powermapper Software
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Rene Rose</p>
+                                <p class="chair-affiliation rep">
+                                    T-Systems
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Brian Rowe&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/1nhtrpd7lyzow8sg84so840o84kgs4s.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Brian Rowe</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Pratik Roy</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with U.S. Bank
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Dagfinn Rømen&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/3s38wpx05mm84wswks4cscg80skkwow.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Dagfinn Rømen</p>
+                                <p class="chair-affiliation rep">
+                                    Agency for Public Management and eGovernment (Difi)
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Marco Sabidussi</p>
+                                <p class="chair-affiliation rep">
+                                    UsableNet
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Angela Savage</p>
+                                <p class="chair-affiliation rep">
+                                    New York State Office of Information Technology
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Harris Schneiderman&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/qys2yo6mvhwccskcowwk8k8gcsscgck.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Harris Schneiderman</p>
+                                <p class="chair-affiliation rep">
+                                    Deque Systems, Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">chris Sharrett</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Anuja Sinkar</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with SS&amp;C Technologies
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Rune Smith Sørensen</p>
+                                <p class="chair-affiliation rep">
+                                    Acquia
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Levon Spradlin</p>
+                                <p class="chair-affiliation rep">
+                                    Pearson plc
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Daniël Strik</p>
+                                <p class="chair-affiliation rep">
+                                    Accessibility Foundation
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Sujith Sukumaran&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/o4yc2jpfuggs4wscsk4c4sw8osoc0cc.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Sujith Sukumaran</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with IBS
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Melanie Sumner&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/hev74phd6qokwww004gc4g4cgckksww.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Melanie Sumner</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Lars Sørensen</p>
+                                <p class="chair-affiliation rep">
+                                    Acquia
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Dimitri Tadege</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with University of Minnesota
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Armagan Tekdoner&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/9333g5wjas08gowc4w0s48s0s8k4sg0.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Armagan Tekdoner</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Government of Canada
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Anne Thyme Nørregaard&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/nmojmbusuv4wsw0c8csocco80084ko8.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Anne Thyme Nørregaard</p>
+                                <p class="chair-affiliation rep">
+                                    deranged ApS
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Scott Trachtenberg&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/hua9r2l47a8kgsc8s00cogc8skk8cwo.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Scott Trachtenberg</p>
+                                <p class="chair-affiliation rep">
+                                    ADA Site Compliance
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Dan Tripp</p>
+                                <p class="chair-affiliation rep">
+                                    Siteimprove
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Marie Trudelle</p>
+                                <p class="chair-affiliation rep">
+                                    Lighthouse Labs
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Matthew Turvey</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">João Vicente</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Universidade de Lisboa - ULisboa
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Brenton West</p>
+                                <p class="chair-affiliation rep">
+                                    Cyxtera Technologies, Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Gian Wild</p>
+                                <p class="chair-affiliation rep">
+                                    AccessibilityOz
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Jeff Witt&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/rh669gaiczkwk04gs0c808gkcooswsc.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Jeff Witt</p>
+                                <p class="chair-affiliation rep">
+                                    edX
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Shunguo Yan</p>
+                                <p class="chair-affiliation rep">
+                                    IBM Corporation
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" width="100" height="100" alt="Illai Zeevi&apos;s profile picture"
+                                         src="../../thumbnails/100/avatar-images/ipp6j9n2nd440g0w8wcoocs08kwwoss.webp?x-version=1"/>
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Illai Zeevi</p>
+                                <p class="chair-affiliation rep">
+                                    Individual CLA commitment but affiliated with Evinced Inc.
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="sortable-entry">
+                            <label for="nominate-participant" class="visuallyhidden">Check and nominate
+                                participant:</label>
+                                                        <div class="avatar no-photo-big">
+                                                                    <img class="pic" alt="No Photo" width="100" height="100"
+                                         src="../../assets/website-2021/svg/avatar.svg">
+                                                            </div>
+                            <div class="avatar-caption info center-me">
+                                <p class="chair-name name">Filippo Zorzi</p>
+                                <p class="chair-affiliation rep">
+                                    UsableNet
+                                </p>
+                            </div>
+                        </li>
+                                    </ul>
+                    </section>
+        <section class="maincolumn group-list sortable-list participants">
+                    </section>
+                            </section>
+                    </div><!-- end .maincolumn -->
+
+            <div class="sidebar">
+        <section class="join">
+                            <h3>Get involved</h3>
+                <a href="https://www.w3.org/community/about/faq/#how-do-i-join-a-group" class="tooltip information">
+                    <span>Learn more about how to join a group.</span>
+                </a>
+                <p>Anyone may join this Community Group. All participants in this group have signed the <a
+                            href="https://www.w3.org/community/about/process/cla/">W3C Community Contributor License Agreement</a>.
+                </p>
+                                    <a class="button action orange big"
+                       href="https://auth.w3.org/?url=%2Fcommunity%2Fact-r%2Fjoin">
+                        Join this group
+                    </a>
+                                    </section>
+                    <section class="login">
+                <a class="button action orange big"
+                   href="https://auth.w3.org/?url=https%3A%2F%2Fwww.w3.org%2Fcommunity%2Fact-r%2Fparticipants">
+                    Log in to nominate Chairs
+                </a>
+            </section>
+                <section class="sidebar facets" style="float: none">
+            <div class="wrap-filtering">
+                <script type="text/template" class="template show">
+                    <form id="filtering" action="participants" method="">
+                        <div class="upper-filters clearfix">
+                            <div id="live-search">
+                                <label for="filter" class="visuallyhidden">Search by name or organization:</label>
+                                <input type="text" id="filter" class="text-input" value=""
+                                       placeholder="Search by name or org" name="search">
+                                <a class="clear">x</a>
+                            </div>
+                            <ul class="sort-box">
+                                <li>
+                                    <a href="javascript:void(0)" class="sort-button name" id="sort-name"
+                                       title="Sort participants by their name (repeat to reverse sort order)"><span
+                                                class=""></span>Sort by person name</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="sort-button organization"
+                                       id="sort-organization"
+                                       title="Sort participants by organization name (repeat to reverse sort order)"><span
+                                                class=""></span>Sort by organization name</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </script>
+                <div class="status active">
+                    <p id="group_count">145</p>
+                    <p id="filter-count">Non-Chair participant<span class="plural">s</span> found</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div> <!-- end .center -->
+
+
+    <!-- Footer -->
+    <aside id="w3c_footer">
+        <div class="logo-footer"><a href="https://www.w3.org/community/"><img
+                        src="../wp-content/themes/StoryTeller/img/svg/cgbg-logo-footer.svg"
+                        alt="Community and Business Groups"></a></div>
+        <div class="center">
+            <h2 class="visuallyhidden">Footer navigation</h2>
+            <div class="footer-nav">
+                <h3>Navigation</h3>
+                <ul class="footer_top_nav">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="https://www.w3.org/standards/">Standards</a></li>
+                    <li><a href="https://www.w3.org/groups/">Groups</a></li>
+                    <li><a href="https://www.w3.org/get-involved/">Get involved</a></li>
+                    <li><a href="https://www.w3.org/resources/">Resources</a></li>
+                    <li><a href="https://www.w3.org/news-events/">News &amp; Events</a></li>
+                    <li><a href="https://www.w3.org/about/">About W3C</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3>Contact W3C</h3>
+                <ul class="footer_bottom_nav">
+                    <li><a href="https://www.w3.org/contact/">Contact</a></li>
+                    <li><a accesskey="0" href="https://www.w3.org/help/">Help</a></li>
+                    <li><a href="https://www.w3.org/support-us/">Support us</a></li>
+                    <li><a href="../../policies/index.html">Legal &amp; Policies</a></li>
+                    <li><a href="https://www.w3.org/about/corporation/">Corporation</a></li>
+                    <li><a href="https://status.w3.org/">Systems Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3>W3C updates</h3>
+                <ul class="footer_follow_nav">
+                    <li>
+                        <a href="https://w3c.social/@w3c" title="W3C on Mastodon"><img
+                                    src="../wp-content/themes/StoryTeller/img/svg/mastodon-logo.svg"
+                                    alt="Mastodon" class="social-icon"
+                                    height="40"/></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- #footer address / page signature -->
+            <footer class="clear copyright">Copyright &copy; 2026 <a href="../../index.html">World Wide Web Consortium</a>.<br>
+                <abbr title="World Wide Web Consortium">W3C</abbr><sup>&reg;</sup> <a href="../../policies/index.html#disclaimers">liability</a>, <a href="../../policies/index.html#trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/copyright/document-license/" title="W3C Document License">permissive license</a> rules apply.
+            </footer>
+
+        </div><!-- .center -->
+    </aside>
+
+    <script src="../../_sf/build/js/runtime.768e43738ffa97f39446.js"></script><script src="../../_sf/build/js/9989.a9365f87db1f4de3e556.js"></script><script src="../../_sf/build/js/community_groups.633d549d9a5eada9855f.js"></script>
+</body>
+</html>

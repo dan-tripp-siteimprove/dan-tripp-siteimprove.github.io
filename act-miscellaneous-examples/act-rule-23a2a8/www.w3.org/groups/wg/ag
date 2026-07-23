@@ -1,0 +1,493 @@
+<!doctype html>
+<html dir="ltr" lang="en" class="no-js">
+<head>
+    <title>Accessibility Guidelines | Working Groups | Discover W3C groups | W3C</title>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="home" href="../../index.html"/>
+<link rel="icon" type="image/png" href="../../assets/logos/w3c-2025/favicons/favicon-32.png"/>
+<link rel="apple-touch-icon" type="image/png" href="../../assets/logos/w3c-2025/favicons/favicon-180.png"/>
+
+<link rel="stylesheet" href="../../assets/website-2021/styles/core.css?ver=1.5" media="screen"/>
+
+<!--
+CSS Mustard Cut
+Print (Edge doesn't apply to print otherwise)
+Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser ~11.8+
+FF 47+
+-->
+<link rel="stylesheet" id="advanced-stylesheet"
+      href="../../assets/website-2021/styles/advanced.css?ver=1.5" media="
+            only print,
+            only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+            only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
+        ">
+<link rel="stylesheet" href="../../assets/website-2021/styles/print.css" media="print"/>
+
+<script src="../../assets/website-2021/js/libraries/fontfaceobserver.js"></script>
+
+<script>
+    var myFont = new FontFaceObserver('Noto Sans');
+
+    Promise.all([myFont.load()]).then(function () {
+        document.documentElement.className += " fonts-loaded";
+    });
+
+    (function () {
+        var linkEl = document.getElementById('advanced-stylesheet');
+        if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+            var script = document.createElement('script');
+            script.src = 'https://www.w3.org/assets/website-2021/js/main.js?ver=1.4';
+            script.defer = true;
+            document.querySelector('head').appendChild(script);
+            (function (H) {
+                H.className = H.className.replace(/\bno-js\b/, 'js')
+            })(document.documentElement);
+        }
+    })();
+</script>
+
+
+    <meta name="description" content="The mission of the Accessibility Guidelines Working Group (AG WG) is to develop specifications to make content on the Web accessible for people with disabilities and to participate in the development and maintenance of implementation support materials for the Web Content Accessibility Guidelines."/>
+    <meta name="thumbnail" content="https://www.w3.org/assets/website-2021/images/w3c-opengraph-image.png"/>
+    <meta property="og:url" content="https://www.w3.org/groups/wg/ag/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Accessibility Guidelines Working Group"/>
+    <meta property="og:image" content="https://www.w3.org/assets/website-2021/images/w3c-opengraph-image.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:description" content="The mission of the Accessibility Guidelines Working Group (AG WG) is to develop specifications to make content on the Web accessible for people with disabilities and to participate in the development and maintenance of implementation support materials for the Web Content Accessibility Guidelines."/>
+    <meta property="og:site_name" content="W3C"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="w3c"/>
+    <meta name="twitter:url" content="https://www.w3.org/groups/wg/ag/"/>
+    <meta name="twitter:title" content="Accessibility Guidelines Working Group"/>
+    <meta name="twitter:description" content="The mission of the Accessibility Guidelines Working Group (AG WG) is to develop specifications to make content on the Web accessible for people with disabilities and to participate in the development and maintenance of implementation support materials for the Web Content Accessibility Guidelines."/>
+    <meta name="twitter:image" content="https://www.w3.org/assets/website-2021/images/w3c-opengraph-image.png"/>
+        
+    <link rel="stylesheet" href="../../_sf/build/styles/3917.ec064f2802ca2db0aa97.css">
+
+        
+    <script src="../../_sf/build/js/runtime.768e43738ffa97f39446.js"></script><script src="../../_sf/build/js/app.7ee25c74399166035d85.js"></script>
+
+                        <link href="https://www.w3.org/groups/wg/ag/feed/" title="W3C - Accessibility Guidelines Working Group Activity" rel="alternate" type="application/rss+xml" />
+            
+    </head>
+
+<body class="profile">
+<a class="skip-link" href="ag#main">Skip to content</a>
+<div class="grid-wrap">
+    <div class="wrap">
+        <header class="global-header">
+            <span role="status" aria-live="polite"></span>
+                                                                    
+                            <nav id="lang-nav" aria-label="Language options">
+        <div class="l-center">
+            <div class="l-cluster">
+                <ul class="clean-list" role="list">
+                        <li><a href="https://www.w3.org/ja/" hreflang="ja" lang="ja">日本語ホームページ<span class="visuallyhidden" lang="en">Japanese website</span></a></li>
+                        <li><a href="https://www.w3.org/zh-hans/" hreflang="zh-hans" lang="zh-hans">简体中文首页<span class="visuallyhidden" lang="en">Chinese website</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+            <nav id="global-nav" aria-label="Main">
+    <div class="global-nav__inner l-center">
+        <a class="logo-link" href="../../index.html" hreflang="en">
+            <span class="logo">
+                <img src="../../assets/logos/w3c-2025/svg/w3c.svg" alt="W3C" role="img"/>
+            </span>
+            <span class="visuallyhidden">Visit the W3C homepage</span>
+        </a>
+        <button type="button" class="button button--ghost with-icon--after with-icon--larger" data-trigger="mobile-nav"
+                style="display: none;"></button>
+        <ul data-component="nav-double-intro">
+                <li class="top-nav-item has-children">
+                    <a href="https://www.w3.org/standards/" class="nav-link">Standards &amp; groups</a>
+                    <div class="nav__submenu" data-nav="submenu" style="display: none;">
+                        <div class="l-center">
+                            <div class="nav__submenu__intro">
+                                <h2 class="nav__submenu__intro__heading">Standards &amp; groups</h2>
+                                <div class="nav__submenu__intro__text">
+                                        <p>Understand the various specifications, their maturity levels on the web standards track, their adoption, and the groups that develop them.</p>
+                                        <a href="https://www.w3.org/standards/">Explore web standards</a>
+                                </div>
+                            </div>
+                            <ul>
+                                        <li><a href="https://www.w3.org/standards/about/">About W3C web standards</a></li>
+                                        <li><a href="https://www.w3.org/TR/">W3C standards &amp; drafts</a></li>
+                                        <li><a href="https://www.w3.org/standards/types/">Types of documents W3C publishes</a></li>
+                                        <li><a href="https://www.w3.org/groups/">W3C groups</a></li>
+                                        <li><a href="https://www.w3.org/translations/">Translations of W3C standards &amp; drafts</a></li>
+                                        <li><a href="https://www.w3.org/standards/review/">Reviews &amp; public feedback</a></li>
+                                        <li><a href="https://www.w3.org/get-involved/promote/">Promote web standards</a></li>
+                                        <li><a href="https://www.w3.org/liaisons/">Liaisons</a></li>
+                                        <li><a href="https://www.w3.org/groups/other/tag/">Technical Architecture Group (TAG)</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-nav-item has-children">
+                    <a href="https://www.w3.org/get-involved/" class="nav-link">Get involved</a>
+                    <div class="nav__submenu" data-nav="submenu" style="display: none;">
+                        <div class="l-center">
+                            <div class="nav__submenu__intro">
+                                <h2 class="nav__submenu__intro__heading">Get involved</h2>
+                                <div class="nav__submenu__intro__text">
+                                        <p>W3C works at the nexus of core technology, industry needs, and societal needs.</p>
+                                        <a href="https://www.w3.org/get-involved/">Find ways to get involved</a>
+                                </div>
+                            </div>
+                            <ul>
+                                        <li><a href="https://www.w3.org/ecosystems/">Browse our work by industry</a></li>
+                                        <li><a href="https://www.w3.org/membership/">Become a Member</a></li>
+                                        <li><a href="https://www.w3.org/Member/">Member home (restricted)</a></li>
+                                        <li><a href="https://www.w3.org/support-us/">Support us</a></li>
+                                        <li><a href="https://www.w3.org/email/">Mailing lists</a></li>
+                                        <li><a href="https://www.w3.org/guide/">Participant guidebook</a></li>
+                                        <li><a href="https://www.w3.org/about/positive-work-environment/">Positive work environment</a></li>
+                                        <li><a href="https://www.w3.org/invited-experts/">Invited Experts</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-nav-item has-children">
+                    <a href="https://www.w3.org/resources/" class="nav-link">Resources</a>
+                    <div class="nav__submenu" data-nav="submenu" style="display: none;">
+                        <div class="l-center">
+                            <div class="nav__submenu__intro">
+                                <h2 class="nav__submenu__intro__heading">Resources</h2>
+                                <div class="nav__submenu__intro__text">
+                                        <p>Master web fundamentals, use our developer tools, or contribute code.</p>
+                                        <a href="https://www.w3.org/resources/">Learn from W3C resources</a>
+                                </div>
+                            </div>
+                            <ul>
+                                        <li><a href="https://www.w3.org/developers/">Developers</a></li>
+                                        <li><a href="https://www.w3.org/developers/tools/">Validators &amp; tools</a></li>
+                                        <li><a href="https://www.w3.org/WAI/fundamentals/">Accessibility fundamentals</a></li>
+                                        <li><a href="https://www.w3.org/International/i18n-drafts/nav/about">Internationalization (i18n)</a></li>
+                                        <li><a href="https://www.w3.org/translations/">Translations of W3C standards &amp; drafts</a></li>
+                                        <li><a href="https://www.w3.org/policies/code-of-conduct/">Code of conduct</a></li>
+                                        <li><a href="https://www.w3.org/reports/">Reports</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-nav-item has-children">
+                    <a href="https://www.w3.org/news-events/" class="nav-link">News &amp; events</a>
+                    <div class="nav__submenu" data-nav="submenu" style="display: none;">
+                        <div class="l-center">
+                            <div class="nav__submenu__intro">
+                                <h2 class="nav__submenu__intro__heading">News &amp; events</h2>
+                                <div class="nav__submenu__intro__text">
+                                        <p>Recent content across news, blogs, press releases, media; upcoming events.</p>
+                                        <a href="https://www.w3.org/news-events/">Explore news &amp; events</a>
+                                </div>
+                            </div>
+                            <ul>
+                                        <li><a href="https://www.w3.org/news/">News</a></li>
+                                        <li><a href="https://www.w3.org/blog/">Blog</a></li>
+                                        <li class="break-after"><a href="https://www.w3.org/press-releases/">Press releases</a></li>
+                                        <li><a href="https://www.w3.org/about/press-media/">Press &amp; media</a></li>
+                                        <li><a href="https://www.w3.org/events/">Events</a></li>
+                                        <li><a href="https://www.w3.org/news-events/w3c-tpac/">Annual W3C Conference (TPAC)</a></li>
+                                        <li><a href="https://www.w3.org/policies/code-of-conduct/">Code of conduct</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-nav-item has-children">
+                    <a href="https://www.w3.org/support-us/" class="nav-link">Support us</a>
+                    <div class="nav__submenu" data-nav="submenu" style="display: none;">
+                        <div class="l-center">
+                            <div class="nav__submenu__intro">
+                                <h2 class="nav__submenu__intro__heading">Support us</h2>
+                                <div class="nav__submenu__intro__text">
+                                        <p>Make a huge difference to our operations as a public-interest non-profit, and help us to achieve our vision.</p>
+                                        <a href="ag"></a>
+                                </div>
+                            </div>
+                            <ul>
+                                        <li><a href="https://www.w3.org/support-us/">Ways you can support us</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-nav-item has-children">
+                    <a href="https://www.w3.org/about/" class="nav-link">About</a>
+                    <div class="nav__submenu" data-nav="submenu" style="display: none;">
+                        <div class="l-center">
+                            <div class="nav__submenu__intro">
+                                <h2 class="nav__submenu__intro__heading">About</h2>
+                                <div class="nav__submenu__intro__text">
+                                        <p>Understand our values and principles, learn our history, look into our policies, meet our people.</p>
+                                        <a href="https://www.w3.org/about/">Find out more about us</a>
+                                </div>
+                            </div>
+                            <ul>
+                                        <li><a href="https://www.w3.org/mission/">Our mission</a></li>
+                                        <li><a href="https://www.w3.org/support-us/">Support us</a></li>
+                                        <li><a href="https://www.w3.org/about/leadership/">Leadership</a></li>
+                                        <li><a href="https://www.w3.org/staff/">Staff</a></li>
+                                        <li class="break-after"><a href="https://www.w3.org/careers/">Careers</a></li>
+                                        <li><a href="https://www.w3.org/about/press-media/">Media kit</a></li>
+                                        <li><a href="https://www.w3.org/about/diversity/">Diversity</a></li>
+                                        <li><a href="https://www.w3.org/evangelists/">Evangelists</a></li>
+                                        <li><a href="https://www.w3.org/about/corporation/">Corporation</a></li>
+                                        <li><a href="../../policies/index.html">Policies &amp; legal information</a></li>
+                                        <li><a href="https://www.w3.org/contact/">Contact us</a></li>
+                                        <li><a href="https://www.w3.org/help/">Help</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+            <li class="top-nav-item">
+                                                                                    <a hreflang="en" href="https://www.w3.org/help/search/" class="nav-link icon-link">
+                    <img class="icon" src="../../assets/website-2021/svg/search.svg" width="24" height="24" alt aria-hidden="true"><span class="hide-at-max-width">Search</span>
+                </a>
+            </li>
+            <li class="top-nav-item">
+                <a hreflang="en" href="https://www.w3.org/users/myprofile/" id="account-login-link" class="account-login icon-link with-icon--after">
+                    My account
+                    <span class="avatar avatar--small icon"><img src="../../assets/website-2021/svg/avatar.svg" width="24" height="24" alt aria-hidden="true"/></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+        </header>
+                        
+<nav id="breadcrumb" aria-label="Breadcrumb">
+    <div class="l-center">
+        <div class="l-cluster">
+            <ol class="breadcrumbs clean-list" role="list">
+                                                                                <li><a href="../../index.html">Home</a></li>
+
+        <li><a href="https://www.w3.org/groups/">Discover W3C groups</a></li>
+
+        <li><a href="https://www.w3.org/groups/wg/">Working Groups</a></li>
+
+        <li><a href="ag" aria-current="page">Accessibility Guidelines</a></li>
+
+                            </ol>
+        </div>
+    </div>
+</nav>
+                <main id="main" >
+                                            
+
+                                
+
+                                
+
+                                
+
+                                <div class="content">
+        <h1>Accessibility Guidelines Working Group</h1>
+
+            <button type="button" class="button button--ghost with-icon with-icon--after" style="display:none;"
+            data-toggle="true">Toggle content
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 320 512" class="icon" focusable="false"
+             aria-hidden="true" width="1em" height="1em">
+            <path class="angle-down"
+                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/>
+            <path class="angle-up"
+                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+        </svg>
+    </button>
+
+            <nav id="profile-nav" aria-label="Group details">
+        <div class="profile-nav__inner">
+            <ul>
+                                                                                                                                        <li>
+                                <a aria-current="true"
+                                        href="ag">
+                                    Summary
+                                </a>
+                            </li>
+                                                                                                                                                <li>
+                                <a
+                                        href="https://www.w3.org/groups/wg/ag/participants/">
+                                    Participants
+                                </a>
+                            </li>
+                                                                                                                                                <li>
+                                <a
+                                        href="https://www.w3.org/groups/wg/ag/tools/">
+                                    Tools
+                                </a>
+                            </li>
+                                                                                                                                                <li>
+                                <a
+                                        href="https://www.w3.org/groups/wg/ag/publications/">
+                                    Publications
+                                </a>
+                            </li>
+                                                                                                                                                <li>
+                                <a
+                                        href="https://www.w3.org/groups/wg/ag/task-forces/">
+                                    Task Forces
+                                </a>
+                            </li>
+                                                                                                                                                <li>
+                                <a
+                                        href="https://www.w3.org/groups/wg/ag/calendar/">
+                                    Calendar
+                                </a>
+                            </li>
+                                                                                                                                                <li>
+                                <a
+                                        href="https://www.w3.org/groups/wg/ag/ipr/">
+                                    IPR
+                                </a>
+                            </li>
+                                                                                                                            </ul>
+        </div>
+    </nav>
+
+        <div class="details">
+                <div class="component component--text">
+                                <p>The mission of the Accessibility Guidelines Working Group (AG WG) is to develop specifications to make content on the Web accessible for people with disabilities and to participate in the development and maintenance of implementation support materials for the Web Content Accessibility Guidelines.</p>
+            
+            <dl class="grid">
+                                    <dt>Homepage</dt>
+                    <dd>
+                        <a href="https://www.w3.org/WAI/about/groups/agwg/">Homepage</a>
+                    </dd>
+                                        <dt>Charter</dt>
+    <dd>
+        <a href="https://www.w3.org/groups/wg/ag/charters/active/">
+            Chartered until 28 August 2026
+        </a>
+        (<a href="https://www.w3.org/groups/wg/ag/charters/">history</a>)
+    </dd>
+    
+                <dt>Shortname</dt>
+                <dd>
+                    ag
+                </dd>
+            </dl>
+
+                            <h2>Participation</h2>
+                    <div class="component--members__cta">
+                                                                                                                                            <div>
+                                    <p>To join or leave this group, please <a href="https://auth.w3.org/?url=https%3A%2F%2Fwww.w3.org%2Fgroups%2Fwg%2Fag%2F">sign in</a> to your account.</p>
+                            </div>
+                            <div>
+                    <a
+                            href="https://www.w3.org/groups/wg/ag/ipr/">
+                        Patent Policy status
+                    </a>
+
+                    <a href="https://www.w3.org/groups/wg/ag/instructions/"><i
+                                class="fas fa-question-circle"
+                                aria-hidden="true"></i>
+                        How to Join
+                    </a>
+                </div>
+                        </div>
+            
+                            <h2>Leadership</h2>
+                <dl class="grid">
+                                            <dt>Chairs</dt>
+                        <dd>
+                            <ul class="clean-list">
+                                                                    <li>
+                                                                                    Rachael Bradley Montgomery
+                                                                            </li>
+                                                                    <li>
+                                                                                    Alastair Campbell
+                                                                            </li>
+                                                                    <li>
+                                                                                    Adam Page
+                                                                            </li>
+                                                            </ul>
+                        </dd>
+                                                                <dt>Staff Contacts</dt>
+                        <dd>
+                            <ul class="clean-list">
+                                                                    <li>
+                                                                                    Kevin White
+                                                                            </li>
+                                                            </ul>
+                        </dd>
+                                    </dl>
+            
+                                                    <h2>Links</h2>
+                <dl class="component grid">
+                                            <dt><span class="fas fa-mail-bulk" aria-hidden="true"></span>&nbsp;Mailing List
+                        </dt>
+                        <dd>
+                            <a href="https://lists.w3.org/Archives/Public/public-ag-admin/">
+                                public-ag-admin
+                            </a></dd>
+                                    </dl>
+                    </div>
+        </div>
+    </div>
+                <div class="l-box l-box--no-border l-box--no-padding">
+	<div class="l-switcher pre-footer">
+		<div>
+			                                                <section class="rss">
+	<h2 class="txt-jupiter">Related RSS feed</h2>
+	<div class="with-icon--before with-icon--larger">
+		<img class="icon icon--larger" src="../../assets/website-2021/svg/rss.svg" width="30" height="30" alt="" aria-hidden="true">
+		<a href="https://www.w3.org/groups/wg/ag/feed/">Subscribe to our Accessibility Guidelines Working Group feed</a>
+	</div>
+</section>
+                            
+            <section class="rss">
+    <h2 class="txt-jupiter">API</h2>
+    <p class="with-icon--before with-icon--larger">
+        <svg class="icon icon--larger" width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+            <path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"/>
+        </svg>
+        Data available in <a href="https://www.w3.org/api/">API</a>
+    </p>
+</section>
+        		</div>
+	</div>
+</div>
+        </main>
+                                </div>
+            <footer class="global-footer">
+    <div class="l-center">
+        <div class="global-footer__links">
+            <div class="l-cluster">
+                <ul class="clean-list" role="list">
+                        <li><a href="../../index.html" hreflang="en"><span lang="en" dir="ltr">Home</span></a></li>
+                        <li><a href="https://www.w3.org/contact/" hreflang="en"><span lang="en" dir="ltr">Contact</span></a></li>
+                        <li><a href="https://www.w3.org/help/" hreflang="en"><span lang="en" dir="ltr">Help</span></a></li>
+                        <li><a href="https://www.w3.org/support-us/" hreflang="en"><span lang="en" dir="ltr">Support us</span></a></li>
+                        <li><a href="../../policies/index.html" hreflang="en"><span lang="en" dir="ltr">Legal &amp; Policies</span></a></li>
+                        <li><a href="https://www.w3.org/about/corporation/" hreflang="en"><span lang="en" dir="ltr">Corporation</span></a></li>
+                        <li><a href="https://status.w3.org/" hreflang="en"><span lang="en" dir="ltr">System Status</span></a></li>
+                </ul>
+            </div>
+            <ul class="clean-list" role="list">
+                <li>
+                    <a class="with-icon--larger" href="https://w3c.social/@w3c" hreflang="en">
+                        <img class="icon icon--larger" src="../../assets/website-2021/svg/mastodon.svg" width="20" height="20" alt aria-hidden="true" loading="lazy"/>
+                        <span class="visuallyhidden"><span lang="en" dir="ltr">W3C on Mastodon</span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="with-icon--larger" href="https://github.com/w3c/" hreflang="en">
+                        <img class="icon icon--larger" src="../../assets/website-2021/svg/github.svg" width="20" height="20" alt aria-hidden="true" loading="lazy"/>
+                        <span class="visuallyhidden"><span lang="en" dir="ltr">W3C on GitHub</span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p class="copyright"><span lang="en" dir="ltr">Copyright &copy; 2026 <a href="../../index.html">World Wide Web Consortium</a>.<br> <abbr title="World Wide Web Consortium">W3C</abbr><sup>&reg;</sup> <a href="../../policies/index.html#disclaimers">liability</a>, <a href="../../policies/index.html#trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/copyright/document-license/" title="W3C Document License">permissive license</a> rules apply.</span></p>
+    </div>
+</footer>
+    </div>
+
+</body>
+
+</html>
