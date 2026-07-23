@@ -500,15 +500,6 @@ h2#sidebar-header {
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<h4 id="passed-example-1-1">Passed Example 1</h4>
-
-<p><a class="example-link" title="Passed Example 1" target="_blank" href="https://w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/039ab3458fe66fb1c56764aca1175d2afc1ed903.html">Open in a new tab</a></p>
-
-<p>This <code class="language-plaintext highlighter-rouge">img</code> element has a non-empty <a href="index.html#accessible-name" title="Definition of accessible name">accessible name</a>. The name is not descriptive and therefore the image fails [Success Criterion 1.1.1 Non-text content][sc111], but this rule only check for existence of a name. This <code class="language-plaintext highlighter-rouge">img</code> also fails rule <a href="../../../../../../www.w3.org/WAI/standards-guidelines/act/rules/qt1vmo/index.html">Image accessible name is descriptive</a>.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Neil Armstrong walking on the Moon"</span> <span class="na">src=</span><span class="s">"/test-assets/shared/w3c-logo.png"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
 <h3 id="failed">Failed</h3>
 
 <h4 id="failed-example-1">Failed Example 1</h4>
@@ -601,6 +592,27 @@ h2#sidebar-header {
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/test-assets/shared/w3c-logo.png"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
+
+<h3 id="misc">Miscellaneous Examples</h3>
+
+<p>These examples are not normative and not required for consistent implementations. They illustrate limitations and boundaries of the rule. Passed and Inapplicable examples in this category are likely to fail the rule's accessibility requirement, showing how the rule is only a partial test. Testing tools and methodologies are encouraged to be more clever than the rule, and to report the correct outcome for these examples. Therefore, they are not required for an implementation to be consistent.</p>
+
+<details>
+  <summary><span>Show/Hide Miscellaneous Examples</span></summary>
+
+<h4 id="misc-example-1">Miscellaneous Example 1 (Passed)</h4>
+
+<p><a class="example-link" target="_blank" href="https://example.com">Open in a new tab</a></p>
+
+<p>This <code class="language-plaintext highlighter-rouge">img</code> element has a non-empty <a href="index.html#accessible-name" title="Definition of accessible name">accessible name</a>. The name is not descriptive and therefore the image fails [Success Criterion 1.1.1 Non-text content][sc111], but this rule only check for existence of a name. This <code class="language-plaintext highlighter-rouge">img</code> also fails rule <a href="../../../../../../www.w3.org/WAI/standards-guidelines/act/rules/qt1vmo/index.html">Image accessible name is descriptive</a>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Neil Armstrong walking on the Moon"</span> <span class="na">src=</span><span class="s">"/test-assets/shared/w3c-logo.png"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+
+</details>
+
+
 
 <h2 id="glossary">Glossary</h2>
 
@@ -966,10 +978,12 @@ h2#sidebar-header {
 
 
 
+  <!--
   <div data-netlify-deploy-id="6a6126e29f82010008e7a5e8" data-netlify-site-id="759222d9-c131-4910-b912-a1703418b80f" data-vcs="github" style="position:fixed">
   
   <script async src="../../../../../.netlify/scripts/cdp"></script>
 </div>
+  -->
 </body>
 
 </html>
