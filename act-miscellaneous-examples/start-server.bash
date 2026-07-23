@@ -31,5 +31,5 @@ EOF
 	exit 1
 fi
 
-python3 -m http.server --bind 127.0.0.1 8123 & 
+nohup python3 -m http.server --bind 127.0.0.1 8123 >/dev/null 2>&1 & 
 
