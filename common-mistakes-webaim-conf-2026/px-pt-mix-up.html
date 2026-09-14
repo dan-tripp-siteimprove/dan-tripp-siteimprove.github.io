@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+
+p { line-height: 1.5; }
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+.visually-hidden:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.before .cta-button {
+	background-color: rgb(91, 91, 91);
+	color: rgb(181, 181, 181);
+	font-size: 18px; 
+}
+
+.after-bigger .cta-button {
+	background-color: rgb(91, 91, 91);
+	color: rgb(181, 181, 181);
+	font-size: 24px; /* equals 18pt = WCAG's "large" */
+}
+
+.after-brighter .cta-button {
+	background-color: rgb(91, 91, 91);
+	color: rgb(211, 211, 211);
+	font-size: 18px; 
+}
+
+	</style>
+
+	<script>
+
+window.addEventListener("load", function(event) {
+});
+
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+<br>
+<br>
+
+<div class="before">
+<button class="cta-button">Create an Account</button>
+</div>
+<br>
+<br>
+
+<div class="after-bigger">
+<button class="cta-button">Create an Account</button>
+</div>
+<br>
+<br>
+
+<div class="after-brighter">
+<button class="cta-button">Create an Account</button>
+</div>
+<br>
+<br>
+
+
+
+
+
+</main>
+
+</body>
+
+</html>
