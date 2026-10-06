@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>x</title>
+
+	<style>
+	
+img:not([class]):not([style]) {
+	width: 30px;
+}
+
+p { 
+	line-height: 1.5;
+}
+
+/* thanks https://www.tpgi.com/the-anatomy-of-visually-hidden/#where-we-came-in */
+:is(.visually-hidden, .sr-only):not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table td, table th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+	</style>
+
+	<script>
+{
+
+	function getShadowRoots() {
+		if(!document.body) { // under realistic conditions, this will never happen, I think.  under contrived test conditions I made it happen by running this script very early in the page load process (= under tampermonkey, @run-at document-start, no sleep.  
+			return [];
+		}
+		let r = [document.body];
+		function walk(node__) {
+			let shadowRoot = node__.shadowRoot;
+			if(shadowRoot) {
+				r.push(shadowRoot);
+				walk(shadowRoot);
+			}
+			for (let child of node__.childNodes) {
+				if (child.nodeType === Node.ELEMENT_NODE) {
+					walk(child);
+				}
+			}
+		}
+		walk(document.body);
+		return r;
+	}
+
+
+	function removeIframesIfFileUriScheme() {
+		if(location.protocol !== "file:") return;
+		for(let root of [document, ...getShadowRoots()]) {
+			for(let iframe of root.querySelectorAll('iframe')) {
+				let newWarningElem = document.createElement('div');
+				newWarningElem.style.fontSize = '2em';
+				newWarningElem.style.color = 'rgba(235, 0, 0)';
+				newWarningElem.textContent = `IFRAME REMOVED.  Because you are viewing this page as a file:// URL, many tools can't handle this, even though the iframe will technically load.  It's more trouble than it's worth.  Recommendation: start a local web server, then view this page as an http:// URL.`;
+				iframe.replaceWith(newWarningElem);
+			}
+		}
+	}
+
+	window.addEventListener("load", function(event) {
+		removeIframesIfFileUriScheme();
+	});
+}
+	</script>
+
+</head>
+
+
+
+
+<body>
+<main>
+
+
+
+
+### Passed
+
+This `ul` element only has `li` children:
+
+<ul>
+  <li>Standard delivery</li>
+  <li>Express delivery</li>
+</ul>
+
+Script-supporting elements are allowed anywhere in a list:
+
+<ul>
+  <template><li>Row template</li></template>
+  <li>Delivered</li>
+  <script type="application/json">{ "status": "delivered" }</script>
+  <li>Signed for</li>
+</ul>
+
+This `dl` element has two terms sharing two descriptions, then a second group, with a `template` between them:
+
+<dl>
+  <dt>Colour</dt>
+  <dt>Finish</dt>
+  <dd>Graphite</dd>
+  <dd>Matte</dd>
+  <template><dt>Template term</dt><dd>Template value</dd></template>
+  <dt>Weight</dt>
+  <dd>1.2 kg</dd>
+</dl>
+
+This `dl` element wraps each of its groups in a `div`:
+
+<dl>
+  <div>
+    <dt>Weight</dt>
+    <dd>1.2 kg</dd>
+  </div>
+  <div>
+    <dt>Colour</dt>
+    <dd>Graphite</dd>
+  </div>
+</dl>
+
+The `li` elements are assigned to a slot in a shadow tree. In the [flat tree][], the `ul` element only has `li` children:
+
+<slotted-list>
+  <li>Monday</li>
+  <li>Tuesday</li>
+</slotted-list>
+<script>
+  customElements.define(
+    "slotted-list",
+    class extends HTMLElement {
+      connectedCallback() {
+        const root = this.attachShadow({ mode: "open" });
+        root.innerHTML = "<ul><slot></slot></ul>";
+      }
+    },
+  );
+</script>
+
+### Failed
+
+Each item is an `a` element that contains the `li`, so the `ul` element has `a` children instead of list items:
+
+<ul>
+  <a href="/standard"><li>Standard delivery</li></a>
+  <a href="/express"><li>Express delivery</li></a>
+</ul>
+
+A rendered `div` sits between the `ol` element and its items:
+
+<ol>
+  <div style="position: relative; min-height: 3rem">
+    <li>Unpack the device</li>
+    <li>Charge for two hours</li>
+    <li>Hold the power button</li>
+  </div>
+</ol>
+
+This `ul` element contains text that is not inside a list item:
+
+<ul>
+  <li>Standard delivery</li>
+  See terms below
+  <li>Express delivery</li>
+</ul>
+
+A no-break space is not [inter-element whitespace][], so this `ul` element contains text:
+
+<ul>
+  <li>Standard delivery</li>&nbsp;<li>Express delivery</li>
+</ul>
+
+This `dl` element only has terms, so no group is followed by a description:
+
+<dl>
+  <dt>Alfa</dt>
+  <dt>axe-core</dt>
+  <dt>HTML_CodeSniffer</dt>
+</dl>
+
+This `dl` element only has descriptions, so no group starts with a term:
+
+```html
+<dl>
+  <dd>1.2 kg</dd>
+  <dd>Graphite</dd>
+</dl>
+```
+
+This `div` holds two name-value groups, where the content model allows exactly one per wrapper:
+
+<dl>
+  <div>
+    <dt>Weight</dt>
+    <dd>1.2 kg</dd>
+    <dt>Colour</dt>
+    <dd>Graphite</dd>
+  </div>
+</dl>
+
+This `div` wrapper contains a `p` element, which is neither a term nor a description:
+
+<dl>
+  <div>
+    <dt>Weight</dt>
+    <dd>1.2 kg</dd>
+    <p>Approximate</p>
+  </div>
+</dl>
+
+This `dl` element mixes a wrapped group with an unwrapped one:
+
+<dl>
+  <div>
+    <dt>Weight</dt>
+    <dd>1.2 kg</dd>
+  </div>
+  <dt>Colour</dt>
+  <dd>Graphite</dd>
+</dl>
+
+This `slot` element is not in a shadow tree, so nothing is ever assigned to it and it is a disallowed child:
+
+<ul>
+  <slot></slot>
+  <li>Standard delivery</li>
+</ul>
+
+
+# SKIP dan 
+# fails sia-r68.  to emphasize that this rule is mainly about the HTML content model, not ARIA.
+<div role="list">
+</div>
+
+# DONE dan 
+# again, fails this rule, passes sia-r68. 
+<ul role="tablist">
+  <a role="tab" href="/standard">Standard delivery</a>
+  <a role="tab" href="/express">Express delivery</a>
+</ul>
+
+# DONE dan 
+# passes this rule, fails sia-r68. 
+<ul>
+  <li role="tab">x</li>
+</ul>
+
+
+
+
+
+### Inapplicable
+
+This `ul` element is not [included in the accessibility tree][]:
+
+<ul style="visibility: hidden">
+  <div>Loading</div>
+</ul>
+
+
+
+
+
+
+</main>
+
+<div style="display: none">
+<!-- this is to prevent the crawler from doing "deduplication" on this page. -->
+09a3a1a4-44be-4f18-8a5c-71f06226d4ba
+</div>
+
+</body>
+
+</html>
